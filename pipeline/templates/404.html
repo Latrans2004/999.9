@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Not found — 999.9{% endblock %}
+{% block content %}
+<div class="wrap hero">
+  <p class="eyebrow">404</p>
+  <p class="hero-figure">Nothing here</p>
+  <p class="hero__lede" style="margin-top:20px">
+    That page does not exist, or it was renamed when the pipeline last rebuilt the site.
+  </p>
+  <p style="margin-top:24px">
+    <a href="{{ root }}critical-minerals/index.html">Go to critical minerals →</a>
+  </p>
+</div>
+{% endblock %}

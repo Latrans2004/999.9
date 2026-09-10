@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}999.9 — supply concentration from open data{% endblock %}
+{% block og_title %}999.9{% endblock %}
+
+{% block content %}
+<div class="wrap hero">
+  <div class="hero__grid">
+    <div>
+      <p class="eyebrow">Open-data measurement</p>
+      <p class="wordmark">999<em>.</em>9</p>
+      <h1>How concentrated is the supply of the materials an energy transition runs on?</h1>
+      <p class="hero__lede">
+        999.9 takes published production and trade statistics and reduces them to one
+        number per material per year — the Herfindahl–Hirschman Index, the same measure
+        antitrust regulators use on markets, pointed at countries instead of firms.
+        Everything here is recomputed from source on a schedule, and every step is in the open.
+      </p>
+    </div>
+    <figure class="hero__mark" style="margin:0">
+      <img src="{{ root }}assets/img/mark-640.png" alt="" width="640" height="640"
+           style="width:100%;height:auto;display:block" loading="eager">
+    </figure>
+  </div>
+</div>
+
+<div class="wrap">
+  <hr class="rule">
+  <section>
+    <div class="section-head">
+      <h2>Sections</h2>
+      <p>One section per material family. Each is self-contained.</p>
+    </div>
+    <div class="cards">
+      <a class="card" href="{{ root }}critical-minerals/index.html">
+        <div class="card__top">
+          <div>
+            <div class="card__name">Critical minerals</div>
+            <div class="card__role">Battery metals</div>
+          </div>
+          <span class="card__symbol">Live</span>
+        </div>
+        <p style="margin:0;font-size:0.875rem;color:var(--ink-2)">
+          Eight minerals on the battery and electrification chain, measured at two points:
+          where the ore is mined and where the material is exported.
+        </p>
+        <div class="card__foot">
+          <span>{{ mineral_count }} minerals · USGS + UN Comtrade</span>
+        </div>
+      </a>
+      <div class="card" aria-hidden="false">
+        <div class="card__top">
+          <div>
+            <div class="card__name" style="color:var(--ink-3)">Further sections</div>
+            <div class="card__role">Not yet built</div>
+          </div>
+          <span class="card__symbol">—</span>
+        </div>
+        <p style="margin:0;font-size:0.875rem;color:var(--ink-3)">
+          The pipeline and the layout are shared, so a second material family is a
+          catalog file and a fetch adapter rather than a new site.
+        </p>
+        <div class="card__foot"><span>Planned</span></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="section-head"><h2>What the number means</h2></div>
+    <div class="split">
+      <div>
+        <p class="measure">
+          The Herfindahl–Hirschman Index is the sum of squared percentage shares. Squaring
+          is the whole idea: it makes one supplier at 60% count for far more than six at
+          10% each, which is the difference a buyer actually feels when a single shipment
+          route closes.
+        </p>
+        <p class="measure">
+          A monopoly scores 10,000. Ten equal suppliers score 1,000. The bands below come
+          from the US merger guidelines and are borrowed here as a reading aid, not as a
+          claim that countries behave like firms.
+        </p>
+        <p><a href="{{ root }}critical-minerals/methodology.html">Read the full method →</a></p>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat__label">Below 1,000</span>
+          <span class="stat__value" style="font-size:1.05rem">Unconcentrated</span>
+          <span class="stat__note">No supplier's absence reshapes the market on its own.</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">1,000 – 1,800</span>
+          <span class="stat__value" style="font-size:1.05rem">Moderate</span>
+          <span class="stat__note">A handful of suppliers set the terms.</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">Above 1,800</span>
+          <span class="stat__value" style="font-size:1.05rem">Highly concentrated</span>
+          <span class="stat__note">One or two suppliers are the market.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

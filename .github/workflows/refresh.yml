@@ -1,0 +1,101 @@
+name: Refresh data
+
+# Both upstream sources publish annually. A nightly run would refetch the same
+# numbers 364 times a year and spend someone else's bandwidth doing it, so the
+# schedule is monthly: often enough that a new USGS edition or a Comtrade
+# revision is picked up within weeks, rare enough to be a good citizen.
+#
+# The USGS adapter discovers the newest data release rather than pointing at a
+# fixed URL, so no edit is needed when a new Mineral Commodity Summaries
+# edition appears.
+on:
+  schedule:
+    - cron: "17 6 1 * *" # 06:17 UTC on the first of each month
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Space-separated mineral slugs to rebuild (blank = all)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Unit tests
+        run: python -m pytest pipeline/tests -q
+
+      - name: Build data and render pages
+        env:
+          # Optional. Without it the pipeline uses UN Comtrade's free preview
+          # endpoint, which caps a response at 500 rows. Add the secret to lift
+          # the cap: https://comtradedeveloper.un.org/
+          COMTRADE_API_KEY: ${{ secrets.COMTRADE_API_KEY }}
+        run: |
+          if [ -n "${{ github.event.inputs.only }}" ]; then
+            python -m pipeline.build --only ${{ github.event.inputs.only }} --verbose
+          else
+            python -m pipeline.build --verbose
+          fi
+
+      - name: Report what the run produced
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+          index = json.loads(pathlib.Path("critical-minerals/data/index.json").read_text())
+          rows = []
+          for mineral in index.get("minerals", []):
+              for key in ("production", "trade"):
+                  block = mineral.get(key)
+                  if block:
+                      rows.append(f"| {mineral['name']} | {key} | {block['year']} | {block['hhi']:,.0f} | {block['band']} |")
+                  else:
+                      rows.append(f"| {mineral['name']} | {key} | — | unavailable | — |")
+          summary = ["| Mineral | Index | Year | HHI | Band |", "|---|---|---|---|---|"] + rows
+          if index.get("failures"):
+              summary.append("")
+              summary.append("**Failures:** " + ", ".join(f["slug"] for f in index["failures"]))
+          pathlib.Path(__import__("os").environ["GITHUB_STEP_SUMMARY"]).write_text("\n".join(summary))
+          PY
+
+      - name: Commit if anything moved
+        id: commit
+        run: |
+          git config user.name  "999.9 pipeline"
+          git config user.email "actions@users.noreply.github.com"
+          git add critical-minerals/data critical-minerals/*.html critical-minerals/minerals index.html 404.html
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Nothing changed upstream; no commit."
+          else
+            git commit -m "data: scheduled refresh $(date -u +%Y-%m-%d)"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: refresh
+    if: needs.refresh.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml

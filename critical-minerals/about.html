@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — 999.9</title>
+<meta name="description" content="999.9 is a personal open-data project measuring supply concentration in critical minerals.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#080A0F">
+<link rel="icon" href="../assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta property="og:title" content="About — 999.9">
+<meta property="og:description" content="Supply concentration in critical minerals, from open data.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/img/icon-512.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="brand" href="../index.html">
+      <img src="../assets/img/brand-32.png" alt="" width="22" height="22">
+      <span>999.9</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../critical-minerals/index.html">Critical minerals</a>
+      <a href="../critical-minerals/methodology.html">Methodology</a>
+      <a href="../critical-minerals/about.html" aria-current="page">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <p class="crumb"><a href="../index.html">999.9</a><span>/</span>About</p>
+</div>
+
+<div class="wrap hero" style="padding-block:clamp(32px,6vw,64px) clamp(20px,4vw,36px)">
+  <div class="hero__grid">
+    <div>
+      <p class="eyebrow">About</p>
+      <h1 style="font-size:var(--step-h1);font-weight:400">999.9</h1>
+      <p class="hero__lede">
+        A hobby project. Public data goes in, one number per material per year comes out,
+        and a scheduled job keeps it current without anyone touching a spreadsheet.
+      </p>
+    </div>
+    <figure class="hero__mark" style="margin:0">
+      <img src="../assets/img/mark-320.png" alt="" width="320" height="320"
+           style="width:100%;height:auto;display:block">
+    </figure>
+  </div>
+</div>
+
+<div class="wrap prose">
+  <section style="padding-top:0">
+    <h2>The name</h2>
+    <p>
+      999.9 is the hallmark for the highest commercial purity of a precious metal — four
+      nines, 99.99%. It is the last figure before a claim stops being verifiable, which
+      seemed like a reasonable thing to name a site about published numbers after.
+    </p>
+
+    <h2>Why concentration</h2>
+    <p>
+      Most discussion of critical minerals runs on adjectives. A supply chain is
+      "fragile", a dependency is "worrying", a country is "dominant". Those words are
+      doing real work, but they are not comparable across materials and they do not change
+      when the underlying facts do.
+    </p>
+    <p>
+      A concentration index is comparable and it does move. It lets you put natural
+      graphite next to copper on the same axis and see the difference immediately, and it
+      lets you ask whether a supply chain is getting narrower or wider over a decade rather
+      than arguing about whether it is narrow.
+    </p>
+    <p>
+      It is not a complete picture — the <a href="../critical-minerals/methodology.html">methodology
+      page</a> is explicit about what it misses — but it is a floor to argue up from.
+    </p>
+
+    <h2>How it is built</h2>
+    <p>
+      A Python pipeline fetches from USGS and UN Comtrade, computes the indices and writes
+      JSON. A renderer turns that JSON into static pages. GitHub Actions runs both on a
+      schedule and commits the result, and GitHub Pages serves it. There is no server, no
+      database and no build step beyond Python, which is the point: it should still work
+      untouched in three years.
+    </p>
+    <p>
+      The site is structured so that critical minerals is one section rather than the whole
+      site. A second material family needs a catalog file and a fetch adapter, not a
+      rewrite.
+    </p>
+
+    <h2>Corrections</h2>
+    <p>
+      If a figure here is wrong, the pipeline is wrong, and that is worth knowing. The
+      repository takes issues, and every page's underlying JSON is in the same repository
+      under <code>critical-minerals/data/</code> if you would rather check the arithmetic
+      yourself.
+    </p>
+
+    <h2>Credit and disclaimer</h2>
+    <p>
+      Production data is from the US Geological Survey, National Minerals Information
+      Center. Trade data is from UN Comtrade. Both are public and both are excellent; the
+      calculations, choices and any errors on this site are mine alone, and neither
+      organisation endorses or is associated with it.
+    </p>
+    <p><a href="https://github.com/OWNER/999.9" rel="noopener">Repository on GitHub →</a></p>
+  </section>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h4>999.9</h4>
+        <p style="margin:0;max-width:32ch">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
+      </div>
+      <div>
+        <h4>Sections</h4>
+        <ul>
+          <li><a href="../critical-minerals/index.html">Critical minerals</a></li>
+          <li><a href="../critical-minerals/methodology.html">Methodology</a></li>
+          <li><a href="../critical-minerals/about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Data sources</h4>
+        <ul>
+          <li><a href="https://www.usgs.gov/centers/national-minerals-information-center/mineral-commodity-summaries" rel="noopener">USGS Mineral Commodity Summaries</a></li>
+          <li><a href="https://comtradeplus.un.org/" rel="noopener">UN Comtrade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Source</h4>
+        <ul>
+          <li><a href="https://github.com/OWNER/999.9" rel="noopener">Repository on GitHub</a></li>
+          <li><a href="https://github.com/OWNER/999.9/actions" rel="noopener">Build history</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__meta">
+      <span>Neither USGS nor the United Nations endorses this site or its calculations.</span>
+      <span class="timestamp">Awaiting first data build</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/charts.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}About — 999.9{% endblock %}
+{% block og_title %}About — 999.9{% endblock %}
+{% block description %}999.9 is a personal open-data project measuring supply concentration in critical minerals.{% endblock %}
+
+{% block content %}
+<div class="wrap">
+  <p class="crumb"><a href="{{ root }}index.html">999.9</a><span>/</span>About</p>
+</div>
+
+<div class="wrap hero" style="padding-block:clamp(32px,6vw,64px) clamp(20px,4vw,36px)">
+  <div class="hero__grid">
+    <div>
+      <p class="eyebrow">About</p>
+      <h1 style="font-size:var(--step-h1);font-weight:400">999.9</h1>
+      <p class="hero__lede">
+        A hobby project. Public data goes in, one number per material per year comes out,
+        and a scheduled job keeps it current without anyone touching a spreadsheet.
+      </p>
+    </div>
+    <figure class="hero__mark" style="margin:0">
+      <img src="{{ root }}assets/img/mark-320.png" alt="" width="320" height="320"
+           style="width:100%;height:auto;display:block">
+    </figure>
+  </div>
+</div>
+
+<div class="wrap prose">
+  <section style="padding-top:0">
+    <h2>The name</h2>
+    <p>
+      999.9 is the hallmark for the highest commercial purity of a precious metal — four
+      nines, 99.99%. It is the last figure before a claim stops being verifiable, which
+      seemed like a reasonable thing to name a site about published numbers after.
+    </p>
+
+    <h2>Why concentration</h2>
+    <p>
+      Most discussion of critical minerals runs on adjectives. A supply chain is
+      "fragile", a dependency is "worrying", a country is "dominant". Those words are
+      doing real work, but they are not comparable across materials and they do not change
+      when the underlying facts do.
+    </p>
+    <p>
+      A concentration index is comparable and it does move. It lets you put natural
+      graphite next to copper on the same axis and see the difference immediately, and it
+      lets you ask whether a supply chain is getting narrower or wider over a decade rather
+      than arguing about whether it is narrow.
+    </p>
+    <p>
+      It is not a complete picture — the <a href="{{ root }}critical-minerals/methodology.html">methodology
+      page</a> is explicit about what it misses — but it is a floor to argue up from.
+    </p>
+
+    <h2>How it is built</h2>
+    <p>
+      A Python pipeline fetches from USGS and UN Comtrade, computes the indices and writes
+      JSON. A renderer turns that JSON into static pages. GitHub Actions runs both on a
+      schedule and commits the result, and GitHub Pages serves it. There is no server, no
+      database and no build step beyond Python, which is the point: it should still work
+      untouched in three years.
+    </p>
+    <p>
+      The site is structured so that critical minerals is one section rather than the whole
+      site. A second material family needs a catalog file and a fetch adapter, not a
+      rewrite.
+    </p>
+
+    <h2>Corrections</h2>
+    <p>
+      If a figure here is wrong, the pipeline is wrong, and that is worth knowing. The
+      repository takes issues, and every page's underlying JSON is in the same repository
+      under <code>critical-minerals/data/</code> if you would rather check the arithmetic
+      yourself.
+    </p>
+
+    <h2>Credit and disclaimer</h2>
+    <p>
+      Production data is from the US Geological Survey, National Minerals Information
+      Center. Trade data is from UN Comtrade. Both are public and both are excellent; the
+      calculations, choices and any errors on this site are mine alone, and neither
+      organisation endorses or is associated with it.
+    </p>
+    <p><a href="{{ repo_url }}" rel="noopener">Repository on GitHub →</a></p>
+  </section>
+</div>
+{% endblock %}

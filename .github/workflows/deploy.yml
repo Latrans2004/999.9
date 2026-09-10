@@ -1,0 +1,55 @@
+name: Test and deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_call:
+
+# Only the built site is deployed; the pipeline is not run here, so a push
+# that only touches CSS or a template redeploys in well under a minute.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+      - name: Unit tests
+        run: python -m pytest pipeline/tests -q
+      - name: Re-render pages and fail if they are stale
+        run: |
+          python -m pipeline.render
+          if ! git diff --quiet -- '*.html'; then
+            echo "::error::Rendered pages differ from what is committed."
+            echo "Run 'python -m pipeline.render' locally and commit the result."
+            git --no-pager diff --stat -- '*.html'
+            exit 1
+          fi
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

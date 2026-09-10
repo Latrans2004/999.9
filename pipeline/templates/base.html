@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}999.9{% endblock %}</title>
+<meta name="description" content="{% block description %}Supply concentration in critical minerals, measured with the Herfindahl-Hirschman Index from USGS and UN Comtrade open data.{% endblock %}">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#080A0F">
+<link rel="icon" href="{{ root }}assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ root }}assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ root }}assets/img/favicon-16.png">
+<link rel="apple-touch-icon" href="{{ root }}assets/img/apple-touch-icon.png">
+<meta property="og:title" content="{% block og_title %}999.9{% endblock %}">
+<meta property="og:description" content="Supply concentration in critical minerals, from open data.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ root }}assets/img/icon-512.png">
+<link rel="stylesheet" href="{{ root }}assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{% if fixtures %}
+<div class="banner"><div class="wrap">
+  <strong>Sample data.</strong>
+  <span>This build was rendered from synthetic fixtures, not from USGS or UN Comtrade. No figure on this page is a measurement.</span>
+</div></div>
+{% endif %}
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="brand" href="{{ root }}index.html">
+      <img src="{{ root }}assets/img/brand-32.png" alt="" width="22" height="22">
+      <span>999.9</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="{{ root }}critical-minerals/index.html"{% if page == 'section' %} aria-current="page"{% endif %}>Critical minerals</a>
+      <a href="{{ root }}critical-minerals/methodology.html"{% if page == 'methodology' %} aria-current="page"{% endif %}>Methodology</a>
+      <a href="{{ root }}critical-minerals/about.html"{% if page == 'about' %} aria-current="page"{% endif %}>About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h4>999.9</h4>
+        <p style="margin:0;max-width:32ch">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
+      </div>
+      <div>
+        <h4>Sections</h4>
+        <ul>
+          <li><a href="{{ root }}critical-minerals/index.html">Critical minerals</a></li>
+          <li><a href="{{ root }}critical-minerals/methodology.html">Methodology</a></li>
+          <li><a href="{{ root }}critical-minerals/about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Data sources</h4>
+        <ul>
+          <li><a href="https://www.usgs.gov/centers/national-minerals-information-center/mineral-commodity-summaries" rel="noopener">USGS Mineral Commodity Summaries</a></li>
+          <li><a href="https://comtradeplus.un.org/" rel="noopener">UN Comtrade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Source</h4>
+        <ul>
+          <li><a href="{{ repo_url }}" rel="noopener">Repository on GitHub</a></li>
+          <li><a href="{{ repo_url }}/actions" rel="noopener">Build history</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__meta">
+      <span>Neither USGS nor the United Nations endorses this site or its calculations.</span>
+      <span class="timestamp">{% if generated_at %}Data last rebuilt {{ generated_at }}{% else %}Awaiting first data build{% endif %}</span>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ root }}assets/js/charts.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

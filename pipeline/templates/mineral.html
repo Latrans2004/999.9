@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+{% block title %}{{ mineral.name }} — critical minerals — 999.9{% endblock %}
+{% block og_title %}{{ mineral.name }} supply concentration — 999.9{% endblock %}
+{% block description %}{{ mineral.summary|striptags|truncate(180) }}{% endblock %}
+
+{% macro block_panel(key, block, title, blurb) %}
+<div class="panel">
+  <div class="panel__head">
+    <h3>{{ title }}</h3>
+    {% if block.available %}
+    <span class="band band--{{ block.latest.band }}">{{ band_labels[block.latest.band] }}</span>
+    {% endif %}
+  </div>
+  <p class="panel__sub">{{ blurb }}</p>
+
+  {% if block.available %}
+  <div class="stats" style="margin-bottom:22px">
+    <div class="stat">
+      <span class="stat__label">HHI {{ block.latest.year }}</span>
+      <span class="stat__value">{{ "{:,.0f}".format(block.latest.hhi) }}</span>
+      <span class="stat__note">
+        {%- if block.trend %}{{ trend_phrase(block.trend) }}{% else %}Single year of data{% endif -%}
+      </span>
+    </div>
+    <div class="stat">
+      <span class="stat__label">Largest supplier</span>
+      <span class="stat__value" style="font-size:1.1rem">{{ block.latest.top[0].name }}</span>
+      <span class="stat__note">{{ "{:.1f}".format(block.latest.top[0].share) }}% of the reported total</span>
+    </div>
+    <div class="stat">
+      <span class="stat__label">Top three</span>
+      <span class="stat__value">{{ "{:.0f}".format(block.latest.cr3) }}%</span>
+      <span class="stat__note">Combined share of the three largest</span>
+    </div>
+    <div class="stat">
+      <span class="stat__label">Effective suppliers</span>
+      <span class="stat__value">{{ "{:.1f}".format(block.latest.effective_suppliers) }}</span>
+      <span class="stat__note">{{ block.latest.reporters }} countries reported</span>
+    </div>
+  </div>
+
+  <div class="split">
+    <div>
+      <h4 style="font-size:var(--step-micro);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px">
+        Index over time
+      </h4>
+      <div class="chart" data-line="{{ key }}"></div>
+      <details class="table-toggle">
+        <summary>Table view</summary>
+        <div class="table-scroll">
+          <table class="data">
+            <caption>{{ title }} by year. HHI on the 0–10,000 scale.</caption>
+            <thead>
+              <tr><th scope="col">Year</th><th scope="col" class="num">HHI</th><th scope="col" class="num">Top three</th><th scope="col" class="num">Reporting</th></tr>
+            </thead>
+            <tbody>
+              {% for point in block.series|reverse %}
+              <tr>
+                <td>{{ point.year }}</td>
+                <td class="num">{{ "{:,.0f}".format(point.hhi) }}</td>
+                <td class="num">{{ "{:.1f}".format(point.cr3) }}%</td>
+                <td class="num">{{ point.reporters }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <div>
+      <h4 style="font-size:var(--step-micro);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px">
+        Shares in {{ block.latest.year }}
+      </h4>
+      <div class="chart" data-bars="{{ key }}"></div>
+      <details class="table-toggle">
+        <summary>Table view</summary>
+        <div class="table-scroll">
+          <table class="data">
+            <caption>{{ block.unit|capitalize }}, {{ block.latest.year }}.</caption>
+            <thead>
+              <tr><th scope="col">Country</th><th scope="col" class="num">Share</th><th scope="col" class="num">Cumulative</th></tr>
+            </thead>
+            <tbody>
+              {% set ns = namespace(cumulative=0) %}
+              {% for row in block.latest.top %}
+              {% set ns.cumulative = ns.cumulative + row.share %}
+              <tr>
+                <td class="name">{{ row.name }}</td>
+                <td class="num">{{ "{:.2f}".format(row.share) }}%</td>
+                <td class="num">{{ "{:.1f}".format(ns.cumulative) }}%</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  {% if block.latest.coverage is not none and block.latest.coverage < 1 %}
+  <div class="notice" style="margin-top:20px">
+    <strong>Coverage {{ "{:.0f}".format(block.latest.coverage * 100) }}%.</strong>
+    The named countries above account for that share of the published world total. The
+    remainder is withheld or unallocated at source; it is excluded from the index rather
+    than attributed to anyone, so the true index is likely a little lower than shown.
+  </div>
+  {% endif %}
+
+  {% else %}
+  <div class="chart__empty">
+    <strong>No data yet</strong>
+    {% if block.notes %}{{ block.notes[0] }}{% else %}
+    This index will appear once the pipeline completes a successful fetch from {{ block.source }}.
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{% block content %}
+<div class="wrap">
+  <p class="crumb">
+    <a href="{{ root }}index.html">999.9</a><span>/</span><a href="{{ root }}critical-minerals/index.html">Critical minerals</a><span>/</span>{{ mineral.name }}
+  </p>
+</div>
+
+<div class="wrap hero" style="padding-block:clamp(28px,5vw,52px) clamp(24px,4vw,40px)">
+  <p class="eyebrow">{{ mineral.role }}</p>
+  <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
+    <h1 style="font-size:var(--step-h1);font-weight:400">{{ mineral.name }}</h1>
+    <span class="card__symbol">{{ mineral.symbol }}</span>
+  </div>
+  <p class="hero__lede" style="margin-top:18px">{{ mineral.summary }}</p>
+</div>
+
+<div class="wrap">
+  {{ block_panel("production", mineral.production,
+                 "Mine concentration",
+                 "Share of world mine production by country, from the USGS Mineral Commodity Summaries. This is where the material leaves the ground.") }}
+
+  {{ block_panel("trade", mineral.trade,
+                 "Export concentration",
+                 "Share of world export value by reporting country, from UN Comtrade, covering " ~ (mineral.hs_label or "the relevant HS codes") ~ ". This captures processing and refining that mine statistics do not.") }}
+
+  {% if mineral.caveats %}
+  <section>
+    <div class="section-head">
+      <h2>What these numbers do not say</h2>
+    </div>
+    <ul class="caveats">
+      {% for caveat in mineral.caveats %}<li>{{ caveat }}</li>{% endfor %}
+      <li>Both indices measure countries, not companies. Two mines in different countries
+      owned by the same parent read here as two suppliers.</li>
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if notes %}
+  <div class="notice">
+    <strong>Build notes for this mineral.</strong>
+    <ul>{% for note in notes %}<li>{{ note }}</li>{% endfor %}</ul>
+  </div>
+  {% endif %}
+
+  <div class="pager">
+    {% if previous %}<a href="{{ root }}critical-minerals/minerals/{{ previous.slug }}.html">← {{ previous.name }}</a>{% else %}<span></span>{% endif %}
+    {% if next %}<a href="{{ root }}critical-minerals/minerals/{{ next.slug }}.html">{{ next.name }} →</a>{% endif %}
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="application/json" id="page-data">{{ page_data|safe }}</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById("page-data").textContent);
+  var thresholds = [
+    { value: 1000, label: "1,000 moderate" },
+    { value: 1800, label: "1,800 high" }
+  ];
+
+  ["production", "trade"].forEach(function (key) {
+    var block = data[key];
+    if (!block || !block.available) return;
+
+    var lineNode = document.querySelector('[data-line="' + key + '"]');
+    if (lineNode) {
+      Chart.register(lineNode, function () {
+        Chart.line(lineNode, {
+          series: block.series,
+          thresholds: thresholds,
+          ariaLabel: (key === "production" ? "Mine" : "Export") +
+                     " concentration index for " + data.name + ", " +
+                     block.series[0].year + " to " + block.series[block.series.length - 1].year
+        });
+      });
+    }
+
+    var barsNode = document.querySelector('[data-bars="' + key + '"]');
+    if (barsNode) {
+      var rows = block.latest.top.map(function (row) {
+        return { name: row.name, share: row.share, code: row.code, detail: block.unit };
+      });
+      Chart.register(barsNode, function () { Chart.bars(barsNode, { rows: rows, limit: 10 }); });
+    }
+  });
+})();
+</script>
+{% endblock %}

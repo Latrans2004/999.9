@@ -1,0 +1,18 @@
+commodity,country,year,production,unit,source
+# Fallback mine-production table, used only when the USGS discovery step in
+# pipeline/sources/usgs.py fails to find rows for a commodity.
+#
+# One row per commodity / country / year. Units only need to be consistent
+# within a commodity and year, because HHI is scale-invariant - but record the
+# unit anyway so a future reader can tell tonnes from thousand tonnes.
+#
+# "commodity" must match one of the usgs_aliases in ../catalog.json.
+# A row whose country is "World total" is read as the world total for coverage
+# reporting and is not treated as a supplier.
+#
+# Every figure entered here must be transcribed from a published USGS Mineral
+# Commodity Summaries table, with the edition recorded in the source column.
+# Do not estimate. An absent row is honest; an invented one is not.
+#
+# Example (delete before adding real rows):
+# Lithium,Australia,2023,86000,t,MCS 2025 p.109

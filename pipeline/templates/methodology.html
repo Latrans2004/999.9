@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% block title %}Methodology — 999.9{% endblock %}
+{% block og_title %}Methodology — 999.9{% endblock %}
+{% block description %}How 999.9 computes the Herfindahl-Hirschman Index from USGS mine production and UN Comtrade export data, and what the result can and cannot support.{% endblock %}
+
+{% block content %}
+<div class="wrap">
+  <p class="crumb"><a href="{{ root }}index.html">999.9</a><span>/</span>Methodology</p>
+</div>
+
+<div class="wrap hero" style="padding-block:clamp(32px,6vw,64px) clamp(20px,4vw,36px)">
+  <p class="eyebrow">Method</p>
+  <h1 style="font-size:var(--step-h1);font-weight:400">How the number is made</h1>
+  <p class="hero__lede">
+    One index, two datasets, no estimation. This page is long enough to reproduce the
+    calculation from scratch, because a concentration figure with no method attached is
+    just a number with a decimal point.
+  </p>
+</div>
+
+<div class="wrap prose">
+  <section style="padding-top:0">
+    <h2>The index</h2>
+    <p>
+      The Herfindahl–Hirschman Index is the sum of the squared percentage shares of every
+      supplier in a market. Written out, for suppliers <code>i = 1 … n</code> with
+      percentage share <code>s<sub>i</sub></code>:
+    </p>
+    <div class="formula">HHI &nbsp;=&nbsp; &Sigma; s<sub>i</sub><sup>2</sup> &nbsp;&nbsp;&nbsp;<span>where s is a percentage, 0 – 100</span></div>
+    <p>
+      That puts the result on a 0–10,000 scale. A single supplier holding everything scores
+      <code>100² = 10,000</code>. Ten equal suppliers score <code>10 × 10² = 1,000</code>.
+      Fifty equal suppliers score 200.
+    </p>
+    <p>
+      The squaring is not a formality. It is what makes the index respond to the thing that
+      actually matters: a market with one supplier at 60% and forty at 1% is far more
+      fragile than a market with six suppliers at 10% and forty at 1%, even though both
+      have forty-one suppliers and the same long tail. Squaring says so; counting suppliers
+      does not.
+    </p>
+
+    <h3>Companion figures</h3>
+    <dl class="defs">
+      <div>
+        <dt>CR3</dt>
+        <dd>The combined share of the three largest suppliers. Blunter than HHI and easier
+        to picture, so both are shown.</dd>
+      </div>
+      <div>
+        <dt>Effective suppliers</dt>
+        <dd><code>10,000 ÷ HHI</code>. The number of equal-sized suppliers that would produce
+        the observed index. An HHI of 2,500 is "as if" four equal suppliers, however many
+        actually report.</dd>
+      </div>
+      <div>
+        <dt>Coverage</dt>
+        <dd>Reported total ÷ published world total, where a world total exists. Below 100%
+        means some production is withheld or unallocated at source.</dd>
+      </div>
+    </dl>
+
+    <h3>The bands</h3>
+    <p>
+      The three labels on this site — unconcentrated below 1,000, moderately concentrated
+      to 1,800, highly concentrated above — are the thresholds in the 2023 US Department of
+      Justice and Federal Trade Commission merger guidelines. They are borrowed as a
+      reading aid.
+    </p>
+    <p>
+      They are <em>not</em> a claim that country supply behaves like firm competition. A
+      regulator applies them to firms that can be sued, merged or broken up; a country
+      cannot. Treat the bands as a shared vocabulary for "how unusual is this number",
+      nothing more.
+    </p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Two indices per mineral</h2>
+    <p>
+      Every mineral page carries two separate indices, because the answer to "who supplies
+      this" changes depending on which step of the chain you ask about.
+    </p>
+    <h3>Mine concentration — USGS</h3>
+    <p>
+      Source: the USGS Mineral Commodity Summaries, published annually by the National
+      Minerals Information Center, as world mine production by country. This is the
+      geological picture: where the ore is extracted.
+    </p>
+    <p>
+      USGS withholds some country figures as company proprietary data, marked <code>W</code>
+      in their tables, and rounds others. Withheld rows are dropped, never imputed, and the
+      resulting gap is reported as a coverage percentage on the page. Because the index is
+      computed over the countries that do report, a low coverage figure means the true
+      index is probably somewhat lower than the one shown — dropping a supplier always
+      raises the shares of the ones that remain.
+    </p>
+    <h3>Export concentration — UN Comtrade</h3>
+    <p>
+      Source: UN Comtrade annual merchandise trade, flow <code>X</code> (exports) to partner
+      <code>World</code>, for the HS commodity codes listed on each mineral page. The
+      reporter is the exporting country and the quantity is the FOB value in current US
+      dollars.
+    </p>
+    <p>
+      Value is used rather than net weight because weight is missing for a large and
+      non-random share of Comtrade rows, and dropping every reporter with no weight
+      recorded would bias the index far more than the value-versus-weight distinction
+      does. The trade-off is that a year of high prices compresses or stretches shares
+      when different grades trade at different prices. Both figures are carried in the
+      underlying JSON so the choice can be revisited.
+    </p>
+    <p>
+      Aggregate reporters — the world total, reporting blocs, "areas not elsewhere
+      specified", bunkers and free zones — are excluded by an explicit list in the source
+      adapter. Including them would both double-count and invent suppliers.
+    </p>
+    <p>
+      Where the two indices diverge is usually the most interesting thing on a mineral
+      page. A mineral that is mined widely and refined narrowly will show a modest mine
+      index and a severe export one; that gap is a processing chokepoint, and it is
+      invisible if you only look at where the rock comes from.
+    </p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>How often this updates</h2>
+    <p>
+      Both sources publish on annual cycles, so a nightly rebuild would produce identical
+      output on 364 days out of 365 and burn someone else's bandwidth doing it. The
+      schedule is matched to the sources instead:
+    </p>
+    <dl class="defs">
+      <div>
+        <dt>Monthly, automatically</dt>
+        <dd>A scheduled GitHub Actions run refetches both sources on the first of the
+        month. If nothing upstream changed, the run produces no commit and nothing is
+        deployed.</dd>
+      </div>
+      <div>
+        <dt>Late January / February</dt>
+        <dd>When the new Mineral Commodity Summaries edition lands, the monthly run picks
+        it up on its own — the USGS adapter discovers the newest data release rather than
+        pointing at a fixed URL.</dd>
+      </div>
+      <div>
+        <dt>On demand</dt>
+        <dd>The workflow can be triggered by hand for a specific mineral, which is how a
+        parser fix gets verified.</dd>
+      </div>
+    </dl>
+    <p>
+      Every page footer carries the timestamp of the run that produced its data, so a stale
+      figure is visible rather than silent.
+    </p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>What this cannot tell you</h2>
+    <ul>
+      <li><strong>Countries are not firms.</strong> Two mines in two countries under one
+      parent company read here as two independent suppliers. Ownership concentration can
+      be far higher than the geographic concentration shown.</li>
+      <li><strong>Reserves are not production.</strong> A high index says supply is
+      concentrated now, not that it must stay that way. Nickel is the clearest counterexample
+      on this site: its index moved a long way within a decade.</li>
+      <li><strong>Trade data is self-reported and revised.</strong> Reporters differ in
+      timeliness and completeness, and figures for recent years are revised upward as late
+      submissions arrive. A dip in the final year of any series is more likely to be
+      reporting lag than a real change.</li>
+      <li><strong>Commodity codes are coarser than markets.</strong> Battery-grade and
+      industrial-grade material frequently share an HS code. Where this materially weakens
+      a result it is flagged on the mineral's own page rather than buried here.</li>
+      <li><strong>Concentration is not the same as risk.</strong> A concentrated supply from
+      a stable, well-connected exporter is a different proposition from a concentrated
+      supply behind a single port. This site measures the first and says nothing about the
+      second.</li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Reproducing it</h2>
+    <p>
+      The whole pipeline is a small Python package in the repository. Nothing is manual and
+      nothing is hand-entered except a documented fallback table that is empty by default.
+    </p>
+    <ol>
+      <li><code>pipeline/sources/usgs.py</code> discovers the newest Mineral Commodity
+      Summaries data release on ScienceBase, downloads its tabular attachments and parses
+      them with header matching rather than fixed column positions.</li>
+      <li><code>pipeline/sources/comtrade.py</code> requests annual exports to world for
+      each HS code, using the free preview endpoint or the keyed endpoint when a
+      subscription key is available.</li>
+      <li><code>pipeline/hhi.py</code> computes the index, the concentration ratios and the
+      coverage figure. It is covered by unit tests and knows nothing about where the
+      numbers came from.</li>
+      <li><code>pipeline/build.py</code> writes one JSON file per mineral plus a summary
+      index, and <code>pipeline/render.py</code> regenerates the static pages from them.</li>
+    </ol>
+    <p><a href="{{ repo_url }}" rel="noopener">Read the source →</a></p>
+  </section>
+</div>
+{% endblock %}

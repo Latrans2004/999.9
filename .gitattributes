@@ -1,0 +1,10 @@
+# Every generated HTML file in this repository is compared against a fresh
+# render in CI, which runs on Linux. Without this, a commit made on Windows
+# with core.autocrlf disabled would store CRLF line endings and every line of
+# every page would read as changed on the Linux runner.
+* text=auto eol=lf
+
+# Binary assets must never be touched by line-ending normalisation.
+*.png binary
+*.ico binary
+*.zip binary

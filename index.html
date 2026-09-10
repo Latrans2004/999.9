@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>999.9 — supply concentration from open data</title>
+<meta name="description" content="Supply concentration in critical minerals, measured with the Herfindahl-Hirschman Index from USGS and UN Comtrade open data.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#080A0F">
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:title" content="999.9">
+<meta property="og:description" content="Supply concentration in critical minerals, from open data.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/icon-512.png">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="brand" href="index.html">
+      <img src="assets/img/brand-32.png" alt="" width="22" height="22">
+      <span>999.9</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="critical-minerals/index.html">Critical minerals</a>
+      <a href="critical-minerals/methodology.html">Methodology</a>
+      <a href="critical-minerals/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap hero">
+  <div class="hero__grid">
+    <div>
+      <p class="eyebrow">Open-data measurement</p>
+      <p class="wordmark">999<em>.</em>9</p>
+      <h1>How concentrated is the supply of the materials an energy transition runs on?</h1>
+      <p class="hero__lede">
+        999.9 takes published production and trade statistics and reduces them to one
+        number per material per year — the Herfindahl–Hirschman Index, the same measure
+        antitrust regulators use on markets, pointed at countries instead of firms.
+        Everything here is recomputed from source on a schedule, and every step is in the open.
+      </p>
+    </div>
+    <figure class="hero__mark" style="margin:0">
+      <img src="assets/img/mark-640.png" alt="" width="640" height="640"
+           style="width:100%;height:auto;display:block" loading="eager">
+    </figure>
+  </div>
+</div>
+
+<div class="wrap">
+  <hr class="rule">
+  <section>
+    <div class="section-head">
+      <h2>Sections</h2>
+      <p>One section per material family. Each is self-contained.</p>
+    </div>
+    <div class="cards">
+      <a class="card" href="critical-minerals/index.html">
+        <div class="card__top">
+          <div>
+            <div class="card__name">Critical minerals</div>
+            <div class="card__role">Battery metals</div>
+          </div>
+          <span class="card__symbol">Live</span>
+        </div>
+        <p style="margin:0;font-size:0.875rem;color:var(--ink-2)">
+          Eight minerals on the battery and electrification chain, measured at two points:
+          where the ore is mined and where the material is exported.
+        </p>
+        <div class="card__foot">
+          <span>8 minerals · USGS + UN Comtrade</span>
+        </div>
+      </a>
+      <div class="card" aria-hidden="false">
+        <div class="card__top">
+          <div>
+            <div class="card__name" style="color:var(--ink-3)">Further sections</div>
+            <div class="card__role">Not yet built</div>
+          </div>
+          <span class="card__symbol">—</span>
+        </div>
+        <p style="margin:0;font-size:0.875rem;color:var(--ink-3)">
+          The pipeline and the layout are shared, so a second material family is a
+          catalog file and a fetch adapter rather than a new site.
+        </p>
+        <div class="card__foot"><span>Planned</span></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="section-head"><h2>What the number means</h2></div>
+    <div class="split">
+      <div>
+        <p class="measure">
+          The Herfindahl–Hirschman Index is the sum of squared percentage shares. Squaring
+          is the whole idea: it makes one supplier at 60% count for far more than six at
+          10% each, which is the difference a buyer actually feels when a single shipment
+          route closes.
+        </p>
+        <p class="measure">
+          A monopoly scores 10,000. Ten equal suppliers score 1,000. The bands below come
+          from the US merger guidelines and are borrowed here as a reading aid, not as a
+          claim that countries behave like firms.
+        </p>
+        <p><a href="critical-minerals/methodology.html">Read the full method →</a></p>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat__label">Below 1,000</span>
+          <span class="stat__value" style="font-size:1.05rem">Unconcentrated</span>
+          <span class="stat__note">No supplier's absence reshapes the market on its own.</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">1,000 – 1,800</span>
+          <span class="stat__value" style="font-size:1.05rem">Moderate</span>
+          <span class="stat__note">A handful of suppliers set the terms.</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">Above 1,800</span>
+          <span class="stat__value" style="font-size:1.05rem">Highly concentrated</span>
+          <span class="stat__note">One or two suppliers are the market.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h4>999.9</h4>
+        <p style="margin:0;max-width:32ch">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
+      </div>
+      <div>
+        <h4>Sections</h4>
+        <ul>
+          <li><a href="critical-minerals/index.html">Critical minerals</a></li>
+          <li><a href="critical-minerals/methodology.html">Methodology</a></li>
+          <li><a href="critical-minerals/about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Data sources</h4>
+        <ul>
+          <li><a href="https://www.usgs.gov/centers/national-minerals-information-center/mineral-commodity-summaries" rel="noopener">USGS Mineral Commodity Summaries</a></li>
+          <li><a href="https://comtradeplus.un.org/" rel="noopener">UN Comtrade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Source</h4>
+        <ul>
+          <li><a href="https://github.com/OWNER/999.9" rel="noopener">Repository on GitHub</a></li>
+          <li><a href="https://github.com/OWNER/999.9/actions" rel="noopener">Build history</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__meta">
+      <span>Neither USGS nor the United Nations endorses this site or its calculations.</span>
+      <span class="timestamp">Awaiting first data build</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/charts.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+{
+  "section": {
+    "slug": "critical-minerals",
+    "title": "Critical Minerals",
+    "theme": "battery-metals",
+    "tagline": "Supply concentration in the minerals that batteries and electrification depend on.",
+    "description": "Eight minerals on the battery and electrification value chain, measured for supply concentration with the Herfindahl–Hirschman Index at two points in the chain: where the material is mined, and where it is exported."
+  },
+  "conventions": {
+    "hhi_scale": "0-10000",
+    "hhi_thresholds": [
+      { "max": 1000, "label": "Unconcentrated" },
+      { "max": 1800, "label": "Moderately concentrated" },
+      { "max": 10000, "label": "Highly concentrated" }
+    ],
+    "min_years": 3,
+    "top_n_displayed": 10,
+    "min_coverage": 0.6
+  },
+  "minerals": [
+    {
+      "slug": "lithium",
+      "name": "Lithium",
+      "symbol": "Li",
+      "role": "Cathode and electrolyte",
+      "summary": "The irreplaceable charge carrier in every lithium-ion cell. Mine output is dominated by Australian hard-rock spodumene and South American brine, but the refining step that turns either into battery-grade carbonate or hydroxide sits somewhere else entirely — which is why the mine-side and trade-side indices tell different stories.",
+      "usgs_commodity": "Lithium",
+      "usgs_aliases": ["Lithium", "Lithium (content)"],
+      "hs_codes": ["283691", "282520"],
+      "hs_label": "Lithium carbonate (2836.91) and lithium oxide/hydroxide (2825.20)",
+      "trade_stage": "refined",
+      "caveats": [
+        "USGS withholds United States lithium production as company proprietary data, so the mine-side index is computed over the countries that do report and the missing share is stated as a coverage figure rather than imputed.",
+        "The trade codes cover refined lithium chemicals, not spodumene concentrate, so the export index describes the chemical conversion step rather than the mine."
+      ]
+    },
+    {
+      "slug": "cobalt",
+      "name": "Cobalt",
+      "symbol": "Co",
+      "role": "Cathode stabiliser",
+      "summary": "The textbook case of geological concentration. A single country holds the majority of world mine supply, and a different single country holds the majority of refining — a two-stage chokepoint that no other battery metal matches. Cobalt is also the metal the industry is trying hardest to design out, which makes its index worth watching for decline as much as for level.",
+      "usgs_commodity": "Cobalt",
+      "usgs_aliases": ["Cobalt", "Cobalt (mine)"],
+      "hs_codes": ["260500", "810520"],
+      "hs_label": "Cobalt ores and concentrates (2605.00) and cobalt mattes, unwrought cobalt and powders (8105.20)",
+      "trade_stage": "ore and intermediate",
+      "caveats": [
+        "Most cobalt is mined as a by-product of copper or nickel, so its output responds to the economics of the host metal rather than to cobalt demand — a supply-elasticity limit the index cannot show."
+      ]
+    },
+    {
+      "slug": "nickel",
+      "name": "Nickel",
+      "symbol": "Ni",
+      "role": "Cathode energy density",
+      "summary": "The volume metal of high-energy cathodes, and the one battery input with a genuinely large non-battery market in stainless steel. Indonesian output has grown fast enough over the last decade to move the index substantially on its own, which makes nickel the clearest example on this site of concentration as a recent event rather than a geological given.",
+      "usgs_commodity": "Nickel",
+      "usgs_aliases": ["Nickel", "Nickel (mine)"],
+      "hs_codes": ["260400", "750210", "750220"],
+      "hs_label": "Nickel ores and concentrates (2604.00) and unwrought nickel (7502.10, 7502.20)",
+      "trade_stage": "ore and unwrought",
+      "caveats": [
+        "Class 1 and Class 2 nickel are not substitutes for battery use but share trade codes, so the export index mixes battery-grade and stainless-grade material."
+      ]
+    },
+    {
+      "slug": "natural-graphite",
+      "name": "Natural graphite",
+      "symbol": "C",
+      "role": "Anode",
+      "summary": "The anode side of the cell, and the battery input with the single highest supply concentration of the eight. Synthetic graphite is a real substitute at a cost and emissions penalty, so the index here should be read as concentration of the cheap option rather than of the only option.",
+      "usgs_commodity": "Graphite (Natural)",
+      "usgs_aliases": ["Graphite (Natural)", "Graphite, natural", "Graphite"],
+      "hs_codes": ["250410", "250490"],
+      "hs_label": "Natural graphite in powder or flakes (2504.10) and other natural graphite (2504.90)",
+      "trade_stage": "raw",
+      "caveats": [
+        "Synthetic graphite falls under a different trade code (3801.10) and is excluded, so the export index understates total anode-material supply.",
+        "Flake, vein and amorphous graphite command different prices and serve different end uses but share trade codes."
+      ]
+    },
+    {
+      "slug": "manganese",
+      "name": "Manganese",
+      "symbol": "Mn",
+      "role": "Cathode (LMO, NMC, LMFP)",
+      "summary": "The low-concentration outlier among battery cathode inputs, and useful on this site mostly as a control. Manganese ore supply is spread across several large producers on three continents, so its index sits near the unconcentrated band even though the battery-grade purification step that follows is far narrower than the ore trade suggests.",
+      "usgs_commodity": "Manganese",
+      "usgs_aliases": ["Manganese", "Manganese (mine)"],
+      "hs_codes": ["260200"],
+      "hs_label": "Manganese ores and concentrates (2602.00)",
+      "trade_stage": "ore",
+      "caveats": [
+        "High-purity manganese sulphate monohydrate, the form batteries actually consume, has no distinct trade code and is far more concentrated than ore trade implies. The gap between the two is the point, not a flaw."
+      ]
+    },
+    {
+      "slug": "rare-earths",
+      "name": "Rare earths",
+      "symbol": "REE",
+      "role": "Traction motor magnets",
+      "summary": "Not a cell input but a drivetrain one: neodymium–iron–boron magnets are what make a compact permanent-magnet traction motor possible. Mine output has diversified somewhat over the past decade while separation and metal-making have not, so the two indices on this page diverge more than for any other mineral here.",
+      "usgs_commodity": "Rare Earths",
+      "usgs_aliases": ["Rare Earths", "Rare earths", "Rare earth"],
+      "hs_codes": ["280530", "284610", "284690"],
+      "hs_label": "Rare-earth metals (2805.30), cerium compounds (2846.10) and other rare-earth compounds (2846.90)",
+      "trade_stage": "separated compounds and metals",
+      "caveats": [
+        "“Rare earths” aggregates seventeen elements with very different supply pictures; neodymium and praseodymium carry the magnet demand but cannot be separated out of these codes.",
+        "USGS reports rare-earth mine production as rare-earth-oxide equivalent, which is not directly comparable with the gross weight recorded in trade statistics."
+      ]
+    },
+    {
+      "slug": "vanadium",
+      "name": "Vanadium",
+      "symbol": "V",
+      "role": "Flow-battery electrolyte",
+      "summary": "The grid-storage entry on this list rather than a vehicle one. Vanadium redox flow batteries trade energy density for cycle life, which suits stationary storage, and vanadium supply is unusual in that most of it arrives as a co-product of steelmaking slag rather than from dedicated mines.",
+      "usgs_commodity": "Vanadium",
+      "usgs_aliases": ["Vanadium"],
+      "hs_codes": ["261590"],
+      "hs_label": "Niobium, tantalum and vanadium ores and concentrates, other (2615.90)",
+      "trade_stage": "ore",
+      "caveats": [
+        "The trade code aggregates vanadium with niobium and tantalum ores, so the export index for vanadium is materially less reliable than the others on this site and should be read as indicative only. The mine-side index is the one to trust here.",
+        "Most vanadium is recovered from steel slag and residues rather than mined directly, so mine-production shares understate the role of large steel producers."
+      ]
+    },
+    {
+      "slug": "copper",
+      "name": "Copper",
+      "symbol": "Cu",
+      "role": "Wiring and busbars",
+      "summary": "The benchmark. Copper is essential to every electrified system and is produced across a wide set of countries, so its index shows what an unconcentrated supply chain actually looks like on the same scale as the others. Reading cobalt or graphite against copper is the fastest way to see what those numbers mean.",
+      "usgs_commodity": "Copper",
+      "usgs_aliases": ["Copper", "Copper (mine)"],
+      "hs_codes": ["260300", "740311"],
+      "hs_label": "Copper ores and concentrates (2603.00) and refined copper cathodes (7403.11)",
+      "trade_stage": "ore and refined",
+      "caveats": [
+        "Copper is included as a low-concentration reference case. It is not on the 2022 USGS critical minerals list, though it appears on the 2025 draft list."
+      ]
+    }
+  ]
+}
