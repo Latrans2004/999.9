@@ -124,6 +124,55 @@ a:hover { text-decoration-color: var(--ink-2); }
 .nav a:hover { color: var(--ink); }
 .nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--data-dim); }
 
+/* -------------------------------------------------------- language toggle */
+
+.lang {
+  display: inline-flex; gap: 2px; padding: 2px;
+  border: 1px solid var(--hairline); border-radius: 999px;
+}
+.lang__btn {
+  appearance: none; -webkit-appearance: none;
+  background: transparent; border: 0; border-radius: 999px;
+  color: var(--ink-3); font: inherit; font-size: var(--step-micro);
+  letter-spacing: 0.06em; line-height: 1.4;
+  padding: 3px 10px; cursor: pointer;
+}
+.lang__btn:hover { color: var(--ink); }
+.lang__btn[aria-pressed="true"] { background: var(--surface-3); color: var(--ink); }
+
+/* Narrow screens: keep the toggle on the brand's row and let the nav take
+   the full second row, instead of stacking three rows of header. */
+@media (max-width: 640px) {
+  .masthead__inner { row-gap: 0; padding-block: 8px; }
+  .lang { order: 1; margin-left: auto; }
+  .nav { order: 2; width: 100%; margin-left: 0; }
+}
+
+/* Blocks written in one language only are toggled with the hidden attribute;
+   this keeps a layout class such as .hero__grid from overriding it. */
+[hidden] { display: none !important; }
+
+/* Set by the inline script in <head> when the page will open in Japanese,
+   removed by i18n.js once the swap is done, so English never flashes first. */
+.i18n-pending body { visibility: hidden; }
+
+/* Japanese text: a CJK-capable stack, a little more leading, and none of the
+   wide tracking that suits uppercase Latin labels but breaks up kana. */
+html[lang="ja"] body {
+  font-family: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+               "Yu Gothic UI", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.8;
+}
+html[lang="ja"] .eyebrow,
+html[lang="ja"] .card__role,
+html[lang="ja"] .figure__label,
+html[lang="ja"] .stat__label,
+html[lang="ja"] .panel__head h3,
+html[lang="ja"] .table-toggle > summary,
+html[lang="ja"] table.data th,
+html[lang="ja"] .footer h4 { letter-spacing: 0.04em; }
+html[lang="ja"] h1, html[lang="ja"] h2, html[lang="ja"] h3 { letter-spacing: 0; line-height: 1.4; }
+
 /* ------------------------------------------------------------------ hero */
 
 .hero { padding: clamp(56px, 11vw, 112px) 0 clamp(40px, 7vw, 72px); }

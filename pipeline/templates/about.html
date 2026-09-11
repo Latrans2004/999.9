@@ -1,19 +1,20 @@
 {% extends "base.html" %}
 {% block title %}About — 999.9{% endblock %}
+{% block title_ja %}このサイトについて — 999.9{% endblock %}
 {% block og_title %}About — 999.9{% endblock %}
 {% block description %}999.9 is a personal open-data project measuring supply concentration in critical minerals.{% endblock %}
 
 {% block content %}
 <div class="wrap">
-  <p class="crumb"><a href="{{ root }}index.html">999.9</a><span>/</span>About</p>
+  <p class="crumb"><a href="{{ root }}index.html">999.9</a><span>/</span><span data-i18n="nav.about">About</span></p>
 </div>
 
 <div class="wrap hero" style="padding-block:clamp(32px,6vw,64px) clamp(20px,4vw,36px)">
   <div class="hero__grid">
     <div>
-      <p class="eyebrow">About</p>
+      <p class="eyebrow" data-i18n="nav.about">About</p>
       <h1 style="font-size:var(--step-h1);font-weight:400">999.9</h1>
-      <p class="hero__lede">
+      <p class="hero__lede" data-i18n-text="趣味のプロジェクト。公開データを入れると、素材ごと・年ごとに1つの数値が出てくる。スプレッドシートに誰も触れることなく、スケジュール実行のジョブがそれを最新に保つ。">
         A hobby project. Public data goes in, one number per material per year comes out,
         and a scheduled job keeps it current without anyone touching a spreadsheet.
       </p>
@@ -25,7 +26,7 @@
   </div>
 </div>
 
-<div class="wrap prose">
+<div class="wrap prose" data-lang-only="en">
   <section style="padding-top:0">
     <h2>The name</h2>
     <p>
@@ -82,6 +83,29 @@
       organisation endorses or is associated with it.
     </p>
     <p><a href="{{ repo_url }}" rel="noopener">Repository on GitHub →</a></p>
+  </section>
+</div>
+
+<div class="wrap prose" data-lang-only="ja" lang="ja" hidden>
+  <section style="padding-top:0">
+    <h2>名前について</h2>
+    <p>999.9は、貴金属の商業上の最高純度を示す刻印で、「フォーナイン」、つまり99.99%を意味する。主張が検証可能であり続ける最後の桁でもある。公表された数値を扱うサイトの名前として、ふさわしいと思えた。</p>
+
+    <h2>なぜ「集中度」なのか</h2>
+    <p>重要鉱物をめぐる議論の多くは、形容詞で成り立っている。サプライチェーンは「脆弱」で、依存は「懸念される」もので、ある国は「支配的」だ。こうした言葉は確かに役割を果たしているが、素材どうしを比べることはできず、根拠となる事実が変わっても言葉のほうは変わらない。</p>
+    <p>集中度の指標は比較ができ、実際に動く。天然黒鉛と銅を同じ軸の上に並べて違いをすぐに見て取れるし、あるサプライチェーンが「狭いかどうか」を言い争う代わりに、この10年で狭くなっているのか広がっているのかを問うことができる。</p>
+    <p>これで全体像が見えるわけではない。何を見落としているかは<a href="{{ root }}critical-minerals/methodology.html">算出方法のページ</a>に明記している。それでも、議論を積み上げていくための土台にはなる。</p>
+
+    <h2>どう作られているか</h2>
+    <p>PythonのパイプラインがUSGSとUN Comtradeからデータを取得し、指標を計算してJSONに書き出す。レンダラーがそのJSONを静的なページに変換する。GitHub Actionsがこの両方をスケジュール実行して結果をコミットし、GitHub Pagesがそれを配信する。サーバーもデータベースもなく、Python以外のビルド工程もない。それこそが狙いで、3年後に手を加えなくても動き続けることを目指している。</p>
+    <p>サイトは、重要鉱物がサイト全体ではなく1つのセクションになるように構成している。2つ目の素材群を加えるのに必要なのはカタログファイルと取得アダプタであって、作り直しではない。</p>
+
+    <h2>誤りの訂正</h2>
+    <p>ここにある数値が間違っているなら、それはパイプラインが間違っているということであり、知っておく価値がある。リポジトリではissueを受け付けている。また、各ページの元になっているJSONはすべて同じリポジトリの<code>critical-minerals/data/</code>にあるので、計算を自分で確かめたい場合はそちらを参照してほしい。</p>
+
+    <h2>クレジットと免責事項</h2>
+    <p>生産データは米国地質調査所(USGS)の国立鉱物情報センター、貿易データはUN Comtradeによるもの。いずれも公開されており、いずれも優れたデータである。このサイトの計算、判断、そして誤りはすべて筆者個人のものであり、どちらの組織も本サイトを承認しておらず、関係もない。</p>
+    <p><a href="{{ repo_url }}" rel="noopener">GitHubのリポジトリ →</a></p>
   </section>
 </div>
 {% endblock %}

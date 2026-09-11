@@ -2,9 +2,12 @@
   "section": {
     "slug": "critical-minerals",
     "title": "Critical Minerals",
+    "title_ja": "重要鉱物",
     "theme": "battery-metals",
     "tagline": "Supply concentration in the minerals that batteries and electrification depend on.",
-    "description": "Eight minerals on the battery and electrification value chain, measured for supply concentration with the Herfindahl–Hirschman Index at two points in the chain: where the material is mined, and where it is exported."
+    "tagline_ja": "バッテリーと電化を支える鉱物の、供給集中度。",
+    "description": "Eight minerals on the battery and electrification value chain, measured for supply concentration with the Herfindahl–Hirschman Index at two points in the chain: where the material is mined, and where it is exported.",
+    "description_ja": "バッテリーと電化のバリューチェーンに連なる8つの鉱物について、ハーフィンダール・ハーシュマン指数(HHI)で供給集中度を測定する。測定点はサプライチェーン上の2か所、採掘される場所と輸出される場所。"
   },
   "conventions": {
     "hhi_scale": "0-10000",
@@ -21,125 +24,185 @@
     {
       "slug": "lithium",
       "name": "Lithium",
+      "name_ja": "リチウム",
       "symbol": "Li",
       "role": "Cathode and electrolyte",
+      "role_ja": "正極材・電解質",
       "summary": "The irreplaceable charge carrier in every lithium-ion cell. Mine output is dominated by Australian hard-rock spodumene and South American brine, but the refining step that turns either into battery-grade carbonate or hydroxide sits somewhere else entirely — which is why the mine-side and trade-side indices tell different stories.",
+      "summary_ja": "あらゆるリチウムイオン電池において代替のきかない電荷キャリア。鉱山生産はオーストラリアの硬岩スポジュメンと南米のかん水が大半を占めるが、それらを電池グレードの炭酸リチウムや水酸化リチウムに変える精製工程はまったく別の場所にある。鉱山側と輸出側の指標が異なる姿を示すのはそのためだ。",
       "usgs_commodity": "Lithium",
       "usgs_aliases": ["Lithium", "Lithium (content)"],
       "hs_codes": ["283691", "282520"],
       "hs_label": "Lithium carbonate (2836.91) and lithium oxide/hydroxide (2825.20)",
+      "hs_label_ja": "炭酸リチウム(2836.91)および酸化リチウム・水酸化リチウム(2825.20)",
       "trade_stage": "refined",
       "caveats": [
         "USGS withholds United States lithium production as company proprietary data, so the mine-side index is computed over the countries that do report and the missing share is stated as a coverage figure rather than imputed.",
         "The trade codes cover refined lithium chemicals, not spodumene concentrate, so the export index describes the chemical conversion step rather than the mine."
+      ],
+      "caveats_ja": [
+        "USGSは米国のリチウム生産量を企業の機密情報として非開示にしているため、鉱山側の指標は報告のある国だけで算出し、欠けている割合は推計で埋めずにカバレッジとして示している。",
+        "輸出側の品目コードはスポジュメン精鉱ではなく精製リチウム化合物を対象としているため、輸出側の指標が表すのは鉱山ではなく化学転換の工程である。"
       ]
     },
     {
       "slug": "cobalt",
       "name": "Cobalt",
+      "name_ja": "コバルト",
       "symbol": "Co",
       "role": "Cathode stabiliser",
+      "role_ja": "正極の安定化",
       "summary": "The textbook case of geological concentration. A single country holds the majority of world mine supply, and a different single country holds the majority of refining — a two-stage chokepoint that no other battery metal matches. Cobalt is also the metal the industry is trying hardest to design out, which makes its index worth watching for decline as much as for level.",
+      "summary_ja": "地質的な集中の教科書的な例。世界の鉱山供給の過半を1つの国が占め、精製の過半はまた別の1つの国が占める。この2段階のチョークポイントは、他のどのバッテリーメタルにも見られない。コバルトは業界が最も熱心に使用量を減らそうとしている金属でもあり、指標の水準だけでなく低下の兆しにも注目する価値がある。",
       "usgs_commodity": "Cobalt",
       "usgs_aliases": ["Cobalt", "Cobalt (mine)"],
       "hs_codes": ["260500", "810520"],
       "hs_label": "Cobalt ores and concentrates (2605.00) and cobalt mattes, unwrought cobalt and powders (8105.20)",
+      "hs_label_ja": "コバルト鉱・精鉱(2605.00)およびコバルトのマット、塊状コバルト、粉(8105.20)",
       "trade_stage": "ore and intermediate",
       "caveats": [
         "Most cobalt is mined as a by-product of copper or nickel, so its output responds to the economics of the host metal rather than to cobalt demand — a supply-elasticity limit the index cannot show."
+      ],
+      "caveats_ja": [
+        "コバルトの大半は銅やニッケルの副産物として採掘されるため、その生産量はコバルト需要ではなく主産物となる金属の経済性に反応する。これは指標には表れない供給弾力性の限界である。"
       ]
     },
     {
       "slug": "nickel",
       "name": "Nickel",
+      "name_ja": "ニッケル",
       "symbol": "Ni",
       "role": "Cathode energy density",
+      "role_ja": "正極のエネルギー密度",
       "summary": "The volume metal of high-energy cathodes, and the one battery input with a genuinely large non-battery market in stainless steel. Indonesian output has grown fast enough over the last decade to move the index substantially on its own, which makes nickel the clearest example on this site of concentration as a recent event rather than a geological given.",
+      "summary_ja": "高エネルギー密度の正極における量的な主役であり、ステンレス鋼という電池以外の大きな市場を持つ唯一のバッテリー原料でもある。インドネシアの生産量はこの10年で急増し、それ単独で指標を大きく動かすほどになった。ニッケルは、集中が地質的な所与ではなく最近の出来事として起こりうることを、このサイトで最も明確に示す例である。",
       "usgs_commodity": "Nickel",
       "usgs_aliases": ["Nickel", "Nickel (mine)"],
       "hs_codes": ["260400", "750210", "750220"],
       "hs_label": "Nickel ores and concentrates (2604.00) and unwrought nickel (7502.10, 7502.20)",
+      "hs_label_ja": "ニッケル鉱・精鉱(2604.00)および塊状ニッケル(7502.10、7502.20)",
       "trade_stage": "ore and unwrought",
       "caveats": [
         "Class 1 and Class 2 nickel are not substitutes for battery use but share trade codes, so the export index mixes battery-grade and stainless-grade material."
+      ],
+      "caveats_ja": [
+        "クラス1とクラス2のニッケルは電池用途では互いに代替できないが、同じ品目コードに含まれるため、輸出側の指標には電池グレードとステンレスグレードの素材が混在している。"
       ]
     },
     {
       "slug": "natural-graphite",
       "name": "Natural graphite",
+      "name_ja": "天然黒鉛",
       "symbol": "C",
       "role": "Anode",
+      "role_ja": "負極",
       "summary": "The anode side of the cell, and the battery input with the single highest supply concentration of the eight. Synthetic graphite is a real substitute at a cost and emissions penalty, so the index here should be read as concentration of the cheap option rather than of the only option.",
+      "summary_ja": "電池の負極側を担う素材で、8鉱物のなかで供給集中度が最も高い。人造黒鉛はコストと排出量の面で不利ながら現実的な代替手段であるため、ここでの指標は「唯一の選択肢」ではなく「安価な選択肢」の集中度として読むべきである。",
       "usgs_commodity": "Graphite (Natural)",
       "usgs_aliases": ["Graphite (Natural)", "Graphite, natural", "Graphite"],
       "hs_codes": ["250410", "250490"],
       "hs_label": "Natural graphite in powder or flakes (2504.10) and other natural graphite (2504.90)",
+      "hs_label_ja": "粉状・フレーク状の天然黒鉛(2504.10)およびその他の天然黒鉛(2504.90)",
       "trade_stage": "raw",
       "caveats": [
         "Synthetic graphite falls under a different trade code (3801.10) and is excluded, so the export index understates total anode-material supply.",
         "Flake, vein and amorphous graphite command different prices and serve different end uses but share trade codes."
+      ],
+      "caveats_ja": [
+        "人造黒鉛は別の品目コード(3801.10)に分類され対象外のため、輸出側の指標は負極材全体の供給を過小に評価している。",
+        "鱗状黒鉛・脈状黒鉛・土状黒鉛は価格も最終用途も異なるが、同じ品目コードに含まれている。"
       ]
     },
     {
       "slug": "manganese",
       "name": "Manganese",
+      "name_ja": "マンガン",
       "symbol": "Mn",
       "role": "Cathode (LMO, NMC, LMFP)",
+      "role_ja": "正極(LMO、NMC、LMFP)",
       "summary": "The low-concentration outlier among battery cathode inputs, and useful on this site mostly as a control. Manganese ore supply is spread across several large producers on three continents, so its index sits near the unconcentrated band even though the battery-grade purification step that follows is far narrower than the ore trade suggests.",
+      "summary_ja": "電池正極の原料のなかで集中度の低い例外であり、このサイトでは主に対照群として役立つ。マンガン鉱石の供給は3つの大陸にまたがる複数の大規模生産国に分散しているため指標は非集中の水準に近いが、その後に続く電池グレードへの精製工程は、鉱石貿易が示すよりもはるかに狭い。",
       "usgs_commodity": "Manganese",
       "usgs_aliases": ["Manganese", "Manganese (mine)"],
       "hs_codes": ["260200"],
       "hs_label": "Manganese ores and concentrates (2602.00)",
+      "hs_label_ja": "マンガン鉱・精鉱(2602.00)",
       "trade_stage": "ore",
       "caveats": [
         "High-purity manganese sulphate monohydrate, the form batteries actually consume, has no distinct trade code and is far more concentrated than ore trade implies. The gap between the two is the point, not a flaw."
+      ],
+      "caveats_ja": [
+        "電池が実際に消費する形態である高純度硫酸マンガン一水和物には独立した品目コードがなく、鉱石貿易が示すよりもはるかに集中している。両者の乖離こそが要点であり、欠陥ではない。"
       ]
     },
     {
       "slug": "rare-earths",
       "name": "Rare earths",
+      "name_ja": "希土類",
       "symbol": "REE",
       "role": "Traction motor magnets",
+      "role_ja": "駆動モーター用磁石",
       "summary": "Not a cell input but a drivetrain one: neodymium–iron–boron magnets are what make a compact permanent-magnet traction motor possible. Mine output has diversified somewhat over the past decade while separation and metal-making have not, so the two indices on this page diverge more than for any other mineral here.",
+      "summary_ja": "電池セルではなく駆動系の原料。ネオジム・鉄・ボロン磁石があるからこそ、小型の永久磁石式駆動モーターが成り立つ。鉱山生産はこの10年である程度分散した一方、分離と金属化の工程は分散しておらず、このページの2つの指標は他のどの鉱物よりも大きく乖離している。",
       "usgs_commodity": "Rare Earths",
       "usgs_aliases": ["Rare Earths", "Rare earths", "Rare earth"],
       "hs_codes": ["280530", "284610", "284690"],
       "hs_label": "Rare-earth metals (2805.30), cerium compounds (2846.10) and other rare-earth compounds (2846.90)",
+      "hs_label_ja": "希土類金属(2805.30)、セリウム化合物(2846.10)およびその他の希土類化合物(2846.90)",
       "trade_stage": "separated compounds and metals",
       "caveats": [
         "“Rare earths” aggregates seventeen elements with very different supply pictures; neodymium and praseodymium carry the magnet demand but cannot be separated out of these codes.",
         "USGS reports rare-earth mine production as rare-earth-oxide equivalent, which is not directly comparable with the gross weight recorded in trade statistics."
+      ],
+      "caveats_ja": [
+        "「希土類」は供給構造がまったく異なる17元素をひとまとめにしたものであり、磁石需要を担うネオジムとプラセオジムをこれらの品目コードから切り分けることはできない。",
+        "USGSは希土類の鉱山生産量を希土類酸化物換算で報告しており、貿易統計に記録される総重量とは直接比較できない。"
       ]
     },
     {
       "slug": "vanadium",
       "name": "Vanadium",
+      "name_ja": "バナジウム",
       "symbol": "V",
       "role": "Flow-battery electrolyte",
+      "role_ja": "レドックスフロー電池の電解液",
       "summary": "The grid-storage entry on this list rather than a vehicle one. Vanadium redox flow batteries trade energy density for cycle life, which suits stationary storage, and vanadium supply is unusual in that most of it arrives as a co-product of steelmaking slag rather than from dedicated mines.",
+      "summary_ja": "このリストのなかで、車両ではなく系統用蓄電を代表する鉱物。バナジウムレドックスフロー電池はエネルギー密度と引き換えにサイクル寿命を得ており、定置用の蓄電に向いている。また、バナジウムの供給の大半が専用鉱山ではなく製鋼スラグの併産物として得られる点でも珍しい。",
       "usgs_commodity": "Vanadium",
       "usgs_aliases": ["Vanadium"],
       "hs_codes": ["261590"],
       "hs_label": "Niobium, tantalum and vanadium ores and concentrates, other (2615.90)",
+      "hs_label_ja": "その他のニオブ・タンタル・バナジウム鉱および精鉱(2615.90)",
       "trade_stage": "ore",
       "caveats": [
         "The trade code aggregates vanadium with niobium and tantalum ores, so the export index for vanadium is materially less reliable than the others on this site and should be read as indicative only. The mine-side index is the one to trust here.",
         "Most vanadium is recovered from steel slag and residues rather than mined directly, so mine-production shares understate the role of large steel producers."
+      ],
+      "caveats_ja": [
+        "この品目コードはバナジウムをニオブ・タンタル鉱と合算しているため、バナジウムの輸出側の指標は本サイトの他の指標より信頼性が著しく低く、参考値としてのみ読むべきである。ここで信頼すべきは鉱山側の指標である。",
+        "バナジウムの大半は直接採掘ではなく鉄鋼スラグや残渣から回収されるため、鉱山生産のシェアは大手鉄鋼生産国の役割を過小に評価している。"
       ]
     },
     {
       "slug": "copper",
       "name": "Copper",
+      "name_ja": "銅",
       "symbol": "Cu",
       "role": "Wiring and busbars",
+      "role_ja": "配線・バスバー",
       "summary": "The benchmark. Copper is essential to every electrified system and is produced across a wide set of countries, so its index shows what an unconcentrated supply chain actually looks like on the same scale as the others. Reading cobalt or graphite against copper is the fastest way to see what those numbers mean.",
+      "summary_ja": "ベンチマーク。銅はあらゆる電化システムに不可欠で、幅広い国々で生産されているため、その指標は集中していないサプライチェーンが同じ尺度の上で実際にどう見えるかを示す。コバルトや黒鉛の数値を銅と比べて読むのが、それらの数値の意味を掴む最短の方法である。",
       "usgs_commodity": "Copper",
       "usgs_aliases": ["Copper", "Copper (mine)"],
       "hs_codes": ["260300", "740311"],
       "hs_label": "Copper ores and concentrates (2603.00) and refined copper cathodes (7403.11)",
+      "hs_label_ja": "銅鉱・精鉱(2603.00)および精製銅カソード(7403.11)",
       "trade_stage": "ore and refined",
       "caveats": [
         "Copper is included as a low-concentration reference case. It is not on the 2022 USGS critical minerals list, though it appears on the 2025 draft list."
+      ],
+      "caveats_ja": [
+        "銅は低集中の参照例として掲載している。2022年のUSGS重要鉱物リストには含まれていないが、2025年のリスト案には含まれている。"
       ]
     }
   ]

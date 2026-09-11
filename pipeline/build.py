@@ -68,18 +68,28 @@ def build_mineral(mineral: dict, conventions: dict, *, fixtures: bool = False) -
     production_series = hhi.series(production_by_year, universe_totals=world_totals)
     trade_series = hhi.series(trade_by_year, codes=iso if not fixtures else None)
 
+    unit_ja_lookup = {
+        "share of reported mine production": "報告された鉱山生産量に占める割合",
+        "share of reported export value (USD, FOB)": (
+            "報告された輸出額(USドル、FOB)に占める割合"
+        ),
+    }
+
     def pack(results, notes, unit, source, stage):
+        unit_ja = unit_ja_lookup.get(unit, unit)
         if not results:
             return {
                 "available": False,
                 "notes": notes,
                 "unit": unit,
+                "unit_ja": unit_ja,
                 "source": source,
                 "stage": stage,
             }
         return {
             "available": True,
             "unit": unit,
+            "unit_ja": unit_ja,
             "source": source,
             "stage": stage,
             "latest_year": results[-1].year,
@@ -101,12 +111,17 @@ def build_mineral(mineral: dict, conventions: dict, *, fixtures: bool = False) -
     return {
         "slug": slug,
         "name": mineral["name"],
+        "name_ja": mineral.get("name_ja"),
         "symbol": mineral.get("symbol"),
         "role": mineral.get("role"),
+        "role_ja": mineral.get("role_ja"),
         "summary": mineral.get("summary"),
+        "summary_ja": mineral.get("summary_ja"),
         "caveats": mineral.get("caveats", []),
+        "caveats_ja": mineral.get("caveats_ja", []),
         "hs_codes": mineral["hs_codes"],
         "hs_label": mineral.get("hs_label"),
+        "hs_label_ja": mineral.get("hs_label_ja"),
         "usgs_commodity": mineral["usgs_commodity"],
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "production": pack(

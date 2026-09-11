@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Critical minerals — 999.9{% endblock %}
+{% block title_ja %}重要鉱物 — 999.9{% endblock %}
 {% block og_title %}Critical minerals — 999.9{% endblock %}
 {% block description %}Supply concentration for eight battery and electrification minerals, measured with the Herfindahl-Hirschman Index at the mine and at the export gate.{% endblock %}
 
@@ -7,9 +8,9 @@
 <div class="wrap hero" style="padding-bottom:clamp(28px,5vw,48px)">
   <div class="hero__grid">
     <div>
-      <p class="eyebrow">Section 01 · Critical minerals</p>
-      <h1>{{ section.tagline }}</h1>
-      <p class="hero__lede">{{ section.description }}</p>
+      <p class="eyebrow" data-i18n-text="セクション 01 · 重要鉱物">Section 01 · Critical minerals</p>
+      <h1 data-i18n-text="{{ section.tagline_ja or '' }}">{{ section.tagline }}</h1>
+      <p class="hero__lede" data-i18n-text="{{ section.description_ja or '' }}">{{ section.description }}</p>
     </div>
     <figure class="hero__mark" style="margin:0">
       <img src="{{ root }}assets/img/mark-320.png" alt="" width="320" height="320"
@@ -21,18 +22,18 @@
 <div class="wrap">
   {% if not has_any_data %}
   <div class="notice" style="margin-bottom:28px">
-    <strong>No data has been built yet.</strong>
-    The pages below exist and the pipeline is in place, but the first successful fetch
+    <strong data-i18n="section.no_data_title">No data has been built yet.</strong>
+    <span data-i18n="section.no_data_body">The pages below exist and the pipeline is in place, but the first successful fetch
     from USGS and UN Comtrade has not run. Until it does, every figure reads as
-    unavailable rather than as a placeholder value.
-    <a href="{{ repo_url }}/actions">Check the build history →</a>
+    unavailable rather than as a placeholder value.</span>
+    <a href="{{ repo_url }}/actions" data-i18n="section.no_data_link">Check the build history →</a>
   </div>
   {% endif %}
 
   <section style="padding-top:0">
     <div class="section-head">
-      <h2>Eight minerals</h2>
-      <p>Sorted as listed. Figures are the most recent year each source covers.</p>
+      <h2 data-i18n="section.eight_minerals_title">Eight minerals</h2>
+      <p data-i18n="section.eight_minerals_sub">Sorted as listed. Figures are the most recent year each source covers.</p>
     </div>
 
     <div class="cards">
@@ -40,26 +41,26 @@
       <a class="card" href="{{ root }}critical-minerals/minerals/{{ mineral.slug }}.html">
         <div class="card__top">
           <div>
-            <div class="card__name">{{ mineral.name }}</div>
-            <div class="card__role">{{ mineral.role }}</div>
+            <div class="card__name" data-i18n-text="{{ mineral.name_ja or '' }}">{{ mineral.name }}</div>
+            <div class="card__role" data-i18n-text="{{ mineral.role_ja or '' }}">{{ mineral.role }}</div>
           </div>
           <span class="card__symbol">{{ mineral.symbol }}</span>
         </div>
 
         <div class="card__figure">
           <div class="figure">
-            <span class="figure__label">
-              {%- if mineral.headline %}{{ mineral.headline_source }} HHI · {{ mineral.headline.year }}{% else %}Concentration{% endif -%}
-            </span>
             {% if mineral.headline %}
+            {% set source_ja = "鉱山側" if mineral.headline_source == "Mine" else "輸出側" %}
+            <span class="figure__label" data-i18n-text="{{ source_ja }}HHI · {{ mineral.headline.year }}">{{ mineral.headline_source }} HHI · {{ mineral.headline.year }}</span>
             <span class="figure__value">{{ "{:,.0f}".format(mineral.headline.hhi) }}</span>
-            <span class="figure__sub">
+            <span class="figure__sub" data-i18n-text="{{ mineral.headline.leader }} {{ '{:.0f}'.format(mineral.headline.leader_share) }}% · 上位3カ国 {{ '{:.0f}'.format(mineral.headline.cr3) }}%">
               {{ mineral.headline.leader }} {{ "{:.0f}".format(mineral.headline.leader_share) }}%
               · top three {{ "{:.0f}".format(mineral.headline.cr3) }}%
             </span>
             {% else %}
-            <span class="figure__value is-empty">Awaiting first build</span>
-            <span class="figure__sub">No source data yet</span>
+            <span class="figure__label" data-i18n="figure.concentration">Concentration</span>
+            <span class="figure__value is-empty" data-i18n="figure.awaiting_build">Awaiting first build</span>
+            <span class="figure__sub" data-i18n="figure.no_source_data">No source data yet</span>
             {% endif %}
           </div>
           {% if mineral.headline %}
@@ -69,12 +70,12 @@
 
         <div class="card__foot">
           {% if mineral.headline %}
-          <span class="band band--{{ mineral.headline.band }}">{{ band_labels[mineral.headline.band] }}</span>
+          <span class="band band--{{ mineral.headline.band }}" data-i18n="band.{{ mineral.headline.band }}">{{ band_labels[mineral.headline.band] }}</span>
           {% if mineral.headline.trend %}
-          <span>{{ trend_phrase(mineral.headline.trend) }}</span>
+          <span data-i18n-text="{{ trend_phrase_ja(mineral.headline.trend) }}">{{ trend_phrase(mineral.headline.trend) }}</span>
           {% endif %}
           {% else %}
-          <span>Page ready · data pending</span>
+          <span data-i18n="figure.page_ready_pending">Page ready · data pending</span>
           {% endif %}
         </div>
       </a>
@@ -86,13 +87,13 @@
 
   <section>
     <div class="section-head">
-      <h2>Two indices, not one</h2>
-      <p>Why each mineral page carries a pair of numbers.</p>
+      <h2 data-i18n="section.two_indices_title">Two indices, not one</h2>
+      <p data-i18n="section.two_indices_sub">Why each mineral page carries a pair of numbers.</p>
     </div>
     <div class="split">
       <div class="panel">
-        <div class="panel__head"><h3>Mine concentration</h3></div>
-        <p class="panel__sub" style="margin-bottom:0">
+        <div class="panel__head"><h3 data-i18n="panel.mine_title">Mine concentration</h3></div>
+        <p class="panel__sub" style="margin-bottom:0" data-i18n-text="USGSの国別の世界鉱山生産量から算出する。素材がどこで地中から取り出されているかに答える指標で、地質によって決まるため変化は遅い。USGSの表で非開示とされた国については、そのシェアを推測せず、カバレッジの不足として報告する。">
           Built from USGS world mine production by country. It answers where the material
           comes out of the ground, which is fixed by geology and slow to change. When a
           country is withheld from the USGS table, its share is reported as a coverage
@@ -100,8 +101,8 @@
         </p>
       </div>
       <div class="panel">
-        <div class="panel__head"><h3>Export concentration</h3></div>
-        <p class="panel__sub" style="margin-bottom:0">
+        <div class="panel__head"><h3 data-i18n="panel.export_title">Export concentration</h3></div>
+        <p class="panel__sub" style="margin-bottom:0" data-i18n-text="UN Comtradeの報告国別の年間輸出額から算出する。実際に誰がその素材を出荷しているかに答える指標で、鉱山統計がまったく捉えない精錬・加工を反映する。ここに並ぶ鉱物のいくつかでは2つの数値が大きく離れており、その乖離こそが面白い部分である。">
           Built from UN Comtrade annual export value by reporting country. It answers who
           actually ships the material, which captures refining and processing that mine
           statistics miss entirely. For several minerals here the two numbers are far

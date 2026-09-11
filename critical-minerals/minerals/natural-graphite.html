@@ -3,7 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Natural graphite — critical minerals — 999.9</title>
+<script>
+/* Decide before first paint whether the page opens in Japanese, so the
+   English text is never shown and then swapped. i18n.js does the swap and
+   clears the class; the timeout is a safety net if that script fails. */
+(function () {
+  try {
+    var lang = localStorage.getItem("999.9:lang");
+    if (!lang && /^ja\b/i.test(navigator.language || "")) lang = "ja";
+    if (lang === "ja") {
+      var root = document.documentElement;
+      root.classList.add("i18n-pending");
+      setTimeout(function () { root.classList.remove("i18n-pending"); }, 1500);
+    }
+  } catch (e) {}
+})();
+</script>
+<title data-i18n-text="天然黒鉛 — 重要鉱物 — 999.9">Natural graphite — critical minerals — 999.9</title>
 <meta name="description" content="The anode side of the cell, and the battery input with the single highest supply concentration of the eight. Synthetic graphite is a real substitute at a cost and emissions...">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#080A0F">
@@ -18,7 +34,7 @@
 <link rel="stylesheet" href="../../assets/css/site.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" data-i18n="skip.content">Skip to content</a>
 
 <header class="masthead">
   <div class="wrap masthead__inner">
@@ -27,69 +43,73 @@
       <span>999.9</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="../../critical-minerals/index.html">Critical minerals</a>
-      <a href="../../critical-minerals/methodology.html">Methodology</a>
-      <a href="../../critical-minerals/about.html">About</a>
+      <a href="../../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a>
+      <a href="../../critical-minerals/methodology.html" data-i18n="nav.methodology">Methodology</a>
+      <a href="../../critical-minerals/about.html" data-i18n="nav.about">About</a>
     </nav>
+    <div class="lang" role="group" aria-label="Language / 言語">
+      <button type="button" class="lang__btn" data-set-lang="en" aria-pressed="true" lang="en">EN</button>
+      <button type="button" class="lang__btn" data-set-lang="ja" aria-pressed="false" lang="ja">日本語</button>
+    </div>
   </div>
 </header>
 
 <main id="main">
 <div class="wrap">
   <p class="crumb">
-    <a href="../../index.html">999.9</a><span>/</span><a href="../../critical-minerals/index.html">Critical minerals</a><span>/</span>Natural graphite
+    <a href="../../index.html">999.9</a><span>/</span><a href="../../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n-text="天然黒鉛">Natural graphite</span>
   </p>
 </div>
 
 <div class="wrap hero" style="padding-block:clamp(28px,5vw,52px) clamp(24px,4vw,40px)">
-  <p class="eyebrow">Anode</p>
+  <p class="eyebrow" data-i18n-text="負極">Anode</p>
   <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
-    <h1 style="font-size:var(--step-h1);font-weight:400">Natural graphite</h1>
+    <h1 style="font-size:var(--step-h1);font-weight:400" data-i18n-text="天然黒鉛">Natural graphite</h1>
     <span class="card__symbol">C</span>
   </div>
-  <p class="hero__lede" style="margin-top:18px">The anode side of the cell, and the battery input with the single highest supply concentration of the eight. Synthetic graphite is a real substitute at a cost and emissions penalty, so the index here should be read as concentration of the cheap option rather than of the only option.</p>
+  <p class="hero__lede" style="margin-top:18px" data-i18n-text="電池の負極側を担う素材で、8鉱物のなかで供給集中度が最も高い。人造黒鉛はコストと排出量の面で不利ながら現実的な代替手段であるため、ここでの指標は「唯一の選択肢」ではなく「安価な選択肢」の集中度として読むべきである。">The anode side of the cell, and the battery input with the single highest supply concentration of the eight. Synthetic graphite is a real substitute at a cost and emissions penalty, so the index here should be read as concentration of the cheap option rather than of the only option.</p>
 </div>
 
 <div class="wrap">
   <div class="panel">
   <div class="panel__head">
-    <h3>Mine concentration</h3>
+    <h3 data-i18n="panel.mine_title">Mine concentration</h3>
   </div>
-  <p class="panel__sub">Share of world mine production by country, from the USGS Mineral Commodity Summaries. This is where the material leaves the ground.</p>
+  <p class="panel__sub" data-i18n-text="USGS Mineral Commodity Summariesにもとづく、国別の世界鉱山生産量シェア。素材が地中から取り出される場所を示す。">Share of world mine production by country, from the USGS Mineral Commodity Summaries. This is where the material leaves the ground.</p>
 
   <div class="chart__empty">
-    <strong>No data yet</strong>
-    This index will appear once the pipeline completes a successful fetch from USGS Mineral Commodity Summaries.
+    <strong data-i18n="chart.no_data_yet">No data yet</strong>
+    <span data-i18n-text="この指標は、USGS Mineral Commodity Summariesからの初回取得が完了すると表示されます。">This index will appear once the pipeline completes a successful fetch from USGS Mineral Commodity Summaries.</span>
   </div>
 </div>
 
 
   <div class="panel">
   <div class="panel__head">
-    <h3>Export concentration</h3>
+    <h3 data-i18n="panel.export_title">Export concentration</h3>
   </div>
-  <p class="panel__sub">Share of world export value by reporting country, from UN Comtrade, covering Natural graphite in powder or flakes (2504.10) and other natural graphite (2504.90). This captures processing and refining that mine statistics do not.</p>
+  <p class="panel__sub" data-i18n-text="UN Comtradeにもとづく、報告国別の世界輸出額シェア。対象は粉状・フレーク状の天然黒鉛(2504.10)およびその他の天然黒鉛(2504.90)。鉱山統計が捉えない加工・精錬の段階を反映する。">Share of world export value by reporting country, from UN Comtrade, covering Natural graphite in powder or flakes (2504.10) and other natural graphite (2504.90). This captures processing and refining that mine statistics do not.</p>
 
   <div class="chart__empty">
-    <strong>No data yet</strong>
-    This index will appear once the pipeline completes a successful fetch from UN Comtrade.
+    <strong data-i18n="chart.no_data_yet">No data yet</strong>
+    <span data-i18n-text="この指標は、UN Comtradeからの初回取得が完了すると表示されます。">This index will appear once the pipeline completes a successful fetch from UN Comtrade.</span>
   </div>
 </div>
 
 
   <section>
     <div class="section-head">
-      <h2>What these numbers do not say</h2>
+      <h2 data-i18n="caveats.heading">What these numbers do not say</h2>
     </div>
     <ul class="caveats">
-<li>Synthetic graphite falls under a different trade code (3801.10) and is excluded, so the export index understates total anode-material supply.</li><li>Flake, vein and amorphous graphite command different prices and serve different end uses but share trade codes.</li>      <li>Both indices measure countries, not companies. Two mines in different countries
+<li data-i18n-text="人造黒鉛は別の品目コード(3801.10)に分類され対象外のため、輸出側の指標は負極材全体の供給を過小に評価している。">Synthetic graphite falls under a different trade code (3801.10) and is excluded, so the export index understates total anode-material supply.</li><li data-i18n-text="鱗状黒鉛・脈状黒鉛・土状黒鉛は価格も最終用途も異なるが、同じ品目コードに含まれている。">Flake, vein and amorphous graphite command different prices and serve different end uses but share trade codes.</li>      <li data-i18n="caveats.shared_note">Both indices measure countries, not companies. Two mines in different countries
       owned by the same parent read here as two suppliers.</li>
     </ul>
   </section>
 
 
   <div class="pager">
-<a href="../../critical-minerals/minerals/nickel.html">← Nickel</a><a href="../../critical-minerals/minerals/manganese.html">Manganese →</a>  </div>
+<a href="../../critical-minerals/minerals/nickel.html" data-i18n-text="← ニッケル">← Nickel</a><a href="../../critical-minerals/minerals/manganese.html" data-i18n-text="マンガン →">Manganese →</a>  </div>
 </div>
 </main>
 
@@ -98,47 +118,47 @@
     <div class="footer__grid">
       <div>
         <h4>999.9</h4>
-        <p style="margin:0;max-width:32ch">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
+        <p style="margin:0;max-width:32ch" data-i18n="footer.tagline">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
       </div>
       <div>
-        <h4>Sections</h4>
+        <h4 data-i18n="footer.sections">Sections</h4>
         <ul>
-          <li><a href="../../critical-minerals/index.html">Critical minerals</a></li>
-          <li><a href="../../critical-minerals/methodology.html">Methodology</a></li>
-          <li><a href="../../critical-minerals/about.html">About</a></li>
+          <li><a href="../../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a></li>
+          <li><a href="../../critical-minerals/methodology.html" data-i18n="nav.methodology">Methodology</a></li>
+          <li><a href="../../critical-minerals/about.html" data-i18n="nav.about">About</a></li>
         </ul>
       </div>
       <div>
-        <h4>Data sources</h4>
+        <h4 data-i18n="footer.sources">Data sources</h4>
         <ul>
           <li><a href="https://www.usgs.gov/centers/national-minerals-information-center/mineral-commodity-summaries" rel="noopener">USGS Mineral Commodity Summaries</a></li>
           <li><a href="https://comtradeplus.un.org/" rel="noopener">UN Comtrade</a></li>
         </ul>
       </div>
       <div>
-        <h4>Source</h4>
+        <h4 data-i18n="footer.source">Source</h4>
         <ul>
-          <li><a href="https://github.com/latrans2004/999.9" rel="noopener">Repository on GitHub</a></li>
-          <li><a href="https://github.com/latrans2004/999.9/actions" rel="noopener">Build history</a></li>
+          <li><a href="https://github.com/latrans2004/999.9" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
+          <li><a href="https://github.com/latrans2004/999.9/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__meta">
-      <span>Neither USGS nor the United Nations endorses this site or its calculations.</span>
-      <span class="timestamp">Awaiting first data build</span>
+      <span data-i18n="footer.disclaimer">Neither USGS nor the United Nations endorses this site or its calculations.</span>
+      <span class="timestamp" data-i18n-text="初回のデータビルド待ち">Awaiting first data build</span>
     </div>
   </div>
 </footer>
 
+<script type="application/json" id="i18n-data">{"nav.critical_minerals": "重要鉱物", "nav.methodology": "算出方法", "nav.about": "このサイトについて", "skip.content": "本文へスキップ", "banner.title": "サンプルデータ。", "banner.body": "このビルドは合成データ(フィクスチャ)から生成されたものであり、USGSやUN Comtradeの実データではありません。このページの数値はいずれも実測値ではありません。", "footer.tagline": "公開データによる供給集中度の測定。手作業ではなくスケジュール実行で更新される個人プロジェクトです。", "footer.sections": "セクション", "footer.sources": "データソース", "footer.source": "ソース", "footer.repo": "GitHubのリポジトリ", "footer.build_history": "ビルド履歴", "footer.disclaimer": "USGS・国連のいずれも、本サイトおよびその算出結果を承認・保証するものではありません。", "footer.awaiting": "初回のデータビルド待ち", "band.unconcentrated": "非集中", "band.moderate": "中程度の集中", "band.high": "高度に集中", "panel.mine_title": "鉱山側の集中度", "panel.export_title": "輸出側の集中度", "table.toggle": "表で見る", "table.year": "年", "table.top_three": "上位3カ国", "table.reporting": "報告国数", "table.country": "国", "table.share": "シェア", "table.cumulative": "累積", "stat.single_year": "単年データのみ", "stat.largest_supplier": "最大供給国", "stat.top_three": "上位3カ国合計", "stat.effective_suppliers": "実効供給者数", "figure.awaiting_build": "初回ビルド待ち", "figure.no_source_data": "ソースデータなし", "figure.page_ready_pending": "ページ準備済み・データ待ち", "figure.concentration": "集中度", "chart.no_data_yet": "データはまだありません", "chart.index_over_time": "指数の推移", "notfound.title": "ページが見つかりません", "notfound.body": "このページは存在しないか、パイプラインの直近のビルドで名称が変更されました。", "notfound.link": "重要鉱物セクションへ →", "section.no_data_title": "データはまだ生成されていません。", "section.no_data_body": "以下のページとパイプラインはすでに用意されていますが、USGSとUN Comtradeからの初回取得はまだ実行されていません。実行されるまで、すべての数値は未取得として表示されます。", "section.no_data_link": "ビルド履歴を確認 →", "section.eight_minerals_title": "8つの鉱物", "section.eight_minerals_sub": "掲載順に表示。数値は各ソースが公表している最新年のもの。", "section.two_indices_title": "2つの指標、それぞれ別の問い", "section.two_indices_sub": "鉱物ごとのページに2つの数値が並ぶ理由。", "caveats.heading": "この数値が語らないこと", "caveats.shared_note": "いずれの指標も対象は国であって企業ではない。同じ親会社が異なる国に持つ2つの鉱山は、ここでは2つの独立した供給者として扱われる。", "notes.heading": "この鉱物についてのビルドノート。", "chart.read_method": "算出方法の全文を読む →", "hub.sections_title": "セクション", "hub.sections_sub": "素材群ごとに1セクション。それぞれ独立して完結する。", "hub.further_sections": "その他のセクション", "hub.not_yet_built": "未着手", "hub.further_blurb": "パイプラインとレイアウトは共通化されているため、2つ目の素材群を追加するのに新しいサイトは要らず、カタログファイルと取得アダプタを1つ足すだけで済む。", "hub.planned": "計画中", "hub.what_it_means_title": "この数値が意味すること", "hub.live": "稼働中"}</script>
+<script src="../../assets/js/i18n.js"></script>
 <script src="../../assets/js/charts.js"></script>
-<script type="application/json" id="page-data">{"slug": "natural-graphite", "name": "Natural graphite", "symbol": "C", "role": "Anode", "summary": "The anode side of the cell, and the battery input with the single highest supply concentration of the eight. Synthetic graphite is a real substitute at a cost and emissions penalty, so the index here should be read as concentration of the cheap option rather than of the only option.", "caveats": ["Synthetic graphite falls under a different trade code (3801.10) and is excluded, so the export index understates total anode-material supply.", "Flake, vein and amorphous graphite command different prices and serve different end uses but share trade codes."], "hs_codes": ["250410", "250490"], "hs_label": "Natural graphite in powder or flakes (2504.10) and other natural graphite (2504.90)", "production": {"available": false, "notes": [], "source": "USGS Mineral Commodity Summaries", "stage": "mine", "unit": "share of mine production", "series": []}, "trade": {"available": false, "notes": [], "source": "UN Comtrade", "stage": "export", "unit": "share of export value", "series": []}}</script>
+<script type="application/json" id="page-data">{"slug": "natural-graphite", "name": "Natural graphite", "name_ja": "天然黒鉛", "symbol": "C", "role": "Anode", "role_ja": "負極", "summary": "The anode side of the cell, and the battery input with the single highest supply concentration of the eight. Synthetic graphite is a real substitute at a cost and emissions penalty, so the index here should be read as concentration of the cheap option rather than of the only option.", "summary_ja": "電池の負極側を担う素材で、8鉱物のなかで供給集中度が最も高い。人造黒鉛はコストと排出量の面で不利ながら現実的な代替手段であるため、ここでの指標は「唯一の選択肢」ではなく「安価な選択肢」の集中度として読むべきである。", "caveats": ["Synthetic graphite falls under a different trade code (3801.10) and is excluded, so the export index understates total anode-material supply.", "Flake, vein and amorphous graphite command different prices and serve different end uses but share trade codes."], "caveats_ja": ["人造黒鉛は別の品目コード(3801.10)に分類され対象外のため、輸出側の指標は負極材全体の供給を過小に評価している。", "鱗状黒鉛・脈状黒鉛・土状黒鉛は価格も最終用途も異なるが、同じ品目コードに含まれている。"], "hs_codes": ["250410", "250490"], "hs_label": "Natural graphite in powder or flakes (2504.10) and other natural graphite (2504.90)", "hs_label_ja": "粉状・フレーク状の天然黒鉛(2504.10)およびその他の天然黒鉛(2504.90)", "production": {"available": false, "notes": [], "source": "USGS Mineral Commodity Summaries", "stage": "mine", "unit": "share of mine production", "unit_ja": "鉱山生産量に占める割合", "series": []}, "trade": {"available": false, "notes": [], "source": "UN Comtrade", "stage": "export", "unit": "share of export value", "unit_ja": "輸出額に占める割合", "series": []}}</script>
 <script>
 (function () {
   var data = JSON.parse(document.getElementById("page-data").textContent);
-  var thresholds = [
-    { value: 1000, label: "1,000 moderate" },
-    { value: 1800, label: "1,800 high" }
-  ];
+
+  function isJa() { return !!(window.I18N && window.I18N.lang === "ja"); }
 
   ["production", "trade"].forEach(function (key) {
     var block = data[key];
@@ -146,23 +166,39 @@
 
     var lineNode = document.querySelector('[data-line="' + key + '"]');
     if (lineNode) {
+      /* Everything language-dependent is built inside the draw callback, so
+         Chart.redraw() after a language switch picks up the new wording. */
       Chart.register(lineNode, function () {
+        var ja = isJa();
+        var first = block.series[0].year;
+        var last = block.series[block.series.length - 1].year;
         Chart.line(lineNode, {
           series: block.series,
-          thresholds: thresholds,
-          ariaLabel: (key === "production" ? "Mine" : "Export") +
-                     " concentration index for " + data.name + ", " +
-                     block.series[0].year + " to " + block.series[block.series.length - 1].year
+          thresholds: ja
+            ? [{ value: 1000, label: "1,000 中程度" }, { value: 1800, label: "1,800 高度" }]
+            : [{ value: 1000, label: "1,000 moderate" }, { value: 1800, label: "1,800 high" }],
+          ariaLabel: ja
+            ? (data.name_ja || data.name) + "の" + (key === "production" ? "鉱山側" : "輸出側") +
+              "集中度指数(" + first + "年〜" + last + "年)"
+            : (key === "production" ? "Mine" : "Export") +
+              " concentration index for " + data.name + ", " + first + " to " + last,
+          t: ja ? {
+            topThree: function (pct) { return "上位3カ国 " + Chart.fmt(pct, 1) + "%"; },
+            reporting: function (n) { return n + "カ国が報告"; }
+          } : null
         });
       });
     }
 
     var barsNode = document.querySelector('[data-bars="' + key + '"]');
     if (barsNode) {
-      var rows = block.latest.top.map(function (row) {
-        return { name: row.name, share: row.share, code: row.code, detail: block.unit };
+      Chart.register(barsNode, function () {
+        var detail = isJa() ? (block.unit_ja || block.unit) : block.unit;
+        var rows = block.latest.top.map(function (row) {
+          return { name: row.name, share: row.share, code: row.code, detail: detail };
+        });
+        Chart.bars(barsNode, { rows: rows, limit: 10 });
       });
-      Chart.register(barsNode, function () { Chart.bars(barsNode, { rows: rows, limit: 10 }); });
     }
   });
 })();

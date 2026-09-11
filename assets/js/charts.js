@@ -67,7 +67,19 @@
 
   /* ------------------------------------------------------------------ line */
 
+  /* Tooltip wording. The caller may pass options.t with its own phrase
+     builders (assets/js/i18n.js does, for Japanese); English is the default
+     so this file works with or without the language toggle present. */
+  function linePhrases(t) {
+    t = t || {};
+    return {
+      topThree: t.topThree || function (pct) { return "top three " + fmt(pct, 1) + "%"; },
+      reporting: t.reporting || function (n) { return n + " reporting"; }
+    };
+  }
+
   function line(container, options) {
+    var phrases = linePhrases(options.t);
     var points = (options.series || []).filter(function (p) { return p && p.hhi != null; });
     container.innerHTML = "";
     if (points.length === 0) return;
@@ -204,8 +216,8 @@
       var label = document.createElement("span");
       label.className = "tooltip__label";
       var parts = [String(point.year)];
-      if (point.cr3 != null) parts.push("top three " + fmt(point.cr3, 1) + "%");
-      if (point.reporters != null) parts.push(point.reporters + " reporting");
+      if (point.cr3 != null) parts.push(phrases.topThree(point.cr3));
+      if (point.reporters != null) parts.push(phrases.reporting(point.reporters));
       label.textContent = parts.join(" · ");
       tip.appendChild(label);
 
@@ -340,15 +352,19 @@
     draw();
   }
 
+  /* Redraw every registered chart. Used on resize, and by i18n.js after a
+     language switch so labels built at draw time pick up the new language. */
+  function redraw() {
+    registry.forEach(function (entry) {
+      if (entry.container.isConnected) entry.draw();
+    });
+  }
+
   var pending;
   global.addEventListener("resize", function () {
     clearTimeout(pending);
-    pending = setTimeout(function () {
-      registry.forEach(function (entry) {
-        if (entry.container.isConnected) entry.draw();
-      });
-    }, 140);
+    pending = setTimeout(redraw, 140);
   });
 
-  global.Chart = { line: line, bars: bars, spark: spark, register: register, fmt: fmt };
+  global.Chart = { line: line, bars: bars, spark: spark, register: register, redraw: redraw, fmt: fmt };
 })(window);

@@ -148,6 +148,39 @@ Add an entry to `critical-minerals/data/catalog.json`:
 Then `python -m pipeline.build --only tin`. The page, the card and the JSON all
 follow from the catalog entry; nothing else needs editing.
 
+For the Japanese side of the page, add `name_ja`, `role_ja`, `summary_ja`,
+`hs_label_ja` and a `caveats_ja` list the same length as `caveats`. A missing
+`*_ja` field is not an error: that text simply stays in English when the
+Japanese toggle is on.
+
+## Language toggle
+
+Every page is rendered once, in English, and carries its Japanese text
+alongside it. The EN / 日本語 buttons in the header swap between the two
+client-side with `assets/js/i18n.js`; nothing is translated at runtime, and
+URLs do not change. The choice is remembered per browser, and a browser whose
+preferred language is Japanese opens in Japanese the first time.
+
+Where the Japanese lives:
+
+| Text | Put the Japanese in |
+|---|---|
+| Repeating UI chrome — nav, footer, table headers, band labels | `pipeline/i18n.py`, `STRINGS_JA`, referenced as `data-i18n="key"` |
+| One-off strings, or any string with a number in it | inline on the element, `data-i18n-text="…"` |
+| Long prose with links or `<code>` (Methodology, About) | a parallel block, `data-lang-only="en"` / `data-lang-only="ja" hidden` |
+| Per-mineral copy | `*_ja` fields in `catalog.json` |
+| Sentences built from data (trend, coverage, timestamp) | a `*_ja` function in `pipeline/i18n.py`, next to its English twin in `render.py` |
+
+Country names and organisation names (USGS, UN Comtrade) are deliberately not
+translated: they stay as the source reports them in both languages. Pipeline
+build notes are also English-only.
+
+The English text in a template is the fallback. If a key or an inline
+translation is missing or empty, the element keeps its English rather than
+going blank, so a half-translated page degrades instead of breaking. After
+editing any of the above, run `python -m pipeline.render` and commit the
+regenerated pages, as with any other template change.
+
 ## Adding a section
 
 Copy `critical-minerals/` to a new directory with its own `data/catalog.json`,

@@ -1,24 +1,25 @@
 {% extends "base.html" %}
 {% block title %}Methodology — 999.9{% endblock %}
+{% block title_ja %}算出方法 — 999.9{% endblock %}
 {% block og_title %}Methodology — 999.9{% endblock %}
 {% block description %}How 999.9 computes the Herfindahl-Hirschman Index from USGS mine production and UN Comtrade export data, and what the result can and cannot support.{% endblock %}
 
 {% block content %}
 <div class="wrap">
-  <p class="crumb"><a href="{{ root }}index.html">999.9</a><span>/</span>Methodology</p>
+  <p class="crumb"><a href="{{ root }}index.html">999.9</a><span>/</span><span data-i18n="nav.methodology">Methodology</span></p>
 </div>
 
 <div class="wrap hero" style="padding-block:clamp(32px,6vw,64px) clamp(20px,4vw,36px)">
-  <p class="eyebrow">Method</p>
-  <h1 style="font-size:var(--step-h1);font-weight:400">How the number is made</h1>
-  <p class="hero__lede">
+  <p class="eyebrow" data-i18n-text="算出方法">Method</p>
+  <h1 style="font-size:var(--step-h1);font-weight:400" data-i18n-text="この数値はどう作られているか">How the number is made</h1>
+  <p class="hero__lede" data-i18n-text="1つの指標、2つのデータセット、推計はなし。このページは計算を一から再現できるだけの分量を備えている。算出方法の添えられていない集中度の数値は、小数点がついているだけのただの数字だからだ。">
     One index, two datasets, no estimation. This page is long enough to reproduce the
     calculation from scratch, because a concentration figure with no method attached is
     just a number with a decimal point.
   </p>
 </div>
 
-<div class="wrap prose">
+<div class="wrap prose" data-lang-only="en">
   <section style="padding-top:0">
     <h2>The index</h2>
     <p>
@@ -206,6 +207,100 @@
       index, and <code>pipeline/render.py</code> regenerates the static pages from them.</li>
     </ol>
     <p><a href="{{ repo_url }}" rel="noopener">Read the source →</a></p>
+  </section>
+</div>
+
+<div class="wrap prose" data-lang-only="ja" lang="ja" hidden>
+  <section style="padding-top:0">
+    <h2>指標</h2>
+    <p>ハーフィンダール・ハーシュマン指数(HHI)は、市場におけるすべての供給者のシェア(%)を2乗して合計したものである。シェア<code>s<sub>i</sub></code>を持つ供給者<code>i = 1 … n</code>について書くと、次のようになる。</p>
+    <div class="formula">HHI &nbsp;=&nbsp; &Sigma; s<sub>i</sub><sup>2</sup> &nbsp;&nbsp;&nbsp;<span>sはパーセント表記(0〜100)</span></div>
+    <p>これにより、結果は0〜10,000の尺度になる。1つの供給者がすべてを占めれば<code>100² = 10,000</code>、均等な10の供給者なら<code>10 × 10² = 1,000</code>、均等な50の供給者なら200である。</p>
+    <p>2乗は形式的な操作ではない。本当に重要なことに指標を反応させるのが、この2乗である。シェア60%の供給者1つとシェア1%の供給者40からなる市場は、シェア10%の供給者6つとシェア1%の供給者40からなる市場よりもはるかに脆弱だ。どちらも供給者の数は41で、裾野の形も同じであるにもかかわらず、である。2乗はこの違いを示すが、供給者の数を数えるだけでは示せない。</p>
+
+    <h3>補助的な数値</h3>
+    <dl class="defs">
+      <div>
+        <dt>CR3</dt>
+        <dd>上位3供給者のシェアの合計。HHIより大まかだが直感的に捉えやすいため、両方を表示している。</dd>
+      </div>
+      <div>
+        <dt>実効供給者数</dt>
+        <dd><code>10,000 ÷ HHI</code>。観測された指標を生み出す、同じ規模の供給者の数。HHIが2,500であれば、実際に何カ国が報告していようと「均等な4つの供給者がいるのと同じ」ということになる。</dd>
+      </div>
+      <div>
+        <dt>カバレッジ</dt>
+        <dd>報告された合計 ÷ 公表されている世界合計(世界合計が存在する場合)。100%を下回る場合、生産の一部がソース側で非開示または未配分になっていることを意味する。</dd>
+      </div>
+    </dl>
+
+    <h3>区分</h3>
+    <p>このサイトで使う3つのラベル、すなわち1,000未満は「非集中」、1,800までは「中程度の集中」、それを超えると「高度に集中」という区分は、2023年の米国司法省(DOJ)と連邦取引委員会(FTC)による合併ガイドラインの閾値である。読み取りの目安として借用している。</p>
+    <p>これは、国の供給が企業間の競争と同じように振る舞う、という主張では<em>ない</em>。規制当局がこの閾値を当てはめるのは、訴えたり、合併させたり、分割したりできる企業であり、国はそうはいかない。区分は「この数値がどれほど珍しいか」を共有するための語彙として扱い、それ以上の意味は持たせないでほしい。</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>鉱物ごとに2つの指標</h2>
+    <p>各鉱物のページには、2つの独立した指標を載せている。「誰がこれを供給しているのか」という問いの答えは、サプライチェーンのどの段階について尋ねるかによって変わるからだ。</p>
+    <h3>鉱山側の集中度 — USGS</h3>
+    <p>ソース:米国地質調査所(USGS)の国立鉱物情報センターが毎年発行するMineral Commodity Summariesの、国別の世界鉱山生産量。これは地質的な姿、つまり鉱石がどこで採掘されているかを表す。</p>
+    <p>USGSは一部の国の数値を企業の機密情報として非開示にしており(表中では<code>W</code>と表記)、他の数値も丸めている。非開示の行は除外し、推計で補うことはしない。その結果生じる欠落は、ページ上にカバレッジの割合として示す。指標は報告のある国だけで計算されるため、カバレッジが低いということは、実際の指標が表示値よりいくらか低い可能性が高いことを意味する。供給者を1つ除けば、残る供給者のシェアは必ず上がるからだ。</p>
+    <h3>輸出側の集中度 — UN Comtrade</h3>
+    <p>ソース:UN Comtradeの年次商品貿易統計のうち、フロー<code>X</code>(輸出)、相手国<code>World</code>について、各鉱物ページに記載したHS品目コードを対象とする。報告国は輸出国、数量は名目米ドル建てのFOB価額である。</p>
+    <p>正味重量ではなく価額を使うのは、Comtradeの行のうち大きな、しかも偏りのある割合で重量が欠けているためだ。重量の記録がない報告国をすべて除外すれば、価額か重量かという違いよりもはるかに大きな偏りが指標に生じる。その代償として、グレードによって取引価格が異なる場合、価格の高い年にはシェアが圧縮されたり引き伸ばされたりする。両方の数値を元のJSONに保持しているので、この選択は後から見直せる。</p>
+    <p>集計上の報告主体、すなわち世界合計、報告ブロック、「他に分類されない地域」、外航船向けの燃料(バンカー)、自由貿易地域は、ソースアダプタ内の明示的なリストによって除外している。これらを含めると、二重計上になるうえに、存在しない供給者を作り出してしまう。</p>
+    <p>2つの指標が乖離している箇所こそ、たいてい鉱物ページで最も興味深い点である。広く採掘され、狭い範囲で精錬される鉱物は、鉱山側では穏やかな指標を、輸出側では厳しい指標を示す。その乖離は加工段階のチョークポイントであり、鉱石がどこから来るかだけを見ていては見えない。</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>更新の頻度</h2>
+    <p>どちらのソースも年単位のサイクルで公表されるため、毎晩再構築しても365日のうち364日は同じ出力になり、そのために他者の帯域を浪費することになる。そこで、更新スケジュールはソースの公表サイクルに合わせている。</p>
+    <dl class="defs">
+      <div>
+        <dt>毎月、自動で</dt>
+        <dd>GitHub Actionsのスケジュール実行が、毎月1日に両方のソースを取得し直す。上流で何も変わっていなければ、コミットは作られず、デプロイも行われない。</dd>
+      </div>
+      <div>
+        <dt>1月下旬〜2月</dt>
+        <dd>Mineral Commodity Summariesの新しい版が公開されると、毎月の実行が自動的にそれを取り込む。USGSアダプタは固定のURLを参照するのではなく、最新のデータリリースを自ら探し出すからだ。</dd>
+      </div>
+      <div>
+        <dt>必要に応じて</dt>
+        <dd>ワークフローは特定の鉱物について手動で起動することもできる。パーサーの修正を確認するときはこの方法を使う。</dd>
+      </div>
+    </dl>
+    <p>すべてのページのフッターには、そのデータを生成した実行のタイムスタンプを載せている。古くなった数値は、黙って残るのではなく、古いと分かるようになっている。</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>この指標から分からないこと</h2>
+    <ul>
+      <li><strong>国は企業ではない。</strong>1つの親会社の傘下にある2カ国の2つの鉱山は、ここでは2つの独立した供給者として扱われる。所有の集中度は、ここに示す地理的な集中度よりはるかに高いことがある。</li>
+      <li><strong>埋蔵量は生産量ではない。</strong>指標が高いということは、いま供給が集中しているということであって、今後もそうでなければならないということではない。このサイトで最も明確な反例はニッケルで、その指標は10年のうちに大きく動いた。</li>
+      <li><strong>貿易データは自己申告であり、改訂される。</strong>報告国によって適時性も網羅性も異なり、直近の年の数値は遅れて提出されたデータが届くにつれて上方修正される。系列の最終年に落ち込みがあれば、実際の変化というより報告の遅れである可能性が高い。</li>
+      <li><strong>品目コードは市場よりも粗い。</strong>電池グレードと工業グレードの素材が同じHSコードに含まれることは珍しくない。これが結果を大きく損なう場合は、ここに埋もれさせるのではなく、その鉱物のページで明示している。</li>
+      <li><strong>集中度はリスクと同じではない。</strong>安定し、つながりの良い輸出国からの集中した供給と、単一の港に依存する集中した供給とでは、意味がまったく異なる。このサイトが測るのは前者であり、後者については何も語らない。</li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>再現するには</h2>
+    <p>パイプライン全体は、リポジトリ内の小さなPythonパッケージである。手作業は一切なく、手入力されているのは、既定では空になっている文書化済みのフォールバック用テーブルだけだ。</p>
+    <ol>
+      <li><code>pipeline/sources/usgs.py</code>が、ScienceBase上にあるMineral Commodity Summariesの最新データリリースを探し出し、表形式の添付ファイルをダウンロードして、固定の列位置ではなくヘッダーの照合によって解析する。</li>
+      <li><code>pipeline/sources/comtrade.py</code>が、HSコードごとに世界向けの年間輸出を要求する。無料のプレビュー用エンドポイントを使うか、サブスクリプションキーがあればキー付きのエンドポイントを使う。</li>
+      <li><code>pipeline/hhi.py</code>が、指標、集中度比率、カバレッジを計算する。ユニットテストでカバーされており、数値がどこから来たかについては何も知らない。</li>
+      <li><code>pipeline/build.py</code>が鉱物ごとのJSONファイルと要約インデックスを書き出し、<code>pipeline/render.py</code>がそこから静的ページを再生成する。</li>
+    </ol>
+    <p><a href="{{ repo_url }}" rel="noopener">ソースコードを読む →</a></p>
   </section>
 </div>
 {% endblock %}

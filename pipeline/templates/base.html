@@ -3,7 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block title %}999.9{% endblock %}</title>
+<script>
+/* Decide before first paint whether the page opens in Japanese, so the
+   English text is never shown and then swapped. i18n.js does the swap and
+   clears the class; the timeout is a safety net if that script fails. */
+(function () {
+  try {
+    var lang = localStorage.getItem("999.9:lang");
+    if (!lang && /^ja\b/i.test(navigator.language || "")) lang = "ja";
+    if (lang === "ja") {
+      var root = document.documentElement;
+      root.classList.add("i18n-pending");
+      setTimeout(function () { root.classList.remove("i18n-pending"); }, 1500);
+    }
+  } catch (e) {}
+})();
+</script>
+<title data-i18n-text="{% block title_ja %}{% endblock %}">{% block title %}999.9{% endblock %}</title>
 <meta name="description" content="{% block description %}Supply concentration in critical minerals, measured with the Herfindahl-Hirschman Index from USGS and UN Comtrade open data.{% endblock %}">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#080A0F">
@@ -18,11 +34,11 @@
 <link rel="stylesheet" href="{{ root }}assets/css/site.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" data-i18n="skip.content">Skip to content</a>
 {% if fixtures %}
 <div class="banner"><div class="wrap">
-  <strong>Sample data.</strong>
-  <span>This build was rendered from synthetic fixtures, not from USGS or UN Comtrade. No figure on this page is a measurement.</span>
+  <strong data-i18n="banner.title">Sample data.</strong>
+  <span data-i18n="banner.body">This build was rendered from synthetic fixtures, not from USGS or UN Comtrade. No figure on this page is a measurement.</span>
 </div></div>
 {% endif %}
 
@@ -33,10 +49,14 @@
       <span>999.9</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="{{ root }}critical-minerals/index.html"{% if page == 'section' %} aria-current="page"{% endif %}>Critical minerals</a>
-      <a href="{{ root }}critical-minerals/methodology.html"{% if page == 'methodology' %} aria-current="page"{% endif %}>Methodology</a>
-      <a href="{{ root }}critical-minerals/about.html"{% if page == 'about' %} aria-current="page"{% endif %}>About</a>
+      <a href="{{ root }}critical-minerals/index.html"{% if page == 'section' %} aria-current="page"{% endif %} data-i18n="nav.critical_minerals">Critical minerals</a>
+      <a href="{{ root }}critical-minerals/methodology.html"{% if page == 'methodology' %} aria-current="page"{% endif %} data-i18n="nav.methodology">Methodology</a>
+      <a href="{{ root }}critical-minerals/about.html"{% if page == 'about' %} aria-current="page"{% endif %} data-i18n="nav.about">About</a>
     </nav>
+    <div class="lang" role="group" aria-label="Language / 言語">
+      <button type="button" class="lang__btn" data-set-lang="en" aria-pressed="true" lang="en">EN</button>
+      <button type="button" class="lang__btn" data-set-lang="ja" aria-pressed="false" lang="ja">日本語</button>
+    </div>
   </div>
 </header>
 
@@ -49,38 +69,40 @@
     <div class="footer__grid">
       <div>
         <h4>999.9</h4>
-        <p style="margin:0;max-width:32ch">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
+        <p style="margin:0;max-width:32ch" data-i18n="footer.tagline">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
       </div>
       <div>
-        <h4>Sections</h4>
+        <h4 data-i18n="footer.sections">Sections</h4>
         <ul>
-          <li><a href="{{ root }}critical-minerals/index.html">Critical minerals</a></li>
-          <li><a href="{{ root }}critical-minerals/methodology.html">Methodology</a></li>
-          <li><a href="{{ root }}critical-minerals/about.html">About</a></li>
+          <li><a href="{{ root }}critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a></li>
+          <li><a href="{{ root }}critical-minerals/methodology.html" data-i18n="nav.methodology">Methodology</a></li>
+          <li><a href="{{ root }}critical-minerals/about.html" data-i18n="nav.about">About</a></li>
         </ul>
       </div>
       <div>
-        <h4>Data sources</h4>
+        <h4 data-i18n="footer.sources">Data sources</h4>
         <ul>
           <li><a href="https://www.usgs.gov/centers/national-minerals-information-center/mineral-commodity-summaries" rel="noopener">USGS Mineral Commodity Summaries</a></li>
           <li><a href="https://comtradeplus.un.org/" rel="noopener">UN Comtrade</a></li>
         </ul>
       </div>
       <div>
-        <h4>Source</h4>
+        <h4 data-i18n="footer.source">Source</h4>
         <ul>
-          <li><a href="{{ repo_url }}" rel="noopener">Repository on GitHub</a></li>
-          <li><a href="{{ repo_url }}/actions" rel="noopener">Build history</a></li>
+          <li><a href="{{ repo_url }}" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
+          <li><a href="{{ repo_url }}/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__meta">
-      <span>Neither USGS nor the United Nations endorses this site or its calculations.</span>
-      <span class="timestamp">{% if generated_at %}Data last rebuilt {{ generated_at }}{% else %}Awaiting first data build{% endif %}</span>
+      <span data-i18n="footer.disclaimer">Neither USGS nor the United Nations endorses this site or its calculations.</span>
+      <span class="timestamp" data-i18n-text="{{ rebuilt_notice_ja }}">{% if generated_at %}Data last rebuilt {{ generated_at }}{% else %}Awaiting first data build{% endif %}</span>
     </div>
   </div>
 </footer>
 
+<script type="application/json" id="i18n-data">{{ i18n_json|safe }}</script>
+<script src="{{ root }}assets/js/i18n.js"></script>
 <script src="{{ root }}assets/js/charts.js"></script>
 {% block scripts %}{% endblock %}
 </body>

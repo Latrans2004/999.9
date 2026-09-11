@@ -1,57 +1,60 @@
 {% extends "base.html" %}
 {% block title %}{{ mineral.name }} — critical minerals — 999.9{% endblock %}
+{% block title_ja %}{{ mineral.name_ja or mineral.name }} — 重要鉱物 — 999.9{% endblock %}
 {% block og_title %}{{ mineral.name }} supply concentration — 999.9{% endblock %}
 {% block description %}{{ mineral.summary|striptags|truncate(180) }}{% endblock %}
 
-{% macro block_panel(key, block, title, blurb) %}
+{% macro block_panel(key, block, title_key, title, title_ja, blurb, blurb_ja) %}
 <div class="panel">
   <div class="panel__head">
-    <h3>{{ title }}</h3>
+    <h3 data-i18n="{{ title_key }}">{{ title }}</h3>
     {% if block.available %}
-    <span class="band band--{{ block.latest.band }}">{{ band_labels[block.latest.band] }}</span>
+    <span class="band band--{{ block.latest.band }}" data-i18n="band.{{ block.latest.band }}">{{ band_labels[block.latest.band] }}</span>
     {% endif %}
   </div>
-  <p class="panel__sub">{{ blurb }}</p>
+  <p class="panel__sub" data-i18n-text="{{ blurb_ja }}">{{ blurb }}</p>
 
   {% if block.available %}
   <div class="stats" style="margin-bottom:22px">
     <div class="stat">
       <span class="stat__label">HHI {{ block.latest.year }}</span>
       <span class="stat__value">{{ "{:,.0f}".format(block.latest.hhi) }}</span>
-      <span class="stat__note">
-        {%- if block.trend %}{{ trend_phrase(block.trend) }}{% else %}Single year of data{% endif -%}
-      </span>
+      {% if block.trend %}
+      <span class="stat__note" data-i18n-text="{{ trend_phrase_ja(block.trend) }}">{{ trend_phrase(block.trend) }}</span>
+      {% else %}
+      <span class="stat__note" data-i18n="stat.single_year">Single year of data</span>
+      {% endif %}
     </div>
     <div class="stat">
-      <span class="stat__label">Largest supplier</span>
+      <span class="stat__label" data-i18n="stat.largest_supplier">Largest supplier</span>
       <span class="stat__value" style="font-size:1.1rem">{{ block.latest.top[0].name }}</span>
-      <span class="stat__note">{{ "{:.1f}".format(block.latest.top[0].share) }}% of the reported total</span>
+      <span class="stat__note" data-i18n-text="報告合計の{{ '{:.1f}'.format(block.latest.top[0].share) }}%">{{ "{:.1f}".format(block.latest.top[0].share) }}% of the reported total</span>
     </div>
     <div class="stat">
-      <span class="stat__label">Top three</span>
+      <span class="stat__label" data-i18n="stat.top_three">Top three</span>
       <span class="stat__value">{{ "{:.0f}".format(block.latest.cr3) }}%</span>
-      <span class="stat__note">Combined share of the three largest</span>
+      <span class="stat__note" data-i18n-text="上位3カ国のシェアの合計">Combined share of the three largest</span>
     </div>
     <div class="stat">
-      <span class="stat__label">Effective suppliers</span>
+      <span class="stat__label" data-i18n="stat.effective_suppliers">Effective suppliers</span>
       <span class="stat__value">{{ "{:.1f}".format(block.latest.effective_suppliers) }}</span>
-      <span class="stat__note">{{ block.latest.reporters }} countries reported</span>
+      <span class="stat__note" data-i18n-text="{{ block.latest.reporters }}カ国が報告">{{ block.latest.reporters }} countries reported</span>
     </div>
   </div>
 
   <div class="split">
     <div>
-      <h4 style="font-size:var(--step-micro);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px">
+      <h4 style="font-size:var(--step-micro);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px" data-i18n="chart.index_over_time">
         Index over time
       </h4>
       <div class="chart" data-line="{{ key }}"></div>
       <details class="table-toggle">
-        <summary>Table view</summary>
+        <summary data-i18n="table.toggle">Table view</summary>
         <div class="table-scroll">
           <table class="data">
-            <caption>{{ title }} by year. HHI on the 0–10,000 scale.</caption>
+            <caption data-i18n-text="{{ title_ja }}の年次推移。HHIは0〜10,000の尺度。">{{ title }} by year. HHI on the 0–10,000 scale.</caption>
             <thead>
-              <tr><th scope="col">Year</th><th scope="col" class="num">HHI</th><th scope="col" class="num">Top three</th><th scope="col" class="num">Reporting</th></tr>
+              <tr><th scope="col" data-i18n="table.year">Year</th><th scope="col" class="num">HHI</th><th scope="col" class="num" data-i18n="table.top_three">Top three</th><th scope="col" class="num" data-i18n="table.reporting">Reporting</th></tr>
             </thead>
             <tbody>
               {% for point in block.series|reverse %}
@@ -69,17 +72,17 @@
     </div>
 
     <div>
-      <h4 style="font-size:var(--step-micro);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px">
+      <h4 style="font-size:var(--step-micro);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px" data-i18n-text="{{ block.latest.year }}年のシェア">
         Shares in {{ block.latest.year }}
       </h4>
       <div class="chart" data-bars="{{ key }}"></div>
       <details class="table-toggle">
-        <summary>Table view</summary>
+        <summary data-i18n="table.toggle">Table view</summary>
         <div class="table-scroll">
           <table class="data">
-            <caption>{{ block.unit|capitalize }}, {{ block.latest.year }}.</caption>
+            <caption data-i18n-text="{{ block.unit_ja or block.unit }}、{{ block.latest.year }}年。">{{ block.unit|capitalize }}, {{ block.latest.year }}.</caption>
             <thead>
-              <tr><th scope="col">Country</th><th scope="col" class="num">Share</th><th scope="col" class="num">Cumulative</th></tr>
+              <tr><th scope="col" data-i18n="table.country">Country</th><th scope="col" class="num" data-i18n="table.share">Share</th><th scope="col" class="num" data-i18n="table.cumulative">Cumulative</th></tr>
             </thead>
             <tbody>
               {% set ns = namespace(cumulative=0) %}
@@ -99,19 +102,22 @@
   </div>
 
   {% if block.latest.coverage is not none and block.latest.coverage < 1 %}
-  <div class="notice" style="margin-top:20px">
+  <div class="notice" style="margin-top:20px" data-lang-only="en">
     <strong>Coverage {{ "{:.0f}".format(block.latest.coverage * 100) }}%.</strong>
     The named countries above account for that share of the published world total. The
     remainder is withheld or unallocated at source; it is excluded from the index rather
     than attributed to anyone, so the true index is likely a little lower than shown.
   </div>
+  <div class="notice" style="margin-top:20px" data-lang-only="ja" lang="ja" hidden>
+    {{ coverage_notice_ja(block.latest.coverage) }}
+  </div>
   {% endif %}
 
   {% else %}
   <div class="chart__empty">
-    <strong>No data yet</strong>
+    <strong data-i18n="chart.no_data_yet">No data yet</strong>
     {% if block.notes %}{{ block.notes[0] }}{% else %}
-    This index will appear once the pipeline completes a successful fetch from {{ block.source }}.
+    <span data-i18n-text="{{ no_data_notice_ja(block.source) }}">This index will appear once the pipeline completes a successful fetch from {{ block.source }}.</span>
     {% endif %}
   </div>
   {% endif %}
@@ -121,36 +127,39 @@
 {% block content %}
 <div class="wrap">
   <p class="crumb">
-    <a href="{{ root }}index.html">999.9</a><span>/</span><a href="{{ root }}critical-minerals/index.html">Critical minerals</a><span>/</span>{{ mineral.name }}
+    <a href="{{ root }}index.html">999.9</a><span>/</span><a href="{{ root }}critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n-text="{{ mineral.name_ja or '' }}">{{ mineral.name }}</span>
   </p>
 </div>
 
 <div class="wrap hero" style="padding-block:clamp(28px,5vw,52px) clamp(24px,4vw,40px)">
-  <p class="eyebrow">{{ mineral.role }}</p>
+  <p class="eyebrow" data-i18n-text="{{ mineral.role_ja or '' }}">{{ mineral.role }}</p>
   <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
-    <h1 style="font-size:var(--step-h1);font-weight:400">{{ mineral.name }}</h1>
+    <h1 style="font-size:var(--step-h1);font-weight:400" data-i18n-text="{{ mineral.name_ja or '' }}">{{ mineral.name }}</h1>
     <span class="card__symbol">{{ mineral.symbol }}</span>
   </div>
-  <p class="hero__lede" style="margin-top:18px">{{ mineral.summary }}</p>
+  <p class="hero__lede" style="margin-top:18px" data-i18n-text="{{ mineral.summary_ja or '' }}">{{ mineral.summary }}</p>
 </div>
 
 <div class="wrap">
   {{ block_panel("production", mineral.production,
-                 "Mine concentration",
-                 "Share of world mine production by country, from the USGS Mineral Commodity Summaries. This is where the material leaves the ground.") }}
+                 "panel.mine_title", "Mine concentration", "鉱山側の集中度",
+                 "Share of world mine production by country, from the USGS Mineral Commodity Summaries. This is where the material leaves the ground.",
+                 "USGS Mineral Commodity Summariesにもとづく、国別の世界鉱山生産量シェア。素材が地中から取り出される場所を示す。") }}
 
   {{ block_panel("trade", mineral.trade,
-                 "Export concentration",
-                 "Share of world export value by reporting country, from UN Comtrade, covering " ~ (mineral.hs_label or "the relevant HS codes") ~ ". This captures processing and refining that mine statistics do not.") }}
+                 "panel.export_title", "Export concentration", "輸出側の集中度",
+                 "Share of world export value by reporting country, from UN Comtrade, covering " ~ (mineral.hs_label or "the relevant HS codes") ~ ". This captures processing and refining that mine statistics do not.",
+                 "UN Comtradeにもとづく、報告国別の世界輸出額シェア。対象は" ~ (mineral.hs_label_ja or mineral.hs_label or "該当するHSコード") ~ "。鉱山統計が捉えない加工・精錬の段階を反映する。") }}
 
   {% if mineral.caveats %}
   <section>
     <div class="section-head">
-      <h2>What these numbers do not say</h2>
+      <h2 data-i18n="caveats.heading">What these numbers do not say</h2>
     </div>
     <ul class="caveats">
-      {% for caveat in mineral.caveats %}<li>{{ caveat }}</li>{% endfor %}
-      <li>Both indices measure countries, not companies. Two mines in different countries
+      {% set caveats_ja = mineral.caveats_ja or [] %}
+      {% for caveat in mineral.caveats %}<li data-i18n-text="{{ caveats_ja[loop.index0] if loop.index0 < caveats_ja|length else '' }}">{{ caveat }}</li>{% endfor %}
+      <li data-i18n="caveats.shared_note">Both indices measure countries, not companies. Two mines in different countries
       owned by the same parent read here as two suppliers.</li>
     </ul>
   </section>
@@ -158,14 +167,14 @@
 
   {% if notes %}
   <div class="notice">
-    <strong>Build notes for this mineral.</strong>
+    <strong data-i18n="notes.heading">Build notes for this mineral.</strong>
     <ul>{% for note in notes %}<li>{{ note }}</li>{% endfor %}</ul>
   </div>
   {% endif %}
 
   <div class="pager">
-    {% if previous %}<a href="{{ root }}critical-minerals/minerals/{{ previous.slug }}.html">← {{ previous.name }}</a>{% else %}<span></span>{% endif %}
-    {% if next %}<a href="{{ root }}critical-minerals/minerals/{{ next.slug }}.html">{{ next.name }} →</a>{% endif %}
+    {% if previous %}<a href="{{ root }}critical-minerals/minerals/{{ previous.slug }}.html" data-i18n-text="{{ '← ' ~ previous.name_ja if previous.name_ja else '' }}">← {{ previous.name }}</a>{% else %}<span></span>{% endif %}
+    {% if next %}<a href="{{ root }}critical-minerals/minerals/{{ next.slug }}.html" data-i18n-text="{{ next.name_ja ~ ' →' if next.name_ja else '' }}">{{ next.name }} →</a>{% endif %}
   </div>
 </div>
 {% endblock %}
@@ -175,10 +184,8 @@
 <script>
 (function () {
   var data = JSON.parse(document.getElementById("page-data").textContent);
-  var thresholds = [
-    { value: 1000, label: "1,000 moderate" },
-    { value: 1800, label: "1,800 high" }
-  ];
+
+  function isJa() { return !!(window.I18N && window.I18N.lang === "ja"); }
 
   ["production", "trade"].forEach(function (key) {
     var block = data[key];
@@ -186,23 +193,39 @@
 
     var lineNode = document.querySelector('[data-line="' + key + '"]');
     if (lineNode) {
+      /* Everything language-dependent is built inside the draw callback, so
+         Chart.redraw() after a language switch picks up the new wording. */
       Chart.register(lineNode, function () {
+        var ja = isJa();
+        var first = block.series[0].year;
+        var last = block.series[block.series.length - 1].year;
         Chart.line(lineNode, {
           series: block.series,
-          thresholds: thresholds,
-          ariaLabel: (key === "production" ? "Mine" : "Export") +
-                     " concentration index for " + data.name + ", " +
-                     block.series[0].year + " to " + block.series[block.series.length - 1].year
+          thresholds: ja
+            ? [{ value: 1000, label: "1,000 中程度" }, { value: 1800, label: "1,800 高度" }]
+            : [{ value: 1000, label: "1,000 moderate" }, { value: 1800, label: "1,800 high" }],
+          ariaLabel: ja
+            ? (data.name_ja || data.name) + "の" + (key === "production" ? "鉱山側" : "輸出側") +
+              "集中度指数(" + first + "年〜" + last + "年)"
+            : (key === "production" ? "Mine" : "Export") +
+              " concentration index for " + data.name + ", " + first + " to " + last,
+          t: ja ? {
+            topThree: function (pct) { return "上位3カ国 " + Chart.fmt(pct, 1) + "%"; },
+            reporting: function (n) { return n + "カ国が報告"; }
+          } : null
         });
       });
     }
 
     var barsNode = document.querySelector('[data-bars="' + key + '"]');
     if (barsNode) {
-      var rows = block.latest.top.map(function (row) {
-        return { name: row.name, share: row.share, code: row.code, detail: block.unit };
+      Chart.register(barsNode, function () {
+        var detail = isJa() ? (block.unit_ja || block.unit) : block.unit;
+        var rows = block.latest.top.map(function (row) {
+          return { name: row.name, share: row.share, code: row.code, detail: detail };
+        });
+        Chart.bars(barsNode, { rows: rows, limit: 10 });
       });
-      Chart.register(barsNode, function () { Chart.bars(barsNode, { rows: rows, limit: 10 }); });
     }
   });
 })();

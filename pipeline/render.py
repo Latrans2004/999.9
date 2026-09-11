@@ -19,6 +19,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+from . import i18n
 from .hhi import BAND_LABELS
 
 log = logging.getLogger("999.9.render")
@@ -32,6 +33,14 @@ CONFIG_PATH = REPO_ROOT / "site.json"
 DEFAULT_CONFIG = {
     "repo_url": "https://github.com/OWNER/999.9",
     "site_base": "/",
+}
+
+# Mirrors pipeline/build.py's unit_ja_lookup, for the "no data yet" shape
+# that render.py builds directly (build.py's pack() never runs for a
+# mineral the pipeline has not fetched yet).
+PLACEHOLDER_UNIT_JA = {
+    "share of mine production": "鉱山生産量に占める割合",
+    "share of export value": "輸出額に占める割合",
 }
 
 
@@ -86,6 +95,9 @@ def environment() -> Environment:
     )
     env.globals["band_labels"] = BAND_LABELS
     env.globals["trend_phrase"] = trend_phrase
+    env.globals["trend_phrase_ja"] = i18n.trend_phrase_ja
+    env.globals["coverage_notice_ja"] = i18n.coverage_notice_ja
+    env.globals["no_data_notice_ja"] = i18n.no_data_notice_ja
     return env
 
 
@@ -114,6 +126,7 @@ def empty_block(source: str, stage: str, unit: str) -> dict:
         "source": source,
         "stage": stage,
         "unit": unit,
+        "unit_ja": PLACEHOLDER_UNIT_JA.get(unit, unit),
         "series": [],
     }
 
@@ -123,12 +136,17 @@ def placeholder_mineral(entry: dict) -> dict:
     return {
         "slug": entry["slug"],
         "name": entry["name"],
+        "name_ja": entry.get("name_ja"),
         "symbol": entry.get("symbol"),
         "role": entry.get("role"),
+        "role_ja": entry.get("role_ja"),
         "summary": entry.get("summary"),
+        "summary_ja": entry.get("summary_ja"),
         "caveats": entry.get("caveats", []),
+        "caveats_ja": entry.get("caveats_ja", []),
         "hs_codes": entry.get("hs_codes", []),
         "hs_label": entry.get("hs_label"),
+        "hs_label_ja": entry.get("hs_label_ja"),
         "production": empty_block(
             "USGS Mineral Commodity Summaries", "mine", "share of mine production"
         ),
@@ -150,11 +168,14 @@ def render_all() -> None:
     summaries = {item["slug"]: item for item in index.get("minerals", [])}
     fixtures = bool(index.get("fixtures"))
     generated_at = human_time(index.get("generated_at"))
+    generated_at_ja = i18n.human_time_ja(index.get("generated_at"))
 
     base = {
         "repo_url": settings["repo_url"],
         "generated_at": generated_at,
         "fixtures": fixtures,
+        "i18n_json": safe_json(i18n.STRINGS_JA),
+        "rebuilt_notice_ja": i18n.rebuilt_notice_ja(generated_at_ja or None),
     }
 
     entries = catalog["minerals"]
@@ -196,8 +217,10 @@ def render_all() -> None:
             {
                 "slug": entry["slug"],
                 "name": entry["name"],
+                "name_ja": entry.get("name_ja"),
                 "symbol": entry.get("symbol"),
                 "role": entry.get("role"),
+                "role_ja": entry.get("role_ja"),
                 "headline": headline,
                 "headline_source": headline_source,
             }
