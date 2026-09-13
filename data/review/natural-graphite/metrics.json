@@ -1,0 +1,732 @@
+[
+  {
+    "global_coverage": null,
+    "hs_code": "250410",
+    "observed_exporter_count": 84,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 100.0,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 1.0,
+      "hhi": 10000.0,
+      "reporters": 1,
+      "top": [
+        {
+          "code": null,
+          "name": "LKA",
+          "quantity": 3113.34,
+          "share": 100.0
+        }
+      ],
+      "total": 3113.34,
+      "year": 2017
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight"
+    ],
+    "reported_weight_coverage": 0.008760085478787939,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 3113.34,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 83,
+    "year": 2017,
+    "yoy": null
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250410",
+    "observed_exporter_count": 89,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 82.11,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 1.42,
+      "hhi": 7062.6,
+      "reporters": 2,
+      "top": [
+        {
+          "code": null,
+          "name": "LVA",
+          "quantity": 4.04,
+          "share": 82.1138
+        },
+        {
+          "code": null,
+          "name": "NZL",
+          "quantity": 0.88,
+          "share": 17.8862
+        }
+      ],
+      "total": 4.92,
+      "year": 2018
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review",
+      "selected_hhi_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 1.3684303888670663e-05,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 4.92,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 87,
+    "year": 2018,
+    "yoy": {
+      "country_count_delta": 1,
+      "hhi_delta": -2937.3999999999996,
+      "total_ratio": 0.0015802964019348993
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250410",
+    "observed_exporter_count": 88,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 92.49,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 1.16,
+      "hhi": 8606.5,
+      "reporters": 3,
+      "top": [
+        {
+          "code": null,
+          "name": "LKA",
+          "quantity": 2570.324,
+          "share": 92.4881
+        },
+        {
+          "code": null,
+          "name": "BLR",
+          "quantity": 201.032,
+          "share": 7.2337
+        },
+        {
+          "code": null,
+          "name": "GEO",
+          "quantity": 7.73,
+          "share": 0.2781
+        }
+      ],
+      "total": 2779.086,
+      "year": 2019
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review",
+      "selected_hhi_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 0.005613867583869281,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 2779.0860000000002,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 85,
+    "year": 2019,
+    "yoy": {
+      "country_count_delta": 1,
+      "hhi_delta": 1543.8999999999996,
+      "total_ratio": 564.8548780487805
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250410",
+    "observed_exporter_count": 77,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 76.54,
+      "cr3": 99.99,
+      "cr5": 100.0,
+      "effective_suppliers": 1.62,
+      "hhi": 6165.3,
+      "reporters": 4,
+      "top": [
+        {
+          "code": null,
+          "name": "NAM",
+          "quantity": 2274.1249,
+          "share": 76.5364
+        },
+        {
+          "code": null,
+          "name": "BLR",
+          "quantity": 468.151,
+          "share": 15.7558
+        },
+        {
+          "code": null,
+          "name": "MYS",
+          "quantity": 228.7236,
+          "share": 7.6978
+        },
+        {
+          "code": null,
+          "name": "CHL",
+          "quantity": 0.3,
+          "share": 0.0101
+        }
+      ],
+      "total": 2971.2995,
+      "year": 2020
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_hhi_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 0.008932459312166172,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 2971.2994999999996,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 73,
+    "year": 2020,
+    "yoy": {
+      "country_count_delta": 1,
+      "hhi_delta": -2441.2,
+      "total_ratio": 1.0691642863876827
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250410",
+    "observed_exporter_count": 85,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 83.61,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 1.38,
+      "hhi": 7258.8,
+      "reporters": 2,
+      "top": [
+        {
+          "code": null,
+          "name": "COL",
+          "quantity": 20.4,
+          "share": 83.6066
+        },
+        {
+          "code": null,
+          "name": "BDI",
+          "quantity": 4.0,
+          "share": 16.3934
+        }
+      ],
+      "total": 24.4,
+      "year": 2021
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review",
+      "selected_hhi_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 5.4045036467192034e-05,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 24.4,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 83,
+    "year": 2021,
+    "yoy": {
+      "country_count_delta": -2,
+      "hhi_delta": 1093.5,
+      "total_ratio": 0.008211895165734723
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250410",
+    "observed_exporter_count": 83,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 100.0,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 1.0,
+      "hhi": 10000.0,
+      "reporters": 1,
+      "top": [
+        {
+          "code": null,
+          "name": "NZL",
+          "quantity": 5.739,
+          "share": 100.0
+        }
+      ],
+      "total": 5.739,
+      "year": 2022
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review",
+      "selected_hhi_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 5.392168014586295e-06,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 5.739,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 82,
+    "year": 2022,
+    "yoy": {
+      "country_count_delta": -1,
+      "hhi_delta": 2741.2,
+      "total_ratio": 0.2352049180327869
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250410",
+    "observed_exporter_count": 79,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 99.93,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 1.0,
+      "hhi": 9986.7,
+      "reporters": 2,
+      "top": [
+        {
+          "code": null,
+          "name": "UKR",
+          "quantity": 1335.894,
+          "share": 99.9334
+        },
+        {
+          "code": null,
+          "name": "CIV",
+          "quantity": 0.89,
+          "share": 0.0666
+        }
+      ],
+      "total": 1336.784,
+      "year": 2023
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 0.0033071691149114605,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 1336.784,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 77,
+    "year": 2023,
+    "yoy": {
+      "country_count_delta": 1,
+      "hhi_delta": -13.299999999999272,
+      "total_ratio": 232.92977870709186
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250410",
+    "observed_exporter_count": 89,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 100.0,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 1.0,
+      "hhi": 10000.0,
+      "reporters": 1,
+      "top": [
+        {
+          "code": null,
+          "name": "LVA",
+          "quantity": 0.61,
+          "share": 100.0
+        }
+      ],
+      "total": 0.61,
+      "year": 2024
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 1.8221210211288356e-06,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 0.61,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 88,
+    "year": 2024,
+    "yoy": {
+      "country_count_delta": -1,
+      "hhi_delta": 13.299999999999272,
+      "total_ratio": 0.0004563190463081545
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250490",
+    "observed_exporter_count": 91,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 89.95,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 1.22,
+      "hhi": 8191.5,
+      "reporters": 2,
+      "top": [
+        {
+          "code": null,
+          "name": "BHR",
+          "quantity": 44.02,
+          "share": 89.9469
+        },
+        {
+          "code": null,
+          "name": "BLR",
+          "quantity": 4.92,
+          "share": 10.0531
+        }
+      ],
+      "total": 48.94,
+      "year": 2017
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight"
+    ],
+    "reported_weight_coverage": 0.00039705193998071814,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 48.940000000000005,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 89,
+    "year": 2017,
+    "yoy": null
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250490",
+    "observed_exporter_count": 94,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 100.0,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 1.0,
+      "hhi": 10000.0,
+      "reporters": 1,
+      "top": [
+        {
+          "code": null,
+          "name": "ZWE",
+          "quantity": 26.0,
+          "share": 100.0
+        }
+      ],
+      "total": 26.0,
+      "year": 2018
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review",
+      "selected_hhi_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 0.00018793102836758515,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 26.0,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 93,
+    "year": 2018,
+    "yoy": {
+      "country_count_delta": -1,
+      "hhi_delta": 1808.5,
+      "total_ratio": 0.5312627707396812
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250490",
+    "observed_exporter_count": 91,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 50.43,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 2.0,
+      "hhi": 5000.4,
+      "reporters": 2,
+      "top": [
+        {
+          "code": null,
+          "name": "UZB",
+          "quantity": 0.29,
+          "share": 50.4348
+        },
+        {
+          "code": null,
+          "name": "PER",
+          "quantity": 0.285,
+          "share": 49.5652
+        }
+      ],
+      "total": 0.575,
+      "year": 2019
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review",
+      "selected_hhi_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 4.431574431767687e-06,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 0.575,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 89,
+    "year": 2019,
+    "yoy": {
+      "country_count_delta": 1,
+      "hhi_delta": -4999.6,
+      "total_ratio": 0.022115384615384613
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250490",
+    "observed_exporter_count": 86,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 100.0,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 1.0,
+      "hhi": 10000.0,
+      "reporters": 1,
+      "top": [
+        {
+          "code": null,
+          "name": "DNK",
+          "quantity": 0.052,
+          "share": 100.0
+        }
+      ],
+      "total": 0.052,
+      "year": 2020
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review",
+      "selected_hhi_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 6.330922408595766e-07,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 0.052,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 85,
+    "year": 2020,
+    "yoy": {
+      "country_count_delta": -1,
+      "hhi_delta": 4999.6,
+      "total_ratio": 0.09043478260869565
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250490",
+    "observed_exporter_count": 90,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 60.67,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 2.16,
+      "hhi": 4623.7,
+      "reporters": 3,
+      "top": [
+        {
+          "code": null,
+          "name": "UGA",
+          "quantity": 0.29,
+          "share": 60.6695
+        },
+        {
+          "code": null,
+          "name": "BWA",
+          "quantity": 0.138,
+          "share": 28.8703
+        },
+        {
+          "code": null,
+          "name": "BLR",
+          "quantity": 0.05,
+          "share": 10.4603
+        }
+      ],
+      "total": 0.478,
+      "year": 2021
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review",
+      "selected_hhi_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 4.795275144887127e-06,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 0.478,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 87,
+    "year": 2021,
+    "yoy": {
+      "country_count_delta": 2,
+      "hhi_delta": -5376.3,
+      "total_ratio": 9.192307692307692
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250490",
+    "observed_exporter_count": 85,
+    "profile": null,
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 0.0,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 0,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 85,
+    "year": 2022,
+    "yoy": {
+      "country_count_delta": -3,
+      "hhi_delta": null,
+      "total_ratio": 0.0
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250490",
+    "observed_exporter_count": 86,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 88.01,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 1.27,
+      "hhi": 7889.9,
+      "reporters": 2,
+      "top": [
+        {
+          "code": null,
+          "name": "NAM",
+          "quantity": 1.1013,
+          "share": 88.0125
+        },
+        {
+          "code": null,
+          "name": "SEN",
+          "quantity": 0.15,
+          "share": 11.9875
+        }
+      ],
+      "total": 1.2513,
+      "year": 2023
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 1.666060974657515e-05,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 1.2512999999999999,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 84,
+    "year": 2023,
+    "yoy": {
+      "country_count_delta": 2,
+      "hhi_delta": null,
+      "total_ratio": null
+    }
+  },
+  {
+    "global_coverage": null,
+    "hs_code": "250490",
+    "observed_exporter_count": 87,
+    "profile": {
+      "band": "high",
+      "coverage": null,
+      "cr1": 100.0,
+      "cr3": 100.0,
+      "cr5": 100.0,
+      "effective_suppliers": 1.0,
+      "hhi": 10000.0,
+      "reporters": 1,
+      "top": [
+        {
+          "code": null,
+          "name": "CHL",
+          "quantity": 6.0,
+          "share": 100.0
+        }
+      ],
+      "total": 6.0,
+      "year": 2024
+    },
+    "publishable": false,
+    "quality_flags": [
+      "fewer_than_5_selected_exporters",
+      "less_than_90_percent_of_observed_reported_weight",
+      "selected_total_yoy_requires_review",
+      "selected_hhi_yoy_requires_review"
+    ],
+    "reported_weight_coverage": 5.8112122902633534e-05,
+    "scope": "Reviewed observed exporters, not world or battery anode supply",
+    "selected_total_t": 6.0,
+    "unit": "metric tonnes of traded natural graphite",
+    "unresolved_count": 86,
+    "year": 2024,
+    "yoy": {
+      "country_count_delta": -1,
+      "hhi_delta": 2110.1000000000004,
+      "total_ratio": 4.795013186286263
+    }
+  }
+]

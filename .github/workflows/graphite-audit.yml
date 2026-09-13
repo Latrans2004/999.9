@@ -30,10 +30,14 @@ jobs:
         run: |
           python -m pipeline.render
           git diff --exit-code -- '*.html' critical-minerals/data
+      - name: Render isolated mine-data preview
+        run: python -m pipeline.graphite_preview
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: natural-graphite-audit-${{ github.run_id }}
-          path: .cache/graphite-audit/
+          path: |
+            .cache/graphite-audit/
+            .cache/graphite-preview/
           include-hidden-files: true
           retention-days: 90

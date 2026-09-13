@@ -4,8 +4,10 @@ from __future__ import annotations
 import argparse
 from collections import defaultdict
 import json
+import hashlib
 import logging
 import os
+import shutil
 from pathlib import Path
 
 from . import archive, countries, entity_diagnostics, hhi, strict_comtrade
@@ -176,25 +178,95 @@ def metrics(decisions):
         if row['profile']:
             assert 0 <= row['profile']['hhi'] <= 10000
             assert 0 <= row['profile']['cr3'] <= 100
+        row['quality_flags'] = []
+        if not row['profile'] or row['profile']['reporters'] < 5:
+            row['quality_flags'].append('fewer_than_5_selected_exporters')
+        if row['reported_weight_coverage'] is None or row['reported_weight_coverage'] < 0.90:
+            row['quality_flags'].append('less_than_90_percent_of_observed_reported_weight')
+        if row['yoy']:
+            ratio = row['yoy']['total_ratio']
+            if ratio is None or not 0.7 <= ratio <= 1.3:
+                row['quality_flags'].append('selected_total_yoy_requires_review')
+            if row['yoy']['hhi_delta'] is not None and abs(row['yoy']['hhi_delta']) > 1000:
+                row['quality_flags'].append('selected_hhi_yoy_requires_review')
         previous[row['hs_code']] = row
     return result
+
+
+def attach_reviews(decisions):
+    reviews = json.loads(Path(__file__).with_name('graphite_reviews.json').read_bytes())
+    for row in decisions:
+        row['external_reviews'] = [review for review in reviews
+                                   if row['country'] in review['countries'] and row['year'] in review['years']
+                                   and row['hs_code'] in review['hs_codes']]
+        if row['external_reviews']:
+            row.update(decision='unresolved', selected_weight_t=None)
+            row['reason'] = ' '.join(r['reason'] for r in row['external_reviews'])
+    return decisions
+
+
+def measurement_audit(rows):
+    observations = []
+    for row in rows:
+        flags = []
+        weight, value = row['weight_t'], row['value_usd']
+        if weight is None:
+            flags.append('missing_weight')
+        if value is None:
+            flags.append('missing_value')
+        if weight == 0 and value and value > 0:
+            flags.append('positive_value_zero_weight')
+        if value == 0 and weight and weight > 0:
+            flags.append('positive_weight_zero_value')
+        if row.get('weight_estimated') is True:
+            flags.append('estimated_weight')
+        if row.get('weight_estimated') is None:
+            flags.append('unknown_weight_estimation_flag')
+        eligible, reason = countries.trade_eligibility(row)
+        observations.append({k: row[k] for k in ('year', 'hs_code', 'flow', 'reporter', 'partner', 'raw_path')} |
+                            {'flags': flags, 'metric_eligible_entity': eligible, 'entity_reason': reason,
+                             'unit_value_usd_t': value / weight if value is not None and weight else None})
+    return observations
+
+
+def replay_bundle(path):
+    bundle = json.loads(path.read_bytes())
+    rows = []
+    for ref in bundle['sources']:
+        source_path = (path.parent / ref['path']).resolve()
+        if not source_path.is_relative_to(path.parent.resolve()):
+            raise ValueError('Raw reference escapes audit archive')
+        body = source_path.read_bytes()
+        if hashlib.sha256(body).hexdigest() != ref['sha256']:
+            raise ValueError('Comtrade raw hash mismatch')
+        batch = strict_comtrade.normalize(json.loads(body), ref['query'], ref['query']['maxRecords'])
+        for row in batch:
+            row.update(raw_path=ref['path'], retrieved_at=ref['retrieved_at'])
+        enrich(path.parent, batch, ref)
+        rows.extend(batch)
+    if rows != bundle['trade']:
+        raise ValueError('Normalized bundle differs from archived responses')
+    return rows
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=ROOT / '.cache/graphite-audit')
     parser.add_argument('--replay', type=Path)
+    parser.add_argument('--replay-usgs', action='store_true', help='Verify and parse archived pinned PDFs in output')
     args = parser.parse_args()
     output = args.output.resolve()
-    if output == ROOT or ROOT / 'critical-minerals' in output.parents or ROOT / 'data' in output.parents:
+    if output == ROOT or output == ROOT / 'critical-minerals' or ROOT / 'critical-minerals' in output.parents or output == ROOT / 'data':
         parser.error('Output must be an isolated audit directory')
     logging.basicConfig(level=logging.INFO, format='%(levelname)s %(message)s')
     if args.replay:
-        rows = json.loads(args.replay.read_bytes())['trade']
+        rows = replay_bundle(args.replay)
+        if args.replay.parent.resolve() != output:
+            shutil.copytree(args.replay.parent / 'data/raw', output / 'data/raw', dirs_exist_ok=True)
         queries = []
     else:
         rows, queries = collect(output)
-    decisions = compare(rows)
+    decisions = attach_reviews(compare(rows))
     put(output, 'decisions.json', decisions)
     put(output, 'discrepancies.json', sorted(
         [r for r in decisions if r['flags']],
@@ -202,15 +274,23 @@ def main():
         reverse=True))
     put(output, 'metrics.json', metrics(decisions))
     put(output, 'entities.json', entity_diagnostics.summarize(rows))
+    put(output, 'measurements.json', measurement_audit(rows))
     expected = {(y, hs, f) for y in YEARS for hs in HS_CODES for f in ('X', 'M')}
     actual = {(r['year'], r['hs_code'], r['flow']) for r in rows}
     failures = [q for q in queries if q['status'] != 'ok']
+    usgs_status = 'ok'
+    try:
+        from . import graphite_usgs
+        graphite_usgs.collect(output, replay=args.replay_usgs)
+    except Exception as exc:
+        usgs_status = type(exc).__name__
     put(output, 'status.json', {'requested_years': YEARS, 'rows': len(rows),
                               'queries_complete': expected == actual and not failures,
                               'global_completeness': 'unverified', 'publishable': False,
                               'missing_queries': sorted(expected - actual),
                               'failed_queries': failures})
-    return 1 if failures or expected != actual else 0
+    put(output, 'usgs-status.json', {'status': usgs_status, 'publishable': False})
+    return 1 if failures or expected != actual or usgs_status != 'ok' else 0
 
 
 if __name__ == '__main__':

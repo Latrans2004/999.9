@@ -1,0 +1,8 @@
+{
+  "path": "data/raw/usgs/b0f949bc45e1e174ff5bef47bbd45e4d13a6a2422e50bd4a253042eb442d7cc5.pdf",
+  "query": {},
+  "retrieved_at": "2026-09-13T18:46:13+00:00",
+  "sha256": "ab3ecfdc9f4171bfef7596139a92d81f7a5f540fc90c91319752112c56e5ccea",
+  "source": "usgs",
+  "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/mcs-2019-graph.pdf"
+}

@@ -1,0 +1,8 @@
+{
+  "path": "data/raw/usgs/c9be56416bb0e74207b321d0b9a8b2e435db22e816790588d6cef2ebc65d7aab.pdf",
+  "query": {},
+  "retrieved_at": "2026-09-13T18:46:53+00:00",
+  "sha256": "4e9f71e27f85cf3269d8b47615d3ccd1346f2b75473b6d9e60d5882db1beae37",
+  "source": "usgs",
+  "url": "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021-graphite.pdf"
+}

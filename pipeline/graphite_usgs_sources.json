@@ -1,0 +1,90 @@
+[
+  {
+    "edition": 2019,
+    "path": "data/raw/usgs/b0f949bc45e1e174ff5bef47bbd45e4d13a6a2422e50bd4a253042eb442d7cc5.pdf",
+    "query": {},
+    "retrieved_at": "2026-09-13T18:46:13+00:00",
+    "reviewed_at": "2026-09-13",
+    "sha256": "ab3ecfdc9f4171bfef7596139a92d81f7a5f540fc90c91319752112c56e5ccea",
+    "source": "usgs",
+    "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/mcs-2019-graph.pdf",
+    "year": 2017
+  },
+  {
+    "edition": 2020,
+    "path": "data/raw/usgs/9e3b054fb41350bbcd06918074bafd0171ba4594706bb54400fa1c0e075785a9.pdf",
+    "query": {},
+    "retrieved_at": "2026-09-13T18:46:52+00:00",
+    "reviewed_at": "2026-09-13",
+    "sha256": "d41e4c536e95de12d09c60f6f850e1397f9e7fdf32b36217e6969eb1e64f4370",
+    "source": "usgs",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-graphite.pdf",
+    "year": 2018
+  },
+  {
+    "edition": 2021,
+    "path": "data/raw/usgs/c9be56416bb0e74207b321d0b9a8b2e435db22e816790588d6cef2ebc65d7aab.pdf",
+    "query": {},
+    "retrieved_at": "2026-09-13T18:46:53+00:00",
+    "reviewed_at": "2026-09-13",
+    "sha256": "4e9f71e27f85cf3269d8b47615d3ccd1346f2b75473b6d9e60d5882db1beae37",
+    "source": "usgs",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021-graphite.pdf",
+    "year": 2019
+  },
+  {
+    "edition": 2022,
+    "path": "data/raw/usgs/6c646104cdd566aab97b64102da9dd9e1c405e60b188b7b61dcb0b8749ebec1e.pdf",
+    "query": {},
+    "retrieved_at": "2026-09-13T18:46:55+00:00",
+    "reviewed_at": "2026-09-13",
+    "sha256": "547293d0291b483e042d6715037cc3332c9f7fcaa1b302e376d82e69ad0eae48",
+    "source": "usgs",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022-graphite.pdf",
+    "year": 2020
+  },
+  {
+    "edition": 2023,
+    "path": "data/raw/usgs/fa5ef145a6f9db6599d30cf75f0e378646328623d6bd8fc6c11d4cbb3202cfe0.pdf",
+    "query": {},
+    "retrieved_at": "2026-09-13T18:46:57+00:00",
+    "reviewed_at": "2026-09-13",
+    "sha256": "f7f93d825b1aa09818d0c9fcf8b9a4bc8018d65a699bc5a5da6fe98a8742e21a",
+    "source": "usgs",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2023/mcs2023-graphite.pdf",
+    "year": 2021
+  },
+  {
+    "edition": 2024,
+    "path": "data/raw/usgs/f9e21976fbcb180857fc843a14afaa252d89607d9f216bec36dad6c29bcfb977.pdf",
+    "query": {},
+    "retrieved_at": "2026-09-13T18:46:59+00:00",
+    "reviewed_at": "2026-09-13",
+    "sha256": "00ab8511468509f87a1b9b5d9393d5c172b3877cd3f7036304e122025c1b9742",
+    "source": "usgs",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-graphite.pdf",
+    "year": 2022
+  },
+  {
+    "edition": 2025,
+    "path": "data/raw/usgs/4991a26cedf817e88f20b31f7c08f03fdad52290f513822c5c5921c420d01ff2.pdf",
+    "query": {},
+    "retrieved_at": "2026-09-13T18:47:01+00:00",
+    "reviewed_at": "2026-09-13",
+    "sha256": "96f088e1346022462def556b9b470e0b14c290be496d4580ec0e1f93f2b88d88",
+    "source": "usgs",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-graphite.pdf",
+    "year": 2023
+  },
+  {
+    "edition": 2026,
+    "path": "data/raw/usgs/6e23e4e85842330c0d30020876267c30b76ede991e05750ba443e13eafe96bf0.pdf",
+    "query": {},
+    "retrieved_at": "2026-09-13T18:47:02+00:00",
+    "reviewed_at": "2026-09-13",
+    "sha256": "09ec621ed6400162e7f0b09b1e0ae8260a976d968c1936d69592fe5347f8df38",
+    "source": "usgs",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-graphite.pdf",
+    "year": 2024
+  }
+]

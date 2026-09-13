@@ -1,0 +1,114 @@
+[
+  {
+    "edition": 2019,
+    "source": {
+      "path": "data/raw/usgs/b0f949bc45e1e174ff5bef47bbd45e4d13a6a2422e50bd4a253042eb442d7cc5.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-13T18:46:13+00:00",
+      "sha256": "ab3ecfdc9f4171bfef7596139a92d81f7a5f540fc90c91319752112c56e5ccea",
+      "source": "usgs",
+      "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/mcs-2019-graph.pdf"
+    },
+    "status": "visually_reviewed_2026-09-13",
+    "text": "World Mine Production and Reserves: The reserves data for Brazil, China, North Korea, Norway, and Vietnam \nwere revised based on information reported by graphite-producing companies and the Governments of those \ncountries. \n \n  Mine production Reserves2 \n  2017 2018e \nUnited States — — (3) \nBrazil 90,000 95,000 72,000,000 \nCanada 40,000 40,000 (3) \nChina 625,000 630,000 73,000,000 \nIndia 35,000 35,000 8,000,000 \nKorea, North 5,500 6,000 2,000,000 \nMadagascar 9,000 9,000 1,600,000 \nMexico 9,000 9,000 3,100,000 \nMozambique 300 20,000 17,000,000 \nNamibia 2,220 2,200 (3) \nNorway 15,500 16,000 600,000 \nPakistan 14,000 14,000 (3) \nRussia 17,000 17,000 (3) \nSri Lanka 3,500 4,000 (3) \nTanzania — — 17,000,000 \nTurkey 2,300 2,000 90,000,000 \nUkraine 20,000 20,000 (3) \nVietnam 5,000 5,000 7,600,000 \nZimbabwe 1,580 2,000 (3) \nOther     1,900     4,000              _ (3) \n World total (rounded) 897,000 930,000 300,000,000 \n \n",
+    "year": 2017
+  },
+  {
+    "edition": 2020,
+    "source": {
+      "path": "data/raw/usgs/9e3b054fb41350bbcd06918074bafd0171ba4594706bb54400fa1c0e075785a9.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-13T18:46:52+00:00",
+      "sha256": "d41e4c536e95de12d09c60f6f850e1397f9e7fdf32b36217e6969eb1e64f4370",
+      "source": "usgs",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-graphite.pdf"
+    },
+    "status": "visually_reviewed_2026-09-13",
+    "text": "World Mine Production and Reserves: Reserves for Mozambique and Tanzania were revised based on information \nreported by graphite-producing companies and the Governments of those countries. \n \n  Mine production Reserves2 \n  2018 2019e \nUnited States — — (3) \nAustria 1,000 1,000 (3) \nBrazil 95,000 96,000 72,000,000 \nCanada 40,000 40,000 (3) \nChina 693,000 700,000 73,000,000 \nGermany 800 800 (3) \nIndia 35,000 35,000 8,000,000 \nKorea, North 6,000 6,000 2,000,000 \nMadagascar 46,900 47,000 1,600,000 \nMexico 9,000 9,000 3,100,000 \nMozambique 104,000 100,000 25,000,000 \nNamibia 3,460 3,500 (3) \nNorway 16,000 16,000 600,000 \nPakistan 14,000 14,000 (3) \nRussia 25,200 25,000 (3) \nSri Lanka 4,000 4,000 (3) \nTanzania 150 150 18,000,000 \nTurkey 2,000 2,000 90,000,000 \nUkraine 20,000 20,000 (3) \nVietnam 5,000 5,000 7,600,000 \nZimbabwe 2,000 2,000 (3) \nOther               200           200                 (3) \n World total (rounded) 1,120,000 1,100,000 300,000,000 \n \n",
+    "year": 2018
+  },
+  {
+    "edition": 2021,
+    "source": {
+      "path": "data/raw/usgs/c9be56416bb0e74207b321d0b9a8b2e435db22e816790588d6cef2ebc65d7aab.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-13T18:46:53+00:00",
+      "sha256": "4e9f71e27f85cf3269d8b47615d3ccd1346f2b75473b6d9e60d5882db1beae37",
+      "source": "usgs",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021-graphite.pdf"
+    },
+    "status": "visually_reviewed_2026-09-13",
+    "text": "World Mine Production and Reserves: Reserves for Brazil, Madagascar, Sri Lanka, and Tanzania were revised \nbased on information reported by graphite-producing companies and the Governments of those countries. \n \nMine production \n \nReserves2 \n2019 2020e \nUnited States — —  (3) \nAustria 1,000 1,000  (3) \nBrazil 96,000 95,000  70,000,000 \nCanada 11,000 10,000  (3) \nChina 700,000 650,000  73,000,000 \nGermany 800 800  (3) \nIndia 35,000 34,000  8,000,000 \nKorea, North 6,000 5,000  2,000,000 \nMadagascar 48,000 47,000  26,000,000 \nMexico 9,000 8,000  3,100,000 \nMozambique 107,000 120,000  25,000,000 \nNorway 16,000 15,000  600,000 \nPakistan 14,000 13,000  (3) \nRussia 25,100 24,000  (3) \nSri Lanka 4,000 3,500  1,500,000 \nTanzania 150 150  17,000,000 \nTurkey 2,000 1,500  90,000,000 \nUkraine 20,000 19,000  (3) \nUzbekistan 100 100  7,600,000 \nVietnam        5,000        4,500                  (3) \nWorld total (rounded) 1,100,000 1,100,000  320,000,000 \n",
+    "year": 2019
+  },
+  {
+    "edition": 2022,
+    "source": {
+      "path": "data/raw/usgs/6c646104cdd566aab97b64102da9dd9e1c405e60b188b7b61dcb0b8749ebec1e.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-13T18:46:55+00:00",
+      "sha256": "547293d0291b483e042d6715037cc3332c9f7fcaa1b302e376d82e69ad0eae48",
+      "source": "usgs",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022-graphite.pdf"
+    },
+    "status": "visually_reviewed_2026-09-13",
+    "text": "World Mine Production and Reserves: Reserves for Tanzania were revised based on information reported by \ngraphite-producing companies and Government reports. \n \n     Mine production Reserves3 \n2020 2021e \nUnited States — — (4) \nAustria 500 500 (4) \nBrazil 63,600 68,000 70,000,000 \nCanada 8,000 8,600 (4) \nChina 762,000 820,000 73,000,000 \nGermany 300 300 (4) \nIndia 6,000 6,500 8,000,000 \nKorea, North 8,100 8,700 2,000,000 \nMadagascar 20,900 22,000 26,000,000 \nMexico 3,300 3,500 3,100,000 \nMozambique 28,000 30,000 25,000,000 \nNorway 12,000 13,000 600,000 \nRussia 25,000 27,000 (4) \nSri Lanka 4,000 4,300 1,500,000 \nTanzania — 150 18,000,000 \nTurkey 2,500 2,700 90,000,000 \nUkraine 16,000 17,000 (4) \nUzbekistan 100 110 7,600,000 \nVietnam     5,000        5,400                 (4) \nWorld total (rounded) 966,000 1,000,000 320,000,000 \n",
+    "year": 2020
+  },
+  {
+    "edition": 2023,
+    "source": {
+      "path": "data/raw/usgs/fa5ef145a6f9db6599d30cf75f0e378646328623d6bd8fc6c11d4cbb3202cfe0.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-13T18:46:57+00:00",
+      "sha256": "f7f93d825b1aa09818d0c9fcf8b9a4bc8018d65a699bc5a5da6fe98a8742e21a",
+      "source": "usgs",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2023/mcs2023-graphite.pdf"
+    },
+    "status": "visually_reviewed_2026-09-13",
+    "text": "World Mine Production and Reserves: Reserves for Brazil, China, and Russia were revised based on company \nand Government reports. \n \nMine production Reserves3 \n2021 2022e \nUnited States — — (4) \nAustria 500 500 (4) \nBrazil 82,000 87,000 74,000,000 \nCanada 12,000 15,000 (4) \nChina 820,000 850,000 52,000,000 \nGermany 250 250 (4) \nIndia 7,000 8,300 8,000,000 \nKorea, North 8,100 8,100 2,000,000 \nKorea, Republic of 10,500 17,000 1,800,000 \nMadagascar 70,000 110,000 26,000,000 \nMexico 2,100 1,900 3,100,000 \nMozambique 72,000 170,000 25,000,000 \nNorway 6,290 10,000 600,000 \nRussia 15,000 15,000 14,000,000 \nSri Lanka 3,000 3,000 1,500,000 \nTanzania — 8,000 18,000,000 \nTurkey 2,700 2,900 90,000,000 \nUkraine 10,000 3,000 (4) \nUzbekistan 110 — 7,600,000 \nVietnam        5,000        5,000                 (4) \nWorld total (rounded) 1,130,000 1,300,000 330,000,000 \n",
+    "year": 2021
+  },
+  {
+    "edition": 2024,
+    "source": {
+      "path": "data/raw/usgs/f9e21976fbcb180857fc843a14afaa252d89607d9f216bec36dad6c29bcfb977.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-13T18:46:59+00:00",
+      "sha256": "00ab8511468509f87a1b9b5d9393d5c172b3877cd3f7036304e122025c1b9742",
+      "source": "usgs",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-graphite.pdf"
+    },
+    "status": "visually_reviewed_2026-09-13",
+    "text": "World Mine Production and Reserves: Reserves for Canada, China, India, Madagascar, and Turkey were revised \nbased on company and Government reports. \n Mine production Reserves3 \n 2022 2023e  \nUnited States — — (4) \nAustria 500 500 (4) \nBrazil e72,000 73,000 74,000,000 \nCanada 13,000 3,500 5,700,000  \nChina 1,210,000 1,230,000 78,000,000 \nGermany 170 150 (4) \nIndia 11,000 11,500 8,600,000 \nKorea, North e8,100 8,100 2,000,000 \nKorea, Republic of 23,800 27,000 1,800,000 \nMadagascar e130,000 100,000 24,000,000 \nMexico 2,000 2,000 3,100,000 \nMozambique 166,000 96,000 25,000,000 \nNorway 10,380 7,200 600,000 \nRussia e16,000 16,000 14,000,000 \nSri Lanka 2,600 2,200 1,500,000 \nTanzania e6,120 6,000 18,000,000 \nTurkey 2,800 2,000 6,900,000 \nUkraine 1,000 2,000 (4) \nVietnam           500           500                 (4) \nWorld total (rounded) 1,680,000 1,600,000 280,000,000 \n",
+    "year": 2022
+  },
+  {
+    "edition": 2025,
+    "source": {
+      "path": "data/raw/usgs/4991a26cedf817e88f20b31f7c08f03fdad52290f513822c5c5921c420d01ff2.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-13T18:47:01+00:00",
+      "sha256": "96f088e1346022462def556b9b470e0b14c290be496d4580ec0e1f93f2b88d88",
+      "source": "usgs",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-graphite.pdf"
+    },
+    "status": "visually_reviewed_2026-09-13",
+    "text": "World Mine Production and Reserves: Reserves for Canada, China, Madagascar, and Vietnam were revised \nbased on company and Government reports. \n Mine production Reserves4 \n 2023 2024e  \nUnited States — — (5) \nAustria 500 500 (5) \nBrazil 66,300 68,000 74,000,000 \nCanada 5,470 20,000 5,900,000  \nChina 1,210,000 1,270,000 81,000,000 \nGermany 180 170 (5) \nIndia 25,600 27,800 8,600,000 \nKorea, North e8,100 8,100 2,000,000 \nKorea, Republic of 9,620 9,600 1,800,000 \nMadagascar e63,000 89,000 27,000,000 \nMexico 1,300 900 3,100,000 \nMozambique e98,000 75,000 25,000,000 \nNorway 6,480 7,000 600,000 \nRussia e15,000 20,000 14,000,000 \nSri Lanka 3,000 3,300 1,500,000 \nTanzania e13,200 25,000 18,000,000 \nTurkey 2,800 3,100 6,900,000 \nUkraine 1,670 1,200 (5) \nVietnam        2,500        2,000     9,700,000 \nWorld total (rounded) 1,530,000 1,600,000 290,000,000 \n",
+    "year": 2023
+  },
+  {
+    "edition": 2026,
+    "source": {
+      "path": "data/raw/usgs/6e23e4e85842330c0d30020876267c30b76ede991e05750ba443e13eafe96bf0.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-13T18:47:02+00:00",
+      "sha256": "09ec621ed6400162e7f0b09b1e0ae8260a976d968c1936d69592fe5347f8df38",
+      "source": "usgs",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-graphite.pdf"
+    },
+    "status": "visually_reviewed_2026-09-13",
+    "text": "World Mine Production and Reserves: Significant revisions were made to the 2024 production for Austria, Brazil, \nCanada, India, the Republic of Korea, Mexico, Mozambique, Norway, Tanzania, Ukraine, and Vietnam based on \ncompany and Government reports. Reserves for China were revised based on Government reports. \nMine production Reserves3 \n2024 2025e \nUnited States — — (4) \nAustria 100 200 (4) \nBrazil 58,000 65,000 74,000,000 \nCanada 11,700 8,000 5,900,000 \nChina 1,270,000 1,400,000 100,000,000 \nGermany 140 140 (4) \nIndia 17,600 17,000 8,600,000 \nKorea, North e8,100 8,000 2,000,000 \nKorea, Republic of 1,000 500 1,800,000 \nMadagascar 85,000 80,000 27,000,000 \nMexico 706 740 3,100,000 \nMozambique 39,000 60,000 25,000,000 \nNorway 5,340 6,600 600,000 \nRussia e20,000 25,000 14,000,000 \nSri Lanka 3,000 3,200 1,500,000 \nTanzania e27,000 75,000 18,000,000 \nTurkey 2,600 2,200 6,900,000 \nUkraine 900 800 (4) \nVietnam  500  500  9,700,000 \nWorld total (rounded) 1,550,000 1,800,000 310,000,000 \n",
+    "year": 2024
+  }
+]

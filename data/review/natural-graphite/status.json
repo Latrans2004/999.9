@@ -1,0 +1,18 @@
+{
+  "failed_queries": [],
+  "global_completeness": "unverified",
+  "missing_queries": [],
+  "publishable": false,
+  "queries_complete": true,
+  "requested_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "rows": 23458
+}
