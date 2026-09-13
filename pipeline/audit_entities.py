@@ -2,6 +2,7 @@
 import json
 import logging
 import os
+import subprocess
 from pathlib import Path
 
 from . import archive, countries, entity_diagnostics, strict_comtrade, strict_usgs, update_minerals
@@ -13,7 +14,8 @@ def run(root):
     key = os.environ.get('COMTRADE_API_KEY', '').strip()
     if not key:
         raise ValueError('COMTRADE_API_KEY is required for the complete audit')
-    report = {'queries': [], 'unmapped': {}}
+    report = {'queries': [], 'unmapped': {}, 'revision': subprocess.check_output(
+        ['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()}
     normalized, references = [], []
     for year in range(settings['start_year'], settings['end_year'] + 1):
         for hs in settings['hs_codes']:
@@ -66,8 +68,15 @@ def run(root):
     (root / 'entity-diagnostics.json').write_bytes(archive.encode(entity_diagnostics.summarize(normalized)))
     analysis = {'queries': len(report['queries']), 'rows': len(normalized), 'published': False}
     try:
+        analysis['stage'] = 'usgs'
         production, sources = strict_usgs.collect(root, settings['usgs'])
         bundle = {'trade': normalized, 'production': production, 'sources': references + sources}
+        analysis['stage'] = 'assemble'
+        catalog = update_minerals.read(root / 'critical-minerals/data/catalog.json')
+        entry = next(e for e in catalog['minerals'] if e['slug'] == 'lithium')
+        processed, _ = update_minerals.assemble(bundle, settings, entry)
+        analysis['concentration'] = processed['concentration']
+        analysis['stage'] = 'publication_validation_and_render'
         changed = update_minerals.run(root, bundle=bundle)
         snapshot = update_minerals.read(root / 'data/processed/lithium/snapshot.json')
         analysis.update(status='ok', generated_changed=changed, validation=snapshot['metadata']['validation'],

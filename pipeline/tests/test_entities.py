@@ -2,7 +2,7 @@ import copy
 import json
 import logging
 import pytest
-from pipeline import countries, entity_diagnostics, process_trade, strict_comtrade, update_minerals
+from pipeline import audit_entities, countries, entity_diagnostics, process_trade, strict_comtrade, update_minerals
 from pipeline.tests.test_strict_pipeline import api_row, query, row, CONFIG, ROOT, synthetic_bundle, copy_repo
 
 
@@ -99,3 +99,24 @@ def test_replay_cannot_spoof_entity_identity():
     entry = json.loads((ROOT/'critical-minerals/data/catalog.json').read_text(encoding='utf-8'))['minerals'][0]
     with pytest.raises(ValueError, match='Invalid normalized entity'):
         update_minerals.assemble(bundle, settings, entry)
+
+
+def test_full_audit_attempts_all_queries_even_after_a_fetch_failure(tmp_path, monkeypatch):
+    (tmp_path/'pipeline').mkdir()
+    (tmp_path/'pipeline/minerals.json').write_text(json.dumps({'minerals': {'lithium': CONFIG}}))
+    monkeypatch.setenv('COMTRADE_API_KEY', 'test-only')
+    monkeypatch.setattr(audit_entities.subprocess, 'check_output', lambda *a, **k: 'test-revision')
+    calls = []
+    def get(url, *, params, **kwargs):
+        calls.append(params)
+        if len(calls) == 2: raise ValueError('Simulated upstream outage')
+        observation = {**api_row(), 'period': params['period'], 'cmdCode': params['cmdCode'],
+                       'flowCode': params['flowCode']}
+        return json.dumps({'data': [observation], 'count': 1}).encode()
+    monkeypatch.setattr(audit_entities.http, 'get', get)
+    with pytest.raises(ValueError, match='Some queries failed'):
+        audit_entities.run(tmp_path)
+    assert len(calls) == 48
+    report = json.loads((tmp_path/'entity-audit.json').read_text(encoding='utf-8'))
+    assert sum(q['status'] == 'ok' for q in report['queries']) == 47
+    assert report['queries'][1]['error'] == 'Simulated upstream outage'
