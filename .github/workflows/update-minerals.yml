@@ -1,0 +1,82 @@
+name: Update lithium data
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mineral-data-refresh
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      revision: ${{ steps.commit.outputs.revision }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r pipeline/requirements.txt
+      - name: Unit, regression and transaction tests
+        run: python -m pytest pipeline/tests -q
+      - name: Fetch, archive, process, validate and stage site
+        env:
+          COMTRADE_API_KEY: ${{ secrets.COMTRADE_API_KEY }}
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pipeline.update_minerals --mineral lithium 2>&1 | tee update.log
+      - name: Verify reproducible HTML
+        run: |
+          python - <<'PY'
+          import pathlib, subprocess, sys
+          paths = list(pathlib.Path('.').glob('*.html')) + list(pathlib.Path('critical-minerals').rglob('*.html'))
+          before = {p: p.read_bytes() for p in paths}
+          subprocess.run([sys.executable, '-m', 'pipeline.render'], check=True)
+          assert all(p.read_bytes() == value for p, value in before.items()), 'Render is not deterministic'
+          PY
+      - name: Commit only changed accepted data
+        id: commit
+        shell: bash
+        run: |
+          if git diff --quiet -- critical-minerals/data/minerals/lithium.json && [ -z "$(git ls-files --others --exclude-standard critical-minerals/data/minerals/lithium.json)" ]; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            echo 'Validated data unchanged. No commit.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name '999.9 pipeline'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/raw data/processed critical-minerals/data critical-minerals/*.html critical-minerals/minerals/*.html index.html 404.html
+          git commit -m 'data: validated lithium refresh'
+          git push origin HEAD:main
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo 'Validated lithium data committed; deployment follows.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve raw observations and diagnostics, including rejected runs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lithium-observations-${{ github.run_id }}
+          path: |
+            update.log
+            data/raw/
+          retention-days: 90
+      - name: Failure summary
+        if: failure()
+        run: echo 'Update failed. No invalid dataset was deployed. Review update.log and the raw observation artifact.' >> "$GITHUB_STEP_SUMMARY"
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml
+    with:
+      revision: ${{ needs.update.outputs.revision }}

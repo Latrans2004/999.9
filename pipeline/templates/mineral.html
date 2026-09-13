@@ -151,6 +151,18 @@
                  "Share of world export value by reporting country, from UN Comtrade, covering " ~ (mineral.hs_label or "the relevant HS codes") ~ ". This captures processing and refining that mine statistics do not.",
                  "UN Comtradeにもとづく、報告国別の世界輸出額シェア。対象は" ~ (mineral.hs_label_ja or mineral.hs_label or "該当するHSコード") ~ "。鉱山統計が捉えない加工・精錬の段階を反映する。") }}
 
+  {% if mineral.audit_data_url %}
+  <section class="panel">
+    <h3 data-i18n-text="段階別データと採用根拠">Stage data and provenance</h3>
+    <p data-i18n-text="段階別の重量指標は、上の輸出額ベースの指標とは異なります。国別の自己申告値・ミラー値・採用値と、未検証・推計の区分を確認できます。">Stage weight metrics differ from the export-value index above. Country records retain reported, mirror and selected quantities, including unverified corrections and estimates.</p>
+    <p>
+      <a href="{{ root }}critical-minerals/data/{{ mineral.slug }}/concentration.json">HHI / CR3 JSON</a> ·
+      <a href="{{ root }}critical-minerals/data/{{ mineral.slug }}/trade.csv" data-i18n-text="国別採用値 CSV">Country selection CSV</a> ·
+      <a href="{{ root }}critical-minerals/data/{{ mineral.slug }}/trade.json" data-i18n-text="国別採用根拠 JSON">Country provenance JSON</a> ·
+      <a href="{{ root }}critical-minerals/data/{{ mineral.slug }}/metadata.json" data-i18n-text="出典・更新履歴">Sources and update metadata</a>
+    </p>
+  </section>
+  {% endif %}
   {% if mineral.caveats %}
   <section>
     <div class="section-head">

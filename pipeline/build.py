@@ -188,6 +188,18 @@ def run(only: list[str] | None = None, *, fixtures: bool = False) -> dict:
         if not minerals:
             raise SystemExit(f"no mineral in the catalog matches {only}")
 
+    # Configured minerals use the strict transaction, even through the old entry point.
+    if not fixtures:
+        strict_config = json.loads((REPO_ROOT / 'pipeline/minerals.json').read_text(encoding='utf-8'))
+        strict_slugs = set(strict_config['minerals'])
+        for mineral in minerals:
+            if mineral['slug'] in strict_slugs:
+                from .update_minerals import run as strict_run
+                strict_run(REPO_ROOT, mineral['slug'])
+        minerals = [m for m in minerals if m['slug'] not in strict_slugs]
+        if not minerals:
+            return json.loads((DATA_DIR / 'index.json').read_text(encoding='utf-8'))
+
     summaries = []
     failures = []
     for mineral in minerals:

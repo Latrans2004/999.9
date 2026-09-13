@@ -14,6 +14,16 @@ file and a fetch adapter, not a new site.
 
 ## Getting it running
 
+### Lithium automatic updates
+
+Lithium now has a strict weekly update pipeline. Start with
+[the lithium operations guide](docs/lithium-pipeline.md) for API authentication,
+reviewed USGS updates, raw archives, Excel comparisons and validation gates.
+Run **Update lithium data** in Actions. Complete bilateral retrieval requires
+`COMTRADE_API_KEY`; it deliberately does not publish truncated preview data.
+`python -m pipeline.build --only lithium` also uses this strict path.
+The legacy **Refresh data** workflow is now manual-only for other minerals.
+
 ### 1. Push it
 
 ```bash
@@ -55,14 +65,18 @@ Actions → **Refresh data** → *Run workflow*. This is the run that turns the
 "awaiting first build" placeholders into real figures. It commits the JSON and
 the regenerated pages, then redeploys.
 
-### 5. Optional: a UN Comtrade key
+### 5. A UN Comtrade key
 
-Without a key the pipeline uses Comtrade's free preview endpoint, which caps a
+For the legacy adapters of other minerals, without a key the pipeline uses Comtrade's free preview endpoint, which caps a
 response at 500 rows. That is usually enough for one commodity code in one year,
 but not always. A free key from
 [comtradedeveloper.un.org](https://comtradedeveloper.un.org/) lifts the cap: add
 it as a repository secret named `COMTRADE_API_KEY` and the adapter switches
 endpoints on its own.
+
+Lithium instead requires a key and treats row caps as a failed update.
+Its strict adapter requests at most 100,000 rows per query; access limits depend
+on the subscription. An authenticated endpoint is not an uncapped endpoint.
 
 ---
 
@@ -205,9 +219,14 @@ stopgap, transcribe the figures into
 `critical-minerals/data/manual/world_production.csv` — the pipeline reads it
 whenever automatic parsing produces nothing for a commodity.
 
-Nothing in this repository estimates, interpolates or imputes a missing figure.
+The legacy adapters do not estimate, interpolate or impute a missing figure.
 A source that fails produces an empty state on the page and a note in the build
 output, which is the intended behaviour.
+
+The strict lithium path instead preserves accepted data and exits nonzero on
+failure. Its separate weight-analysis output records the pre-existing Excel
+estimates and unverified corrections explicitly; these do not alter the site's
+reported-USD headline. See the lithium guide before interpreting them.
 
 ---
 
