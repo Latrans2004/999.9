@@ -1,0 +1,43 @@
+name: Audit natural graphite (no publication)
+on:
+  push:
+    branches: [codex/natural-graphite-audit]
+    paths:
+      - 'pipeline/graphite*.py'
+      - '.github/workflows/graphite-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: natural-graphite-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r pipeline/requirements.txt
+      - run: python -m pytest pipeline/tests -q
+      - name: Collect and compare without publishing
+        env:
+          COMTRADE_API_KEY: ${{ secrets.COMTRADE_API_KEY }}
+        run: python -m pipeline.graphite
+      - name: Check existing site generation
+        run: |
+          python -m pipeline.render
+          git diff --exit-code -- '*.html' critical-minerals/data
+      - name: Render isolated mine-data preview
+        run: python -m pipeline.graphite_preview
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: natural-graphite-audit-${{ github.run_id }}
+          path: |
+            .cache/graphite-audit/
+            .cache/graphite-preview/
+          include-hidden-files: true
+          retention-days: 90

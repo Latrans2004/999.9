@@ -1,0 +1,25 @@
+[
+  {
+    "countries": ["USA"], "years": [2020, 2021], "hs_codes": ["250490"],
+    "decision": "unresolved",
+    "source_url": "https://pubs.usgs.gov/myb/vol1/2021/myb1-2021-graphite.pdf",
+    "locator": "Table 5, printed page 32.13; natural graphite column and footnote 3",
+    "reason": "USGS (source: US Census Bureau) reports all-natural-graphite exports of 5,920 t in 2020 and 8,670 t in 2021, covering both 250410 and 250490. This contradicts the scale of the observed mirror totals dominated by Dominican Republic, but does not provide a current HS250490-specific replacement. Keep unresolved; do not substitute aggregate natural exports or synthetic graphite exports. Table uses free-alongside-ship values and an August 2022 data vintage."
+  },
+  {
+    "countries": ["MOZ"], "years": [2018, 2022, 2024], "hs_codes": ["250410"],
+    "decision": "unresolved",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-graphite.pdf",
+    "additional_source_urls": ["https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-graphite.pdf", "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-graphite.pdf"],
+    "locator": "World Mine Production tables, second page; MCS 2020/2024/2026 respectively",
+    "reason": "USGS reports Mozambique mine output of 104,000 t (2018), 166,000 t (2022), and 39,000 t (2024). This supplies scale and revision context, not an export measurement: stock changes, trade timing and re-exports can differ. Neither Comtrade side is validated by mine output. INE Industrial Statistics 2022 link returned HTTP 404 on 2026-09-13. Keep unresolved pending annual HS-specific customs reconciliation."
+  },
+  {
+    "countries": ["PRK"], "years": [2017, 2018], "hs_codes": ["250490"],
+    "decision": "unresolved",
+    "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/mcs-2019-graph.pdf",
+    "additional_source_urls": ["https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-graphite.pdf"],
+    "locator": "World Mine Production table, second page",
+    "reason": "USGS mine output is 5,500 t for 2017 and 6,000 t for 2018. Mirror observations substantially exceed this scale while own exports are absent. Mine production does not bound exports and cannot establish classification or mirror completeness. Keep unresolved, do not replace missing exports with the observed mirror."
+  }
+]
