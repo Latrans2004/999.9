@@ -3,6 +3,7 @@ from __future__ import annotations
 from collections import defaultdict
 from statistics import median
 from .hhi import concentration
+from . import countries
 
 
 def total(values):
@@ -12,6 +13,18 @@ def total(values):
 
 
 def build(rows, config):
+    # Filtering here covers mirrors, partner-sum recovery and China imports,
+    # while the archived/normalized observations remain complete.
+    rows = [r for r in rows if countries.trade_eligibility(r)[0]]
+    return select_quantities(rows, config)
+
+
+def select_quantities(rows, config):
+    """Legacy quantity-selection method, on an explicitly chosen population.
+
+    Excel reconciliation uses its original population (including S19); production
+    callers use build(), which applies the common entity policy first.
+    """
     world = {}
     bilateral = defaultdict(list)
     for r in rows:

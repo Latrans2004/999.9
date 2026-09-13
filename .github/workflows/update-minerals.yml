@@ -82,6 +82,11 @@ jobs:
           path: |
             update.log
             entity-audit.json
+            entity-diagnostics.json
+            analysis-audit.json
+            data/processed/lithium/
+            critical-minerals/data/lithium/
+            critical-minerals/minerals/lithium.html
             data/raw/
           retention-days: 90
       - name: Failure summary

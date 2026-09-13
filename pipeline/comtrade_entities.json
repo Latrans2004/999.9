@@ -1,0 +1,337 @@
+{
+  "source": "https://comtradeapi.un.org/files/v1/app/reference/partnerAreas.json",
+  "retrieved_date": "2026-09-13",
+  "source_sha256": "1f62551d0c4783c8e89954ccf024188d9412fd249650e8f12fb63fb646bab2bd",
+  "note": "Comtrade identifiers/names/dates from source; kind is a reviewed statistical classification, not a sovereignty determination. Channel Islands and former customs unions are aggregates.",
+  "entities": [
+    {
+      "code": 0,
+      "iso": "W00",
+      "name": "World",
+      "kind": "aggregate",
+      "expired": null
+    },
+    {
+      "code": 80,
+      "iso": "ATB",
+      "name": "Br. Antarctic Terr.",
+      "kind": "territory",
+      "expired": null
+    },
+    {
+      "code": 129,
+      "iso": "A49",
+      "name": "Caribbean, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 200,
+      "iso": "CSK",
+      "name": "Czechoslovakia (...1992)",
+      "kind": "country",
+      "expired": "1992-12-31T00:00:00"
+    },
+    {
+      "code": 221,
+      "iso": "E29",
+      "name": "Eastern Europe, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 278,
+      "iso": "DDR",
+      "name": "Dem. Rep. of Germany (...1990)",
+      "kind": "country",
+      "expired": "1990-12-31T00:00:00"
+    },
+    {
+      "code": 290,
+      "iso": "F49",
+      "name": "Northern Africa, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 412,
+      "iso": "_KS",
+      "name": "Kosovo",
+      "kind": "country",
+      "expired": null
+    },
+    {
+      "code": 457,
+      "iso": "_SK",
+      "name": "Sarawak",
+      "kind": "territory",
+      "expired": "1963-12-31T00:00:00"
+    },
+    {
+      "code": 459,
+      "iso": "_PM",
+      "name": "Peninsula Malaysia (...1963)",
+      "kind": "territory",
+      "expired": "1963-12-31T00:00:00"
+    },
+    {
+      "code": 461,
+      "iso": "_SH",
+      "name": "Sabah (...1963)",
+      "kind": "territory",
+      "expired": "1963-12-31T00:00:00"
+    },
+    {
+      "code": 471,
+      "iso": "R91",
+      "name": "CACM, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 472,
+      "iso": "_AC",
+      "name": "Africa CAMEU region, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 473,
+      "iso": "A79",
+      "name": "LAIA, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 488,
+      "iso": "_MI",
+      "name": "Midway Islands",
+      "kind": "territory",
+      "expired": null
+    },
+    {
+      "code": 490,
+      "iso": "S19",
+      "name": "Other Asia, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 492,
+      "iso": "MCO",
+      "name": "Europe EU, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 527,
+      "iso": "O19",
+      "name": "Oceania, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 530,
+      "iso": "ANT",
+      "name": "Netherlands Antilles (...2010)",
+      "kind": "territory",
+      "expired": "2010-10-31T00:00:00"
+    },
+    {
+      "code": 532,
+      "iso": "ANT",
+      "name": "Netherlands Antilles and Aruba (...1985)",
+      "kind": "territory",
+      "expired": "1985-12-31T00:00:00"
+    },
+    {
+      "code": 536,
+      "iso": "NTZ",
+      "name": "Neutral Zone",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 568,
+      "iso": "E19",
+      "name": "Other Europe, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 577,
+      "iso": "F19",
+      "name": "Other Africa, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 582,
+      "iso": "PCI",
+      "name": "Pacific Isds (...1991)",
+      "kind": "territory",
+      "expired": "1991-12-31T00:00:00"
+    },
+    {
+      "code": 592,
+      "iso": "PCZ",
+      "name": "Panama-Canal-Zone (...1977)",
+      "kind": "territory",
+      "expired": "1977-12-31T00:00:00"
+    },
+    {
+      "code": 636,
+      "iso": "A79",
+      "name": "Rest of America, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 637,
+      "iso": "A59",
+      "name": "North America and Central America, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 647,
+      "iso": "_RI",
+      "name": "Ryukyu Isd",
+      "kind": "territory",
+      "expired": "1972-12-31T00:00:00"
+    },
+    {
+      "code": 697,
+      "iso": "R20",
+      "name": "Europe EFTA, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 698,
+      "iso": "_SM",
+      "name": "Sikkim, Protectorate of India (...1974)",
+      "kind": "territory",
+      "expired": "1974-12-31T00:00:00"
+    },
+    {
+      "code": 711,
+      "iso": "ZA1",
+      "name": "Southern African Customs Union (...1999)",
+      "kind": "aggregate",
+      "expired": "1999-12-31T00:00:00"
+    },
+    {
+      "code": 717,
+      "iso": "_RN",
+      "name": "Rhodesia Nyas (...1964)",
+      "kind": "territory",
+      "expired": "1964-12-31T00:00:00"
+    },
+    {
+      "code": 720,
+      "iso": "YMD",
+      "name": "Dem. Yemen (...1990)",
+      "kind": "country",
+      "expired": "1990-12-31T00:00:00"
+    },
+    {
+      "code": 810,
+      "iso": "SUN",
+      "name": "USSR (...1990)",
+      "kind": "country",
+      "expired": "1990-12-31T00:00:00"
+    },
+    {
+      "code": 830,
+      "iso": "_CI",
+      "name": "Channel Islands",
+      "kind": "aggregate",
+      "expired": null
+    },
+    {
+      "code": 835,
+      "iso": "_TK",
+      "name": "Tanganyika (...1964)",
+      "kind": "country",
+      "expired": "1964-12-31T00:00:00"
+    },
+    {
+      "code": 836,
+      "iso": "_ZP",
+      "name": "Zanzibar and Pemba Isd (...1964)",
+      "kind": "territory",
+      "expired": "1964-12-31T00:00:00"
+    },
+    {
+      "code": 837,
+      "iso": "X1",
+      "name": "Bunkers",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 838,
+      "iso": "X2",
+      "name": "Free Zones",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 839,
+      "iso": "XX",
+      "name": "Special Categories",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 849,
+      "iso": "PUS",
+      "name": "US Misc. Pacific Isds",
+      "kind": "territory",
+      "expired": null
+    },
+    {
+      "code": 866,
+      "iso": "VDR",
+      "name": "Dem. Rep. of Vietnam (...1974)",
+      "kind": "country",
+      "expired": "1974-12-31T00:00:00"
+    },
+    {
+      "code": 872,
+      "iso": "_WI",
+      "name": "Wake Island",
+      "kind": "territory",
+      "expired": null
+    },
+    {
+      "code": 879,
+      "iso": "F97",
+      "name": "Western Asia, nes",
+      "kind": "special_area",
+      "expired": null
+    },
+    {
+      "code": 890,
+      "iso": "YUG",
+      "name": "Yugoslavia (...1991)",
+      "kind": "country",
+      "expired": "1991-12-31T00:00:00"
+    },
+    {
+      "code": 891,
+      "iso": "SCG",
+      "name": "Serbia and Montenegro (...2005)",
+      "kind": "country",
+      "expired": "2006-05-31T00:00:00"
+    },
+    {
+      "code": 899,
+      "iso": "_X",
+      "name": "Areas, nes",
+      "kind": "special_area",
+      "expired": null
+    }
+  ]
+}

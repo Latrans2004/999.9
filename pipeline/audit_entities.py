@@ -4,7 +4,7 @@ import logging
 import os
 from pathlib import Path
 
-from . import archive, countries
+from . import archive, countries, entity_diagnostics, strict_comtrade, strict_usgs, update_minerals
 from .sources import comtrade, http
 
 
@@ -14,6 +14,7 @@ def run(root):
     if not key:
         raise ValueError('COMTRADE_API_KEY is required for the complete audit')
     report = {'queries': [], 'unmapped': {}}
+    normalized, references = [], []
     for year in range(settings['start_year'], settings['end_year'] + 1):
         for hs in settings['hs_codes']:
             for flow in ('X', 'M'):
@@ -49,6 +50,12 @@ def run(root):
                                 record['rows'] += 1
                                 record['value_usd'] += row.get('primaryValue') or 0
                     item['status'] = 'ok'
+                    batch = strict_comtrade.normalize(payload, query, settings['max_records'])
+                    for row in batch:
+                        row.update(raw_path=item['source']['path'], retrieved_at=item['source']['retrieved_at'])
+                    normalized.extend(batch)
+                    references.append(item['source'])
+                    item['normalized_rows'] = len(batch)
                 except Exception as exc:
                     item.update(status='failed', error=str(exc))
                 report['queries'].append(item)
@@ -56,6 +63,20 @@ def run(root):
                 logging.info('%s %s %s: %s (%s rows)', year, hs, flow, item['status'], item.get('rows'))
     if any(q['status'] != 'ok' for q in report['queries']):
         raise ValueError('Some queries failed; see entity-audit.json')
+    (root / 'entity-diagnostics.json').write_bytes(archive.encode(entity_diagnostics.summarize(normalized)))
+    analysis = {'queries': len(report['queries']), 'rows': len(normalized), 'published': False}
+    try:
+        production, sources = strict_usgs.collect(root, settings['usgs'])
+        bundle = {'trade': normalized, 'production': production, 'sources': references + sources}
+        changed = update_minerals.run(root, bundle=bundle)
+        snapshot = update_minerals.read(root / 'data/processed/lithium/snapshot.json')
+        analysis.update(status='ok', generated_changed=changed, validation=snapshot['metadata']['validation'],
+                        concentration=snapshot['concentration'], fingerprint=snapshot['fingerprint'])
+    except Exception as exc:
+        analysis.update(status='failed', error=str(exc))
+        raise
+    finally:
+        (root / 'analysis-audit.json').write_bytes(archive.encode(analysis))
 
 
 if __name__ == '__main__':

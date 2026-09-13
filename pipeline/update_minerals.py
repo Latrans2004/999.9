@@ -19,7 +19,7 @@ import sys
 import uuid
 from contextlib import contextmanager
 
-from . import archive, countries, hhi, process_trade, strict_comtrade, strict_usgs, validate_data
+from . import archive, countries, entity_diagnostics, hhi, process_trade, strict_comtrade, strict_usgs, validate_data
 from .build import summarise
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -62,6 +62,7 @@ def collect(root, settings):
                 batch, ref = strict_comtrade.fetch(root, hs, year, flow, max_records=settings['max_records'])
                 rows.extend(batch)
                 refs.append(ref)
+                put(root, 'entity-diagnostics.json', entity_diagnostics.summarize(rows))
     production, production_refs = strict_usgs.collect(root, settings['usgs'])
     return {'trade': rows, 'production': production, 'sources': refs + production_refs}
 
@@ -89,20 +90,26 @@ def assemble(bundle, settings, entry):
     for hs,y,_ in expected:
         if not any(r['hs_code']==hs and r['year']==y and r['flow']=='X' and r['partner']=='W00' for r in rows):
             raise ValueError(f'{hs} {y}: missing reported world export totals')
-    seen = set()
+    seen, unknowns = set(), set()
     for r in rows:
         key=(r['hs_code'],r['year'],r['flow'],r['reporter'],r['partner'])
         if key in seen: raise ValueError(f'Duplicate normalized trade row: {key}')
         seen.add(key)
-        if not countries.normalize(r['reporter']) or (r['partner'] != 'W00' and not countries.normalize(r['partner'])):
-            raise ValueError('Invalid normalized country')
+        for dimension in ('reporter', 'partner'):
+            entity = countries.row_entity(r, dimension)
+            if entity.key != r[dimension]:
+                raise ValueError(f'Invalid normalized entity: {dimension} {r[dimension]}')
+            if entity.kind == 'unknown':
+                unknowns.add(entity.key)
         for field in ['weight_t','value_usd']:
             strict_comtrade.number(r[field])
+    if unknowns:
+        log.warning('Unknown entities retained but excluded from metrics: %s', ', '.join(sorted(unknowns)))
     selected = process_trade.build(rows, settings)
     concentration = process_trade.metrics(selected)
     exports = defaultdict(lambda: defaultdict(float))
     for r in rows:
-        if r['hs_code'] in settings['headline_hs_codes'] and r['flow'] == 'X' and r['partner'] == 'W00':
+        if countries.trade_eligibility(r)[0] and r['hs_code'] in settings['headline_hs_codes'] and r['flow'] == 'X' and r['partner'] == 'W00':
             if r['value_usd'] is None:
                 raise ValueError('Missing headline export value')
             exports[r['year']][r['reporter']] += r['value_usd']
@@ -145,7 +152,7 @@ def assemble(bundle, settings, entry):
                                'reporters':len({r['reporter'] for r in group}),
                                'missing_value_fraction':sum(r['value_usd'] is None for r in group)/len(group)})
     return {'selected':audit_selected,'concentration':concentration,'trade_rows':rows,'source_quality':source_quality,
-            'production':bundle['production']}, data
+            'entity_diagnostics':entity_diagnostics.summarize(rows), 'production':bundle['production']}, data
 
 
 def content_fingerprint(payload):
@@ -206,6 +213,8 @@ def run(root=ROOT, mineral='lithium', bundle=None, *, render_command=None):
                 'fingerprint':fingerprint,'sources':bundle['sources'],
                 'usgs_mode':'reviewed_csv_with_automatic_publication_archive',
                 'validation':report}
+    metadata['entity_diagnostics_url'] = 'entities.json'
+    metadata['unknown_entities'] = [e['id'] for e in processed['entity_diagnostics']['entities'] if e['kind'] == 'unknown']
     processed.update({'fingerprint':fingerprint,'metadata':metadata})
     site.update({'generated_at':stamp,'metadata':metadata,
                  'audit_data_url':f'../data/{mineral}/metadata.json'})
@@ -232,6 +241,7 @@ def run(root=ROOT, mineral='lithium', bundle=None, *, render_command=None):
         put(stage,f'{base}/trade.json',{'metadata':metadata,'records':[r for r in processed['selected'] if r['hs_code'] not in ('headline_usd','mine_li_t')]})
         put(stage,f'{base}/concentration.json',{'metadata':metadata,'records':processed['concentration']})
         put(stage,f'{base}/metadata.json',metadata)
+        put(stage,f'{base}/entities.json',processed['entity_diagnostics'])
         put(stage,f'critical-minerals/data/minerals/{mineral}.json',site)
         put(stage,'critical-minerals/data/index.json',index)
         table=io.StringIO(newline='')
