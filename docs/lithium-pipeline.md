@@ -162,8 +162,15 @@ PDF改訂を検知したら古いレビュー済みCSVを最新資料と誤表�
 他にも報告遅れがあるため、暦が進むだけで未完全年を公開しない。
 新年の公開開始時は完全性を確認してend_yearを進める。既存年の改訂取得は週次自動。
 2026-09-13にGitHub Secretsを使った48クエリ監査と、修正後の48クエリ取得・正規化を実施。
-結果と公開を阻む既存の最低国数条件は [entity監査記録](comtrade-entity-audit-2026-09-13.md) を参照。
+結果と公開を阻んでいた既存の最低国数条件は [entity監査記録](comtrade-entity-audit-2026-09-13.md) を参照。
 監査ではPages公開を行っていない。
+
+253090（鉱石）の2019年輸出profileはBrazilとZimbabweの2か国のみ採用条件を満たし、
+Australiaは採用可能な重量がなく、ThailandはMirror観測のみでore policyが採用しない。
+`min_countries`の全体閾値（3）は変更せず、`pipeline/minerals.json`の
+`validation.min_countries_exceptions`に`"253090|2019"`のみを理由付きで例外登録した。
+他の品目・年には適用されず、`too few countries`以外の検証（HHI/CR3の範囲、総量、
+前回値との比較など）はこのキーにも通常どおり適用される。
 
 ## 別鉱物の追加
 
