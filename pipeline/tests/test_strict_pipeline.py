@@ -171,6 +171,10 @@ def copy_repo(tmp_path):
     config=json.loads((root/'pipeline/minerals.json').read_text(encoding='utf-8'))
     config['minerals']['lithium']['start_year']=2022
     (root/'pipeline/minerals.json').write_bytes(archive.encode(config))
+    # Tests exercise the first-run -> idempotent-second-run cycle against
+    # synthetic data; they must not be influenced by whatever real accepted
+    # snapshot main happens to carry by the time this runs.
+    (root/'data/processed/lithium/snapshot.json').unlink(missing_ok=True)
     return root
 
 
