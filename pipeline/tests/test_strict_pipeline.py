@@ -135,6 +135,23 @@ def test_anomaly_gates(mutation):
     with pytest.raises(ValueError): validate_data.validate(new,old,CONFIG['validation'])
 
 
+def two_reporter_snapshot(hs_code,year):
+    rows=[{'hs_code':hs_code,'year':year,'country':c,'reported_value':v,'mirror_value':None,
+           'selected_value':v,'included':True} for c,v in [('BRA',33643.404),('ZWE',64194.3774)]]
+    return {'selected':rows,'concentration':[{'hs_code':hs_code,**hhi.concentration(year,{'BRA':33643.404,'ZWE':64194.3774}).to_dict()}]}
+
+
+def test_min_countries_exception_is_scoped():
+    # 253090/2019 is a documented, reviewed exception (see pipeline/minerals.json
+    # and docs/comtrade-entity-audit-2026-09-13.md); it must not excuse any other
+    # hs_code/year that also happens to fall below min_countries.
+    validate_data.validate(two_reporter_snapshot('253090',2019),None,CONFIG['validation'])
+    with pytest.raises(ValueError,match='too few countries'):
+        validate_data.validate(two_reporter_snapshot('253090',2020),None,CONFIG['validation'])
+    with pytest.raises(ValueError,match='too few countries'):
+        validate_data.validate(two_reporter_snapshot('283691',2019),None,CONFIG['validation'])
+
+
 def synthetic_bundle():
     records=[]
     for hs in CONFIG['hs_codes']:

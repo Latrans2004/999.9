@@ -21,8 +21,10 @@ def validate(current, previous, limits):
     profiles = {(r['hs_code'], r['year']): r for r in current['concentration']}
     if not profiles:
         errors.append('No concentration profiles')
+    min_countries_exceptions = limits.get('min_countries_exceptions', {})
     for key, r in profiles.items():
-        if r['reporters'] < limits['min_countries']:
+        exception_key = f'{key[0]}|{key[1]}'
+        if r['reporters'] < limits['min_countries'] and exception_key not in min_countries_exceptions:
             errors.append(f'{key}: too few countries ({r["reporters"]})')
         if not 0 <= r['hhi'] <= 10000 or not 0 <= r['cr3'] <= 100 or r['total'] <= 0:
             errors.append(f'{key}: invalid HHI/CR3/total')
