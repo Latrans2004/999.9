@@ -1,0 +1,422 @@
+[
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090",
+    "new_cr3": 99.79,
+    "new_hhi": 9649.5,
+    "old_cr3": 99.79,
+    "old_hhi": 9649.5,
+    "year": 2017
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090",
+    "new_cr3": 99.74,
+    "new_hhi": 9489.1,
+    "old_cr3": 99.74,
+    "old_hhi": 9489.1,
+    "year": 2018
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090",
+    "new_cr3": 100.0,
+    "new_hhi": 5487.5,
+    "old_cr3": 100.0,
+    "old_hhi": 5487.5,
+    "year": 2019
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090",
+    "new_cr3": 99.16,
+    "new_hhi": 8828.4,
+    "old_cr3": 99.16,
+    "old_hhi": 8828.4,
+    "year": 2020
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090",
+    "new_cr3": 98.87,
+    "new_hhi": 8621.0,
+    "old_cr3": 98.87,
+    "old_hhi": 8621.0,
+    "year": 2021
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090",
+    "new_cr3": 99.39,
+    "new_hhi": 8569.2,
+    "old_cr3": 99.39,
+    "old_hhi": 8569.2,
+    "year": 2022
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090",
+    "new_cr3": 99.78,
+    "new_hhi": 5769.6,
+    "old_cr3": 99.78,
+    "old_hhi": 5769.6,
+    "year": 2023
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090",
+    "new_cr3": 99.6,
+    "new_hhi": 6143.0,
+    "old_cr3": 99.6,
+    "old_hhi": 6143.0,
+    "year": 2024
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090_china_import",
+    "new_cr3": 99.99,
+    "new_hhi": 9990.9,
+    "old_cr3": 99.99,
+    "old_hhi": 9990.9,
+    "year": 2017
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090_china_import",
+    "new_cr3": 99.93,
+    "new_hhi": 9532.6,
+    "old_cr3": 99.93,
+    "old_hhi": 9532.6,
+    "year": 2018
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090_china_import",
+    "new_cr3": 99.45,
+    "new_hhi": 8781.2,
+    "old_cr3": 99.45,
+    "old_hhi": 8781.2,
+    "year": 2019
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090_china_import",
+    "new_cr3": 99.83,
+    "new_hhi": 9285.3,
+    "old_cr3": 99.83,
+    "old_hhi": 9285.3,
+    "year": 2020
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090_china_import",
+    "new_cr3": 99.78,
+    "new_hhi": 8840.3,
+    "old_cr3": 99.78,
+    "old_hhi": 8840.3,
+    "year": 2021
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090_china_import",
+    "new_cr3": 97.7,
+    "new_hhi": 8185.7,
+    "old_cr3": 97.7,
+    "old_hhi": 8185.7,
+    "year": 2022
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090_china_import",
+    "new_cr3": 90.18,
+    "new_hhi": 5249.0,
+    "old_cr3": 90.18,
+    "old_hhi": 5249.0,
+    "year": 2023
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "253090_china_import",
+    "new_cr3": 91.05,
+    "new_hhi": 4360.5,
+    "old_cr3": 91.05,
+    "old_hhi": 4360.5,
+    "year": 2024
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "282520",
+    "new_cr3": 81.88,
+    "new_hhi": 2854.9,
+    "old_cr3": 81.88,
+    "old_hhi": 2854.9,
+    "year": 2017
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "282520",
+    "new_cr3": 85.13,
+    "new_hhi": 3688.2,
+    "old_cr3": 85.13,
+    "old_hhi": 3688.2,
+    "year": 2018
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "282520",
+    "new_cr3": 86.95,
+    "new_hhi": 4424.0,
+    "old_cr3": 86.95,
+    "old_hhi": 4424.0,
+    "year": 2019
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "282520",
+    "new_cr3": 87.99,
+    "new_hhi": 4794.4,
+    "old_cr3": 87.99,
+    "old_hhi": 4794.4,
+    "year": 2020
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "282520",
+    "new_cr3": 84.07,
+    "new_hhi": 4419.9,
+    "old_cr3": 84.07,
+    "old_hhi": 4419.9,
+    "year": 2021
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "282520",
+    "new_cr3": 97.04,
+    "new_hhi": 5981.6,
+    "old_cr3": 97.04,
+    "old_hhi": 5981.6,
+    "year": 2022
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "282520",
+    "new_cr3": 93.23,
+    "new_hhi": 5827.5,
+    "old_cr3": 93.23,
+    "old_hhi": 5827.5,
+    "year": 2023
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "282520",
+    "new_cr3": 93.61,
+    "new_hhi": 5844.2,
+    "old_cr3": 93.61,
+    "old_hhi": 5844.2,
+    "year": 2024
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "283691",
+    "new_cr3": 89.45,
+    "new_hhi": 4115.5,
+    "old_cr3": 89.45,
+    "old_hhi": 4115.5,
+    "year": 2017
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "283691",
+    "new_cr3": 86.27,
+    "new_hhi": 3697.5,
+    "old_cr3": 86.27,
+    "old_hhi": 3697.5,
+    "year": 2018
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "283691",
+    "new_cr3": 84.72,
+    "new_hhi": 3709.7,
+    "old_cr3": 84.72,
+    "old_hhi": 3709.7,
+    "year": 2019
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "283691",
+    "new_cr3": 87.04,
+    "new_hhi": 4392.9,
+    "old_cr3": 87.04,
+    "old_hhi": 4392.9,
+    "year": 2020
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "283691",
+    "new_cr3": 86.34,
+    "new_hhi": 4780.8,
+    "old_cr3": 86.34,
+    "old_hhi": 4780.8,
+    "year": 2021
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "283691",
+    "new_cr3": 88.44,
+    "new_hhi": 5564.2,
+    "old_cr3": 88.44,
+    "old_hhi": 5564.2,
+    "year": 2022
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "283691",
+    "new_cr3": 89.71,
+    "new_hhi": 5475.6,
+    "old_cr3": 89.71,
+    "old_hhi": 5475.6,
+    "year": 2023
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "283691",
+    "new_cr3": 94.45,
+    "new_hhi": 5678.1,
+    "old_cr3": 94.45,
+    "old_hhi": 5678.1,
+    "year": 2024
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "headline_usd",
+    "new_cr3": 73.99,
+    "new_hhi": 2682.0,
+    "old_cr3": 73.99,
+    "old_hhi": 2682.0,
+    "year": 2017
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "headline_usd",
+    "new_cr3": 81.24,
+    "new_hhi": 3194.7,
+    "old_cr3": 81.24,
+    "old_hhi": 3194.7,
+    "year": 2018
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "headline_usd",
+    "new_cr3": 81.27,
+    "new_hhi": 2973.7,
+    "old_cr3": 81.27,
+    "old_hhi": 2973.7,
+    "year": 2019
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "headline_usd",
+    "new_cr3": 82.21,
+    "new_hhi": 3076.7,
+    "old_cr3": 82.21,
+    "old_hhi": 3076.7,
+    "year": 2020
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "headline_usd",
+    "new_cr3": 84.15,
+    "new_hhi": 3207.7,
+    "old_cr3": 84.15,
+    "old_hhi": 3207.7,
+    "year": 2021
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "headline_usd",
+    "new_cr3": 91.77,
+    "new_hhi": 4366.3,
+    "old_cr3": 91.77,
+    "old_hhi": 4366.3,
+    "year": 2022
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "headline_usd",
+    "new_cr3": 87.51,
+    "new_hhi": 3658.1,
+    "old_cr3": 87.51,
+    "old_hhi": 3658.1,
+    "year": 2023
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "headline_usd",
+    "new_cr3": 88.87,
+    "new_hhi": 3435.7,
+    "old_cr3": 88.87,
+    "old_hhi": 3435.7,
+    "year": 2024
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "mine_li_t",
+    "new_cr3": 77.59,
+    "new_hhi": 2345.9,
+    "old_cr3": 77.59,
+    "old_hhi": 2345.9,
+    "year": 2024
+  },
+  {
+    "cr3_delta_pp": 0.0,
+    "hhi_delta": 0.0,
+    "hs_code": "mine_li_t",
+    "new_cr3": 72.82,
+    "new_hhi": 2046.7,
+    "old_cr3": 72.82,
+    "old_hhi": 2046.7,
+    "year": 2025
+  }
+]

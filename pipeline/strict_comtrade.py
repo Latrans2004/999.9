@@ -2,6 +2,7 @@
 from __future__ import annotations
 import json
 import math
+import logging
 import os
 from . import archive, countries
 from .sources import http, comtrade
@@ -31,7 +32,7 @@ def normalize(payload, query, limit):
     required = {"period", "cmdCode", "reporterCode", "reporterISO", "partnerCode", "partnerISO",
                 "flowCode", "primaryValue", "netWgt", "qty", "qtyUnitCode",
                 "partner2Code", "customsCode", "motCode", "freqCode", "typeCode"}
-    seen, result = set(), []
+    seen, result, warned = set(), [], set()
     for row in rows:
         if not isinstance(row, dict) or not required <= row.keys():
             raise ValueError("Comtrade missing required columns")
@@ -43,17 +44,21 @@ def normalize(payload, query, limit):
         for key in ("reporterCode", "partnerCode"):
             if query.get(key) not in (None, "") and str(row[key]) != str(query[key]):
                 raise ValueError(f"Unexpected requested {key}")
-        if int(row["reporterCode"]) in comtrade.NON_COUNTRY_REPORTERS:
-            continue
-        reporter = countries.normalize(row.get("reporterDesc"), code=row["reporterISO"])
-        if int(row["partnerCode"]) == 0:
-            partner = "W00"
-        elif int(row["partnerCode"]) in comtrade.NON_COUNTRY_REPORTERS:
-            continue
-        else:
-            partner = countries.normalize(row.get("partnerDesc"), code=row["partnerISO"])
-        if not reporter or not partner:
-            raise ValueError("Country dimension could not be normalized")
+        entities, provenance = {}, {}
+        for dimension in ('reporter', 'partner'):
+            entity = countries.resolve(row.get(dimension + 'Desc'), code=row[dimension + 'ISO'],
+                                       numeric_code=row[dimension + 'Code'])
+            entities[dimension] = entity
+            provenance.update({dimension + '_code': int(row[dimension + 'Code']),
+                               dimension + '_iso': row[dimension + 'ISO'],
+                               dimension + '_name': row.get(dimension + 'Desc'),
+                               dimension + '_kind': entity.kind})
+            if entity.kind == 'unknown' and (dimension, entity.key) not in warned:
+                logging.getLogger(__name__).warning(
+                    'Unknown Comtrade entity %s %s: ISO=%r name=%r; retained, excluded from metrics; query=%s',
+                    dimension, entity.key, row[dimension + 'ISO'], row.get(dimension + 'Desc'), query)
+                warned.add((dimension, entity.key))
+        reporter, partner = (entities[d].key for d in ('reporter', 'partner'))
         identity = (int(row["period"]), row["cmdCode"], reporter, partner, row["flowCode"])
         if identity in seen:
             raise ValueError(f"Duplicate trade key (including classification overlap): {identity}")
@@ -68,7 +73,7 @@ def normalize(payload, query, limit):
                        "weight_t": None if weight is None else weight / 1000,
                        "weight_source": "netWgt" if net is not None else ("qty_kg" if weight is not None else "missing"),
                        "is_estimated": row.get("isNetWgtEstimated"),
-                       "classification": row.get("classificationCode")})
+                       "classification": row.get("classificationCode"), **provenance})
     if not result:
         raise ValueError("No country trade rows remain")
     return result

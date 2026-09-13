@@ -91,7 +91,9 @@ def test_excel_production_and_carbonate():
         assert result.hhi==pytest.approx(case['hhi'],abs=1e-8)
         assert result.cr3==pytest.approx(case['cr3_percent'],abs=1e-8)
     for case in fixture['carbonate']:
-        selected=process_trade.build(case['rows'],{'stages':{'283691':CONFIG['stages']['283691']}})
+        # Preserve the Excel selection-method regression on Excel's original
+        # population; its S19 rows were already excluded by the strict fetcher.
+        selected=process_trade.select_quantities(case['rows'],{'stages':{'283691':CONFIG['stages']['283691']}})
         amounts={r['country']:r['selected_value'] for r in selected if r['included']}
         result=hhi.concentration(case['year'],amounts)
         assert result.hhi==pytest.approx(case['hhi'],abs=.01)

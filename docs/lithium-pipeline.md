@@ -60,10 +60,41 @@ Previewは500行上限。全世界二国間取得に十分ではないので週�
 
 ## データ保存と安全性
 
+### Comtrade entity と指標の母集団
+
+`countries.resolve` は country / territory / aggregate / special_area / unknown を区別する。
+ISOで表せる地域は従来のISOキーを維持し、Comtrade独自地域は `CT:<数値コード>` とする。
+原文の数値コード・ISO欄・名称・分類を正規化明細に残す。ISO欄だけでは一意でないため、
+例えば473と636（ともにA79）は分け、492/MCOをMonacoに誤変換しない。
+`comtrade_entities.json` は公式partnerAreas一覧の独自コード等を抜粋した固定レジストリ。
+出典・取得日・本文SHA256を記録し、分類は当パイプラインの統計上の区別とする。
+地位・主権についての判断ではない。名称変更や新しいコードの登録はレビューして更新する。
+
+`metric_eligibility` は識別と独立した採否規則。国家と識別できるterritoryを別供給者として
+扱い、aggregateは二重計上を避け、未配賦のspecial_areaとunknownは指標から外す。
+失効した歴史的entityと従来除外対象のUS Misc. Pacific Isdsは範囲レビューまで除外する。
+ATB（80）は **territory / CT:80**。GBRやATAに合算せず、人口を理由に除外しない。
+entityとして採用可能でも、重量や品目の採用条件を満たすこととは別である。
+
+未知entityは即時例外にせず、Rawと正規化明細を保持し、クエリごとにwarningを出す。
+`entity-diagnostics.json`（Actions artifact）と公開 `entities.json` に未知一覧・除外理由・
+クエリ別件数/観測金額/重量を記録し、metadataにも未知IDを載せる。観測額はX/Mや
+World/相手別の重複を含むため、クエリ間を足した値を世界貿易額と解釈しない。
+未知やspecial_areaへの輸出を既知reporterのWorld合計から推計控除することもしない。
+Mirror、相手別合計による復元、中国輸入、公開USD headlineには同じ採否規則を適用する。
+HHI/CR3の算式、価格・数量の選別規則、既存の品質ゲートは変更しない。
+未知entityの除外で国数・総量等が大幅に変われば品質ゲートは従来どおり公開を止める。
+
+監査実行は Actions → Update lithium data → 対象ブランチ → `audit_only=true`。
+全48クエリを試し、個々の失敗も一覧に保存する。取得と正規化が成功した場合はUSGS取得、
+分析・検証・HTML生成まで実行し、成果物をartifactに保存する。監査はcommit/Pages公開を行わない。
+通常の自動commit/公開はmain実行時のみ。テスト対象のcheckoutは実行SHAに固定する。
+ローカルの `python -m pipeline.audit_entities` も同じ検証・ファイル生成を行うが、Git pushはしない。
+
 * `data/raw/comtrade/`, `data/raw/usgs/`: 取得本文とURL・query・取得時刻・SHA256のsidecar。
   内容とクエリに基づく別名保存で旧Rawを上書きしない。
 * `data/processed/lithium/snapshot.json`: 正規化明細、全採用値、指標、受理済みmetadata。
-* `critical-minerals/data/lithium/`: production/trade/concentration/metadata JSONとtrade CSV。
+* `critical-minerals/data/lithium/`: production/trade/concentration/metadata/entities JSONとtrade CSV。
 * 受理したRawはGit履歴に保存。失敗/変更なしの観測もActions artifactに90日保存する。
   長期保管が必要ならartifact期限内に保管先へ移す。
 
@@ -106,6 +137,9 @@ Excel比較fixtureは生産量4年（2017/2021/2024/2025）と炭酸2年（2021/
 炭酸入力の14!DはExcelで同一Reporterの重量欠損を復元済みの値であり、
 この回帰テストはMirror選択と指標計算を検証する。加工前RawからExcel全セルを
 再現できたという意味ではない。253090/282520全期間の数値一致は未検証。
+Excel入力はS19等を含むため、Excel照合では `select_quantities` に元の母集団を渡す。
+本番の `build` はentity採否を先に適用する（旧strict取得もS19等は除外していた）。
+選別ロジックの照合と、本番母集団の検査を分離してテストする。
 Excelの階級境界1500/2500とサイト1000/1800は異なる。サイト境界は変更しない。
 
 ## USGSの更新
@@ -127,9 +161,9 @@ PDF改訂を検知したら古いレビュー済みCSVを最新資料と誤表�
 貿易はまず2017–2024を明示的に更新する。Excelでは2025の中国253090輸入が未収録で、
 他にも報告遅れがあるため、暦が進むだけで未完全年を公開しない。
 新年の公開開始時は完全性を確認してend_yearを進める。既存年の改訂取得は週次自動。
-最初の本番フル取得には利用可能なComtradeキーが必要。Previewの実レスポンスと
-USGS公式PDFは確認したが、キー付き48クエリ、GitHub Actions上の実行、Pages公開は
-このローカル検証に含まれない。
+2026-09-13にGitHub Secretsを使った48クエリ監査と、修正後の48クエリ取得・正規化を実施。
+結果と公開を阻む既存の最低国数条件は [entity監査記録](comtrade-entity-audit-2026-09-13.md) を参照。
+監査ではPages公開を行っていない。
 
 ## 別鉱物の追加
 
