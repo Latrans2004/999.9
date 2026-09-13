@@ -1,0 +1,103 @@
+{
+  "conventions": {
+    "hhi_scale": "0-10000",
+    "hhi_thresholds": [
+      {
+        "label": "Unconcentrated",
+        "max": 1000
+      },
+      {
+        "label": "Moderately concentrated",
+        "max": 1800
+      },
+      {
+        "label": "Highly concentrated",
+        "max": 10000
+      }
+    ],
+    "min_coverage": 0.6,
+    "min_years": 3,
+    "top_n_displayed": 10
+  },
+  "failures": [],
+  "fixtures": false,
+  "generated_at": "2026-09-13T16:44:21+00:00",
+  "minerals": [
+    {
+      "name": "Lithium",
+      "production": {
+        "band": "high",
+        "cr3": 72.82,
+        "hhi": 2046.7,
+        "leader": "Australia",
+        "leader_share": 31.9024,
+        "sparkline": [
+          2345.9,
+          2046.7
+        ],
+        "trend": {
+          "change": -299.2,
+          "direction": "down",
+          "from_hhi": 2345.9,
+          "from_year": 2024,
+          "to_hhi": 2046.7,
+          "to_year": 2025
+        },
+        "year": 2025,
+        "years": [
+          2024,
+          2025
+        ]
+      },
+      "role": "Cathode and electrolyte",
+      "slug": "lithium",
+      "symbol": "Li",
+      "trade": {
+        "band": "high",
+        "cr3": 88.87,
+        "hhi": 3435.7,
+        "leader": "Chile",
+        "leader_share": 43.0185,
+        "sparkline": [
+          2682.0,
+          3194.7,
+          2973.7,
+          3076.7,
+          3207.7,
+          4366.3,
+          3658.1,
+          3435.7
+        ],
+        "trend": {
+          "change": 359.0,
+          "direction": "up",
+          "from_hhi": 3076.7,
+          "from_year": 2020,
+          "to_hhi": 3435.7,
+          "to_year": 2024
+        },
+        "year": 2024,
+        "years": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024
+        ]
+      }
+    }
+  ],
+  "section": {
+    "description": "Eight minerals on the battery and electrification value chain, measured for supply concentration with the Herfindahl–Hirschman Index at two points in the chain: where the material is mined, and where it is exported.",
+    "description_ja": "バッテリーと電化のバリューチェーンに連なる8つの鉱物について、ハーフィンダール・ハーシュマン指数(HHI)で供給集中度を測定する。測定点はサプライチェーン上の2か所、採掘される場所と輸出される場所。",
+    "slug": "critical-minerals",
+    "tagline": "Supply concentration in the minerals that batteries and electrification depend on.",
+    "tagline_ja": "バッテリーと電化を支える鉱物の、供給集中度。",
+    "theme": "battery-metals",
+    "title": "Critical Minerals",
+    "title_ja": "重要鉱物"
+  }
+}
