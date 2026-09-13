@@ -1,16 +1,8 @@
 name: Refresh data
 
-# Both upstream sources publish annually. A nightly run would refetch the same
-# numbers 364 times a year and spend someone else's bandwidth doing it, so the
-# schedule is monthly: often enough that a new USGS edition or a Comtrade
-# revision is picked up within weeks, rare enough to be a good citizen.
-#
-# The USGS adapter discovers the newest data release rather than pointing at a
-# fixed URL, so no edit is needed when a new Mineral Commodity Summaries
-# edition appears.
+# Legacy multi-mineral entry point, manual only. The weekly lithium schedule
+# lives in update-minerals.yml. Lithium is routed through strict validation.
 on:
-  schedule:
-    - cron: "17 6 1 * *" # 06:17 UTC on the first of each month
   workflow_dispatch:
     inputs:
       only:
@@ -22,7 +14,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: refresh
+  group: mineral-data-refresh
   cancel-in-progress: false
 
 jobs:
@@ -30,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       changed: ${{ steps.commit.outputs.changed }}
+      revision: ${{ steps.commit.outputs.revision }}
     steps:
       - uses: actions/checkout@v4
 
@@ -45,13 +38,15 @@ jobs:
 
       - name: Build data and render pages
         env:
+          MINERALS_ONLY: ${{ inputs.only }}
           # Optional. Without it the pipeline uses UN Comtrade's free preview
           # endpoint, which caps a response at 500 rows. Add the secret to lift
           # the cap: https://comtradedeveloper.un.org/
           COMTRADE_API_KEY: ${{ secrets.COMTRADE_API_KEY }}
         run: |
-          if [ -n "${{ github.event.inputs.only }}" ]; then
-            python -m pipeline.build --only ${{ github.event.inputs.only }} --verbose
+          if [ -n "$MINERALS_ONLY" ]; then
+            read -r -a selected <<< "$MINERALS_ONLY"
+            python -m pipeline.build --only "${selected[@]}" --verbose
           else
             python -m pipeline.build --verbose
           fi
@@ -82,6 +77,9 @@ jobs:
           git config user.name  "999.9 pipeline"
           git config user.email "actions@users.noreply.github.com"
           git add critical-minerals/data critical-minerals/*.html critical-minerals/minerals index.html 404.html
+          if ! git diff --cached --quiet -- critical-minerals/data/minerals/lithium.json; then
+            git add data/processed data/raw
+          fi
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Nothing changed upstream; no commit."
@@ -89,6 +87,7 @@ jobs:
             git commit -m "data: scheduled refresh $(date -u +%Y-%m-%d)"
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           fi
 
   deploy:
@@ -99,3 +98,5 @@ jobs:
       pages: write
       id-token: write
     uses: ./.github/workflows/deploy.yml
+    with:
+      revision: ${{ needs.refresh.outputs.revision }}

@@ -3,8 +3,15 @@ name: Test and deploy
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
   workflow_call:
+    inputs:
+      revision:
+        type: string
+        required: false
+        default: ''
 
 # Only the built site is deployed; the pipeline is not run here, so a push
 # that only touches CSS or a template redeploys in well under a minute.
@@ -14,7 +21,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.event.pull_request.number || 'production' }}
   cancel-in-progress: false
 
 jobs:
@@ -22,6 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.revision || github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -41,15 +50,29 @@ jobs:
 
   deploy:
     needs: test
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.revision || github.sha }}
       - uses: actions/configure-pages@v5
+      - name: Stage only public site files
+        run: |
+          python - <<'PY'
+          import pathlib, shutil
+          out = pathlib.Path('_site')
+          out.mkdir()
+          for name in ('assets', 'critical-minerals'):
+              shutil.copytree(name, out / name)
+          for name in ('index.html', '404.html', 'robots.txt', '.nojekyll'):
+              shutil.copy2(name, out / name)
+          PY
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4

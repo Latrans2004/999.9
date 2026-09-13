@@ -1,0 +1,24 @@
+{
+  "methodology_version": "lithium-2026-09-12-v1",
+  "minerals": {
+    "lithium": {
+      "start_year": 2017,
+      "end_year": 2024,
+      "hs_codes": ["253090", "283691", "282520"],
+      "headline_hs_codes": ["283691", "282520"],
+      "max_records": 100000,
+      "usgs": {
+        "publication_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-lithium.pdf",
+        "edition": 2026,
+        "publication_sha256": "53f92ea45c367c36f05919151f7784feda5776095afaf3a25aec795a27be106f",
+        "reviewed_csv": "data/manual/lithium-production.csv"
+      },
+      "stages": {
+        "253090": {"policy": "ore", "min_cumulative_t": 50000, "peak_years": [2022, 2023], "drop_year": 2024, "min_peak_usd_t": 800, "max_peak_usd_t": 5000, "max_drop_ratio": 0.6, "min_china_ratio": 0.4},
+        "283691": {"policy": "carbonate", "mirror_allowlist": ["ARG", "AUS", "BRA", "CAN", "CHL", "CHN", "MLI", "NAM", "PRT", "RUS", "USA", "ZWE"], "minimum_reported_t": 1, "underreported_country": "ARG", "mirror_ratio": 1.15},
+        "282520": {"policy": "hydroxide", "anchor_countries": ["CHN", "CHL", "USA"], "price_factor": 0.4, "mirror_countries": ["AUS"], "mirror_reporters": ["CHN", "JPN", "KOR", "USA"], "missing_mirror_countries": ["CHN"], "unverified_mirror_countries": ["AUS"], "legacy_usgs_export_proxy": {"country": "USA", "lithium_fraction": 0.1654, "values_li_t": {"2021": 1870, "2025": 2000}, "source_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-lithium.pdf", "caveat": "Excel 05 B6:B8 legacy assumption: all-lithium exports converted as hydroxide monohydrate, not HS-specific measured exports"}, "estimate_missing_from_anchor_price": true}
+      },
+      "validation": {"min_countries": 3, "max_country_drop": 0.25, "max_total_relative_change": 0.5, "max_country_relative_change": 3.0, "max_missing_increase": 0.1, "max_missing_fraction": 0.25, "max_hhi_change": 1500, "max_cr3_change": 15}
+    }
+  }
+}
