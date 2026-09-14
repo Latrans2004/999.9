@@ -1,0 +1,212 @@
+[
+  {
+    "http_status": 200,
+    "id": "bgs-2020-2024",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/bgs-2020-2024/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T17:45:29+00:00",
+      "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+      "source": "bgs-2020-2024",
+      "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+  },
+  {
+    "http_status": 200,
+    "id": "glencore-2024",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/glencore-2024/12fe8f4c17ce3ad617522ca1a4b9682e8981addaed81f432f4f4b7f0ce26fef6.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T17:45:30+00:00",
+      "sha256": "92d709b4f14b1b24f7875406e1630f9d800734b32889d65191ea953d21daefd8",
+      "source": "glencore-2024",
+      "url": "https://www.glencore.com/.rest/api/v1/documents/static/437c6cdb-dbfb-4e61-a769-18655951cee2/Glencore+production+report_FY2024.pdf"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://www.glencore.com/.rest/api/v1/documents/static/437c6cdb-dbfb-4e61-a769-18655951cee2/Glencore+production+report_FY2024.pdf"
+  },
+  {
+    "http_status": 200,
+    "id": "cmoc-2024-results",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/cmoc-2024-results/d2d17d6a1807687271a7277bb6f7676eb1351f7aafc32d348ddf9d21e81d648a.html",
+      "query": {},
+      "retrieved_at": "2026-09-14T17:45:31+00:00",
+      "sha256": "259b03baa6a2aafb80bb924412f650c36d65e9803bcd7ec3e3ebc86cb9c3e310",
+      "source": "cmoc-2024-results",
+      "url": "https://en.cmoc.com/html/2025/News_0324/73.html"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://en.cmoc.com/html/2025/News_0324/73.html"
+  },
+  {
+    "http_status": 200,
+    "id": "drc-ministry-index",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/drc-ministry-index/1a3e83a6bb9c4243f3004e0c3aa0869a21bee24a70328db37d71da11cf8fb8c2.html",
+      "query": {},
+      "retrieved_at": "2026-09-14T17:45:32+00:00",
+      "sha256": "145a2800b87482dd6d9ea5b6507697e785df9dff5a40b5fb0af9baa04556c9a4",
+      "source": "drc-ministry-index",
+      "url": "https://mines.gouv.cd/statistique/pdf"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://mines.gouv.cd/statistique/pdf"
+  },
+  {
+    "http_status": 200,
+    "id": "nrcan-cobalt",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/nrcan-cobalt/217d3ec973e703776126151167589183d31c322946f99ac1a9903c201c2d0ec6.html",
+      "query": {},
+      "retrieved_at": "2026-09-14T17:45:32+00:00",
+      "sha256": "c2fbd092ca07a18fae5d4390a3b5301f9ef15d07bac9f7fcf2c28ee52436fd59",
+      "source": "nrcan-cobalt",
+      "url": "https://natural-resources.canada.ca/minerals-mining/mining-data-statistics-analysis/minerals-metals-facts/cobalt-facts"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://natural-resources.canada.ca/minerals-mining/mining-data-statistics-analysis/minerals-metals-facts/cobalt-facts"
+  },
+  {
+    "http_status": 200,
+    "id": "un-hs-conversion",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/un-hs-conversion/3bd1bed3af220d5de6b927a41ebac4a1b724424ad7f85d510ed000014582bebe.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T17:45:34+00:00",
+      "sha256": "ac3671c241646b3d98668473d003a7546ca45e3304d44a777b551cc19e5a26ff",
+      "source": "un-hs-conversion",
+      "url": "https://unstats.un.org/unsd/classifications/Econ/corr-notes/HS2022%20conversion%20to%20earlier%20HS%20versions%20and%20other%20classifications%20%20-%20v.1.0.pdf"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://unstats.un.org/unsd/classifications/Econ/corr-notes/HS2022%20conversion%20to%20earlier%20HS%20versions%20and%20other%20classifications%20%20-%20v.1.0.pdf"
+  },
+  {
+    "http_status": 200,
+    "id": "drc-ministry-2024",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/drc-ministry-2024/952329e3bc8ccfb5c0f1ce90d100ddf8318e6ab56818d72a794119d92df2ff05.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T17:49:17+00:00",
+      "sha256": "a5a92cb6bcf18373ce5881b38bdd710b80d2adb028d3bcd465a755e8d78e25d6",
+      "source": "drc-ministry-2024",
+      "url": "https://mines.gouv.cd/download/3"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://mines.gouv.cd/download/3"
+  },
+  {
+    "http_status": 200,
+    "id": "drc-ministry-2023",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/drc-ministry-2023/5f861927c2a57ee75df3cebeec4b100a41d35b446c308cbd1e725478b326bb6a.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T17:49:18+00:00",
+      "sha256": "10926083b4a333cc129ae59e8e27c1395da43d2a032055d62848a05a94830bb4",
+      "source": "drc-ministry-2023",
+      "url": "https://mines.gouv.cd/download/4"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://mines.gouv.cd/download/4"
+  },
+  {
+    "http_status": 200,
+    "id": "un-h4",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/un-h4/24306ed3e70d779d1b735d73d90841956a098a7a15a944e6d6ab8fd871254546.json",
+      "query": {},
+      "retrieved_at": "2026-09-14T17:51:21+00:00",
+      "sha256": "29b35dfc510f94e8360cfe3d2eefdabfb47c69a28e6b5628f9a3b6d824789a33",
+      "source": "un-h4",
+      "url": "https://comtradeapi.un.org/files/v1/app/reference/H4.json"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://comtradeapi.un.org/files/v1/app/reference/H4.json"
+  },
+  {
+    "http_status": 200,
+    "id": "un-h5",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/un-h5/a93a931111e590e4595e0023b34b200df000f54068e7c4bed6ce963c6151f996.json",
+      "query": {},
+      "retrieved_at": "2026-09-14T17:51:24+00:00",
+      "sha256": "079987eba4e5e1f60e63368e2aa8d7ac68c29fa6f3a889466dbd5276272f2431",
+      "source": "un-h5",
+      "url": "https://comtradeapi.un.org/files/v1/app/reference/H5.json"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://comtradeapi.un.org/files/v1/app/reference/H5.json"
+  },
+  {
+    "http_status": 200,
+    "id": "un-h6",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/un-h6/ce07433579b8acf7648e0eb7a7c2ee9046118bfc0a2665b99a66e23d2482b9cf.json",
+      "query": {},
+      "retrieved_at": "2026-09-14T17:51:27+00:00",
+      "sha256": "e266823e1299d1307c5d7986eb738b83aa5e5bd9af675bf19bf372220660be15",
+      "source": "un-h6",
+      "url": "https://comtradeapi.un.org/files/v1/app/reference/H6.json"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://comtradeapi.un.org/files/v1/app/reference/H6.json"
+  },
+  {
+    "http_status": 200,
+    "id": "un-h6-h5",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/un-h6-h5/68c231f58c5f36b7d7f26f8d420bb1f3890f48a4d5786ffd54dec426dae8c8e7.xlsx",
+      "query": {},
+      "retrieved_at": "2026-09-14T22:18:57+00:00",
+      "sha256": "8eb17f1db419eed133d44f831176a51f9d9df499cc82a491b999da53652ba038",
+      "source": "un-h6-h5",
+      "url": "https://unstats.un.org/unsd/classifications/Econ/tables/HS2022toHS2017ConversionAndCorrelationTables.xlsx"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://unstats.un.org/unsd/classifications/Econ/tables/HS2022toHS2017ConversionAndCorrelationTables.xlsx"
+  },
+  {
+    "http_status": 200,
+    "id": "un-h6-h4",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/un-h6-h4/332339e6d418ab71c405d809383383cfabe2331025ea591e942c68a34df6fdf5.xlsx",
+      "query": {},
+      "retrieved_at": "2026-09-14T22:18:58+00:00",
+      "sha256": "169a0f5e5fc66f6195964f0516ec177b864a09a8cd3514ccc2642d2d298ad453",
+      "source": "un-h6-h4",
+      "url": "https://unstats.un.org/unsd/classifications/Econ/tables/HS2022toHS2012ConversionAndCorrelationTables.xlsx"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://unstats.un.org/unsd/classifications/Econ/tables/HS2022toHS2012ConversionAndCorrelationTables.xlsx"
+  },
+  {
+    "http_status": 200,
+    "id": "un-h5-h4",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/un-h5-h4/4708f403c2824e3c4275f57d97314c7065699d30fddad880bdbc0010cd0b1c71.xlsx",
+      "query": {},
+      "retrieved_at": "2026-09-14T22:18:58+00:00",
+      "sha256": "795b14a664a1a46e24bf72b45fae5128a05209c91f5f581ae419e57028497fac",
+      "source": "un-h5-h4",
+      "url": "https://unstats.un.org/unsd/classifications/Econ/tables/HS2017toHS2012ConversionAndCorrelationTables.xlsx"
+    },
+    "status": "archived_unreviewed",
+    "url": "https://unstats.un.org/unsd/classifications/Econ/tables/HS2017toHS2012ConversionAndCorrelationTables.xlsx"
+  }
+]

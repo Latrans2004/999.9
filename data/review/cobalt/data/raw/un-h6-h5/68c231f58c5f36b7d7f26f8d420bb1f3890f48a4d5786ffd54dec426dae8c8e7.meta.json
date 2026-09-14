@@ -1,0 +1,8 @@
+{
+  "path": "data/raw/un-h6-h5/68c231f58c5f36b7d7f26f8d420bb1f3890f48a4d5786ffd54dec426dae8c8e7.xlsx",
+  "query": {},
+  "retrieved_at": "2026-09-14T22:18:57+00:00",
+  "sha256": "8eb17f1db419eed133d44f831176a51f9d9df499cc82a491b999da53652ba038",
+  "source": "un-h6-h5",
+  "url": "https://unstats.un.org/unsd/classifications/Econ/tables/HS2022toHS2017ConversionAndCorrelationTables.xlsx"
+}

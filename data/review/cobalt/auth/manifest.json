@@ -1,0 +1,696 @@
+{
+  "attempts": [
+    {
+      "attempted_at": "2026-09-14T18:39:08+00:00",
+      "classifications": [
+        "H4"
+      ],
+      "estimated_net_weight": 0,
+      "http_status": 200,
+      "missing_net_weight": 0,
+      "publishable": false,
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260500",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 5000,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2017",
+        "reporterCode": "180"
+      },
+      "raw": {
+        "path": "data/raw/comtrade-auth/2f44913c4fbb523b2368dcedc31f15d8c29f7ee19af17f65cfc0cc6b083862bb.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "260500",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 5000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2017",
+          "reporterCode": "180"
+        },
+        "retrieved_at": "2026-09-14T18:39:09+00:00",
+        "sha256": "8ee47d05c6fa3d8fd5edcd8f3489a56f796150466b61d88f63f771c546405826",
+        "source": "comtrade-auth",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      "retry_after": null,
+      "rows": 8,
+      "status": "observed"
+    },
+    {
+      "attempted_at": "2026-09-14T18:39:12+00:00",
+      "classifications": [
+        "H5"
+      ],
+      "estimated_net_weight": 0,
+      "http_status": 200,
+      "missing_net_weight": 0,
+      "publishable": false,
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260500",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 5000,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2017",
+        "reporterCode": "156"
+      },
+      "raw": {
+        "path": "data/raw/comtrade-auth/41e93e240354c82b4e0e1ae166f3b2f1442747cd4bc702ec753008a73279a223.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "260500",
+          "customsCode": "C00",
+          "flowCode": "M",
+          "includeDesc": "true",
+          "maxRecords": 5000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2017",
+          "reporterCode": "156"
+        },
+        "retrieved_at": "2026-09-14T18:39:12+00:00",
+        "sha256": "b261892299368b476b88a0488947a3fce9d988adba30d9d5865752b1ad6f1ed0",
+        "source": "comtrade-auth",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      "retry_after": null,
+      "rows": 9,
+      "status": "observed"
+    },
+    {
+      "attempted_at": "2026-09-14T18:39:15+00:00",
+      "http_status": 200,
+      "publishable": false,
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "810520",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 5000,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2017",
+        "reporterCode": "180"
+      },
+      "raw": {
+        "path": "data/raw/comtrade-auth/d099730267f6899b0583c4e8d483cd4da01aa0a9f26745617e643002111eee2b.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "810520",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 5000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2017",
+          "reporterCode": "180"
+        },
+        "retrieved_at": "2026-09-14T18:39:16+00:00",
+        "sha256": "dd4b059066c27a0375ed17d0ecf893f6152247a369f64239c91d7cbdbd1751eb",
+        "source": "comtrade-auth",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      "retry_after": null,
+      "rows": 0,
+      "status": "empty"
+    },
+    {
+      "attempted_at": "2026-09-14T18:39:19+00:00",
+      "classifications": [
+        "H5"
+      ],
+      "estimated_net_weight": 6,
+      "http_status": 200,
+      "missing_net_weight": 0,
+      "publishable": false,
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "810520",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 5000,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2017",
+        "reporterCode": "156"
+      },
+      "raw": {
+        "path": "data/raw/comtrade-auth/5074eae1c02f1aa97b9f8992fffb8fe1446c843e2ff50a9b446a1b8c3c4c2f22.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "810520",
+          "customsCode": "C00",
+          "flowCode": "M",
+          "includeDesc": "true",
+          "maxRecords": 5000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2017",
+          "reporterCode": "156"
+        },
+        "retrieved_at": "2026-09-14T18:39:19+00:00",
+        "sha256": "04f13de58eee9701d0565d66194d6fb43a73bca1c472ed808e93e5f21d0f8eaf",
+        "source": "comtrade-auth",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      "retry_after": null,
+      "rows": 26,
+      "status": "observed"
+    },
+    {
+      "attempted_at": "2026-09-14T18:39:22+00:00",
+      "http_status": 200,
+      "publishable": false,
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260500",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 5000,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "180"
+      },
+      "raw": {
+        "path": "data/raw/comtrade-auth/3b86586122ec516a8e6910f8f9cc3378dd8653920d901f118c30adc35cc93722.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "260500",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 5000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2024",
+          "reporterCode": "180"
+        },
+        "retrieved_at": "2026-09-14T18:39:23+00:00",
+        "sha256": "d28761e01e933cf9f2639c2ad82e4832825f5bdf2371928d13bd22a83fe1ead4",
+        "source": "comtrade-auth",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      "retry_after": null,
+      "rows": 0,
+      "status": "empty"
+    },
+    {
+      "attempted_at": "2026-09-14T18:39:26+00:00",
+      "classifications": [
+        "H6"
+      ],
+      "estimated_net_weight": 2,
+      "http_status": 200,
+      "missing_net_weight": 0,
+      "publishable": false,
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260500",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 5000,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "156"
+      },
+      "raw": {
+        "path": "data/raw/comtrade-auth/64bcc488d9678fb7fabdcd2c8f0506e6ef18caa18ca4a4acabe609eec67f22ce.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "260500",
+          "customsCode": "C00",
+          "flowCode": "M",
+          "includeDesc": "true",
+          "maxRecords": 5000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2024",
+          "reporterCode": "156"
+        },
+        "retrieved_at": "2026-09-14T18:39:26+00:00",
+        "sha256": "41b6047a42a12735fd6b91de6ddaee47c0b82efe037743e871532b7ec302328f",
+        "source": "comtrade-auth",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      "retry_after": null,
+      "rows": 7,
+      "status": "observed"
+    },
+    {
+      "attempted_at": "2026-09-14T18:39:29+00:00",
+      "http_status": 200,
+      "publishable": false,
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "810520",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 5000,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "180"
+      },
+      "raw": {
+        "path": "data/raw/comtrade-auth/aa13eb9722c0fb22e28d51ebcfaaf4ebd3e7e8d174b9628c7d0f20c00d9c5755.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "810520",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 5000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2024",
+          "reporterCode": "180"
+        },
+        "retrieved_at": "2026-09-14T18:39:29+00:00",
+        "sha256": "65a09982fd54f10976d88d3d5859795c3b14b5c30954a226066a3fbadd2973de",
+        "source": "comtrade-auth",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      "retry_after": null,
+      "rows": 0,
+      "status": "empty"
+    },
+    {
+      "attempted_at": "2026-09-14T18:39:32+00:00",
+      "classifications": [
+        "H6"
+      ],
+      "estimated_net_weight": 5,
+      "http_status": 200,
+      "missing_net_weight": 0,
+      "publishable": false,
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "810520",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 5000,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "156"
+      },
+      "raw": {
+        "path": "data/raw/comtrade-auth/7edf7c7663b6aa9c895e2496b9bdf901f7584074634fad5cfa22f66b1f11881c.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "810520",
+          "customsCode": "C00",
+          "flowCode": "M",
+          "includeDesc": "true",
+          "maxRecords": 5000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2024",
+          "reporterCode": "156"
+        },
+        "retrieved_at": "2026-09-14T18:39:33+00:00",
+        "sha256": "c578eca43e17836a243cb653e7c74a6ffc82859419f981124cf61c976ca32137",
+        "source": "comtrade-auth",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      "retry_after": null,
+      "rows": 22,
+      "status": "observed"
+    },
+    {
+      "attempted_at": "2026-09-14T18:39:36+00:00",
+      "classifications": [
+        "H6"
+      ],
+      "estimated_net_weight": 0,
+      "http_status": 200,
+      "missing_net_weight": 4,
+      "publishable": false,
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260500",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 5000,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "0",
+        "period": "2024",
+        "reporterCode": ""
+      },
+      "raw": {
+        "path": "data/raw/comtrade-auth/91be39995900d4a3d689f3640265617fdfafc032ca53106c8f9089dc1cfd5a1e.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "260500",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 5000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "0",
+          "period": "2024",
+          "reporterCode": ""
+        },
+        "retrieved_at": "2026-09-14T18:39:36+00:00",
+        "sha256": "b9148541faf8d2e67c1124be8b2f41feba667a3bb447eabba848a5a0c22344cc",
+        "source": "comtrade-auth",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      "retry_after": null,
+      "rows": 26,
+      "status": "observed"
+    },
+    {
+      "attempted_at": "2026-09-14T18:39:39+00:00",
+      "classifications": [
+        "H6"
+      ],
+      "estimated_net_weight": 11,
+      "http_status": 200,
+      "missing_net_weight": 0,
+      "publishable": false,
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "810520",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 5000,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "0",
+        "period": "2024",
+        "reporterCode": ""
+      },
+      "raw": {
+        "path": "data/raw/comtrade-auth/b2997d0d3fcb52bdd22dd02d99094dd44b950cd48ccd3aabf2dfd04070c97970.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "810520",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 5000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "0",
+          "period": "2024",
+          "reporterCode": ""
+        },
+        "retrieved_at": "2026-09-14T18:39:40+00:00",
+        "sha256": "b9a8515d169243401511e758e2b45d6128898112dda3a3ed18f74e50b8056b4a",
+        "source": "comtrade-auth",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      "retry_after": null,
+      "rows": 46,
+      "status": "observed"
+    },
+    {
+      "attempted_at": "2026-09-14T18:39:43+00:00",
+      "http_status": 200,
+      "publishable": false,
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "282200",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 5000,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "180"
+      },
+      "raw": {
+        "path": "data/raw/comtrade-auth/3a06c15355bee706e24b169dfdd9ec6a346118f5a33dc5488316106b33ad9792.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "282200",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 5000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2024",
+          "reporterCode": "180"
+        },
+        "retrieved_at": "2026-09-14T18:39:43+00:00",
+        "sha256": "65a09982fd54f10976d88d3d5859795c3b14b5c30954a226066a3fbadd2973de",
+        "source": "comtrade-auth",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      "retry_after": null,
+      "rows": 0,
+      "status": "empty"
+    },
+    {
+      "attempted_at": "2026-09-14T18:39:46+00:00",
+      "classifications": [
+        "H6"
+      ],
+      "estimated_net_weight": 10,
+      "http_status": 200,
+      "missing_net_weight": 0,
+      "publishable": false,
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "282200",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 5000,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "156"
+      },
+      "raw": {
+        "path": "data/raw/comtrade-auth/3c13c8ccb1e96da363d59d574aec83b458b59e595b6d10b8d1af303a78c3797a.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "282200",
+          "customsCode": "C00",
+          "flowCode": "M",
+          "includeDesc": "true",
+          "maxRecords": 5000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2024",
+          "reporterCode": "156"
+        },
+        "retrieved_at": "2026-09-14T18:39:46+00:00",
+        "sha256": "d40a977b236e0874b6c2721d9927fcef6d212f90e6c10a7a56440cfef663f94b",
+        "source": "comtrade-auth",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      "retry_after": null,
+      "rows": 14,
+      "status": "observed"
+    }
+  ],
+  "publishable": false,
+  "queries": [
+    {
+      "breakdownMode": "classic",
+      "cmdCode": "260500",
+      "customsCode": "C00",
+      "flowCode": "X",
+      "includeDesc": "true",
+      "maxRecords": 5000,
+      "motCode": "0",
+      "partner2Code": "0",
+      "partnerCode": "",
+      "period": "2017",
+      "reporterCode": "180"
+    },
+    {
+      "breakdownMode": "classic",
+      "cmdCode": "260500",
+      "customsCode": "C00",
+      "flowCode": "M",
+      "includeDesc": "true",
+      "maxRecords": 5000,
+      "motCode": "0",
+      "partner2Code": "0",
+      "partnerCode": "",
+      "period": "2017",
+      "reporterCode": "156"
+    },
+    {
+      "breakdownMode": "classic",
+      "cmdCode": "810520",
+      "customsCode": "C00",
+      "flowCode": "X",
+      "includeDesc": "true",
+      "maxRecords": 5000,
+      "motCode": "0",
+      "partner2Code": "0",
+      "partnerCode": "",
+      "period": "2017",
+      "reporterCode": "180"
+    },
+    {
+      "breakdownMode": "classic",
+      "cmdCode": "810520",
+      "customsCode": "C00",
+      "flowCode": "M",
+      "includeDesc": "true",
+      "maxRecords": 5000,
+      "motCode": "0",
+      "partner2Code": "0",
+      "partnerCode": "",
+      "period": "2017",
+      "reporterCode": "156"
+    },
+    {
+      "breakdownMode": "classic",
+      "cmdCode": "260500",
+      "customsCode": "C00",
+      "flowCode": "X",
+      "includeDesc": "true",
+      "maxRecords": 5000,
+      "motCode": "0",
+      "partner2Code": "0",
+      "partnerCode": "",
+      "period": "2024",
+      "reporterCode": "180"
+    },
+    {
+      "breakdownMode": "classic",
+      "cmdCode": "260500",
+      "customsCode": "C00",
+      "flowCode": "M",
+      "includeDesc": "true",
+      "maxRecords": 5000,
+      "motCode": "0",
+      "partner2Code": "0",
+      "partnerCode": "",
+      "period": "2024",
+      "reporterCode": "156"
+    },
+    {
+      "breakdownMode": "classic",
+      "cmdCode": "810520",
+      "customsCode": "C00",
+      "flowCode": "X",
+      "includeDesc": "true",
+      "maxRecords": 5000,
+      "motCode": "0",
+      "partner2Code": "0",
+      "partnerCode": "",
+      "period": "2024",
+      "reporterCode": "180"
+    },
+    {
+      "breakdownMode": "classic",
+      "cmdCode": "810520",
+      "customsCode": "C00",
+      "flowCode": "M",
+      "includeDesc": "true",
+      "maxRecords": 5000,
+      "motCode": "0",
+      "partner2Code": "0",
+      "partnerCode": "",
+      "period": "2024",
+      "reporterCode": "156"
+    },
+    {
+      "breakdownMode": "classic",
+      "cmdCode": "260500",
+      "customsCode": "C00",
+      "flowCode": "X",
+      "includeDesc": "true",
+      "maxRecords": 5000,
+      "motCode": "0",
+      "partner2Code": "0",
+      "partnerCode": "0",
+      "period": "2024",
+      "reporterCode": ""
+    },
+    {
+      "breakdownMode": "classic",
+      "cmdCode": "810520",
+      "customsCode": "C00",
+      "flowCode": "X",
+      "includeDesc": "true",
+      "maxRecords": 5000,
+      "motCode": "0",
+      "partner2Code": "0",
+      "partnerCode": "0",
+      "period": "2024",
+      "reporterCode": ""
+    },
+    {
+      "breakdownMode": "classic",
+      "cmdCode": "282200",
+      "customsCode": "C00",
+      "flowCode": "X",
+      "includeDesc": "true",
+      "maxRecords": 5000,
+      "motCode": "0",
+      "partner2Code": "0",
+      "partnerCode": "",
+      "period": "2024",
+      "reporterCode": "180"
+    },
+    {
+      "breakdownMode": "classic",
+      "cmdCode": "282200",
+      "customsCode": "C00",
+      "flowCode": "M",
+      "includeDesc": "true",
+      "maxRecords": 5000,
+      "motCode": "0",
+      "partner2Code": "0",
+      "partnerCode": "",
+      "period": "2024",
+      "reporterCode": "156"
+    }
+  ],
+  "schema_version": 1
+}

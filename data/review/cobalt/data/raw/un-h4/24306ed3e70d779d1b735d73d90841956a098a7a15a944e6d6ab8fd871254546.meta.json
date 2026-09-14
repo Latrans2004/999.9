@@ -1,0 +1,8 @@
+{
+  "path": "data/raw/un-h4/24306ed3e70d779d1b735d73d90841956a098a7a15a944e6d6ab8fd871254546.json",
+  "query": {},
+  "retrieved_at": "2026-09-14T17:51:21+00:00",
+  "sha256": "29b35dfc510f94e8360cfe3d2eefdabfb47c69a28e6b5628f9a3b6d824789a33",
+  "source": "un-h4",
+  "url": "https://comtradeapi.un.org/files/v1/app/reference/H4.json"
+}

@@ -1,0 +1,8 @@
+{
+  "path": "data/raw/un-h5/a93a931111e590e4595e0023b34b200df000f54068e7c4bed6ce963c6151f996.json",
+  "query": {},
+  "retrieved_at": "2026-09-14T17:51:24+00:00",
+  "sha256": "079987eba4e5e1f60e63368e2aa8d7ac68c29fa6f3a889466dbd5276272f2431",
+  "source": "un-h5",
+  "url": "https://comtradeapi.un.org/files/v1/app/reference/H5.json"
+}

@@ -1,0 +1,8 @@
+{
+  "path": "data/raw/glencore-2024/12fe8f4c17ce3ad617522ca1a4b9682e8981addaed81f432f4f4b7f0ce26fef6.pdf",
+  "query": {},
+  "retrieved_at": "2026-09-14T17:45:30+00:00",
+  "sha256": "92d709b4f14b1b24f7875406e1630f9d800734b32889d65191ea953d21daefd8",
+  "source": "glencore-2024",
+  "url": "https://www.glencore.com/.rest/api/v1/documents/static/437c6cdb-dbfb-4e61-a769-18655951cee2/Glencore+production+report_FY2024.pdf"
+}
