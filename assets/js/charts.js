@@ -12,7 +12,9 @@
   "use strict";
 
   var NS = "http://www.w3.org/2000/svg";
-  var INK = { data: "#CBD5E2", dim: "#7C8697", grid: "#222835", faint: "#4A5264", text: "#A7B0C0", strong: "#EAEEF4", surface: "#0D1017" };
+  /* White-ground palette: one steel-blue series colour, greys for everything
+     that is not data. Keep in step with the tokens in assets/css/site.css. */
+  var INK = { data: "#0F62B7", dim: "#8B949E", grid: "#E6EAEE", faint: "#6E7781", text: "#57606A", strong: "#14181D", surface: "#FFFFFF" };
 
   function el(name, attrs) {
     var node = document.createElementNS(NS, name);
