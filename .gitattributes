@@ -8,3 +8,6 @@
 *.png binary
 *.ico binary
 *.zip binary
+
+# Preserve archived PDF bytes for SHA256 verification.
+*.pdf binary
