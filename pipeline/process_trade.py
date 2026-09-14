@@ -54,6 +54,59 @@ def load_evidence(path, mineral=None):
     return entries
 
 
+VERIFICATION_STATUSES = ('not_applicable', 'no_adjustment', 'externally_confirmed',
+                         'externally_conflicting', 'unverified')
+
+
+def apply_verification(selected, entries):
+    """Label each row with whether its selected value was checked, and how.
+
+    The five values are ordered by how much they claim, and the first that fits wins:
+
+    not_applicable   the question does not arise - either the stage has no self-report /
+                     mirror pair to disagree about (a single-source stage), or no value was
+                     selected at all, so there is nothing to have verified.
+    externally_*     the ledger records a check of this country-year against a source
+                     outside the trade statistics. This outranks no_adjustment: a
+                     self-report that an outside source confirms - Japan's, checked against
+                     the Ministry of Finance - is a stronger statement than 'we changed
+                     nothing', and collapsing it into no_adjustment would hide the check.
+    no_adjustment    the self-report was taken as filed. Nothing was corrected, so there is
+                     no correction to verify. This is not the same as not_applicable: here
+                     the question arises and the answer is that it does not bite.
+    unverified       a correction was applied and nobody has checked it against anything
+                     outside Comtrade.
+
+    The legacy boolean is derived from the result rather than kept alongside it, so the two
+    cannot drift apart. Note what that reclassifies: the mirror substitutions on the
+    carbonate stage were all carried as verified because the twelve-country allowlist
+    limits them to producing and refining countries. That is an argument about which
+    substitutions are plausible, not a check of any particular country, and only Argentina
+    has actually been checked. The rest now read as unverified, which is what they are.
+    """
+    ledger = {}
+    for e in entries:
+        for year in range(e['year_from'], e['year_to'] + 1):
+            ledger[(e['hs_code'], year, e['country'])] = e
+    matched = set()
+    for r in selected:
+        entry = ledger.get((r.get('hs_code'), r.get('year'), r.get('country')))
+        if 'selected_source' not in r:
+            status = 'not_applicable'
+        elif entry is not None:
+            status = entry['outcome']
+            matched.add((entry['hs_code'], r['year'], entry['country']))
+        elif r['selected_value'] is None:
+            status = 'not_applicable'
+        elif r['selected_source'] in ('reported', 'reported_china_import'):
+            status = 'no_adjustment'
+        else:
+            status = 'unverified'
+        r['verification_status'] = status
+        r['unverified'] = status == 'unverified'
+    return sorted(set(ledger) - matched)
+
+
 def report_coverage(rows, flow='X'):
     """Reporting completeness per (hs_code, year), as a percentage of that stage's own median.
 

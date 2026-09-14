@@ -157,6 +157,52 @@ def test_evidence_ledger_rejects_untrustworthy_entries(tmp_path,breakage):
     with pytest.raises((ValueError,KeyError)): process_trade.load_evidence(path,'lithium')
 
 
+def test_verification_status_separates_why_from_whether():
+    entries=[{'mineral':'lithium','hs_code':'282520','country':'JPN','year_from':2021,'year_to':2021,
+              'outcome':'externally_confirmed','supports':'self_report','source_name':'MOF',
+              'source_url':None,'note_en':'e','note_ja':'j'},
+             {'mineral':'lithium','hs_code':'253090','country':'ZWE','year_from':2030,'year_to':2030,
+              'outcome':'externally_conflicting','supports':'neither','source_name':'MMCZ',
+              'source_url':None,'note_en':'e','note_ja':'j'}]
+    rows=[{'hs_code':'282520','year':2021,'country':'JPN','selected_value':3.736,'selected_source':'reported'},
+          {'hs_code':'282520','year':2021,'country':'KOR','selected_value':1.0,'selected_source':'reported'},
+          {'hs_code':'253090','year':2021,'country':'CHN','selected_value':5.0,'selected_source':'reported_china_import'},
+          {'hs_code':'283691','year':2021,'country':'BRA','selected_value':9.0,'selected_source':'mirror_missing_report'},
+          {'hs_code':'283691','year':2021,'country':'FRA','selected_value':None,'selected_source':'missing'},
+          {'hs_code':'headline_usd','year':2021,'country':'CHL','selected_value':7.0}]
+    unmatched=process_trade.apply_verification(rows,entries)
+    status=[r['verification_status'] for r in rows]
+    # An outside source that confirms a self-report outranks 'we changed nothing': folding
+    # Japan into no_adjustment would hide the one check that was actually carried out.
+    assert status[0]=='externally_confirmed'
+    assert status[1]=='no_adjustment'
+    # The importer's own declaration is taken as filed, so there is no correction to verify.
+    assert status[2]=='no_adjustment'
+    # A mirror substitution nobody checked is exactly what 'unverified' is for.
+    assert status[3]=='unverified'
+    # Nothing was selected, and a stage with no self-report/mirror pair has no such question.
+    assert status[4]=='not_applicable' and status[5]=='not_applicable'
+    assert [r['unverified'] for r in rows]==[s=='unverified' for s in status]
+    assert all(s in process_trade.VERIFICATION_STATUSES for s in status)
+    # An entry covering a year that is not published verifies nothing, and says so.
+    assert unmatched==[('253090',2030,'ZWE')]
+
+
+def test_accepted_snapshot_carries_only_checked_mirrors_as_verified():
+    snapshot=json.loads((ROOT/'data/processed/lithium/snapshot.json').read_text(encoding='utf-8'))
+    rows=snapshot['selected']
+    assert all(r['verification_status'] in process_trade.VERIFICATION_STATUSES for r in rows)
+    assert all(r['unverified']==(r['verification_status']=='unverified') for r in rows)
+    # The twelve-country allowlist on the carbonate stage is an argument about which
+    # substitutions are plausible, not a check of any country. Only Argentina 2024 has been
+    # checked against an outside source; every other mirror substitution reads as unverified.
+    mirrors=[r for r in rows if r['hs_code']=='283691' and r['selected_source'].startswith('mirror')]
+    assert len(mirrors)==33
+    checked=[r for r in mirrors if r['verification_status']=='externally_confirmed']
+    assert [(r['country'],r['year']) for r in checked]==[('ARG',2024)]
+    assert all(r['verification_status']=='unverified' for r in mirrors if r not in checked)
+
+
 def test_headline_hs_codes_agree_across_catalog_and_pipeline():
     # The site catalog and the strict pipeline each carry the headline HS codes, and a
     # silent divergence would publish a headline the pipeline did not compute. They are

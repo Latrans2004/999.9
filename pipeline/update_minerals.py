@@ -80,7 +80,7 @@ def pack(by_year, source, unit, unit_ja, stage, world=None):
             'trend': hhi.trend(series), 'notes': []}
 
 
-def assemble(bundle, settings, entry):
+def assemble(bundle, settings, entry, mineral='lithium', root=ROOT):
     rows = bundle['trade']
     # Input bundles are for reproducible audited replays, not an unchecked publication bypass.
     expected = {(hs,y,f) for hs in settings['hs_codes'] for y in range(settings['start_year'],settings['end_year']+1) for f in ['X','M']}
@@ -159,8 +159,13 @@ def assemble(bundle, settings, entry):
         source_quality.append({'hs_code':hs,'year':y,'flow':flow,'rows':len(group),
                                'reporters':len({r['reporter'] for r in group}),
                                'missing_value_fraction':sum(r['value_usd'] is None for r in group)/len(group)})
+    evidence = process_trade.load_evidence(root/'pipeline/evidence.json', mineral)
+    unmatched = process_trade.apply_verification(audit_selected, evidence)
+    if unmatched:
+        log.warning('External evidence matches no row (stage or year not published yet): %s', unmatched)
     return {'selected':audit_selected,'concentration':concentration,'trade_rows':rows,'source_quality':source_quality,
-            'entity_diagnostics':entity_diagnostics.summarize(rows), 'production':bundle['production']}, data
+            'entity_diagnostics':entity_diagnostics.summarize(rows),'evidence':evidence,
+            'production':bundle['production']}, data
 
 
 def content_fingerprint(payload):
@@ -206,7 +211,7 @@ def run(root=ROOT, mineral='lithium', bundle=None, *, render_command=None):
     if unknown_stages:
         raise ValueError(f'provisional_years names unknown stages: {sorted(unknown_stages)}')
     bundle = collect(root, settings) if bundle is None else bundle
-    processed, site = assemble(bundle, settings, entry)
+    processed, site = assemble(bundle, settings, entry, mineral, root)
     accepted_path = f'data/processed/{mineral}/snapshot.json'
     previous = read(root / accepted_path)
     report = validate_data.validate(processed,previous,settings['validation'])
@@ -254,10 +259,11 @@ def run(root=ROOT, mineral='lithium', bundle=None, *, render_command=None):
         put(stage,f'{base}/concentration.json',{'metadata':metadata,'records':processed['concentration']})
         put(stage,f'{base}/metadata.json',metadata)
         put(stage,f'{base}/entities.json',processed['entity_diagnostics'])
+        put(stage,f'{base}/evidence.json',{'metadata':metadata,'entries':processed['evidence']})
         put(stage,f'critical-minerals/data/minerals/{mineral}.json',site)
         put(stage,'critical-minerals/data/index.json',index)
         table=io.StringIO(newline='')
-        fields=['hs_code','year','country','reported_value','mirror_value','selected_value','selected_source','unit','included','classification','unverified','selection_note','supplement_source_url']
+        fields=['hs_code','year','country','reported_value','mirror_value','selected_value','selected_source','unit','included','classification','verification_status','unverified','selection_note','supplement_source_url']
         writer=csv.DictWriter(table,fieldnames=fields,extrasaction='ignore')
         writer.writeheader()
         writer.writerows(r for r in processed['selected'] if r['hs_code'] not in ('headline_usd','mine_li_t'))

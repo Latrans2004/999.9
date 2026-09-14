@@ -1,20 +1,71 @@
 {
-  "audit_data_url": "../data/lithium/metadata.json",
-  "caveats": [
-    "USGS withholds United States lithium production as company proprietary data, so the mine-side index is computed over the countries that do report and the missing share is stated as a coverage figure rather than imputed.",
-    "The trade codes cover refined lithium chemicals, not spodumene concentrate, so the export index describes the chemical conversion step rather than the mine."
+  "entries": [
+    {
+      "country": "ZWE",
+      "hs_code": "253090",
+      "mineral": "lithium",
+      "note_en": "Three sources, no two of which agree. Zimbabwe declared 865,611 t of exports to the world in 2024, of which 688,477 t to China; China declared 1,259,180 t of imports from Zimbabwe; MMCZ put Zimbabwe's worldwide exports at 1,014,000 t. China's import declaration exceeds the figure Zimbabwe's own state marketing body publishes for exports to the entire world - an inversion no reporting lag explains. Ore smuggling is a recurring, structural problem in Zimbabwe: it has been the subject of a US House China Select Committee inquiry and of arrests over consignments as small as 720 t, and the government has gone as far as banning raw ore and concentrate exports. Large volumes are moving outside official statistics and no available source captures the real figure, so none of them is used to fill the gap.",
+      "note_ja": "三者が食い違い、どの二つも一致しない。ジンバブエは2024年に全世界向け865,611 t(うち対中国688,477 t)を申告し、中国はジンバブエからの輸入を1,259,180 tと申告、MMCZはジンバブエの全世界向け輸出を1,014,000 tとしている。中国側の輸入申告が、ジンバブエ政府自身の販売公社が全世界向け輸出として公表する数値を上回るという逆転が起きており、報告遅れでは説明がつかない。ジンバブエでは鉱石の密輸が構造的な問題として繰り返し報じられ(米下院China Select Committeeの調査、720 tの積荷での逮捕事例など)、政府は生鉱石・精鉱の輸出禁止措置まで取っている。公式統計の外側で大量に動いていることの表れであり、どのソースも実態を捉えきれていないため、いずれも補完には使わない。",
+      "outcome": "externally_conflicting",
+      "source_name": "Minerals Marketing Corporation of Zimbabwe (MMCZ)",
+      "source_url": null,
+      "supports": "neither",
+      "year_from": 2024,
+      "year_to": 2024
+    },
+    {
+      "country": "CAN",
+      "hs_code": "253090",
+      "mineral": "lithium",
+      "note_en": "Natural Resources Canada puts 2024 Canadian lithium production at 5,983 t of contained lithium. Converted at the 2.788% lithium content of a 6% Li2O spodumene concentrate that is about 214,600 t of concentrate, and China declared 209,521 t of imports from Canada - a 97.6% match. Canada's own declaration of exports to China for the same year is 14 t. The mirror is right and the self-report is broken. NRCan states that spodumene ore and concentrate data are unavailable, so it publishes no export figure directly; checking the production volume for physical plausibility is what made the comparison possible. Note that the ore stage never adopts a mirror value, so this entry documents a known limitation of the published ore series rather than endorsing the value it carries.",
+      "note_ja": "カナダ天然資源省(NRCan)の2024年リチウム生産量は5,983 t(リチウム含有量)。6%Li2Oのスポジュメン精鉱のリチウム含有率2.788%で換算すると精鉱約214,600 tとなり、中国の対カナダ輸入申告209,521 tと97.6%一致する。同年のカナダ自身による対中国輸出申告はわずか14 t。ミラーが正しく、自己申告が壊れている。NRCanは「スポジュメン鉱石・精鉱のデータは利用不可」と明記しており輸出量そのものは公表していないため、生産量から物量の妥当性を確かめるという手順が有効だった。なお鉱石段階はミラー値を採用しない方針であり、本エントリは公開中の鉱石系列が持つ既知の限界を記録するものであって、その値を裏付けるものではない。",
+      "outcome": "externally_confirmed",
+      "source_name": "Natural Resources Canada - Lithium facts",
+      "source_url": null,
+      "supports": "mirror",
+      "year_from": 2024,
+      "year_to": 2024
+    },
+    {
+      "country": "NGA",
+      "hs_code": "253090",
+      "mineral": "lithium",
+      "note_en": "Benchmark Mineral Intelligence puts Nigeria's annual exports at roughly 85 kt LCE, about 17 kt below its own 103 kt LCE forecast. Nigeria's Comtrade self-report for 2024 is 6,529 t - an order of magnitude away - while China declares 490,223 t of imports from Nigeria, which is the figure consistent with the independent estimate. Illegal mining and smuggling are an acknowledged problem in Nigeria, including the closure of Three Crown Mines in Kebbi State, and the national export statistics do not capture what is actually leaving. Note that the ore stage never adopts a mirror value, so this entry documents a known limitation of the published ore series rather than endorsing the value it carries.",
+      "note_ja": "Benchmark Mineral Intelligenceによれば、ナイジェリアの年間輸出は約85 kt LCE規模(同社予測103 kt LCEを約17 kt下回る水準)。Comtradeのナイジェリア自己申告は2024年で6,529 tと桁が違い、中国側の対ナイジェリア輸入申告490,223 tのほうが独立推計と整合する。ナイジェリアでは違法採掘・密輸が問題化しており(Kebbi州のThree Crown Mines閉鎖など)、自国の輸出統計が実態を捉えていない。なお鉱石段階はミラー値を採用しない方針であり、本エントリは公開中の鉱石系列が持つ既知の限界を記録するものであって、その値を裏付けるものではない。",
+      "outcome": "externally_confirmed",
+      "source_name": "Benchmark Mineral Intelligence",
+      "source_url": null,
+      "supports": "mirror",
+      "year_from": 2024,
+      "year_to": 2024
+    },
+    {
+      "country": "ARG",
+      "hs_code": "283691",
+      "mineral": "lithium",
+      "note_en": "CAEM and the mining secretariat put Argentina's 2024 worldwide exports at 67,766 t. The Comtrade mirror - the sum of what importing countries declared - is 64,840 t, or 95.7% of that independent figure, while Argentina's own declaration is 47,609 t, or 70.3%. The mirror lands close to the independent source and the self-report is clearly understated, which is what the underreporting correction on this stage assumes. The same reporting also records Argentina's share going to China rising from 43% in 2023 to 67% in 2024, consistent with the sharp increase in China's share of this stage.",
+      "note_ja": "CAEMおよび鉱業事務局によるアルゼンチンの2024年全世界向け輸出は67,766 t。Comtradeのミラー値(輸入国側の申告合計)は64,840 tで独立ソースの95.7%、一方アルゼンチン自身の申告は47,609 tで70.3%にとどまる。ミラー値が独立ソースにきわめて近く自己申告が明確に過小であり、本段階の過小申告補正が前提とするとおりの関係になっている。同じ報道はアルゼンチンの対中国比率が2023年43%から2024年67%へ急増したとも伝えており、本段階における中国シェアの急拡大とも整合する。",
+      "outcome": "externally_confirmed",
+      "source_name": "CAEM (Camara Argentina de Empresarios Mineros) / Secretaria de Mineria",
+      "source_url": null,
+      "supports": "mirror",
+      "year_from": 2024,
+      "year_to": 2024
+    },
+    {
+      "country": "JPN",
+      "hs_code": "282520",
+      "mineral": "lithium",
+      "note_en": "Japan's Ministry of Finance records 2021 exports under this code of 3,510 kg to China and 6 kg to South Korea, with no entry for the United States - about 3.52 t in total. Japan's Comtrade self-report of 3.736 t agrees with it; the mirror is 305.8 t, of which 264.2 t is China's declared import from Japan, roughly eighty times the self-report. The mirror is importing countries booking entrepot trade with Japan recorded as the country of origin, so the mirror correction is left switched off for Japan and the self-report is used. The instructive part is the direction: statistical quality is no guide to which side to believe - here the well-resourced statistical agency is the one to trust, where for Canada in the same dataset it is not. The physical check was carried out for 2021 only, so this entry covers 2021 alone even though the correction's configured scope is 2018-2021; the other years are unverified.",
+      "note_ja": "財務省貿易統計によれば、2021年の本コードの輸出は中国向け3,510 kg、韓国向け6 kg、米国向けはデータなしで、合計約3.52 t。Comtradeの日本の自己申告3.736 tとほぼ一致する。一方ミラー値は305.8 t、うち中国側が申告する対日輸入は264.2 tで、自己申告の約80倍にあたる。ミラー値は輸入国側が中継貿易を「原産国=日本」と計上したものと判断し、日本についてはミラー補正を無効化して自己申告を採用している。重要なのは方向で、統計精度の高さは「どちらを信じるか」の指針にならない。ここでは統計体制の整った国の申告が正しく、同じデータセットのカナダでは逆だった。物量確認は2021年について行ったものであり、補正の設定上の適用範囲は2018〜2021年だが本エントリは2021年のみを対象とする。他年は未確認である。",
+      "outcome": "externally_confirmed",
+      "source_name": "Japan Ministry of Finance Trade Statistics (e-Stat API, exports by commodity and country, statistical code 282520000)",
+      "source_url": null,
+      "supports": "self_report",
+      "year_from": 2021,
+      "year_to": 2021
+    }
   ],
-  "caveats_ja": [
-    "USGSは米国のリチウム生産量を企業の機密情報として非開示にしているため、鉱山側の指標は報告のある国だけで算出し、欠けている割合は推計で埋めずにカバレッジとして示している。",
-    "輸出側の品目コードはスポジュメン精鉱ではなく精製リチウム化合物を対象としているため、輸出側の指標が表すのは鉱山ではなく化学転換の工程である。"
-  ],
-  "generated_at": "2026-09-13T16:44:21+00:00",
-  "headline_hs_codes": [
-    "283691",
-    "282520"
-  ],
-  "hs_label": "Lithium carbonate (2836.91) and lithium oxide/hydroxide (2825.20)",
-  "hs_label_ja": "炭酸リチウム(2836.91)および酸化リチウム・水酸化リチウム(2825.20)",
   "metadata": {
     "data_year": [
       2017,
@@ -1028,269 +1079,5 @@
       "row_count": 3525,
       "status": "passed"
     }
-  },
-  "name": "Lithium",
-  "name_ja": "リチウム",
-  "production": {
-    "available": true,
-    "latest": {
-      "band": "high",
-      "coverage": 0.9944,
-      "cr1": 31.9,
-      "cr3": 72.82,
-      "cr5": 90.51,
-      "effective_suppliers": 4.89,
-      "hhi": 2046.7,
-      "reporters": 9,
-      "top": [
-        {
-          "code": "AUS",
-          "name": "Australia",
-          "quantity": 92000.0,
-          "share": 31.9024
-        },
-        {
-          "code": "CHN",
-          "name": "China",
-          "quantity": 62000.0,
-          "share": 21.4994
-        },
-        {
-          "code": "CHL",
-          "name": "Chile",
-          "quantity": 56000.0,
-          "share": 19.4188
-        },
-        {
-          "code": "ZWE",
-          "name": "Zimbabwe",
-          "quantity": 28000.0,
-          "share": 9.7094
-        },
-        {
-          "code": "ARG",
-          "name": "Argentina",
-          "quantity": 23000.0,
-          "share": 7.9756
-        },
-        {
-          "code": "BRA",
-          "name": "Brazil",
-          "quantity": 12000.0,
-          "share": 4.1612
-        },
-        {
-          "code": "MLI",
-          "name": "Mali",
-          "quantity": 9400.0,
-          "share": 3.2596
-        },
-        {
-          "code": "CAN",
-          "name": "Canada",
-          "quantity": 5600.0,
-          "share": 1.9419
-        },
-        {
-          "code": "PRT",
-          "name": "Portugal",
-          "quantity": 380.0,
-          "share": 0.1318
-        }
-      ],
-      "total": 288380.0,
-      "year": 2025
-    },
-    "latest_year": 2025,
-    "notes": [],
-    "series": [
-      {
-        "coverage": 1.0,
-        "cr3": 77.59,
-        "hhi": 2345.9,
-        "reporters": 9,
-        "year": 2024
-      },
-      {
-        "coverage": 0.9944,
-        "cr3": 72.82,
-        "hhi": 2046.7,
-        "reporters": 9,
-        "year": 2025
-      }
-    ],
-    "source": "USGS Mineral Commodity Summaries",
-    "stage": "mine",
-    "trend": {
-      "change": -299.2,
-      "direction": "down",
-      "from_hhi": 2345.9,
-      "from_year": 2024,
-      "to_hhi": 2046.7,
-      "to_year": 2025
-    },
-    "unit": "share of reported mine production",
-    "unit_ja": "報告された鉱山生産量に占める割合"
-  },
-  "role": "Cathode and electrolyte",
-  "role_ja": "正極材・電解質",
-  "slug": "lithium",
-  "summary": "The irreplaceable charge carrier in every lithium-ion cell. Mine output is dominated by Australian hard-rock spodumene and South American brine, but the refining step that turns either into battery-grade carbonate or hydroxide sits somewhere else entirely — which is why the mine-side and trade-side indices tell different stories.",
-  "summary_ja": "あらゆるリチウムイオン電池において代替のきかない電荷キャリア。鉱山生産はオーストラリアの硬岩スポジュメンと南米のかん水が大半を占めるが、それらを電池グレードの炭酸リチウムや水酸化リチウムに変える精製工程はまったく別の場所にある。鉱山側と輸出側の指標が異なる姿を示すのはそのためだ。",
-  "symbol": "Li",
-  "trade": {
-    "available": true,
-    "latest": {
-      "band": "high",
-      "coverage": null,
-      "cr1": 43.02,
-      "cr3": 88.87,
-      "cr5": 94.32,
-      "effective_suppliers": 2.91,
-      "hhi": 3435.7,
-      "reporters": 55,
-      "top": [
-        {
-          "code": "CHL",
-          "name": "Chile",
-          "quantity": 2522459905.8,
-          "share": 43.0185
-        },
-        {
-          "code": "CHN",
-          "name": "China",
-          "quantity": 2282789737.0,
-          "share": 38.9311
-        },
-        {
-          "code": "ARG",
-          "name": "Argentina",
-          "quantity": 406031369.05,
-          "share": 6.9245
-        },
-        {
-          "code": "USA",
-          "name": "United States",
-          "quantity": 195003715.0,
-          "share": 3.3256
-        },
-        {
-          "code": "KOR",
-          "name": "Korea, Republic of",
-          "quantity": 124169267.0,
-          "share": 2.1176
-        },
-        {
-          "code": "NLD",
-          "name": "Netherlands",
-          "quantity": 117994770.67,
-          "share": 2.0123
-        },
-        {
-          "code": "DEU",
-          "name": "Germany",
-          "quantity": 51668537.718,
-          "share": 0.8812
-        },
-        {
-          "code": "AUS",
-          "name": "Australia",
-          "quantity": 36274487.973,
-          "share": 0.6186
-        },
-        {
-          "code": "JPN",
-          "name": "Japan",
-          "quantity": 31986173.572,
-          "share": 0.5455
-        },
-        {
-          "code": "GBR",
-          "name": "United Kingdom",
-          "quantity": 30209930.678,
-          "share": 0.5152
-        }
-      ],
-      "total": 5863668521.208,
-      "year": 2024
-    },
-    "latest_year": 2024,
-    "notes": [],
-    "series": [
-      {
-        "coverage": null,
-        "cr3": 73.99,
-        "hhi": 2682.0,
-        "reporters": 52,
-        "year": 2017
-      },
-      {
-        "coverage": null,
-        "cr3": 81.24,
-        "hhi": 3194.7,
-        "reporters": 54,
-        "year": 2018
-      },
-      {
-        "coverage": null,
-        "cr3": 81.27,
-        "hhi": 2973.7,
-        "reporters": 50,
-        "year": 2019
-      },
-      {
-        "coverage": null,
-        "cr3": 82.21,
-        "hhi": 3076.7,
-        "reporters": 50,
-        "year": 2020
-      },
-      {
-        "coverage": null,
-        "cr3": 84.15,
-        "hhi": 3207.7,
-        "reporters": 51,
-        "year": 2021
-      },
-      {
-        "coverage": null,
-        "cr3": 91.77,
-        "hhi": 4366.3,
-        "reporters": 55,
-        "year": 2022
-      },
-      {
-        "coverage": null,
-        "cr3": 87.51,
-        "hhi": 3658.1,
-        "reporters": 64,
-        "year": 2023
-      },
-      {
-        "coverage": null,
-        "cr3": 88.87,
-        "hhi": 3435.7,
-        "reporters": 55,
-        "year": 2024
-      }
-    ],
-    "source": "UN Comtrade",
-    "stage": "refined",
-    "trend": {
-      "change": 359.0,
-      "direction": "up",
-      "from_hhi": 3076.7,
-      "from_year": 2020,
-      "to_hhi": 3435.7,
-      "to_year": 2024
-    },
-    "unit": "share of reported export value (USD, FOB)",
-    "unit_ja": "報告された輸出額(USドル、FOB)に占める割合"
-  },
-  "trade_stage": "refined",
-  "usgs_aliases": [
-    "Lithium",
-    "Lithium (content)"
-  ],
-  "usgs_commodity": "Lithium"
+  }
 }
