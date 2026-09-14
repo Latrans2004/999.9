@@ -122,6 +122,41 @@ def test_report_coverage_measures_filings_not_accepted_suppliers():
     assert process_trade.report_coverage(rows+[row('JPN',10,'M','CHN',hs='283691',year=2024)])[('283691',2024)]==pytest.approx(33.3)
 
 
+def test_evidence_ledger_is_well_formed_and_reaches_real_rows():
+    entries=process_trade.load_evidence(ROOT/'pipeline/evidence.json','lithium')
+    assert entries
+    settings=CONFIG
+    snapshot=json.loads((ROOT/'data/processed/lithium/snapshot.json').read_text(encoding='utf-8'))
+    rows={(r['hs_code'],r['year'],r['country']) for r in snapshot['selected']}
+    for e in entries:
+        # An entry naming a stage the pipeline does not query, or a year outside the
+        # published range, would silently verify nothing.
+        assert e['hs_code'] in settings['hs_codes'], e
+        assert settings['start_year']<=e['year_from']<=e['year_to']<=settings['end_year'], e
+        for year in range(e['year_from'],e['year_to']+1):
+            assert (e['hs_code'],year,e['country']) in rows, (e['hs_code'],year,e['country'])
+        # URLs are filled in by hand once confirmed; a fabricated one would defeat the ledger.
+        assert e.get('source_url') in (None,'')
+
+
+@pytest.mark.parametrize('breakage',['outcome','supports','conflicting_supports','years','source','note','overlap'])
+def test_evidence_ledger_rejects_untrustworthy_entries(tmp_path,breakage):
+    entry={'mineral':'lithium','hs_code':'283691','country':'ARG','year_from':2024,'year_to':2024,
+           'outcome':'externally_confirmed','supports':'mirror','source_name':'S','source_url':None,
+           'note_en':'e','note_ja':'j'}
+    ledger={'entries':[entry]}
+    if breakage=='outcome': entry['outcome']='probably_fine'
+    if breakage=='supports': entry['supports']='whoever'
+    if breakage=='conflicting_supports': entry['outcome']='externally_conflicting'
+    if breakage=='years': entry['year_to']=2023
+    if breakage=='source': entry['source_name']=''
+    if breakage=='note': entry['note_ja']=''
+    if breakage=='overlap': ledger['entries'].append(copy.deepcopy(entry))
+    path=tmp_path/'evidence.json'
+    path.write_bytes(archive.encode(ledger))
+    with pytest.raises((ValueError,KeyError)): process_trade.load_evidence(path,'lithium')
+
+
 def test_headline_hs_codes_agree_across_catalog_and_pipeline():
     # The site catalog and the strict pipeline each carry the headline HS codes, and a
     # silent divergence would publish a headline the pipeline did not compute. They are

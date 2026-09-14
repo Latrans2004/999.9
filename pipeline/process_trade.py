@@ -1,6 +1,8 @@
 """Reported and mirror quantities stay separate from the legacy USD headline."""
 from __future__ import annotations
 from collections import defaultdict
+import json
+from pathlib import Path
 from statistics import median
 from .hhi import concentration
 from . import countries
@@ -10,6 +12,46 @@ def total(values):
     values = list(values)
     # Do not claim a complete mirror sum when any constituent is missing.
     return sum(values) if values and all(v is not None for v in values) else None
+
+
+OUTCOMES = {'externally_confirmed', 'externally_conflicting'}
+SUPPORTS = {'self_report', 'mirror', 'neither'}
+
+
+def load_evidence(path, mineral=None):
+    """Read the external-evidence ledger and refuse anything that cannot be trusted as one.
+
+    The ledger's whole value is that a reader can take an entry at face value, so the
+    shape is checked rather than assumed: an outcome and a supported side that agree, a
+    named source, and a reason written in both languages. A conflicting outcome may not
+    claim to support either declaration, since the point of recording it is that neither
+    was settled. source_url is allowed to be empty - an unchecked link that looks real
+    would be worse than no link - but a source_name is not.
+    """
+    ledger = json.loads(Path(path).read_text(encoding='utf-8'))
+    entries = [e for e in ledger['entries'] if mineral is None or e['mineral'] == mineral]
+    seen = set()
+    for e in entries:
+        identity = (e['mineral'], e['hs_code'], e['country'], e['year_from'], e['year_to'])
+        if e['outcome'] not in OUTCOMES:
+            raise ValueError(f'{identity}: unknown evidence outcome {e["outcome"]}')
+        if e['supports'] not in SUPPORTS:
+            raise ValueError(f'{identity}: unknown supported side {e["supports"]}')
+        if (e['supports'] == 'neither') != (e['outcome'] == 'externally_conflicting'):
+            raise ValueError(f'{identity}: outcome and supported side disagree')
+        if e['year_to'] < e['year_from']:
+            raise ValueError(f'{identity}: invalid year range')
+        if not e.get('source_name'):
+            raise ValueError(f'{identity}: external evidence without a named source')
+        for field in ('note_en', 'note_ja'):
+            if not e.get(field):
+                raise ValueError(f'{identity}: missing {field}')
+        for year in range(e['year_from'], e['year_to'] + 1):
+            key = (e['mineral'], e['hs_code'], e['country'], year)
+            if key in seen:
+                raise ValueError(f'{key}: two evidence entries cover the same country-year')
+            seen.add(key)
+    return entries
 
 
 def report_coverage(rows, flow='X'):
