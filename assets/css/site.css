@@ -217,7 +217,8 @@ table.screener__table td.num strong { font-weight: 600; color: var(--text); }
 .cell__name { font-weight: 600; }
 .cell__name a { color: var(--text); text-decoration: none; }
 .cell__name a:hover { color: var(--link); text-decoration: underline; }
-.cell__sub { display: block; font-size: var(--step-micro); color: var(--text-3rd); margin-top: 1px; }
+.cell__sub { display: block; font-size: var(--step-micro); color: var(--text-3rd); margin-top: 1px; white-space: nowrap; }
+.cell__supplier { white-space: nowrap; }
 .cell__sub--num { font-variant-numeric: tabular-nums; }
 .cell__pending { color: var(--text-3rd); }
 .cell__review { color: var(--band-mid-ink); }
@@ -293,6 +294,7 @@ table.screener__table td.num strong { font-weight: 600; color: var(--text); }
 .quote__stat + .quote__stat { border-left: 1px solid var(--hairline-soft); padding-left: 16px; }
 .quote__stat-label { font-size: var(--step-micro); letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-2nd); }
 .quote__stat-value { font-size: 1.05rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.quote__stat-value--text { font-size: 0.9rem; line-height: 1.35; }
 .quote__stat-note { font-size: var(--step-micro); color: var(--text-3rd); }
 @media (max-width: 560px) {
   .quote__stats { grid-template-columns: 1fr 1fr; gap: 6px 16px; }

@@ -1,5 +1,6 @@
 {
   "audit_data_url": "../data/natural-graphite/metadata.json",
+  "category": "battery-metals",
   "caveats": [
     "Synthetic graphite (3801.10) is excluded. Natural graphite trade codes do not identify battery grade; trade concentration remains under review.",
     "Flake, vein and amorphous graphite command different prices and serve different end uses but share trade codes.",

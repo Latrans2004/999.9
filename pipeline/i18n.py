@@ -143,6 +143,36 @@ STRINGS_JA: dict[str, str] = {
     "evidence.source": "照合したソース",
     "table.source": "採用根拠",
     "table.verification": "検証",
+    # screener (hub and section index)
+    "screener.search": "検索",
+    "screener.placeholder": "鉱物名または元素記号",
+    "screener.category": "カテゴリ",
+    "screener.all_categories": "すべてのカテゴリ",
+    "screener.caption": (
+        "鉱物ごとの供給集中度。HHIは0〜10,000の尺度で、区分は鉱山側の値にもとづく。"
+    ),
+    "screener.pending": "準備中",
+    "screener.under_review": "確認中",
+    "screener.no_match": "該当する鉱物はありません。",
+    "screener.showing": "{total}件中{shown}件を表示",
+    "col.mineral": "鉱物",
+    "col.mine_hhi": "鉱山HHI",
+    "col.top_supplier": "最大供給国",
+    "col.export_hhi": "輸出HHI",
+    "col.band": "区分",
+    "col.year": "年",
+    "legend.title": "区分の読み方",
+    "legend.caption": "区分の読み方",
+    "legend.reading": "読み方",
+    "stage.provisional_short": "暫定",
+    # quote header (mineral pages)
+    "quote.mine_hhi": "鉱山HHI",
+    "quote.export_hhi": "輸出HHI",
+    "quote.top_producer": "最大生産国",
+    "quote.updated": "更新",
+    "quote.provisional_title": "暫定値を含みます。",
+    "quote.review_title": "貿易指標は確認中です。",
+    "quote.coverage_title": "カバレッジ",
 }
 
 

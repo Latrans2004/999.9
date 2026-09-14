@@ -1,103 +1,43 @@
 {% extends "base.html" %}
-{% block title %}Petralysis — supply concentration from open data{% endblock %}
-{% block title_ja %}Petralysis — 公開データで測る供給集中度{% endblock %}
+{% import "_screener.html" as ui %}
+{% block title %}Petralysis — supply concentration in critical minerals{% endblock %}
+{% block title_ja %}Petralysis — 重要鉱物の供給集中度{% endblock %}
 {% block og_title %}Petralysis{% endblock %}
 
 {% block content %}
-<div class="wrap hero">
-  <div class="hero__grid">
-    <div>
-      <p class="eyebrow" data-i18n-text="公開データによる測定">Open-data measurement</p>
-      <p class="wordmark">Petralysis</p>
-      <h1 data-i18n-text="エネルギー転換を支える素材の供給は、どれほど集中しているのか。">How concentrated is the supply of the materials an energy transition runs on?</h1>
-      <p class="hero__lede" data-i18n-text="Petralysisは、公表されている生産統計と貿易統計を、素材ごと・年ごとに1つの数値へと集約する。その数値がハーフィンダール・ハーシュマン指数(HHI)だ。独占禁止当局が市場の評価に用いるのと同じ尺度を、企業ではなく国に向けて使っている。ここにある数値はすべて、スケジュールにしたがってソースから再計算され、その過程はすべて公開されている。">
-        Petralysis takes published production and trade statistics and reduces them to one
-        number per material per year — the Herfindahl–Hirschman Index, the same measure
-        antitrust regulators use on markets, pointed at countries instead of firms.
-        Everything here is recomputed from source on a schedule, and every step is in the open.
-      </p>
-    </div>
-  </div>
-</div>
-
 <div class="wrap">
-  <hr class="rule">
+  <div class="page-head">
+    <h1>Petralysis</h1>
+    <p class="page-head__lede" data-i18n-text="重要鉱物の供給集中度を、公開データから。鉱山(USGS)と輸出(UN Comtrade)の2地点で測ったハーフィンダール・ハーシュマン指数(HHI)。">
+      Supply concentration in critical minerals, from open data. The Herfindahl–Hirschman
+      Index at two points in the chain: the mine (USGS) and the export gate (UN Comtrade).
+    </p>
+    <p class="page-head__meta">
+      <span data-i18n-text="{{ mineral_count }}鉱物 · 公開済み {{ live_count }}">{{ mineral_count }} minerals · {{ live_count }} published</span>
+      <span class="timestamp" data-i18n-text="{{ rebuilt_notice_ja }}">{% if generated_at %}Data last rebuilt {{ generated_at }}{% else %}Awaiting first data build{% endif %}</span>
+      <a href="{{ root }}critical-minerals/methodology.html" data-i18n="nav.methodology">Methodology</a>
+    </p>
+  </div>
+
+  {{ ui.screener(rows, categories, none, root) }}
+
   <section>
     <div class="section-head">
-      <h2 data-i18n="hub.sections_title">Sections</h2>
-      <p data-i18n="hub.sections_sub">One section per material family. Each is self-contained.</p>
+      <h2 data-i18n="legend.title">Reading the band</h2>
+      <p><a href="{{ root }}critical-minerals/methodology.html" data-i18n="chart.read_method">Read the full method →</a></p>
     </div>
-    <div class="cards">
-      <a class="card" href="{{ root }}critical-minerals/index.html">
-        <div class="card__top">
-          <div>
-            <div class="card__name" data-i18n="nav.critical_minerals">Critical minerals</div>
-            <div class="card__role" data-i18n-text="バッテリーメタル">Battery metals</div>
-          </div>
-          <span class="card__symbol" data-i18n="hub.live">Live</span>
-        </div>
-        <p style="margin:0;font-size:0.875rem;color:var(--ink-2)" data-i18n-text="バッテリーと電化のチェーンに連なる8つの鉱物を、2つの地点で測定する。鉱石が採掘される場所と、素材が輸出される場所。">
-          Eight minerals on the battery and electrification chain, measured at two points:
-          where the ore is mined and where the material is exported.
-        </p>
-        <div class="card__foot">
-          <span data-i18n-text="{{ mineral_count }}鉱物 · USGS + UN Comtrade">{{ mineral_count }} minerals · USGS + UN Comtrade</span>
-        </div>
-      </a>
-      <div class="card" aria-hidden="false">
-        <div class="card__top">
-          <div>
-            <div class="card__name" style="color:var(--ink-3)" data-i18n="hub.further_sections">Further sections</div>
-            <div class="card__role" data-i18n="hub.not_yet_built">Not yet built</div>
-          </div>
-          <span class="card__symbol">—</span>
-        </div>
-        <p style="margin:0;font-size:0.875rem;color:var(--ink-3)" data-i18n="hub.further_blurb">
-          The pipeline and the layout are shared, so a second material family is a
-          catalog file and a fetch adapter rather than a new site.
-        </p>
-        <div class="card__foot"><span data-i18n="hub.planned">Planned</span></div>
-      </div>
-    </div>
+    <p class="muted" style="font-size:var(--step-small)" data-i18n-text="HHIは各供給国のシェア(%)を2乗して合計した値(0〜10,000)。区分は米国合併ガイドラインの閾値を読み取りの目安として借用したもので、国が企業のように振る舞うという主張ではない。">
+      HHI is the sum of squared percentage shares of every supplying country, on a 0–10,000
+      scale. The bands borrow the US merger-guideline thresholds as a reading aid, not as
+      a claim that countries behave like firms.
+    </p>
+    {{ ui.band_legend(root) }}
   </section>
 
-  <hr class="rule">
-
-  <section>
-    <div class="section-head"><h2 data-i18n="hub.what_it_means_title">What the number means</h2></div>
-    <div class="split">
-      <div>
-        <p class="measure" data-i18n-text="ハーフィンダール・ハーシュマン指数は、各供給者のシェア(%)を2乗して合計したものだ。この「2乗」こそが要点で、シェア60%の供給者1社は、10%ずつの供給者6社よりもはるかに重く数えられる。これは、ある輸送ルートが1本閉ざされたときに買い手が実際に感じる違いそのものである。">
-          The Herfindahl–Hirschman Index is the sum of squared percentage shares. Squaring
-          is the whole idea: it makes one supplier at 60% count for far more than six at
-          10% each, which is the difference a buyer actually feels when a single shipment
-          route closes.
-        </p>
-        <p class="measure" data-i18n-text="独占は10,000点、均等な10の供給者は1,000点になる。下の区分は米国の合併ガイドラインに由来するもので、ここでは読み取りの目安として借用している。国が企業と同じように振る舞う、と主張するものではない。">
-          A monopoly scores 10,000. Ten equal suppliers score 1,000. The bands below come
-          from the US merger guidelines and are borrowed here as a reading aid, not as a
-          claim that countries behave like firms.
-        </p>
-        <p><a href="{{ root }}critical-minerals/methodology.html" data-i18n="chart.read_method">Read the full method →</a></p>
-      </div>
-      <div class="stats">
-        <div class="stat">
-          <span class="stat__label" data-i18n-text="1,000未満">Below 1,000</span>
-          <span class="stat__value" style="font-size:1.05rem" data-i18n="band.unconcentrated">Unconcentrated</span>
-          <span class="stat__note" data-i18n-text="どの供給者が欠けても、それ単独で市場の姿は変わらない。">No supplier's absence reshapes the market on its own.</span>
-        </div>
-        <div class="stat">
-          <span class="stat__label">1,000 – 1,800</span>
-          <span class="stat__value" style="font-size:1.05rem" data-i18n-text="中程度">Moderate</span>
-          <span class="stat__note" data-i18n-text="少数の供給者が条件を決める。">A handful of suppliers set the terms.</span>
-        </div>
-        <div class="stat">
-          <span class="stat__label" data-i18n-text="1,800超">Above 1,800</span>
-          <span class="stat__value" style="font-size:1.05rem" data-i18n="band.high">Highly concentrated</span>
-          <span class="stat__note" data-i18n-text="1つか2つの供給者が、市場そのものである。">One or two suppliers are the market.</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="cta-slot"></div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ root }}assets/js/screener.js"></script>
 {% endblock %}

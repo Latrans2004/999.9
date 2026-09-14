@@ -9,14 +9,16 @@
   <p class="crumb"><a href="{{ root }}index.html">Petralysis</a><span>/</span><span data-i18n="nav.methodology">Methodology</span></p>
 </div>
 
-<div class="wrap hero" style="padding-block:clamp(32px,6vw,64px) clamp(20px,4vw,36px)">
-  <p class="eyebrow" data-i18n-text="算出方法">Method</p>
-  <h1 style="font-size:var(--step-h1);font-weight:400" data-i18n-text="この数値はどう作られているか">How the number is made</h1>
-  <p class="hero__lede" data-i18n-text="1つの指標、2つのデータセット、推計はなし。このページは計算を一から再現できるだけの分量を備えている。算出方法の添えられていない集中度の数値は、小数点がついているだけのただの数字だからだ。">
-    One index, two datasets, no estimation. This page is long enough to reproduce the
-    calculation from scratch, because a concentration figure with no method attached is
-    just a number with a decimal point.
-  </p>
+<div class="wrap">
+  <div class="page-head">
+    <p class="eyebrow" data-i18n-text="算出方法">Method</p>
+    <h1 data-i18n-text="この数値はどう作られているか">How the number is made</h1>
+    <p class="page-head__lede" data-i18n-text="1つの指標、2つのデータセット、推計はなし。このページは計算を一から再現できるだけの分量を備えている。算出方法の添えられていない集中度の数値は、小数点がついているだけのただの数字だからだ。">
+      One index, two datasets, no estimation. This page is long enough to reproduce the
+      calculation from scratch, because a concentration figure with no method attached is
+      just a number with a decimal point.
+    </p>
+  </div>
 </div>
 
 <div class="wrap prose" data-lang-only="en">
@@ -78,11 +80,16 @@
 
   <hr class="rule">
 
-  <section>
+  <section id="two-indices">
     <h2>Two indices per mineral</h2>
     <p>
       Every mineral page carries two separate indices, because the answer to "who supplies
-      this" changes depending on which step of the chain you ask about.
+      this" changes depending on which step of the chain you ask about. The screener on
+      the front page shows both side by side: the mine figure sets the band, and the
+      export column quotes one representative trade figure per mineral. Where a mineral
+      is measured at several trade stages, the catalog names which stage that column
+      quotes; where the trade figure is withheld pending review, the column says so
+      rather than showing a number.
     </p>
     <h3>Mine concentration — USGS</h3>
     <p>
@@ -243,7 +250,7 @@
 
   <section>
     <h2>鉱物ごとに2つの指標</h2>
-    <p>各鉱物のページには、2つの独立した指標を載せている。「誰がこれを供給しているのか」という問いの答えは、サプライチェーンのどの段階について尋ねるかによって変わるからだ。</p>
+    <p>各鉱物のページには、2つの独立した指標を載せている。「誰がこれを供給しているのか」という問いの答えは、サプライチェーンのどの段階について尋ねるかによって変わるからだ。トップページのスクリーナーでは両者を並べて示す。区分は鉱山側の値で決まり、輸出列には鉱物ごとに代表となる貿易指標を1つ載せる。複数の貿易段階で測っている鉱物では、どの段階を代表値とするかをカタログで指定し、貿易指標がレビュー待ちで保留されている鉱物では、数値の代わりにその旨を表示する。</p>
     <h3>鉱山側の集中度 — USGS</h3>
     <p>ソース:米国地質調査所(USGS)の国立鉱物情報センターが毎年発行するMineral Commodity Summariesの、国別の世界鉱山生産量。これは地質的な姿、つまり鉱石がどこで採掘されているかを表す。</p>
     <p>USGSは一部の国の数値を企業の機密情報として非開示にしており(表中では<code>W</code>と表記)、他の数値も丸めている。非開示の行は除外し、推計で補うことはしない。その結果生じる欠落は、ページ上にカバレッジの割合として示す。指標は報告のある国だけで計算されるため、カバレッジが低いということは、実際の指標が表示値よりいくらか低い可能性が高いことを意味する。供給者を1つ除けば、残る供給者のシェアは必ず上がるからだ。</p>

@@ -1,23 +1,27 @@
 {% extends "base.html" %}
+{% import "_screener.html" as ui %}
 {% block title %}Critical minerals — Petralysis{% endblock %}
 {% block title_ja %}重要鉱物 — Petralysis{% endblock %}
 {% block og_title %}Critical minerals — Petralysis{% endblock %}
 {% block description %}Supply concentration for eight battery and electrification minerals, measured with the Herfindahl-Hirschman Index at the mine and at the export gate.{% endblock %}
 
 {% block content %}
-<div class="wrap hero" style="padding-bottom:clamp(28px,5vw,48px)">
-  <div class="hero__grid">
-    <div>
-      <p class="eyebrow" data-i18n-text="セクション 01 · 重要鉱物">Section 01 · Critical minerals</p>
-      <h1 data-i18n-text="{{ section.tagline_ja or '' }}">{{ section.tagline }}</h1>
-      <p class="hero__lede" data-i18n-text="{{ section.description_ja or '' }}">{{ section.description }}</p>
-    </div>
-  </div>
-</div>
-
 <div class="wrap">
+  <p class="crumb"><a href="{{ root }}index.html">Petralysis</a><span>/</span><span data-i18n="nav.critical_minerals">Critical minerals</span></p>
+
+  <div class="page-head">
+    {% set label = categories[fixed_category] if fixed_category in categories else none %}
+    <p class="eyebrow" data-i18n-text="セクション 01 · {{ label.label_ja if label else '' }}">Section 01 · {{ label.label if label else fixed_category }}</p>
+    <h1 data-i18n-text="{{ section.title_ja or '' }}">{{ section.title }}</h1>
+    <p class="page-head__lede" data-i18n-text="{{ section.tagline_ja or '' }}">{{ section.tagline }}</p>
+    <p class="page-head__meta">
+      <span data-i18n-text="{{ rows|length }}鉱物 · USGS + UN Comtrade">{{ rows|length }} minerals · USGS + UN Comtrade</span>
+      <span class="timestamp" data-i18n-text="{{ rebuilt_notice_ja }}">{% if generated_at %}Data last rebuilt {{ generated_at }}{% else %}Awaiting first data build{% endif %}</span>
+    </p>
+  </div>
+
   {% if not has_any_data %}
-  <div class="notice" style="margin-bottom:28px">
+  <div class="notice" style="margin-bottom:20px">
     <strong data-i18n="section.no_data_title">No data has been built yet.</strong>
     <span data-i18n="section.no_data_body">The pages below exist and the pipeline is in place, but the first successful fetch
     from USGS and UN Comtrade has not run. Until it does, every figure reads as
@@ -26,100 +30,24 @@
   </div>
   {% endif %}
 
-  <section style="padding-top:0">
-    <div class="section-head">
-      <h2 data-i18n="section.eight_minerals_title">Eight minerals</h2>
-      <p data-i18n="section.eight_minerals_sub">Sorted as listed. Figures are the most recent year each source covers.</p>
-    </div>
-
-    <div class="cards">
-      {% for mineral in minerals %}
-      <a class="card" href="{{ root }}critical-minerals/minerals/{{ mineral.slug }}.html">
-        <div class="card__top">
-          <div>
-            <div class="card__name" data-i18n-text="{{ mineral.name_ja or '' }}">{{ mineral.name }}</div>
-            <div class="card__role" data-i18n-text="{{ mineral.role_ja or '' }}">{{ mineral.role }}</div>
-          </div>
-          <span class="card__symbol">{{ mineral.symbol }}</span>
-        </div>
-
-        <div class="card__figure">
-          <div class="figure">
-            {% if mineral.headline %}
-            {% set source_ja = "鉱山側" if mineral.headline_source == "Mine" else "輸出側" %}
-            <span class="figure__label" data-i18n-text="{{ source_ja }}HHI · {{ mineral.headline.year }}">{{ mineral.headline_source }} HHI · {{ mineral.headline.year }}</span>
-            <span class="figure__value">{{ "{:,.0f}".format(mineral.headline.hhi) }}</span>
-            <span class="figure__sub" data-i18n-text="{{ mineral.headline.leader }} {{ '{:.0f}'.format(mineral.headline.leader_share) }}% · 上位3カ国 {{ '{:.0f}'.format(mineral.headline.cr3) }}%">
-              {{ mineral.headline.leader }} {{ "{:.0f}".format(mineral.headline.leader_share) }}%
-              · top three {{ "{:.0f}".format(mineral.headline.cr3) }}%
-            </span>
-            {% else %}
-            <span class="figure__label" data-i18n="figure.concentration">Concentration</span>
-            <span class="figure__value is-empty" data-i18n="figure.awaiting_build">Awaiting first build</span>
-            <span class="figure__sub" data-i18n="figure.no_source_data">No source data yet</span>
-            {% endif %}
-          </div>
-          {% if mineral.headline %}
-          <div class="card__spark" data-spark="{{ mineral.slug }}"></div>
-          {% endif %}
-        </div>
-
-        <div class="card__foot">
-          {% if mineral.headline %}
-          <span class="band band--{{ mineral.headline.band }}" data-i18n="band.{{ mineral.headline.band }}">{{ band_labels[mineral.headline.band] }}</span>
-          {% if mineral.headline.trend %}
-          <span data-i18n-text="{{ trend_phrase_ja(mineral.headline.trend) }}">{{ trend_phrase(mineral.headline.trend) }}</span>
-          {% endif %}
-          {% else %}
-          <span data-i18n="figure.page_ready_pending">Page ready · data pending</span>
-          {% endif %}
-        </div>
-      </a>
-      {% endfor %}
-    </div>
-  </section>
-
-  <hr class="rule">
+  {{ ui.screener(rows, categories, fixed_category, root) }}
 
   <section>
     <div class="section-head">
       <h2 data-i18n="section.two_indices_title">Two indices, not one</h2>
-      <p data-i18n="section.two_indices_sub">Why each mineral page carries a pair of numbers.</p>
+      <p><a href="{{ root }}critical-minerals/methodology.html#two-indices" data-i18n="chart.read_method">Read the full method →</a></p>
     </div>
-    <div class="split">
-      <div class="panel">
-        <div class="panel__head"><h3 data-i18n="panel.mine_title">Mine concentration</h3></div>
-        <p class="panel__sub" style="margin-bottom:0" data-i18n-text="USGSの国別の世界鉱山生産量から算出する。素材がどこで地中から取り出されているかに答える指標で、地質によって決まるため変化は遅い。USGSの表で非開示とされた国については、そのシェアを推測せず、カバレッジの不足として報告する。">
-          Built from USGS world mine production by country. It answers where the material
-          comes out of the ground, which is fixed by geology and slow to change. When a
-          country is withheld from the USGS table, its share is reported as a coverage
-          shortfall rather than guessed at.
-        </p>
-      </div>
-      <div class="panel">
-        <div class="panel__head"><h3 data-i18n="panel.export_title">Export concentration</h3></div>
-        <p class="panel__sub" style="margin-bottom:0" data-i18n-text="UN Comtradeの報告国別の年間輸出額から算出する。実際に誰がその素材を出荷しているかに答える指標で、鉱山統計がまったく捉えない精錬・加工を反映する。ここに並ぶ鉱物のいくつかでは2つの数値が大きく離れており、その乖離こそが面白い部分である。">
-          Built from UN Comtrade annual export value by reporting country. It answers who
-          actually ships the material, which captures refining and processing that mine
-          statistics miss entirely. For several minerals here the two numbers are far
-          apart, and that gap is the interesting part.
-        </p>
-      </div>
-    </div>
+    <p class="muted" style="font-size:var(--step-small)" data-i18n-text="鉱山側の指標はUSGSの国別鉱山生産量から、輸出側の指標はUN Comtradeの報告国別輸出額から算出する。素材がどこで採掘されるかと、誰が実際に出荷しているかは別の問いであり、両者の乖離が加工段階のチョークポイントを示す。">
+      The mine index is built from USGS mine production by country; the export index from
+      UN Comtrade export value by reporting country. Where the material leaves the ground
+      and who actually ships it are different questions, and the gap between the two
+      figures is where a processing chokepoint shows.
+    </p>
+    {{ ui.band_legend(root) }}
   </section>
 </div>
 {% endblock %}
 
 {% block scripts %}
-<script type="application/json" id="page-data">{{ page_data|safe }}</script>
-<script>
-(function () {
-  var data = JSON.parse(document.getElementById("page-data").textContent);
-  (data.minerals || []).forEach(function (mineral) {
-    var node = document.querySelector('[data-spark="' + mineral.slug + '"]');
-    if (!node || !mineral.sparkline) return;
-    Chart.register(node, function () { Chart.spark(node, mineral.sparkline); });
-  });
-})();
-</script>
+<script src="{{ root }}assets/js/screener.js"></script>
 {% endblock %}

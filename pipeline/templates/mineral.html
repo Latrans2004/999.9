@@ -4,7 +4,9 @@
 {% block og_title %}{{ mineral.name }} supply concentration — Petralysis{% endblock %}
 {% block description %}{{ mineral.summary|striptags|truncate(180) }}{% endblock %}
 
-{% macro block_panel(key, block, title_key, title, title_ja, blurb, blurb_ja) %}
+{# compact=true drops the stat grid and the coverage notice, which the quote
+   header at the top of the page already carries for the mine index. #}
+{% macro block_panel(key, block, title_key, title, title_ja, blurb, blurb_ja, compact=false) %}
 <div class="panel">
   <div class="panel__head">
     <h3 data-i18n="{{ title_key }}">{{ title }}</h3>
@@ -15,7 +17,8 @@
   <p class="panel__sub" data-i18n-text="{{ blurb_ja }}">{{ blurb }}</p>
 
   {% if block.available %}
-  <div class="stats" style="margin-bottom:22px">
+  {% if not compact %}
+  <div class="stats" style="margin-bottom:18px">
     <div class="stat">
       <span class="stat__label">HHI {{ block.latest.year }}</span>
       <span class="stat__value">{{ "{:,.0f}".format(block.latest.hhi) }}</span>
@@ -43,12 +46,11 @@
       <span class="stat__note" data-i18n-text="{{ block.latest.reporters }}カ国が報告">{{ block.latest.reporters }} countries reported</span>
     </div>
   </div>
+  {% endif %}
 
   <div class="split">
     <div>
-      <h4 style="font-size:var(--step-micro);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px" data-i18n="chart.index_over_time">
-        Index over time
-      </h4>
+      <h4 class="split__head" data-i18n="chart.index_over_time">Index over time</h4>
       <div class="chart" data-line="{{ key }}"></div>
       <details class="table-toggle">
         <summary data-i18n="table.toggle">Table view</summary>
@@ -74,9 +76,7 @@
     </div>
 
     <div>
-      <h4 style="font-size:var(--step-micro);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px" data-i18n-text="{{ block.latest.year }}年のシェア">
-        Shares in {{ block.latest.year }}
-      </h4>
+      <h4 class="split__head" data-i18n-text="{{ block.latest.year }}年のシェア">Shares in {{ block.latest.year }}</h4>
       <div class="chart" data-bars="{{ key }}"></div>
       <details class="table-toggle">
         <summary data-i18n="table.toggle">Table view</summary>
@@ -103,7 +103,7 @@
     </div>
   </div>
 
-  {% if block.latest.coverage is not none and block.latest.coverage < 1 %}
+  {% if not compact and block.latest.coverage is not none and block.latest.coverage < 1 %}
   <div class="notice" style="margin-top:20px" data-lang-only="en">
     <strong>Coverage {{ "{:.0f}".format(block.latest.coverage * 100) }}%.</strong>
     The named countries above account for that share of the published world total. The
@@ -116,9 +116,9 @@
   {% endif %}
 
   {% else %}
-  <div class="chart__empty">
+  <div class="chart__empty{% if block.publication_status == 'under_review' %} chart__empty--review{% endif %}">
     {% if block.publication_status == 'under_review' %}
-    <strong data-i18n-text="確認中">Under review</strong>
+    <strong data-i18n="screener.under_review">Under review</strong>
     <span data-i18n-text="{{ block.notes_ja[0] }}">{{ block.notes[0] }}</span>
     {% else %}
     <strong data-i18n="chart.no_data_yet">No data yet</strong>
@@ -246,26 +246,129 @@
 {% endmacro %}
 
 {% block content %}
+{% set prod = mineral.production %}
+{% set trade = mineral.trade %}
+{% set trade_review = trade.publication_status == 'under_review' %}
 <div class="wrap">
   <p class="crumb">
     <a href="{{ root }}index.html">Petralysis</a><span>/</span><a href="{{ root }}critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n-text="{{ mineral.name_ja or '' }}">{{ mineral.name }}</span>
   </p>
-</div>
 
-<div class="wrap hero" style="padding-block:clamp(28px,5vw,52px) clamp(24px,4vw,40px)">
-  <p class="eyebrow" data-i18n-text="{{ mineral.role_ja or '' }}">{{ mineral.role }}</p>
-  <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
-    <h1 style="font-size:var(--step-h1);font-weight:400" data-i18n-text="{{ mineral.name_ja or '' }}">{{ mineral.name }}</h1>
-    <span class="card__symbol">{{ mineral.symbol }}</span>
+  {# ------------------------------------------------------- quote header #}
+  <section class="quote" aria-labelledby="quote-title">
+    <div class="quote__title">
+      <h1 id="quote-title" data-i18n-text="{{ mineral.name_ja or '' }}">{{ mineral.name }}</h1>
+      {% if mineral.symbol %}<span class="quote__symbol">{{ mineral.symbol }}</span>{% endif %}
+      <span class="quote__category"><span data-i18n-text="{{ category.label_ja }}">{{ category.label }}</span>{% if mineral.role %} · <span data-i18n-text="{{ mineral.role_ja or '' }}">{{ mineral.role }}</span>{% endif %}</span>
+    </div>
+    {% if mineral.summary %}
+    <p class="quote__summary" data-i18n-text="{{ first_sentence(mineral.summary_ja) }}">{{ first_sentence(mineral.summary) }}</p>
+    {% endif %}
+
+    <div class="quote__figure">
+      {% if prod.available %}
+      <span class="quote__label" data-i18n-text="鉱山HHI · {{ prod.latest.year }}">Mine HHI · {{ prod.latest.year }}</span>
+      <span class="quote__value">{{ "{:,.0f}".format(prod.latest.hhi) }}</span>
+      <span class="band band--{{ prod.latest.band }}" data-i18n="band.{{ prod.latest.band }}">{{ band_labels[prod.latest.band] }}</span>
+      {% if prod.trend %}
+      <span class="quote__delta" data-i18n-text="{{ trend_phrase_ja(prod.trend) }}">{{ trend_phrase(prod.trend) }}</span>
+      {% elif prod.trend_note %}
+      <span class="quote__delta" data-i18n-text="{{ prod.trend_note_ja }}">{{ prod.trend_note }}</span>
+      {% endif %}
+      {% else %}
+      <span class="quote__label" data-i18n="quote.mine_hhi">Mine HHI</span>
+      <span class="quote__value is-empty" data-i18n="screener.pending">Pending</span>
+      {% endif %}
+    </div>
+
+    <dl class="quote__stats">
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="quote.top_producer">Top producer</dt>
+        {% if prod.available %}
+        <dd class="quote__stat-value quote__stat-value--text">{{ prod.latest.top[0].name }}</dd>
+        <dd class="quote__stat-note" data-i18n-text="報告合計の{{ '{:.1f}'.format(prod.latest.top[0].share) }}%">{{ "{:.1f}".format(prod.latest.top[0].share) }}% of reported total</dd>
+        {% else %}
+        <dd class="quote__stat-value muted">—</dd>
+        {% endif %}
+      </div>
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="stat.top_three">Top three</dt>
+        {% if prod.available %}
+        <dd class="quote__stat-value">{{ "{:.0f}".format(prod.latest.cr3) }}%</dd>
+        <dd class="quote__stat-note" data-i18n-text="上位3カ国のシェアの合計">Combined share of the largest three</dd>
+        {% else %}
+        <dd class="quote__stat-value muted">—</dd>
+        {% endif %}
+      </div>
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="stat.effective_suppliers">Effective suppliers</dt>
+        {% if prod.available and prod.latest.effective_suppliers is not none %}
+        <dd class="quote__stat-value">{{ "{:.1f}".format(prod.latest.effective_suppliers) }}</dd>
+        <dd class="quote__stat-note" data-i18n-text="{{ prod.latest.reporters }}カ国が報告">{{ prod.latest.reporters }} countries reported</dd>
+        {% else %}
+        <dd class="quote__stat-value muted">—</dd>
+        {% endif %}
+      </div>
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="quote.export_hhi">Export HHI</dt>
+        {% if trade_review %}
+        <dd class="quote__stat-value quote__stat-value--text cell__review" data-i18n="screener.under_review">Under review</dd>
+        <dd class="quote__stat-note" data-i18n-text="貿易指標は公開判定待ち">Withheld pending review</dd>
+        {% elif trade.available %}
+        <dd class="quote__stat-value">{{ "{:,.0f}".format(trade.latest.hhi) }}</dd>
+        <dd class="quote__stat-note"><span class="band band--{{ trade.latest.band }}" data-i18n="band.{{ trade.latest.band }}">{{ band_labels[trade.latest.band] }}</span> {{ trade.latest.year }}</dd>
+        {% else %}
+        <dd class="quote__stat-value muted" data-i18n="screener.pending">Pending</dd>
+        {% endif %}
+      </div>
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="quote.updated">Updated</dt>
+        {% if mineral.generated_at %}
+        <dd class="quote__stat-value quote__stat-value--text timestamp" data-i18n-text="{{ human_time_ja(mineral.generated_at) }}">{{ human_time(mineral.generated_at) }}</dd>
+        <dd class="quote__stat-note" data-i18n-text="USGS · UN Comtrade">USGS · UN Comtrade</dd>
+        {% else %}
+        <dd class="quote__stat-value muted" data-i18n="figure.awaiting_build">Awaiting first build</dd>
+        {% endif %}
+      </div>
+    </dl>
+  </section>
+
+  {# ------------------------------------------------- notes under the header #}
+  {% if prod.available and prod.latest.coverage is not none and prod.latest.coverage < 1 %}
+  <div class="notice" style="margin-top:12px" data-lang-only="en">
+    <strong>Coverage {{ "{:.0f}".format(prod.latest.coverage * 100) }}%.</strong>
+    The named countries account for that share of the published world total. The
+    remainder is withheld or unallocated at source; it is excluded from the index rather
+    than attributed to anyone, so the true index is likely a little lower than shown.
   </div>
-  <p class="hero__lede" style="margin-top:18px" data-i18n-text="{{ mineral.summary_ja or '' }}">{{ mineral.summary }}</p>
+  <div class="notice" style="margin-top:12px" data-lang-only="ja" lang="ja" hidden>
+    {{ coverage_notice_ja(prod.latest.coverage) }}
+  </div>
+  {% endif %}
+  {% if trade_review %}
+  <div class="notice notice--review" style="margin-top:12px">
+    <strong data-i18n="quote.review_title">Trade metrics are under review.</strong>
+    <span data-i18n-text="{{ trade.notes_ja[0] if trade.notes_ja else '' }}">{{ trade.notes[0] if trade.notes else '' }}</span>
+  </div>
+  {% endif %}
+  {% if stages %}
+  {% set provisional_years = [] %}
+  {% for tab in stages.tabs %}{% for panel in tab.panels %}{% for year in panel.provisional_years %}{% if year not in provisional_years %}{% set _ = provisional_years.append(year) %}{% endif %}{% endfor %}{% endfor %}{% endfor %}
+  {% if provisional_years %}
+  <div class="notice notice--review" style="margin-top:12px">
+    <strong data-i18n="quote.provisional_title">Includes provisional figures.</strong>
+    <span data-i18n-text="段階別の{{ provisional_years|sort|join('年・') }}年の値は、報告完全性が不足する段階では暫定値です。段階別パネルで確定値と区別して表示しています。">Stage figures for {{ provisional_years|sort|join(', ') }} are provisional where report completeness falls short; the stage panel marks them apart from confirmed years.</span>
+  </div>
+  {% endif %}
+  {% endif %}
 </div>
 
-<div class="wrap">
+<div class="wrap" style="margin-top:20px">
   {{ block_panel("production", mineral.production,
                  "panel.mine_title", "Mine concentration", "鉱山側の集中度",
                  "Share of world mine production by country, from the USGS Mineral Commodity Summaries. This is where the material leaves the ground.",
-                 "USGS Mineral Commodity Summariesにもとづく、国別の世界鉱山生産量シェア。素材が地中から取り出される場所を示す。") }}
+                 "USGS Mineral Commodity Summariesにもとづく、国別の世界鉱山生産量シェア。素材が地中から取り出される場所を示す。",
+                 compact=true) }}
 
   {{ block_panel("trade", mineral.trade,
                  "panel.export_title", "Export concentration", "輸出側の集中度",

@@ -20,7 +20,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from . import i18n
-from .hhi import BAND_LABELS
+from .hhi import BAND_LABELS, band as band_of
 
 log = logging.getLogger("orelysis.render")
 
@@ -121,6 +121,36 @@ def human_time(iso: str | None) -> str:
     return stamp.strftime("%d %B %Y, %H:%M UTC")
 
 
+def first_sentence(text: str | None) -> str:
+    """The opening sentence of a summary, for the one line under a quote header.
+
+    Display only: the full summary stays in the JSON and in the catalog. English
+    breaks at the first ". " and Japanese at the first "。"; a summary with no
+    terminator is returned whole.
+    """
+    if not text:
+        return ""
+    text = text.strip()
+    for mark in ("。", ". "):
+        at = text.find(mark)
+        if at != -1:
+            return text[: at + len(mark)].rstrip()
+    return text
+
+
+def confirmed_latest(years: list[dict]) -> dict | None:
+    """The latest year that is not flagged provisional.
+
+    A stage whose newest year is provisional headlines the year before it, so
+    the screener quotes a settled figure. When every year is provisional the
+    newest one is returned with its flag intact rather than nothing.
+    """
+    if not years:
+        return None
+    settled = [y for y in years if not y.get("provisional")]
+    return (settled or years)[-1]
+
+
 def environment() -> Environment:
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATE_DIR)),
@@ -135,6 +165,9 @@ def environment() -> Environment:
     env.globals["no_data_notice_ja"] = i18n.no_data_notice_ja
     env.globals["stage_coverage_ja"] = i18n.stage_coverage_ja
     env.globals["provisional_legend_ja"] = i18n.provisional_legend_ja
+    env.globals["human_time"] = human_time
+    env.globals["human_time_ja"] = i18n.human_time_ja
+    env.globals["first_sentence"] = first_sentence
     return env
 
 
@@ -277,6 +310,7 @@ def stage_panel(records, hs_code, provisional, provenance, evidence_index) -> di
         {
             "year": r["year"],
             "hhi": r["hhi"],
+            "band": r["band"],
             "cr3": r["cr3"],
             "reporters": r["reporters"],
             "coverage_pct": r["coverage_pct"],
@@ -414,6 +448,106 @@ def load_stages(slug: str) -> dict | None:
     return {"tabs": tabs, "notes": [n for n in notes if n["id"] in used]}
 
 
+# ------------------------------------------------------------- screener
+#
+# One row per catalog entry, live or not, so the table always has the same
+# shape and a mineral that is still pending is visible as pending. Nothing
+# here computes an index: every figure is read from the published summary,
+# the published stage records, or is absent.
+
+def category_of(entry: dict, catalog: dict) -> dict:
+    key = entry.get("category") or catalog.get("section", {}).get("theme") or ""
+    labels = (catalog.get("categories") or {}).get(key) or {}
+    return {
+        "key": key,
+        "label": labels.get("label") or key.replace("-", " ").capitalize(),
+        "label_ja": labels.get("label_ja") or "",
+    }
+
+
+def export_cell(entry: dict, summary: dict, data: dict | None, stages: dict | None) -> dict:
+    """What the Export HHI column shows for one mineral.
+
+    The publication decision is honoured first: a trade block whose
+    publication_status is under_review never yields a number here, whatever
+    else is on disk. Then a mineral with several trade stages quotes the one
+    stage the catalog names as headline_trade_stage, or, if none is named,
+    points at the page instead of choosing for the reader.
+    """
+    trade = (data or {}).get("trade") or {}
+    if trade.get("publication_status") == "under_review" or trade.get("publishable") is False:
+        return {"kind": "review"}
+    if stages:
+        trade_tabs = [t for t in stages["tabs"] if t["key"] not in DERIVED_SERIES]
+        chosen = entry.get("headline_trade_stage")
+        tab = next((t for t in trade_tabs if t["key"] == chosen), None) if chosen else None
+        if tab:
+            # The stage's own filing, never the mirror side.
+            panel = tab["panels"][0]
+            point = confirmed_latest(panel["years"])
+            if point:
+                return {
+                    "kind": "value",
+                    "hhi": point["hhi"],
+                    "year": point["year"],
+                    "band": point.get("band") or band_of(point["hhi"]),
+                    "provisional": bool(point.get("provisional")),
+                    "stage_key": tab["key"],
+                    "stage_label": tab["label"],
+                    "stage_label_ja": tab["label_ja"],
+                }
+        if len(trade_tabs) > 1:
+            return {"kind": "stages", "count": len(trade_tabs)}
+    if summary.get("trade"):
+        block = summary["trade"]
+        return {
+            "kind": "value",
+            "hhi": block["hhi"],
+            "year": block["year"],
+            "band": block["band"],
+            "provisional": False,
+            "stage_key": None,
+            "stage_label": None,
+            "stage_label_ja": None,
+        }
+    return {"kind": "pending"}
+
+
+def screener_rows(catalog: dict, summaries: dict) -> list[dict]:
+    rows = []
+    for entry in catalog["minerals"]:
+        summary = summaries.get(entry["slug"], {})
+        data = load_mineral(entry["slug"])
+        stages = load_stages(entry["slug"])
+        mine = None
+        if summary.get("production"):
+            block = summary["production"]
+            mine = {
+                "hhi": block["hhi"],
+                "year": block["year"],
+                "band": block["band"],
+                "leader": block.get("leader"),
+                "leader_share": block.get("leader_share"),
+            }
+        export = export_cell(entry, summary, data, stages)
+        year = mine["year"] if mine else (export["year"] if export["kind"] == "value" else None)
+        rows.append(
+            {
+                "slug": entry["slug"],
+                "name": entry["name"],
+                "name_ja": entry.get("name_ja") or "",
+                "symbol": entry.get("symbol") or "",
+                "category": category_of(entry, catalog),
+                "mine": mine,
+                "export": export,
+                "band": mine["band"] if mine else None,
+                "year": year,
+                "live": bool(mine or export["kind"] in ("value", "stages", "review")),
+            }
+        )
+    return rows
+
+
 def write(path: Path, html: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(html, encoding="utf-8")
@@ -440,12 +574,22 @@ def render_all() -> None:
     }
 
     entries = catalog["minerals"]
+    rows = screener_rows(catalog, summaries)
+    categories = catalog.get("categories") or {}
+    live_count = sum(1 for r in rows if r["live"])
 
     # ------------------------------------------------------------ hub page
     write(
         REPO_ROOT / "index.html",
         env.get_template("hub.html").render(
-            root="", page="hub", path="index.html", mineral_count=len(entries), **base
+            root="",
+            page="hub",
+            path="index.html",
+            rows=rows,
+            categories=categories,
+            mineral_count=len(entries),
+            live_count=live_count,
+            **base,
         ),
     )
 
@@ -458,35 +602,8 @@ def render_all() -> None:
     )
 
     # -------------------------------------------------------- section index
-    cards = []
-    spark_payload = []
-    has_any_data = False
-    for entry in entries:
-        summary = summaries.get(entry["slug"], {})
-        # Prefer the mine-side figure as the headline; fall back to trade.
-        headline, headline_source = None, None
-        if summary.get("production"):
-            headline, headline_source = summary["production"], "Mine"
-        elif summary.get("trade"):
-            headline, headline_source = summary["trade"], "Export"
-        if headline:
-            has_any_data = True
-            spark_payload.append(
-                {"slug": entry["slug"], "sparkline": headline.get("sparkline")}
-            )
-        cards.append(
-            {
-                "slug": entry["slug"],
-                "name": entry["name"],
-                "name_ja": entry.get("name_ja"),
-                "symbol": entry.get("symbol"),
-                "role": entry.get("role"),
-                "role_ja": entry.get("role_ja"),
-                "headline": headline,
-                "headline_source": headline_source,
-            }
-        )
-
+    # The same screener, fixed to the section's category. Kept at its old URL.
+    section_key = catalog["section"].get("theme") or ""
     write(
         SECTION_DIR / "index.html",
         env.get_template("section.html").render(
@@ -494,9 +611,10 @@ def render_all() -> None:
             page="section",
             path="critical-minerals/index.html",
             section=catalog["section"],
-            minerals=cards,
-            has_any_data=has_any_data,
-            page_data=safe_json({"minerals": spark_payload}),
+            rows=[r for r in rows if r["category"]["key"] == section_key],
+            categories=categories,
+            fixed_category=section_key,
+            has_any_data=live_count > 0,
             **base,
         ),
     )
@@ -528,6 +646,7 @@ def render_all() -> None:
                 page="mineral",
                 path=f"critical-minerals/minerals/{entry['slug']}.html",
                 mineral=data,
+                category=category_of(entry, catalog),
                 notes=notes,
                 previous=entries[position - 1] if position > 0 else None,
                 next=entries[position + 1] if position + 1 < len(entries) else None,
