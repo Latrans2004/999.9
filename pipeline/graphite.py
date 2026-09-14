@@ -284,6 +284,10 @@ def main():
         graphite_usgs.collect(output, replay=args.replay_usgs)
     except Exception as exc:
         usgs_status = type(exc).__name__
+    if usgs_status == 'ok':
+        from . import graphite_anchor
+        production = json.loads((output / 'production.json').read_bytes())
+        put(output, 'anchor.json', graphite_anchor.audit(decisions, production))
     put(output, 'status.json', {'requested_years': YEARS, 'rows': len(rows),
                               'queries_complete': expected == actual and not failures,
                               'global_completeness': 'unverified', 'publishable': False,

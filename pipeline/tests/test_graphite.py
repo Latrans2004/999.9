@@ -1,6 +1,7 @@
 import pytest
 from pipeline import graphite
 from pipeline import graphite_usgs
+from pipeline import graphite_anchor
 
 
 def row(flow='X', reporter='CHN', partner='W00', weight=100, **extra):
@@ -110,3 +111,45 @@ def test_measurement_audit_preserves_missing_and_zero():
     assert result[0]['unit_value_usd_t'] is None
     assert 'missing_weight' in result[0]['flags']
     assert 'positive_value_zero_weight' in result[1]['flags']
+
+
+def test_anchor_never_selects_a_weight():
+    decisions = [{'country': 'MOZ', 'year': 2022, 'hs_code': '250410',
+                  'reported_weight_t': 648262.0, 'mirror_observed_weight_t': 159438.0}]
+    production = [{'country': 'MOZ', 'year': 2022, 'kind': 'country', 'production_t': 166000}]
+    result = graphite_anchor.audit(decisions, production)[0]
+    assert result['selected_weight_t'] is None
+    assert result['favours'] == 'mirror'
+    assert result['review_class'] == 'production_adjudicable'
+
+
+def test_anchor_favours_reported_when_mirror_is_the_outlier():
+    assert graphite_anchor.classify(35305.0, 74768.0, 39000) == ('production_adjudicable', 'reported')
+
+
+def test_anchor_declines_reexport_hub():
+    # Germany mines hundreds of tonnes and ships tens of thousands, so neither
+    # side of a genuine dispute can be checked against mine output.
+    assert graphite_anchor.classify(15517.0, 25482.0, 300) == ('reexport_hub', None)
+
+
+def test_anchor_ignores_a_hub_whose_observations_agree():
+    assert graphite_anchor.classify(18429.0, 13966.0, 140) == ('no_dispute', None)
+
+
+def test_anchor_declines_domestic_consumption_producer():
+    # India mines 35 kt and exports almost none of it.
+    assert graphite_anchor.classify(1068.0, 2374.0, 35000) == ('domestic_consumption_producer', None)
+
+
+def test_anchor_declines_without_mine_production():
+    assert graphite_anchor.classify(100.0, 900.0, 0) == ('no_mine_production', None)
+    assert graphite_anchor.classify(100.0, 900.0, None) == ('no_mine_production', None)
+
+
+def test_anchor_ignores_agreeing_observations():
+    assert graphite_anchor.classify(100.0, 95.0, 100) == ('no_dispute', None)
+
+
+def test_anchor_requires_both_observations():
+    assert graphite_anchor.classify(None, 95.0, 100) == ('incomplete_trade_observation', None)
