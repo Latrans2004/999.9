@@ -63,8 +63,11 @@ SOURCE_GROUPS = {
 SHOWN_VERIFICATION = ("unverified", "externally_confirmed", "externally_conflicting")
 
 DEFAULT_CONFIG = {
-    "repo_url": "https://github.com/OWNER/orelysis",
+    "repo_url": "https://github.com/OWNER/petralysis",
     "site_base": "/",
+    # Absolute origin + base path, used only where a relative URL cannot work
+    # (Open Graph images, canonical links). Empty disables both.
+    "site_url": "",
 }
 
 # Mirrors pipeline/build.py's unit_ja_lookup, for the "no data yet" shape
@@ -429,6 +432,7 @@ def render_all() -> None:
 
     base = {
         "repo_url": settings["repo_url"],
+        "site_url": settings.get("site_url") or "",
         "generated_at": generated_at,
         "fixtures": fixtures,
         "i18n_json": safe_json(i18n.STRINGS_JA),
@@ -441,7 +445,7 @@ def render_all() -> None:
     write(
         REPO_ROOT / "index.html",
         env.get_template("hub.html").render(
-            root="", page="hub", mineral_count=len(entries), **base
+            root="", page="hub", path="index.html", mineral_count=len(entries), **base
         ),
     )
 
@@ -488,6 +492,7 @@ def render_all() -> None:
         env.get_template("section.html").render(
             root="../",
             page="section",
+            path="critical-minerals/index.html",
             section=catalog["section"],
             minerals=cards,
             has_any_data=has_any_data,
@@ -500,7 +505,9 @@ def render_all() -> None:
     for name, page in (("methodology", "methodology"), ("about", "about")):
         write(
             SECTION_DIR / f"{name}.html",
-            env.get_template(f"{name}.html").render(root="../", page=page, **base),
+            env.get_template(f"{name}.html").render(
+                root="../", page=page, path=f"critical-minerals/{name}.html", **base
+            ),
         )
 
     # -------------------------------------------------------- mineral pages
@@ -519,6 +526,7 @@ def render_all() -> None:
             env.get_template("mineral.html").render(
                 root="../../",
                 page="mineral",
+                path=f"critical-minerals/minerals/{entry['slug']}.html",
                 mineral=data,
                 notes=notes,
                 previous=entries[position - 1] if position > 0 else None,

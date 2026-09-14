@@ -9,7 +9,7 @@
    clears the class; the timeout is a safety net if that script fails. */
 (function () {
   try {
-    var lang = localStorage.getItem("orelysis:lang");
+    var lang = localStorage.getItem("petralysis:lang");
     if (!lang && /^ja\b/i.test(navigator.language || "")) lang = "ja";
     if (lang === "ja") {
       var root = document.documentElement;
@@ -19,18 +19,22 @@
   } catch (e) {}
 })();
 </script>
-<title data-i18n-text="算出方法 — Orelysis">Methodology — Orelysis</title>
-<meta name="description" content="How Orelysis computes the Herfindahl-Hirschman Index from USGS mine production and UN Comtrade export data, and what the result can and cannot support.">
+<title data-i18n-text="算出方法 — Petralysis">Methodology — Petralysis</title>
+<meta name="description" content="How Petralysis computes the Herfindahl-Hirschman Index from USGS mine production and UN Comtrade export data, and what the result can and cannot support.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#080A0F">
 <link rel="icon" href="../assets/img/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
-<meta property="og:title" content="Methodology — Orelysis">
+<meta property="og:title" content="Methodology — Petralysis">
 <meta property="og:description" content="Supply concentration in critical minerals, from open data.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="../assets/img/icon-512.png">
+<meta property="og:site_name" content="Petralysis">
+<link rel="canonical" href="https://latrans2004.github.io/petralysis/critical-minerals/methodology.html">
+<meta property="og:url" content="https://latrans2004.github.io/petralysis/critical-minerals/methodology.html">
+<meta property="og:image" content="https://latrans2004.github.io/petralysis/assets/img/icon-512.png">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body>
@@ -40,7 +44,7 @@
   <div class="wrap masthead__inner">
     <a class="brand" href="../index.html">
       <img src="../assets/img/brand-32.png" alt="" width="22" height="22">
-      <span>Orelysis</span>
+      <span>Petralysis</span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a>
@@ -56,7 +60,7 @@
 
 <main id="main">
 <div class="wrap">
-  <p class="crumb"><a href="../index.html">Orelysis</a><span>/</span><span data-i18n="nav.methodology">Methodology</span></p>
+  <p class="crumb"><a href="../index.html">Petralysis</a><span>/</span><span data-i18n="nav.methodology">Methodology</span></p>
 </div>
 
 <div class="wrap hero" style="padding-block:clamp(32px,6vw,64px) clamp(20px,4vw,36px)">
@@ -256,7 +260,7 @@
       <li><code>pipeline/build.py</code> writes one JSON file per mineral plus a summary
       index, and <code>pipeline/render.py</code> regenerates the static pages from them.</li>
     </ol>
-    <p><a href="https://github.com/latrans2004/orelysis" rel="noopener">Read the source →</a></p>
+    <p><a href="https://github.com/latrans2004/petralysis" rel="noopener">Read the source →</a></p>
   </section>
 </div>
 
@@ -350,7 +354,7 @@
       <li><code>pipeline/hhi.py</code>が、指標、集中度比率、カバレッジを計算する。ユニットテストでカバーされており、数値がどこから来たかについては何も知らない。</li>
       <li><code>pipeline/build.py</code>が鉱物ごとのJSONファイルと要約インデックスを書き出し、<code>pipeline/render.py</code>がそこから静的ページを再生成する。</li>
     </ol>
-    <p><a href="https://github.com/latrans2004/orelysis" rel="noopener">ソースコードを読む →</a></p>
+    <p><a href="https://github.com/latrans2004/petralysis" rel="noopener">ソースコードを読む →</a></p>
   </section>
 </div>
 </main>
@@ -359,7 +363,7 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <h4>Orelysis</h4>
+        <h4>Petralysis</h4>
         <p style="margin:0;max-width:32ch" data-i18n="footer.tagline">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
       </div>
       <div>
@@ -380,8 +384,8 @@
       <div>
         <h4 data-i18n="footer.source">Source</h4>
         <ul>
-          <li><a href="https://github.com/latrans2004/orelysis" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
-          <li><a href="https://github.com/latrans2004/orelysis/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
+          <li><a href="https://github.com/latrans2004/petralysis" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
+          <li><a href="https://github.com/latrans2004/petralysis/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
         </ul>
       </div>
     </div>

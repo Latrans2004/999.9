@@ -9,7 +9,7 @@
    clears the class; the timeout is a safety net if that script fails. */
 (function () {
   try {
-    var lang = localStorage.getItem("orelysis:lang");
+    var lang = localStorage.getItem("petralysis:lang");
     if (!lang && /^ja\b/i.test(navigator.language || "")) lang = "ja";
     if (lang === "ja") {
       var root = document.documentElement;
@@ -19,7 +19,7 @@
   } catch (e) {}
 })();
 </script>
-<title data-i18n-text="{% block title_ja %}{% endblock %}">{% block title %}Orelysis{% endblock %}</title>
+<title data-i18n-text="{% block title_ja %}{% endblock %}">{% block title %}Petralysis{% endblock %}</title>
 <meta name="description" content="{% block description %}Supply concentration in critical minerals, measured with the Herfindahl-Hirschman Index from USGS and UN Comtrade open data.{% endblock %}">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#080A0F">
@@ -27,10 +27,16 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ root }}assets/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ root }}assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="{{ root }}assets/img/apple-touch-icon.png">
-<meta property="og:title" content="{% block og_title %}Orelysis{% endblock %}">
+<meta property="og:title" content="{% block og_title %}Petralysis{% endblock %}">
 <meta property="og:description" content="Supply concentration in critical minerals, from open data.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{{ root }}assets/img/icon-512.png">
+<meta property="og:site_name" content="Petralysis">
+{% if site_url and path %}
+<link rel="canonical" href="{{ site_url }}{{ path }}">
+<meta property="og:url" content="{{ site_url }}{{ path }}">
+{% endif %}
+<meta property="og:image" content="{{ site_url or root }}assets/img/icon-512.png">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="{{ root }}assets/css/site.css">
 </head>
 <body>
@@ -46,7 +52,7 @@
   <div class="wrap masthead__inner">
     <a class="brand" href="{{ root }}index.html">
       <img src="{{ root }}assets/img/brand-32.png" alt="" width="22" height="22">
-      <span>Orelysis</span>
+      <span>Petralysis</span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="{{ root }}critical-minerals/index.html"{% if page == 'section' %} aria-current="page"{% endif %} data-i18n="nav.critical_minerals">Critical minerals</a>
@@ -68,7 +74,7 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <h4>Orelysis</h4>
+        <h4>Petralysis</h4>
         <p style="margin:0;max-width:32ch" data-i18n="footer.tagline">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
       </div>
       <div>

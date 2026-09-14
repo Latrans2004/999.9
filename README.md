@@ -1,4 +1,4 @@
-# Orelysis
+# Petralysis
 
 Supply concentration in critical minerals, measured from open data and published
 as a static site on GitHub Pages.
@@ -37,9 +37,9 @@ and [Task E rollout](docs/task-e-mineral-rollout.md).
 ```bash
 git init
 git add .
-git commit -m "orelysis: initial site and pipeline"
+git commit -m "petralysis: initial site and pipeline"
 git branch -M main
-git remote add origin https://github.com/<you>/orelysis.git
+git remote add origin https://github.com/<you>/petralysis.git
 git push -u origin main
 ```
 
@@ -47,14 +47,14 @@ git push -u origin main
 
 ```json
 {
-  "repo_url": "https://github.com/<you>/orelysis",
-  "site_base": "/orelysis/"
+  "repo_url": "https://github.com/<you>/petralysis",
+  "site_base": "/petralysis/"
 }
 ```
 
 `repo_url` fills the footer links. `site_base` is only used by `404.html`, and it
-must match how Pages serves the site: `/orelysis/` for a project page at
-`<you>.github.io/orelysis/`, or `/` for a user page or a custom domain.
+must match how Pages serves the site: `/petralysis/` for a project page at
+`<you>.github.io/petralysis/`, or `/` for a user page or a custom domain.
 
 Then re-render so the change reaches the HTML:
 
@@ -115,7 +115,7 @@ you fix a parser is fast and does not re-hammer the upstream services.
 ## Layout
 
 ```
-index.html                      the Orelysis hub
+index.html                      the Petralysis hub
 404.html
 assets/                         css, js, images — shared by every section
 critical-minerals/              section 01, self-contained

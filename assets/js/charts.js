@@ -1,4 +1,4 @@
-/* Orelysis — chart primitives.
+/* Petralysis — chart primitives.
  *
  * No dependencies, no CDN. Three forms only, because the site asks three
  * questions: how has concentration moved (line), who holds the share today
@@ -73,7 +73,7 @@
   var patternSeq = 0;
 
   function hatchPattern(svg) {
-    var id = "orelysis-hatch-" + (++patternSeq);
+    var id = "petralysis-hatch-" + (++patternSeq);
     var defs = el("defs", {});
     var pattern = el("pattern", {
       id: id, width: 6, height: 6, patternUnits: "userSpaceOnUse",
