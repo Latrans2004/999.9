@@ -75,6 +75,9 @@ def verify_archived(root=ROOT):
     """Fail closed when a pinned primary document's bytes have changed."""
     root = Path(root)
     for url, entry in sorted(pinned_sources().items()):
+        if not entry.get('path'):
+            raise ValueError(f'Pinned source has no archived path: {url}; '
+                              f'copy "path" from the discover() report when pinning sha256')
         body = (root / entry['path']).read_bytes()
         if hashlib.sha256(body).hexdigest() != entry['sha256']:
             raise ValueError(f'Primary document revised; review required before accepting {url}')

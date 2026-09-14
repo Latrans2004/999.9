@@ -15,9 +15,28 @@
       "operation": "Balama",
       "country": "MOZ",
       "url": "https://announcements.asx.com.au/asxpdf/20231017/pdf/05w4c8xyhlml9c.pdf",
+      "sha256": "1450272a62c0717e237b4d69798bee39703fe9d08cffe147634754191f975336",
+      "path": "data/raw/company/934527b694aa2c8811fd88ed649975f76f619c944002b43238f88c395ab54d5c.pdf",
+      "review_date": "2026-09-14",
+      "wanted": "Confirmed by human review on 2026-09-14: Quarterly Activities Report for the three months ending 30 September 2023, ASX announcement dated 2023-10-17. Page 2 table 'Graphite Produced Tonnes (’000)' gives 38kt for the quarter ending 30 September 2022 and 35kt for the quarter ending 31 December 2022 — two of the four 2022 quarters, not the full calendar year. Not entered in the disclosures CSV: the CSV holds annual figures only, and reporting a 73kt two-quarter sum as if it were the 2022 annual total would misrepresent this source. Kept as corroborating evidence only, cited from graphite_reviews.json if used."
+    },
+    {
+      "kind": "document",
+      "company": "Syrah Resources",
+      "operation": "Balama",
+      "country": "MOZ",
+      "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/S/ASX_SYR_2022.pdf",
       "sha256": null,
       "review_date": null,
-      "wanted": "Surfaced by search on 2026-09-14 as an ASX announcement dated 2023-10-17; not yet confirmed by a human which report this is. Likely the September 2023 quarterly activities report given the date, which would cover a 2024-anchor-adjacent period, not the 2022 dispute. More announcement URLs for other quarters must still be located from the index above."
+      "wanted": "2022 Annual Report (financial year end 31 December 2022), surfaced by search on 2026-09-14. This is the target for a full calendar-year 2022 production/sales total for Balama, to settle the MOZ/2022/250410 case (reported 648,262 t vs mirror 159,438 t vs USGS mine output 166,000 t)."
+    },
+    {
+      "kind": "index",
+      "company": "Syrah Resources",
+      "operation": "Balama",
+      "country": "MOZ",
+      "url": "https://www.syrahresources.com.au/our-business/balama-graphite-operation",
+      "wanted": "2024 Annual Report was not located by search on 2026-09-14; press coverage cites full-year 2024 production of 34,899 t (Reuters, via secondary reporting, not yet a primary filing), needed to settle MOZ/2024/250410 (reported 35,305 t vs mirror 74,768 t vs USGS mine output 39,000 t). Browse for the primary 2024 Annual Report or December 2024 quarterly activities report."
     },
     {
       "kind": "index",

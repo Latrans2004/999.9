@@ -262,3 +262,13 @@ def test_discover_reports_fetch_failure_without_raising(tmp_path, monkeypatch):
     packet = graphite_companies.discover(tmp_path, FailingHttp())
     assert packet[0]['status'] == 'fetch_failed'
     assert 'HTTP 404' in packet[0]['error']
+
+
+def test_verify_archived_rejects_pin_without_path(tmp_path, monkeypatch):
+    sources = tmp_path / 'sources.json'
+    entry = {'kind': 'document', 'company': 'X', 'operation': 'Y', 'country': 'MOZ',
+             'url': 'https://example.invalid/report.pdf', 'sha256': 'abc'}
+    sources.write_bytes(graphite.archive.encode({'note': 't', 'documents': [entry]}))
+    monkeypatch.setattr(graphite_companies, 'SOURCES', sources)
+    with pytest.raises(ValueError, match='no archived path'):
+        graphite_companies.verify_archived(tmp_path)
