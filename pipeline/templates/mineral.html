@@ -21,6 +21,8 @@
       <span class="stat__value">{{ "{:,.0f}".format(block.latest.hhi) }}</span>
       {% if block.trend %}
       <span class="stat__note" data-i18n-text="{{ trend_phrase_ja(block.trend) }}">{{ trend_phrase(block.trend) }}</span>
+      {% elif block.trend_note %}
+      <span class="stat__note" data-i18n-text="{{ block.trend_note_ja }}">{{ block.trend_note }}</span>
       {% else %}
       <span class="stat__note" data-i18n="stat.single_year">Single year of data</span>
       {% endif %}
@@ -115,9 +117,14 @@
 
   {% else %}
   <div class="chart__empty">
+    {% if block.publication_status == 'under_review' %}
+    <strong data-i18n-text="確認中">Under review</strong>
+    <span data-i18n-text="{{ block.notes_ja[0] }}">{{ block.notes[0] }}</span>
+    {% else %}
     <strong data-i18n="chart.no_data_yet">No data yet</strong>
     {% if block.notes %}{{ block.notes[0] }}{% else %}
     <span data-i18n-text="{{ no_data_notice_ja(block.source) }}">This index will appear once the pipeline completes a successful fetch from {{ block.source }}.</span>
+    {% endif %}
     {% endif %}
   </div>
   {% endif %}
@@ -327,6 +334,15 @@
   {% if mineral.audit_data_url %}
   <section class="panel">
     <h3 data-i18n-text="段階別データと採用根拠">Stage data and provenance</h3>
+    {% if mineral.trade.publication_status == 'under_review' %}
+    <p data-i18n-text="鉱山生産の国別原数値・推計区分・資料の版と、貿易指標の公開保留理由を確認できます。">Inspect mine production records, source estimates and editions, and the reasons trade metrics are withheld.</p>
+    <p>
+      <a href="{{ root }}critical-minerals/data/{{ mineral.slug }}/concentration.json">HHI / CR3 JSON</a> ·
+      <a href="{{ root }}critical-minerals/data/{{ mineral.slug }}/production.json" data-i18n-text="鉱山生産の原数値 JSON">Mine production JSON</a> ·
+      <a href="{{ root }}critical-minerals/data/{{ mineral.slug }}/trade-status.json" data-i18n-text="貿易の確認状況">Trade review status</a> ·
+      <a href="{{ root }}critical-minerals/data/{{ mineral.slug }}/metadata.json" data-i18n-text="出典・更新履歴">Sources and update metadata</a>
+    </p>
+    {% else %}
     <p data-i18n-text="段階別の重量指標は、上の輸出額ベースの指標とは異なります。国別の自己申告値・ミラー値・採用値と、未検証・推計の区分を確認できます。">Stage weight metrics differ from the export-value index above. Country records retain reported, mirror and selected quantities, including unverified corrections and estimates.</p>
     <p>
       <a href="{{ root }}critical-minerals/data/{{ mineral.slug }}/concentration.json">HHI / CR3 JSON</a> ·
@@ -334,6 +350,7 @@
       <a href="{{ root }}critical-minerals/data/{{ mineral.slug }}/trade.json" data-i18n-text="国別採用根拠 JSON">Country provenance JSON</a> ·
       <a href="{{ root }}critical-minerals/data/{{ mineral.slug }}/metadata.json" data-i18n-text="出典・更新履歴">Sources and update metadata</a>
     </p>
+    {% endif %}
   </section>
   {% endif %}
   {% if mineral.caveats %}

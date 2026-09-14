@@ -96,8 +96,8 @@
       "symbol": "C",
       "role": "Anode",
       "role_ja": "負極",
-      "summary": "The anode side of the cell, and the battery input with the single highest supply concentration of the eight. Synthetic graphite is a real substitute at a cost and emissions penalty, so the index here should be read as concentration of the cheap option rather than of the only option.",
-      "summary_ja": "電池の負極側を担う素材で、8鉱物のなかで供給集中度が最も高い。人造黒鉛はコストと排出量の面で不利ながら現実的な代替手段であるため、ここでの指標は「唯一の選択肢」ではなく「安価な選択肢」の集中度として読むべきである。",
+      "summary": "Natural graphite mine production across all grades and uses. Synthetic graphite and total battery anode supply are outside this series.",
+      "summary_ja": "全品種・用途を対象とする天然黒鉛の鉱山生産量。人造黒鉛や電池用負極材全体の供給量は、この系列の対象外です。",
       "usgs_commodity": "Graphite (Natural)",
       "usgs_aliases": ["Graphite (Natural)", "Graphite, natural", "Graphite"],
       "headline_hs_codes": ["250410", "250490"],
@@ -105,11 +105,11 @@
       "hs_label_ja": "粉状・フレーク状の天然黒鉛(2504.10)およびその他の天然黒鉛(2504.90)",
       "trade_stage": "raw",
       "caveats": [
-        "Synthetic graphite falls under a different trade code (3801.10) and is excluded, so the export index understates total anode-material supply.",
+        "Synthetic graphite (3801.10) is excluded. Natural graphite trade codes do not identify battery grade; trade concentration remains under review.",
         "Flake, vein and amorphous graphite command different prices and serve different end uses but share trade codes."
       ],
       "caveats_ja": [
-        "人造黒鉛は別の品目コード(3801.10)に分類され対象外のため、輸出側の指標は負極材全体の供給を過小に評価している。",
+        "人造黒鉛(3801.10)は対象外です。天然黒鉛の貿易コードでは電池級を識別できず、貿易集中度は確認中です。",
         "鱗状黒鉛・脈状黒鉛・土状黒鉛は価格も最終用途も異なるが、同じ品目コードに含まれている。"
       ]
     },

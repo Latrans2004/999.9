@@ -1,0 +1,31 @@
+{
+  "authorization": "Project owner approved publication of 2017–2024 fixed-vintage mine production with estimates and vintage caveats; trade remains under review (2026-09-14).",
+  "methodology_version": "natural-graphite-fixed-mine-2026-09-14-v1",
+  "production": {
+    "decision": "publish_fixed_vintages",
+    "note": "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series.",
+    "note_ja": "USGS MCS 2019〜2026年版から2017〜2024年を収録。推計値を保持し、Otherは国別HHIから除外しています。世界合計は丸められており、カバレッジは100%を上限とします。2018・2020・2022年の変化には資料の版や収録国の違いが含まれ、同一基準で改訂された成長率系列ではありません。",
+    "records_sha256": "84674a7e1d929d19f0c804e20ed42e61415ac4c3f85df4100e967d1e3726785d",
+    "reviewed_flag_years": [
+      2018,
+      2020,
+      2022
+    ]
+  },
+  "reviewed_at": "2026-09-14T00:00:00+00:00",
+  "trade": {
+    "decision": "withhold",
+    "note": "Trade concentration is under review: mirror discrepancies and weight coverage remain unresolved. No trade HHI is published.",
+    "note_ja": "貿易集中度は確認中です。ミラーデータとの差異と重量カバレッジが未解決のため、貿易HHIは公開していません。"
+  },
+  "years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ]
+}

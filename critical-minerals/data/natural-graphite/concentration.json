@@ -1,0 +1,1299 @@
+{
+  "metadata": {
+    "data_year": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "methodology_version": "natural-graphite-fixed-mine-2026-09-14-v1",
+    "production_publishable": true,
+    "publication_review": {
+      "authorization": "Project owner approved publication of 2017–2024 fixed-vintage mine production with estimates and vintage caveats; trade remains under review (2026-09-14).",
+      "methodology_version": "natural-graphite-fixed-mine-2026-09-14-v1",
+      "production": {
+        "decision": "publish_fixed_vintages",
+        "note": "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series.",
+        "note_ja": "USGS MCS 2019〜2026年版から2017〜2024年を収録。推計値を保持し、Otherは国別HHIから除外しています。世界合計は丸められており、カバレッジは100%を上限とします。2018・2020・2022年の変化には資料の版や収録国の違いが含まれ、同一基準で改訂された成長率系列ではありません。",
+        "records_sha256": "84674a7e1d929d19f0c804e20ed42e61415ac4c3f85df4100e967d1e3726785d",
+        "reviewed_flag_years": [
+          2018,
+          2020,
+          2022
+        ]
+      },
+      "reviewed_at": "2026-09-14T00:00:00+00:00",
+      "trade": {
+        "decision": "withhold",
+        "note": "Trade concentration is under review: mirror discrepancies and weight coverage remain unresolved. No trade HHI is published.",
+        "note_ja": "貿易集中度は確認中です。ミラーデータとの差異と重量カバレッジが未解決のため、貿易HHIは公開していません。"
+      },
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    "sources": [
+      {
+        "edition": 2019,
+        "path": "data/raw/usgs/b0f949bc45e1e174ff5bef47bbd45e4d13a6a2422e50bd4a253042eb442d7cc5.pdf",
+        "query": {},
+        "retrieved_at": "2026-09-13T18:46:13+00:00",
+        "reviewed_at": "2026-09-13",
+        "sha256": "ab3ecfdc9f4171bfef7596139a92d81f7a5f540fc90c91319752112c56e5ccea",
+        "source": "usgs",
+        "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/mcs-2019-graph.pdf",
+        "year": 2017
+      },
+      {
+        "edition": 2020,
+        "path": "data/raw/usgs/9e3b054fb41350bbcd06918074bafd0171ba4594706bb54400fa1c0e075785a9.pdf",
+        "query": {},
+        "retrieved_at": "2026-09-13T18:46:52+00:00",
+        "reviewed_at": "2026-09-13",
+        "sha256": "d41e4c536e95de12d09c60f6f850e1397f9e7fdf32b36217e6969eb1e64f4370",
+        "source": "usgs",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-graphite.pdf",
+        "year": 2018
+      },
+      {
+        "edition": 2021,
+        "path": "data/raw/usgs/c9be56416bb0e74207b321d0b9a8b2e435db22e816790588d6cef2ebc65d7aab.pdf",
+        "query": {},
+        "retrieved_at": "2026-09-13T18:46:53+00:00",
+        "reviewed_at": "2026-09-13",
+        "sha256": "4e9f71e27f85cf3269d8b47615d3ccd1346f2b75473b6d9e60d5882db1beae37",
+        "source": "usgs",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021-graphite.pdf",
+        "year": 2019
+      },
+      {
+        "edition": 2022,
+        "path": "data/raw/usgs/6c646104cdd566aab97b64102da9dd9e1c405e60b188b7b61dcb0b8749ebec1e.pdf",
+        "query": {},
+        "retrieved_at": "2026-09-13T18:46:55+00:00",
+        "reviewed_at": "2026-09-13",
+        "sha256": "547293d0291b483e042d6715037cc3332c9f7fcaa1b302e376d82e69ad0eae48",
+        "source": "usgs",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022-graphite.pdf",
+        "year": 2020
+      },
+      {
+        "edition": 2023,
+        "path": "data/raw/usgs/fa5ef145a6f9db6599d30cf75f0e378646328623d6bd8fc6c11d4cbb3202cfe0.pdf",
+        "query": {},
+        "retrieved_at": "2026-09-13T18:46:57+00:00",
+        "reviewed_at": "2026-09-13",
+        "sha256": "f7f93d825b1aa09818d0c9fcf8b9a4bc8018d65a699bc5a5da6fe98a8742e21a",
+        "source": "usgs",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2023/mcs2023-graphite.pdf",
+        "year": 2021
+      },
+      {
+        "edition": 2024,
+        "path": "data/raw/usgs/f9e21976fbcb180857fc843a14afaa252d89607d9f216bec36dad6c29bcfb977.pdf",
+        "query": {},
+        "retrieved_at": "2026-09-13T18:46:59+00:00",
+        "reviewed_at": "2026-09-13",
+        "sha256": "00ab8511468509f87a1b9b5d9393d5c172b3877cd3f7036304e122025c1b9742",
+        "source": "usgs",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-graphite.pdf",
+        "year": 2022
+      },
+      {
+        "edition": 2025,
+        "path": "data/raw/usgs/4991a26cedf817e88f20b31f7c08f03fdad52290f513822c5c5921c420d01ff2.pdf",
+        "query": {},
+        "retrieved_at": "2026-09-13T18:47:01+00:00",
+        "reviewed_at": "2026-09-13",
+        "sha256": "96f088e1346022462def556b9b470e0b14c290be496d4580ec0e1f93f2b88d88",
+        "source": "usgs",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-graphite.pdf",
+        "year": 2023
+      },
+      {
+        "edition": 2026,
+        "path": "data/raw/usgs/6e23e4e85842330c0d30020876267c30b76ede991e05750ba443e13eafe96bf0.pdf",
+        "query": {},
+        "retrieved_at": "2026-09-13T18:47:02+00:00",
+        "reviewed_at": "2026-09-13",
+        "sha256": "09ec621ed6400162e7f0b09b1e0ae8260a976d968c1936d69592fe5347f8df38",
+        "source": "usgs",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-graphite.pdf",
+        "year": 2024
+      }
+    ],
+    "trade_publishable": false
+  },
+  "records": [
+    {
+      "estimated_countries": [],
+      "other_t": 1900,
+      "profile": {
+        "band": "high",
+        "coverage": 0.9977,
+        "cr1": 69.84,
+        "cr3": 84.37,
+        "cr5": 90.51,
+        "effective_suppliers": 1.99,
+        "hhi": 5031.1,
+        "reporters": 17,
+        "top": [
+          {
+            "code": null,
+            "name": "CHN",
+            "quantity": 625000.0,
+            "share": 69.8402
+          },
+          {
+            "code": null,
+            "name": "BRA",
+            "quantity": 90000.0,
+            "share": 10.057
+          },
+          {
+            "code": null,
+            "name": "CAN",
+            "quantity": 40000.0,
+            "share": 4.4698
+          },
+          {
+            "code": null,
+            "name": "IND",
+            "quantity": 35000.0,
+            "share": 3.9111
+          },
+          {
+            "code": null,
+            "name": "UKR",
+            "quantity": 20000.0,
+            "share": 2.2349
+          },
+          {
+            "code": null,
+            "name": "RUS",
+            "quantity": 17000.0,
+            "share": 1.8997
+          },
+          {
+            "code": null,
+            "name": "NOR",
+            "quantity": 15500.0,
+            "share": 1.732
+          },
+          {
+            "code": null,
+            "name": "PAK",
+            "quantity": 14000.0,
+            "share": 1.5644
+          },
+          {
+            "code": null,
+            "name": "MDG",
+            "quantity": 9000.0,
+            "share": 1.0057
+          },
+          {
+            "code": null,
+            "name": "MEX",
+            "quantity": 9000.0,
+            "share": 1.0057
+          },
+          {
+            "code": null,
+            "name": "PRK",
+            "quantity": 5500.0,
+            "share": 0.6146
+          },
+          {
+            "code": null,
+            "name": "VNM",
+            "quantity": 5000.0,
+            "share": 0.5587
+          },
+          {
+            "code": null,
+            "name": "LKA",
+            "quantity": 3500.0,
+            "share": 0.3911
+          },
+          {
+            "code": null,
+            "name": "TUR",
+            "quantity": 2300.0,
+            "share": 0.257
+          },
+          {
+            "code": null,
+            "name": "NAM",
+            "quantity": 2220.0,
+            "share": 0.2481
+          },
+          {
+            "code": null,
+            "name": "ZWE",
+            "quantity": 1580.0,
+            "share": 0.1766
+          },
+          {
+            "code": null,
+            "name": "MOZ",
+            "quantity": 300.0,
+            "share": 0.0335
+          }
+        ],
+        "total": 894900.0,
+        "year": 2017
+      },
+      "publishable": true,
+      "quality_flags": [],
+      "review_note": "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series.",
+      "rounded_world_total_t": 897000,
+      "rounding_relative_difference": -0.0002229654403567447,
+      "scope": "USGS natural graphite mine output; identified producers; estimates retained",
+      "series_key": "mine_natural_graphite_t",
+      "source_edition": 2019,
+      "unit": "t natural graphite",
+      "year": 2017,
+      "yoy": null
+    },
+    {
+      "estimated_countries": [],
+      "other_t": 200,
+      "profile": {
+        "band": "high",
+        "coverage": 1.0,
+        "cr1": 61.74,
+        "cr3": 79.46,
+        "cr5": 87.21,
+        "effective_suppliers": 2.49,
+        "hhi": 4022.0,
+        "reporters": 20,
+        "top": [
+          {
+            "code": null,
+            "name": "CHN",
+            "quantity": 693000.0,
+            "share": 61.7366
+          },
+          {
+            "code": null,
+            "name": "MOZ",
+            "quantity": 104000.0,
+            "share": 9.265
+          },
+          {
+            "code": null,
+            "name": "BRA",
+            "quantity": 95000.0,
+            "share": 8.4632
+          },
+          {
+            "code": null,
+            "name": "MDG",
+            "quantity": 46900.0,
+            "share": 4.1781
+          },
+          {
+            "code": null,
+            "name": "CAN",
+            "quantity": 40000.0,
+            "share": 3.5634
+          },
+          {
+            "code": null,
+            "name": "IND",
+            "quantity": 35000.0,
+            "share": 3.118
+          },
+          {
+            "code": null,
+            "name": "RUS",
+            "quantity": 25200.0,
+            "share": 2.245
+          },
+          {
+            "code": null,
+            "name": "UKR",
+            "quantity": 20000.0,
+            "share": 1.7817
+          },
+          {
+            "code": null,
+            "name": "NOR",
+            "quantity": 16000.0,
+            "share": 1.4254
+          },
+          {
+            "code": null,
+            "name": "PAK",
+            "quantity": 14000.0,
+            "share": 1.2472
+          },
+          {
+            "code": null,
+            "name": "MEX",
+            "quantity": 9000.0,
+            "share": 0.8018
+          },
+          {
+            "code": null,
+            "name": "PRK",
+            "quantity": 6000.0,
+            "share": 0.5345
+          },
+          {
+            "code": null,
+            "name": "VNM",
+            "quantity": 5000.0,
+            "share": 0.4454
+          },
+          {
+            "code": null,
+            "name": "LKA",
+            "quantity": 4000.0,
+            "share": 0.3563
+          },
+          {
+            "code": null,
+            "name": "NAM",
+            "quantity": 3460.0,
+            "share": 0.3082
+          },
+          {
+            "code": null,
+            "name": "TUR",
+            "quantity": 2000.0,
+            "share": 0.1782
+          },
+          {
+            "code": null,
+            "name": "ZWE",
+            "quantity": 2000.0,
+            "share": 0.1782
+          },
+          {
+            "code": null,
+            "name": "AUT",
+            "quantity": 1000.0,
+            "share": 0.0891
+          },
+          {
+            "code": null,
+            "name": "DEU",
+            "quantity": 800.0,
+            "share": 0.0713
+          },
+          {
+            "code": null,
+            "name": "TZA",
+            "quantity": 150.0,
+            "share": 0.0134
+          }
+        ],
+        "total": 1122510.0,
+        "year": 2018
+      },
+      "publishable": true,
+      "quality_flags": [
+        "year_or_source_vintage_change_requires_review"
+      ],
+      "review_note": "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series.",
+      "rounded_world_total_t": 1120000,
+      "rounding_relative_difference": 0.002419642857142857,
+      "scope": "USGS natural graphite mine output; identified producers; estimates retained",
+      "series_key": "mine_natural_graphite_t",
+      "source_edition": 2020,
+      "unit": "t natural graphite",
+      "year": 2018,
+      "yoy": {
+        "country_count_delta": 3,
+        "cr3_delta": -4.910000000000011,
+        "hhi_delta": -1009.1000000000004,
+        "total_ratio": 1.2543412671806906
+      }
+    },
+    {
+      "estimated_countries": [],
+      "other_t": 0,
+      "profile": {
+        "band": "high",
+        "coverage": 1.0,
+        "cr1": 63.63,
+        "cr3": 82.08,
+        "cr5": 89.62,
+        "effective_suppliers": 2.35,
+        "hhi": 4263.0,
+        "reporters": 19,
+        "top": [
+          {
+            "code": null,
+            "name": "CHN",
+            "quantity": 700000.0,
+            "share": 63.6277
+          },
+          {
+            "code": null,
+            "name": "MOZ",
+            "quantity": 107000.0,
+            "share": 9.7259
+          },
+          {
+            "code": null,
+            "name": "BRA",
+            "quantity": 96000.0,
+            "share": 8.7261
+          },
+          {
+            "code": null,
+            "name": "MDG",
+            "quantity": 48000.0,
+            "share": 4.363
+          },
+          {
+            "code": null,
+            "name": "IND",
+            "quantity": 35000.0,
+            "share": 3.1814
+          },
+          {
+            "code": null,
+            "name": "RUS",
+            "quantity": 25100.0,
+            "share": 2.2815
+          },
+          {
+            "code": null,
+            "name": "UKR",
+            "quantity": 20000.0,
+            "share": 1.8179
+          },
+          {
+            "code": null,
+            "name": "NOR",
+            "quantity": 16000.0,
+            "share": 1.4543
+          },
+          {
+            "code": null,
+            "name": "PAK",
+            "quantity": 14000.0,
+            "share": 1.2726
+          },
+          {
+            "code": null,
+            "name": "CAN",
+            "quantity": 11000.0,
+            "share": 0.9999
+          },
+          {
+            "code": null,
+            "name": "MEX",
+            "quantity": 9000.0,
+            "share": 0.8181
+          },
+          {
+            "code": null,
+            "name": "PRK",
+            "quantity": 6000.0,
+            "share": 0.5454
+          },
+          {
+            "code": null,
+            "name": "VNM",
+            "quantity": 5000.0,
+            "share": 0.4545
+          },
+          {
+            "code": null,
+            "name": "LKA",
+            "quantity": 4000.0,
+            "share": 0.3636
+          },
+          {
+            "code": null,
+            "name": "TUR",
+            "quantity": 2000.0,
+            "share": 0.1818
+          },
+          {
+            "code": null,
+            "name": "AUT",
+            "quantity": 1000.0,
+            "share": 0.0909
+          },
+          {
+            "code": null,
+            "name": "DEU",
+            "quantity": 800.0,
+            "share": 0.0727
+          },
+          {
+            "code": null,
+            "name": "TZA",
+            "quantity": 150.0,
+            "share": 0.0136
+          },
+          {
+            "code": null,
+            "name": "UZB",
+            "quantity": 100.0,
+            "share": 0.0091
+          }
+        ],
+        "total": 1100150.0,
+        "year": 2019
+      },
+      "publishable": true,
+      "quality_flags": [],
+      "review_note": "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series.",
+      "rounded_world_total_t": 1100000,
+      "rounding_relative_difference": 0.00013636363636363637,
+      "scope": "USGS natural graphite mine output; identified producers; estimates retained",
+      "series_key": "mine_natural_graphite_t",
+      "source_edition": 2021,
+      "unit": "t natural graphite",
+      "year": 2019,
+      "yoy": {
+        "country_count_delta": -1,
+        "cr3_delta": 2.6200000000000045,
+        "hhi_delta": 241.0,
+        "total_ratio": 0.9800803556315757
+      }
+    },
+    {
+      "estimated_countries": [],
+      "other_t": 0,
+      "profile": {
+        "band": "high",
+        "coverage": 0.9993,
+        "cr1": 78.94,
+        "cr3": 88.43,
+        "cr5": 93.18,
+        "effective_suppliers": 1.59,
+        "hhi": 6301.3,
+        "reporters": 17,
+        "top": [
+          {
+            "code": null,
+            "name": "CHN",
+            "quantity": 762000.0,
+            "share": 78.9392
+          },
+          {
+            "code": null,
+            "name": "BRA",
+            "quantity": 63600.0,
+            "share": 6.5886
+          },
+          {
+            "code": null,
+            "name": "MOZ",
+            "quantity": 28000.0,
+            "share": 2.9007
+          },
+          {
+            "code": null,
+            "name": "RUS",
+            "quantity": 25000.0,
+            "share": 2.5899
+          },
+          {
+            "code": null,
+            "name": "MDG",
+            "quantity": 20900.0,
+            "share": 2.1651
+          },
+          {
+            "code": null,
+            "name": "UKR",
+            "quantity": 16000.0,
+            "share": 1.6575
+          },
+          {
+            "code": null,
+            "name": "NOR",
+            "quantity": 12000.0,
+            "share": 1.2431
+          },
+          {
+            "code": null,
+            "name": "PRK",
+            "quantity": 8100.0,
+            "share": 0.8391
+          },
+          {
+            "code": null,
+            "name": "CAN",
+            "quantity": 8000.0,
+            "share": 0.8288
+          },
+          {
+            "code": null,
+            "name": "IND",
+            "quantity": 6000.0,
+            "share": 0.6216
+          },
+          {
+            "code": null,
+            "name": "VNM",
+            "quantity": 5000.0,
+            "share": 0.518
+          },
+          {
+            "code": null,
+            "name": "LKA",
+            "quantity": 4000.0,
+            "share": 0.4144
+          },
+          {
+            "code": null,
+            "name": "MEX",
+            "quantity": 3300.0,
+            "share": 0.3419
+          },
+          {
+            "code": null,
+            "name": "TUR",
+            "quantity": 2500.0,
+            "share": 0.259
+          },
+          {
+            "code": null,
+            "name": "AUT",
+            "quantity": 500.0,
+            "share": 0.0518
+          },
+          {
+            "code": null,
+            "name": "DEU",
+            "quantity": 300.0,
+            "share": 0.0311
+          },
+          {
+            "code": null,
+            "name": "UZB",
+            "quantity": 100.0,
+            "share": 0.0104
+          }
+        ],
+        "total": 965300.0,
+        "year": 2020
+      },
+      "publishable": true,
+      "quality_flags": [
+        "year_or_source_vintage_change_requires_review"
+      ],
+      "review_note": "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series.",
+      "rounded_world_total_t": 966000,
+      "rounding_relative_difference": -0.0007246376811594203,
+      "scope": "USGS natural graphite mine output; identified producers; estimates retained",
+      "series_key": "mine_natural_graphite_t",
+      "source_edition": 2022,
+      "unit": "t natural graphite",
+      "year": 2020,
+      "yoy": {
+        "country_count_delta": -2,
+        "cr3_delta": 6.3500000000000085,
+        "hhi_delta": 2038.3000000000002,
+        "total_ratio": 0.8774258055719675
+      }
+    },
+    {
+      "estimated_countries": [],
+      "other_t": 0,
+      "profile": {
+        "band": "high",
+        "coverage": 0.9969,
+        "cr1": 72.79,
+        "cr3": 86.46,
+        "cr5": 94.0,
+        "effective_suppliers": 1.84,
+        "hhi": 5436.8,
+        "reporters": 18,
+        "top": [
+          {
+            "code": null,
+            "name": "CHN",
+            "quantity": 820000.0,
+            "share": 72.7886
+          },
+          {
+            "code": null,
+            "name": "BRA",
+            "quantity": 82000.0,
+            "share": 7.2789
+          },
+          {
+            "code": null,
+            "name": "MOZ",
+            "quantity": 72000.0,
+            "share": 6.3912
+          },
+          {
+            "code": null,
+            "name": "MDG",
+            "quantity": 70000.0,
+            "share": 6.2137
+          },
+          {
+            "code": null,
+            "name": "RUS",
+            "quantity": 15000.0,
+            "share": 1.3315
+          },
+          {
+            "code": null,
+            "name": "CAN",
+            "quantity": 12000.0,
+            "share": 1.0652
+          },
+          {
+            "code": null,
+            "name": "KOR",
+            "quantity": 10500.0,
+            "share": 0.932
+          },
+          {
+            "code": null,
+            "name": "UKR",
+            "quantity": 10000.0,
+            "share": 0.8877
+          },
+          {
+            "code": null,
+            "name": "PRK",
+            "quantity": 8100.0,
+            "share": 0.719
+          },
+          {
+            "code": null,
+            "name": "IND",
+            "quantity": 7000.0,
+            "share": 0.6214
+          },
+          {
+            "code": null,
+            "name": "NOR",
+            "quantity": 6290.0,
+            "share": 0.5583
+          },
+          {
+            "code": null,
+            "name": "VNM",
+            "quantity": 5000.0,
+            "share": 0.4438
+          },
+          {
+            "code": null,
+            "name": "LKA",
+            "quantity": 3000.0,
+            "share": 0.2663
+          },
+          {
+            "code": null,
+            "name": "TUR",
+            "quantity": 2700.0,
+            "share": 0.2397
+          },
+          {
+            "code": null,
+            "name": "MEX",
+            "quantity": 2100.0,
+            "share": 0.1864
+          },
+          {
+            "code": null,
+            "name": "AUT",
+            "quantity": 500.0,
+            "share": 0.0444
+          },
+          {
+            "code": null,
+            "name": "DEU",
+            "quantity": 250.0,
+            "share": 0.0222
+          },
+          {
+            "code": null,
+            "name": "UZB",
+            "quantity": 110.0,
+            "share": 0.0098
+          }
+        ],
+        "total": 1126550.0,
+        "year": 2021
+      },
+      "publishable": true,
+      "quality_flags": [],
+      "review_note": "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series.",
+      "rounded_world_total_t": 1130000,
+      "rounding_relative_difference": -0.0030530973451327434,
+      "scope": "USGS natural graphite mine output; identified producers; estimates retained",
+      "series_key": "mine_natural_graphite_t",
+      "source_edition": 2023,
+      "unit": "t natural graphite",
+      "year": 2021,
+      "yoy": {
+        "country_count_delta": 1,
+        "cr3_delta": -1.970000000000013,
+        "hhi_delta": -864.5,
+        "total_ratio": 1.167046514037087
+      }
+    },
+    {
+      "estimated_countries": [
+        "BRA",
+        "PRK",
+        "MDG",
+        "RUS",
+        "TZA"
+      ],
+      "other_t": 0,
+      "profile": {
+        "band": "high",
+        "coverage": 0.9976,
+        "cr1": 72.2,
+        "cr3": 89.86,
+        "cr5": 95.57,
+        "effective_suppliers": 1.85,
+        "hhi": 5393.9,
+        "reporters": 18,
+        "top": [
+          {
+            "code": null,
+            "name": "CHN",
+            "quantity": 1210000.0,
+            "share": 72.197
+          },
+          {
+            "code": null,
+            "name": "MOZ",
+            "quantity": 166000.0,
+            "share": 9.9047
+          },
+          {
+            "code": null,
+            "name": "MDG",
+            "quantity": 130000.0,
+            "share": 7.7567
+          },
+          {
+            "code": null,
+            "name": "BRA",
+            "quantity": 72000.0,
+            "share": 4.296
+          },
+          {
+            "code": null,
+            "name": "KOR",
+            "quantity": 23800.0,
+            "share": 1.4201
+          },
+          {
+            "code": null,
+            "name": "RUS",
+            "quantity": 16000.0,
+            "share": 0.9547
+          },
+          {
+            "code": null,
+            "name": "CAN",
+            "quantity": 13000.0,
+            "share": 0.7757
+          },
+          {
+            "code": null,
+            "name": "IND",
+            "quantity": 11000.0,
+            "share": 0.6563
+          },
+          {
+            "code": null,
+            "name": "NOR",
+            "quantity": 10380.0,
+            "share": 0.6193
+          },
+          {
+            "code": null,
+            "name": "PRK",
+            "quantity": 8100.0,
+            "share": 0.4833
+          },
+          {
+            "code": null,
+            "name": "TZA",
+            "quantity": 6120.0,
+            "share": 0.3652
+          },
+          {
+            "code": null,
+            "name": "TUR",
+            "quantity": 2800.0,
+            "share": 0.1671
+          },
+          {
+            "code": null,
+            "name": "LKA",
+            "quantity": 2600.0,
+            "share": 0.1551
+          },
+          {
+            "code": null,
+            "name": "MEX",
+            "quantity": 2000.0,
+            "share": 0.1193
+          },
+          {
+            "code": null,
+            "name": "UKR",
+            "quantity": 1000.0,
+            "share": 0.0597
+          },
+          {
+            "code": null,
+            "name": "AUT",
+            "quantity": 500.0,
+            "share": 0.0298
+          },
+          {
+            "code": null,
+            "name": "VNM",
+            "quantity": 500.0,
+            "share": 0.0298
+          },
+          {
+            "code": null,
+            "name": "DEU",
+            "quantity": 170.0,
+            "share": 0.0101
+          }
+        ],
+        "total": 1675970.0,
+        "year": 2022
+      },
+      "publishable": true,
+      "quality_flags": [
+        "year_or_source_vintage_change_requires_review"
+      ],
+      "review_note": "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series.",
+      "rounded_world_total_t": 1680000,
+      "rounding_relative_difference": -0.002398809523809524,
+      "scope": "USGS natural graphite mine output; identified producers; estimates retained",
+      "series_key": "mine_natural_graphite_t",
+      "source_edition": 2024,
+      "unit": "t natural graphite",
+      "year": 2022,
+      "yoy": {
+        "country_count_delta": 0,
+        "cr3_delta": 3.4000000000000057,
+        "hhi_delta": -42.900000000000546,
+        "total_ratio": 1.4877013891971063
+      }
+    },
+    {
+      "estimated_countries": [
+        "PRK",
+        "MDG",
+        "MOZ",
+        "RUS",
+        "TZA"
+      ],
+      "other_t": 0,
+      "profile": {
+        "band": "high",
+        "coverage": 1.0,
+        "cr1": 78.94,
+        "cr3": 89.66,
+        "cr5": 95.44,
+        "effective_suppliers": 1.58,
+        "hhi": 6314.3,
+        "reporters": 18,
+        "top": [
+          {
+            "code": null,
+            "name": "CHN",
+            "quantity": 1210000.0,
+            "share": 78.9446
+          },
+          {
+            "code": null,
+            "name": "MOZ",
+            "quantity": 98000.0,
+            "share": 6.3939
+          },
+          {
+            "code": null,
+            "name": "BRA",
+            "quantity": 66300.0,
+            "share": 4.3256
+          },
+          {
+            "code": null,
+            "name": "MDG",
+            "quantity": 63000.0,
+            "share": 4.1103
+          },
+          {
+            "code": null,
+            "name": "IND",
+            "quantity": 25600.0,
+            "share": 1.6702
+          },
+          {
+            "code": null,
+            "name": "RUS",
+            "quantity": 15000.0,
+            "share": 0.9787
+          },
+          {
+            "code": null,
+            "name": "TZA",
+            "quantity": 13200.0,
+            "share": 0.8612
+          },
+          {
+            "code": null,
+            "name": "KOR",
+            "quantity": 9620.0,
+            "share": 0.6276
+          },
+          {
+            "code": null,
+            "name": "PRK",
+            "quantity": 8100.0,
+            "share": 0.5285
+          },
+          {
+            "code": null,
+            "name": "NOR",
+            "quantity": 6480.0,
+            "share": 0.4228
+          },
+          {
+            "code": null,
+            "name": "CAN",
+            "quantity": 5470.0,
+            "share": 0.3569
+          },
+          {
+            "code": null,
+            "name": "LKA",
+            "quantity": 3000.0,
+            "share": 0.1957
+          },
+          {
+            "code": null,
+            "name": "TUR",
+            "quantity": 2800.0,
+            "share": 0.1827
+          },
+          {
+            "code": null,
+            "name": "VNM",
+            "quantity": 2500.0,
+            "share": 0.1631
+          },
+          {
+            "code": null,
+            "name": "UKR",
+            "quantity": 1670.0,
+            "share": 0.109
+          },
+          {
+            "code": null,
+            "name": "MEX",
+            "quantity": 1300.0,
+            "share": 0.0848
+          },
+          {
+            "code": null,
+            "name": "AUT",
+            "quantity": 500.0,
+            "share": 0.0326
+          },
+          {
+            "code": null,
+            "name": "DEU",
+            "quantity": 180.0,
+            "share": 0.0117
+          }
+        ],
+        "total": 1532720.0,
+        "year": 2023
+      },
+      "publishable": true,
+      "quality_flags": [],
+      "review_note": "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series.",
+      "rounded_world_total_t": 1530000,
+      "rounding_relative_difference": 0.0017777777777777779,
+      "scope": "USGS natural graphite mine output; identified producers; estimates retained",
+      "series_key": "mine_natural_graphite_t",
+      "source_edition": 2025,
+      "unit": "t natural graphite",
+      "year": 2023,
+      "yoy": {
+        "country_count_delta": 0,
+        "cr3_delta": -0.20000000000000284,
+        "hhi_delta": 920.4000000000005,
+        "total_ratio": 0.9145271096738008
+      }
+    },
+    {
+      "estimated_countries": [
+        "PRK",
+        "RUS",
+        "TZA"
+      ],
+      "other_t": 0,
+      "profile": {
+        "band": "high",
+        "coverage": 1.0,
+        "cr1": 81.9,
+        "cr3": 91.12,
+        "cr5": 95.38,
+        "effective_suppliers": 1.48,
+        "hhi": 6764.9,
+        "reporters": 18,
+        "top": [
+          {
+            "code": null,
+            "name": "CHN",
+            "quantity": 1270000.0,
+            "share": 81.8992
+          },
+          {
+            "code": null,
+            "name": "MDG",
+            "quantity": 85000.0,
+            "share": 5.4814
+          },
+          {
+            "code": null,
+            "name": "BRA",
+            "quantity": 58000.0,
+            "share": 3.7403
+          },
+          {
+            "code": null,
+            "name": "MOZ",
+            "quantity": 39000.0,
+            "share": 2.515
+          },
+          {
+            "code": null,
+            "name": "TZA",
+            "quantity": 27000.0,
+            "share": 1.7412
+          },
+          {
+            "code": null,
+            "name": "RUS",
+            "quantity": 20000.0,
+            "share": 1.2898
+          },
+          {
+            "code": null,
+            "name": "IND",
+            "quantity": 17600.0,
+            "share": 1.135
+          },
+          {
+            "code": null,
+            "name": "CAN",
+            "quantity": 11700.0,
+            "share": 0.7545
+          },
+          {
+            "code": null,
+            "name": "PRK",
+            "quantity": 8100.0,
+            "share": 0.5223
+          },
+          {
+            "code": null,
+            "name": "NOR",
+            "quantity": 5340.0,
+            "share": 0.3444
+          },
+          {
+            "code": null,
+            "name": "LKA",
+            "quantity": 3000.0,
+            "share": 0.1935
+          },
+          {
+            "code": null,
+            "name": "TUR",
+            "quantity": 2600.0,
+            "share": 0.1677
+          },
+          {
+            "code": null,
+            "name": "KOR",
+            "quantity": 1000.0,
+            "share": 0.0645
+          },
+          {
+            "code": null,
+            "name": "UKR",
+            "quantity": 900.0,
+            "share": 0.058
+          },
+          {
+            "code": null,
+            "name": "MEX",
+            "quantity": 706.0,
+            "share": 0.0455
+          },
+          {
+            "code": null,
+            "name": "VNM",
+            "quantity": 500.0,
+            "share": 0.0322
+          },
+          {
+            "code": null,
+            "name": "DEU",
+            "quantity": 140.0,
+            "share": 0.009
+          },
+          {
+            "code": null,
+            "name": "AUT",
+            "quantity": 100.0,
+            "share": 0.0064
+          }
+        ],
+        "total": 1550686.0,
+        "year": 2024
+      },
+      "publishable": true,
+      "quality_flags": [],
+      "review_note": "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series.",
+      "rounded_world_total_t": 1550000,
+      "rounding_relative_difference": 0.0004425806451612903,
+      "scope": "USGS natural graphite mine output; identified producers; estimates retained",
+      "series_key": "mine_natural_graphite_t",
+      "source_edition": 2026,
+      "unit": "t natural graphite",
+      "year": 2024,
+      "yoy": {
+        "country_count_delta": 0,
+        "cr3_delta": 1.460000000000008,
+        "hhi_delta": 450.59999999999945,
+        "total_ratio": 1.011721645179811
+      }
+    }
+  ]
+}
