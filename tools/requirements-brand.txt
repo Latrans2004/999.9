@@ -1,0 +1,7 @@
+# Brand asset generation only. Deliberately NOT part of pipeline/requirements.txt:
+# the site builds from committed PNGs, so nothing in the published path needs
+# an image library.
+#
+#   pip install -r tools/requirements-brand.txt
+#   python tools/make_brand_assets.py
+Pillow>=10
