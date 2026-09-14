@@ -1,0 +1,239 @@
+{
+  "acquisition_scope": "sample",
+  "attempted_queries": 16,
+  "failed_queries": [
+    {
+      "error_type": "ValueError",
+      "flow": "X",
+      "hs_code": "260200",
+      "partner": "",
+      "raw": {
+        "path": "data/raw/comtrade/b9e640bfaec67e9b7eae41891e1f12f21d46eab8f5f66ba7929f4d4fb6e69972.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "260200",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 500,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2024",
+          "reporterCode": "36"
+        },
+        "retrieved_at": "2026-09-14T07:00:22+00:00",
+        "sha256": "697b3d5cc2a92d2e2b63ab7e2d02691b3cdd538c902e9e52e95e95acf459485c",
+        "source": "comtrade",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+      },
+      "reason_code": "empty_response_not_zero_trade",
+      "reporter": 36,
+      "status": "failed",
+      "year": 2024
+    },
+    {
+      "error_type": "ValueError",
+      "flow": "X",
+      "hs_code": "260200",
+      "partner": "",
+      "raw": {
+        "path": "data/raw/comtrade/3527fd7901fdc42af246ecc2e441b8f5560a98907cf54c4718d5b462ee1af6d3.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "260200",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 500,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2024",
+          "reporterCode": "266"
+        },
+        "retrieved_at": "2026-09-14T07:00:41+00:00",
+        "sha256": "f3680a1dd8407c30d82902892c8744a6b5c616f6f817fbcff9545710ea68f763",
+        "source": "comtrade",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+      },
+      "reason_code": "empty_response_not_zero_trade",
+      "reporter": 266,
+      "status": "failed",
+      "year": 2024
+    },
+    {
+      "error_type": "ValueError",
+      "flow": "M",
+      "hs_code": "260200",
+      "partner": "",
+      "raw": {
+        "path": "data/raw/comtrade/30ca389a382e48e17823002575029a6186946a89933847343e15961267e5d185.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "260200",
+          "customsCode": "C00",
+          "flowCode": "M",
+          "includeDesc": "true",
+          "maxRecords": 500,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2024",
+          "reporterCode": "266"
+        },
+        "retrieved_at": "2026-09-14T07:00:46+00:00",
+        "sha256": "d621c47cf1d6c742b1b1a7c897cc473519dd08c3851cea6d2103a872e7b4554e",
+        "source": "comtrade",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+      },
+      "reason_code": "empty_response_not_zero_trade",
+      "reporter": 266,
+      "status": "failed",
+      "year": 2024
+    },
+    {
+      "error_type": "ValueError",
+      "flow": "X",
+      "hs_code": "260200",
+      "partner": "",
+      "raw": {
+        "path": "data/raw/comtrade/904e90249c2052900aaa644775ac39740250d580c5907755238804eb8663833b.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "260200",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 500,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2024",
+          "reporterCode": "356"
+        },
+        "retrieved_at": "2026-09-14T07:00:47+00:00",
+        "sha256": "d5b6bec2ca12c01d3de898153073fea5196e40f417bf4617352282e5478ee1bd",
+        "source": "comtrade",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+      },
+      "reason_code": "empty_response_not_zero_trade",
+      "reporter": 356,
+      "status": "failed",
+      "year": 2024
+    },
+    {
+      "error_type": "ValueError",
+      "flow": "M",
+      "hs_code": "260200",
+      "partner": "",
+      "raw": {
+        "path": "data/raw/comtrade/b7bb15fdfded3e29482cf989ec1d69daa5fcb50bfd1088719e21ea2dfe48c367.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "260200",
+          "customsCode": "C00",
+          "flowCode": "M",
+          "includeDesc": "true",
+          "maxRecords": 500,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2024",
+          "reporterCode": "356"
+        },
+        "retrieved_at": "2026-09-14T07:00:51+00:00",
+        "sha256": "0f48794e774fadb67770df6eadb0f3844d14aca4dc4c12226de2e63facc771ad",
+        "source": "comtrade",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+      },
+      "reason_code": "empty_response_not_zero_trade",
+      "reporter": 356,
+      "status": "failed",
+      "year": 2024
+    }
+  ],
+  "global_completeness": "unverified",
+  "limitations": [
+    "human_review_required",
+    "manganese_thresholds_deferred",
+    "production_trade_comparability_not_established"
+  ],
+  "missing_year_flows": [
+    [
+      2017,
+      "260200",
+      "M"
+    ],
+    [
+      2017,
+      "260200",
+      "X"
+    ],
+    [
+      2018,
+      "260200",
+      "M"
+    ],
+    [
+      2018,
+      "260200",
+      "X"
+    ],
+    [
+      2019,
+      "260200",
+      "M"
+    ],
+    [
+      2019,
+      "260200",
+      "X"
+    ],
+    [
+      2020,
+      "260200",
+      "M"
+    ],
+    [
+      2020,
+      "260200",
+      "X"
+    ],
+    [
+      2021,
+      "260200",
+      "M"
+    ],
+    [
+      2021,
+      "260200",
+      "X"
+    ],
+    [
+      2022,
+      "260200",
+      "M"
+    ],
+    [
+      2022,
+      "260200",
+      "X"
+    ],
+    [
+      2023,
+      "260200",
+      "M"
+    ],
+    [
+      2023,
+      "260200",
+      "X"
+    ]
+  ],
+  "publishable": false,
+  "queries_complete": false,
+  "rows": 249,
+  "status": "diagnosed",
+  "unresolved_decisions": 60
+}

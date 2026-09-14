@@ -1,0 +1,17 @@
+[
+  {
+    "id": "usgs-2019-official-legacy-url",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/840a522012d94068cfc1878e36ea333c916fca8486f1696e6b3e6e3657f0cfcb.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T12:29:19+00:00",
+      "sha256": "a91bf8f685ebd48af35dcca94e0a8cb7605d2445688d73e282994a2f09c59f09",
+      "source": "external",
+      "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/mcs-2019-manga.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/mcs-2019-manga.pdf",
+    "status": "downloaded_unreviewed"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "adopted_values": 0,
+  "anchor_counts": {
+    "domestic_consumption": 8,
+    "missing": 510
+  },
+  "comparison_counts": {
+    "indeterminate": 76,
+    "missing": 438,
+    "observed_difference_threshold_deferred": 4
+  },
+  "exporter_years": 518,
+  "human_decisions": 0,
+  "input_rows": 2642,
+  "publishable": false,
+  "reviewed_disclosures": 0
+}

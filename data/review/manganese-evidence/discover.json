@@ -1,0 +1,76 @@
+[
+  {
+    "id": "eramet-index",
+    "publishable": false,
+    "review_status": "unreviewed",
+    "source_url": "https://www.eramet.com/en/investors/annual-report/",
+    "status": "skipped_index"
+  },
+  {
+    "id": "south32-index",
+    "publishable": false,
+    "review_status": "unreviewed",
+    "source_url": "https://www.south32.net/investors-media/annual-reporting-suite",
+    "status": "skipped_index"
+  },
+  {
+    "id": "eramet-2024",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/c6946b33ee2f50a6939934807e95aeaf396a32c43594198b8681f0e610790dd2.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T07:00:46+00:00",
+      "sha256": "d8091e6d202e7e435240ea8f859c0c349e8e93a9d07391ec7b0f06ee4566374e",
+      "source": "external",
+      "url": "https://www.eramet.com/wp-content/uploads/2025/02/2025-19-02-Eramet-CP-Financial-results-2024.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://www.eramet.com/wp-content/uploads/2025/02/2025-19-02-Eramet-CP-Financial-results-2024.pdf",
+    "status": "downloaded_unreviewed"
+  },
+  {
+    "id": "south32-2024",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/e2e10f6f64908ae2bdd3cc863014b6aeaa0130f7ae3da6281c6b03ed9cee041c.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T07:00:51+00:00",
+      "sha256": "5682d22821e1f14c3a567e3c78e84390f0eb7c1629bc000c7afc0fe0e031e05d",
+      "source": "external",
+      "url": "https://www.south32.net/docs/default-source/annual-reporting-suite/2024/annual-report-2024.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://www.south32.net/docs/default-source/annual-reporting-suite/2024/annual-report-2024.pdf",
+    "status": "downloaded_unreviewed"
+  },
+  {
+    "id": "usgs-2025",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/20b85462b3564ea7d570903ea7d0c72395e0abfb2d15b3e494bf112442334869.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T07:00:53+00:00",
+      "sha256": "5868e111d64cc6a771883efd27332511ad407db64eddbe7c5f70a2256ecd2052",
+      "source": "external",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-manganese.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-manganese.pdf",
+    "status": "downloaded_unreviewed"
+  },
+  {
+    "id": "usgs-2026",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/e82419c2f4fde895a0690b6ff4d63a43539f7c01e1a9733fe9373b9accbfaee7.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T07:00:55+00:00",
+      "sha256": "05e4fc710af04302a9cfecb2802d926943940c7421c419b5c6501fba0ff34ff5",
+      "source": "external",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-manganese.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-manganese.pdf",
+    "status": "downloaded_unreviewed"
+  }
+]

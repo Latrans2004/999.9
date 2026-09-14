@@ -1,0 +1,47 @@
+[
+  {
+    "id": "bgs-2017-2021",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T10:17:53+00:00",
+      "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+      "source": "external",
+      "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf",
+    "status": "downloaded_unreviewed"
+  },
+  {
+    "id": "bgs-2020-2024",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T10:18:01+00:00",
+      "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+      "source": "external",
+      "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf",
+    "status": "downloaded_unreviewed"
+  },
+  {
+    "id": "usgs-yearbook-2019",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/55329b37162d374416506eaa1c29c5addd4e16051dc725b657b718856a6dbf2a.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T10:18:02+00:00",
+      "sha256": "db6e278c897424434e1642aafb06c00208c5cdd0a1ab4bdf507d35db6070a004",
+      "source": "external",
+      "url": "https://pubs.usgs.gov/myb/vol1/2019/myb1-2019-manganese.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://pubs.usgs.gov/myb/vol1/2019/myb1-2019-manganese.pdf",
+    "status": "downloaded_unreviewed"
+  }
+]

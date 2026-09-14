@@ -1,0 +1,2320 @@
+[
+  {
+    "comparison_status": "missing",
+    "country": "AGO",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 1480.0,
+    "mirror_observed_weight_t": 0.01,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "AUS",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 411455280.328,
+    "mirror_observed_weight_t": 2145280.4499999997,
+    "mirror_reporters": [
+      "CHN",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "BEL",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 136346.384,
+    "mirror_observed_weight_t": 200.847,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "BOL",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 103.909,
+    "mirror_observed_weight_t": 0.001,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "indeterminate",
+    "country": "BRA",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [
+      "unobserved_export_destinations"
+    ],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 4,
+    "mirror_observed_value_usd": 98384641.043,
+    "mirror_observed_weight_t": 638690.0817,
+    "mirror_reporters": [
+      "CHN",
+      "NLD",
+      "USA",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [
+      "ARG",
+      "CAN",
+      "CHL",
+      "COL",
+      "ESP",
+      "GBR",
+      "IND",
+      "ITA",
+      "MEX",
+      "OMN",
+      "PER",
+      "POL",
+      "TUR",
+      "URY",
+      "VNM"
+    ],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "estimated_or_unknown_reported_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": 84939408.0,
+    "reported_weight_t": 706236.482814,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json",
+      "data/raw/comtrade/268b629a17846b4a6f0ff4fbe1e714b4124f0bd2429bb1a894e9bc67405c6ea6.json",
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json",
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": 0.13665987801006077,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": 0.09564275247415895,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "BWA",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 113.538,
+    "mirror_observed_weight_t": 6.2702,
+    "mirror_reporters": [
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "CAN",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 13999.579,
+    "mirror_observed_weight_t": 67.539,
+    "mirror_reporters": [
+      "NLD",
+      "USA"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json",
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "indeterminate",
+    "country": "CHN",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [
+      "unobserved_export_destinations"
+    ],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 3,
+    "mirror_observed_value_usd": 548272.128,
+    "mirror_observed_weight_t": 794.0999999999999,
+    "mirror_reporters": [
+      "AUS",
+      "BRA",
+      "USA"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [
+      "BGD",
+      "BLR",
+      "BWA",
+      "CRI",
+      "DZA",
+      "GHA",
+      "IDN",
+      "ITA",
+      "JOR",
+      "JPN",
+      "KAZ",
+      "KEN",
+      "KOR",
+      "MDG",
+      "MEX",
+      "MMR",
+      "MNG",
+      "MYS",
+      "PHL",
+      "POL",
+      "PRK",
+      "RUS",
+      "THA",
+      "TJK",
+      "TZA",
+      "UKR",
+      "UZB",
+      "VEN",
+      "VNM"
+    ],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [],
+    "reported_reliability": "unverified",
+    "reported_value_usd": 69160142.0,
+    "reported_weight_t": 269106.481,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json",
+      "data/raw/comtrade/266ff9abf243bb9ef3ebeefdeeffdc4d7d44a88ab2b681f26fedb2bb77a1f0fd.json",
+      "data/raw/comtrade/41d1920e8373b27d1a3e1009f35fb7b3ba34c1d2cff1937497617c202cb4e8b7.json",
+      "data/raw/comtrade/d582803f31fc511fcfa22f42e1d0b61b2909986cd35d556d87807e5137875957.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": 0.9920724262249201,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": 0.9970491234657408,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "CIV",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 68728226.289,
+    "mirror_observed_weight_t": 490129.35,
+    "mirror_reporters": [
+      "CHN",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "CMR",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 297.185,
+    "mirror_observed_weight_t": 0.6796,
+    "mirror_reporters": [
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "COD",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 4015.299,
+    "mirror_observed_weight_t": 32.017,
+    "mirror_reporters": [
+      "CHN",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "CZE",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 9.741,
+    "mirror_observed_weight_t": 0.013,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "DEU",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 106407.741,
+    "mirror_observed_weight_t": 133.042,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "ESP",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 7037.1089999999995,
+    "mirror_observed_weight_t": 8.985,
+    "mirror_reporters": [
+      "NLD",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "EST",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 1.082,
+    "mirror_observed_weight_t": 0.001,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "FRA",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 4,
+    "mirror_observed_value_usd": 4676081.002,
+    "mirror_observed_weight_t": 12098.175,
+    "mirror_reporters": [
+      "AUS",
+      "BRA",
+      "NLD",
+      "USA"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json",
+      "data/raw/comtrade/41d1920e8373b27d1a3e1009f35fb7b3ba34c1d2cff1937497617c202cb4e8b7.json",
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json",
+      "data/raw/comtrade/d582803f31fc511fcfa22f42e1d0b61b2909986cd35d556d87807e5137875957.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "GAB",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 5,
+    "mirror_observed_value_usd": 921537088.348,
+    "mirror_observed_weight_t": 4454512.66777,
+    "mirror_reporters": [
+      "AUS",
+      "CHN",
+      "NLD",
+      "USA",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json",
+      "data/raw/comtrade/41d1920e8373b27d1a3e1009f35fb7b3ba34c1d2cff1937497617c202cb4e8b7.json",
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json",
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "GBR",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 656297.002,
+    "mirror_observed_weight_t": 1524.599,
+    "mirror_reporters": [
+      "NLD",
+      "USA"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json",
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "GEO",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 14.071,
+    "mirror_observed_weight_t": 0.056,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "GHA",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 534139924.0,
+    "mirror_observed_weight_t": 4645303.0,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "GUY",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 22803688.0,
+    "mirror_observed_weight_t": 138873.0,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "IND",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [
+      "estimated_or_unknown_mirror_weights"
+    ],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 115151.0,
+    "mirror_observed_weight_t": 96.125739,
+    "mirror_reporters": [
+      "CHN",
+      "USA"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json",
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "ISR",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 6949.0,
+    "mirror_observed_weight_t": 12.872,
+    "mirror_reporters": [
+      "USA"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "ITA",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 2.165,
+    "mirror_observed_weight_t": 0.003,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "JPN",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 2862.096,
+    "mirror_observed_weight_t": 0.3,
+    "mirror_reporters": [
+      "AUS"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/41d1920e8373b27d1a3e1009f35fb7b3ba34c1d2cff1937497617c202cb4e8b7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "KAZ",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 5402884.826,
+    "mirror_observed_weight_t": 45395.438,
+    "mirror_reporters": [
+      "CHN",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "KEN",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 2028641.0,
+    "mirror_observed_weight_t": 28012.076,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "KHM",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 9943653.0,
+    "mirror_observed_weight_t": 40411.83,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "KOR",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [
+      "no_usable_mirror",
+      "missing_mirror_weights"
+    ],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 1,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 6494.283,
+    "mirror_observed_weight_t": null,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "LUX",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 1.082,
+    "mirror_observed_weight_t": 0.001,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "MAR",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 4,
+    "mirror_observed_value_usd": 6866635.194,
+    "mirror_observed_weight_t": 38872.736820000006,
+    "mirror_reporters": [
+      "BRA",
+      "CHN",
+      "NLD",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json",
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json",
+      "data/raw/comtrade/d582803f31fc511fcfa22f42e1d0b61b2909986cd35d556d87807e5137875957.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "MEX",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 3,
+    "mirror_observed_value_usd": 22491154.0,
+    "mirror_observed_weight_t": 97664.418,
+    "mirror_reporters": [
+      "BRA",
+      "CHN",
+      "USA"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json",
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/d582803f31fc511fcfa22f42e1d0b61b2909986cd35d556d87807e5137875957.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "MLI",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 1754629.0,
+    "mirror_observed_weight_t": 9923.78,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "MMR",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 58425665.0,
+    "mirror_observed_weight_t": 561830.18,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "MNG",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 85153.0,
+    "mirror_observed_weight_t": 1268.606,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "MRT",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 3.247,
+    "mirror_observed_weight_t": 0.003,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "MYS",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 17492649.165,
+    "mirror_observed_weight_t": 213585.962,
+    "mirror_reporters": [
+      "CHN",
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json",
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "NAM",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 4166615.463,
+    "mirror_observed_weight_t": 39234.123999999996,
+    "mirror_reporters": [
+      "CHN",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "NGA",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 402781.0,
+    "mirror_observed_weight_t": 4801.106,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "indeterminate",
+    "country": "NLD",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [
+      "unobserved_export_destinations"
+    ],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 103956.0,
+    "mirror_observed_weight_t": 129.6,
+    "mirror_reporters": [
+      "BRA",
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [
+      "ARM",
+      "AUT",
+      "BEL",
+      "BGR",
+      "CYP",
+      "CZE",
+      "DEU",
+      "DNK",
+      "ESP",
+      "EST",
+      "FIN",
+      "FRA",
+      "GBR",
+      "GRC",
+      "HRV",
+      "HUN",
+      "IDN",
+      "IND",
+      "IRL",
+      "ITA",
+      "JPN",
+      "KOR",
+      "LTU",
+      "MAR",
+      "MLI",
+      "MLT",
+      "POL",
+      "PRT",
+      "SEN",
+      "SVK",
+      "SVN",
+      "SWE",
+      "THA",
+      "TUR",
+      "USA",
+      "VGB"
+    ],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [],
+    "reported_reliability": "unverified",
+    "reported_value_usd": 11540039.563,
+    "reported_weight_t": 15056.884,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/7037b0e8df8f6e43df6f3f62f1c6c9f9513fb1c0f26de3cdc4ce76fc09c83a15.json",
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/d582803f31fc511fcfa22f42e1d0b61b2909986cd35d556d87807e5137875957.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": 0.9909917119926255,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": 0.9913926413991102,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "NOR",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 147.204,
+    "mirror_observed_weight_t": 0.009,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "PAK",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 312204.0,
+    "mirror_observed_weight_t": 4232.931,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "PAN",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 49399.844,
+    "mirror_observed_weight_t": 85.0,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "PER",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [
+      "estimated_or_unknown_mirror_weights"
+    ],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 313531.0,
+    "mirror_observed_weight_t": 1777.882139,
+    "mirror_reporters": [
+      "BRA",
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/d582803f31fc511fcfa22f42e1d0b61b2909986cd35d556d87807e5137875957.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "PHL",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 624.0,
+    "mirror_observed_weight_t": 0.069,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "POL",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 23335.0,
+    "mirror_observed_weight_t": 43.103,
+    "mirror_reporters": [
+      "USA"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "PRY",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 12349.961,
+    "mirror_observed_weight_t": 21.25,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "SAU",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 2.165,
+    "mirror_observed_weight_t": 0.002,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "SEN",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 1254738.913,
+    "mirror_observed_weight_t": 9244.30342,
+    "mirror_reporters": [
+      "CHN",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "SRB",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 1.082,
+    "mirror_observed_weight_t": 0.006,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "SVK",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 590347.621,
+    "mirror_observed_weight_t": 2517.78,
+    "mirror_reporters": [
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "THA",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 511091.0,
+    "mirror_observed_weight_t": 2953.94,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "TJK",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 100.0,
+    "mirror_observed_weight_t": 0.013,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "TUR",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 3,
+    "mirror_observed_value_usd": 2104723.826,
+    "mirror_observed_weight_t": 13600.918000000001,
+    "mirror_reporters": [
+      "CHN",
+      "NLD",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json",
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "TZA",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 26907.0,
+    "mirror_observed_weight_t": 510.087,
+    "mirror_reporters": [
+      "CHN"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "UKR",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 1070038.0,
+    "mirror_observed_weight_t": 4490.3,
+    "mirror_reporters": [
+      "USA"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "indeterminate",
+    "country": "USA",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [
+      "unobserved_export_destinations"
+    ],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 361704.202,
+    "mirror_observed_weight_t": 325.401,
+    "mirror_reporters": [
+      "BRA",
+      "NLD"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [
+      "CAN",
+      "CHL",
+      "FIN",
+      "FRA",
+      "ISL",
+      "KOR",
+      "MEX",
+      "PER"
+    ],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [],
+    "reported_reliability": "unverified",
+    "reported_value_usd": 1448337.0,
+    "reported_weight_t": 3069.092,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json",
+      "data/raw/comtrade/d582803f31fc511fcfa22f42e1d0b61b2909986cd35d556d87807e5137875957.json",
+      "data/raw/comtrade/de5e17ba01a45b9220ea98d7451a6936e62d9bdb302e8240dc91e1f51265dfc3.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": 0.7502624030180821,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": 0.8939748303407001,
+    "year": 2024
+  },
+  {
+    "comparison_status": "indeterminate",
+    "country": "ZAF",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [
+      "unobserved_export_destinations"
+    ],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 5,
+    "mirror_observed_value_usd": 2329178518.881,
+    "mirror_observed_weight_t": 16054487.1898,
+    "mirror_reporters": [
+      "AUS",
+      "CHN",
+      "NLD",
+      "USA",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [
+      "AGO",
+      "ARE",
+      "BEL",
+      "BWA",
+      "CAN",
+      "CHE",
+      "COD",
+      "ESP",
+      "FIN",
+      "FRA",
+      "GBR",
+      "HKG",
+      "IDN",
+      "IND",
+      "ITA",
+      "JPN",
+      "KOR",
+      "LKA",
+      "LVA",
+      "MEX",
+      "MOZ",
+      "MYS",
+      "NAM",
+      "NOR",
+      "NZL",
+      "OMN",
+      "RUS",
+      "SAU",
+      "SGP",
+      "SWZ",
+      "THA",
+      "TUR",
+      "VNM",
+      "ZMB",
+      "ZWE"
+    ],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [],
+    "reported_reliability": "unverified",
+    "reported_value_usd": 3090477978.167,
+    "reported_weight_t": 24716301.86339,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json",
+      "data/raw/comtrade/41d1920e8373b27d1a3e1009f35fb7b3ba34c1d2cff1937497617c202cb4e8b7.json",
+      "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json",
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json",
+      "data/raw/comtrade/cb8db2e29a0e31c74260875abd46452c1526e91d858e68119930d161635cfd98.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": 0.24633712476331437,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": 0.3504494613095802,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "ZMB",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 2,
+    "mirror_observed_value_usd": 20123864.322,
+    "mirror_observed_weight_t": 120670.63200000001,
+    "mirror_reporters": [
+      "CHN",
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  },
+  {
+    "comparison_status": "missing",
+    "country": "ZWE",
+    "decision": "pending_human_review",
+    "hs_code": "260200",
+    "mirror_coverage_flags": [],
+    "mirror_global_coverage": null,
+    "mirror_missing_weight_rows": 0,
+    "mirror_observed_rows": 1,
+    "mirror_observed_value_usd": 3457.536,
+    "mirror_observed_weight_t": 32.0,
+    "mirror_reporters": [
+      "ZAF"
+    ],
+    "mirror_review_allowed": false,
+    "mirror_world_complete": false,
+    "missing_observed_destinations": [],
+    "product_scope": "manganese_ores_concentrates",
+    "publishable": false,
+    "reported_measurement_flags": [
+      "missing_reported_world_weight"
+    ],
+    "reported_reliability": "unverified",
+    "reported_value_usd": null,
+    "reported_weight_t": null,
+    "selected_weight_t": null,
+    "sources": [
+      "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json"
+    ],
+    "valuation_note": "Imports generally CIF; exports FOB; no freight adjustment.",
+    "value_relative_gap": null,
+    "weight_basis": "ore_mass_unspecified_moisture",
+    "weight_relative_gap": null,
+    "year": 2024
+  }
+]

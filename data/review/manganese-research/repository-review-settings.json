@@ -1,0 +1,14 @@
+{
+  "main_protection": {
+    "body": {
+      "documentation_url": "https://docs.github.com/rest",
+      "message": "Requires authentication",
+      "status": "401"
+    },
+    "status_code": 401
+  },
+  "rulesets": {
+    "body": [],
+    "status_code": 200
+  }
+}

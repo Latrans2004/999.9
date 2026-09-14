@@ -1,0 +1,482 @@
+[
+  {
+    "error_type": "ValueError",
+    "flow": "X",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/b9e640bfaec67e9b7eae41891e1f12f21d46eab8f5f66ba7929f4d4fb6e69972.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "36"
+      },
+      "retrieved_at": "2026-09-14T07:00:22+00:00",
+      "sha256": "697b3d5cc2a92d2e2b63ab7e2d02691b3cdd538c902e9e52e95e95acf459485c",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "reason_code": "empty_response_not_zero_trade",
+    "reporter": 36,
+    "status": "failed",
+    "year": 2024
+  },
+  {
+    "flow": "M",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/41d1920e8373b27d1a3e1009f35fb7b3ba34c1d2cff1937497617c202cb4e8b7.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "36"
+      },
+      "retrieved_at": "2026-09-14T07:00:24+00:00",
+      "sha256": "2620d4b790edb7db2010036de75fdb0299f43f1e712c575a1af7fb9493aea1ee",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "raw_path": "data/raw/comtrade/41d1920e8373b27d1a3e1009f35fb7b3ba34c1d2cff1937497617c202cb4e8b7.json",
+    "reporter": 36,
+    "rows": 6,
+    "status": "ok",
+    "year": 2024
+  },
+  {
+    "flow": "X",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/268b629a17846b4a6f0ff4fbe1e714b4124f0bd2429bb1a894e9bc67405c6ea6.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "76"
+      },
+      "retrieved_at": "2026-09-14T07:00:33+00:00",
+      "sha256": "2355f8ca6619beb37e5b4b03f0328de472735de93bc999c056cf2de743b05dbe",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "raw_path": "data/raw/comtrade/268b629a17846b4a6f0ff4fbe1e714b4124f0bd2429bb1a894e9bc67405c6ea6.json",
+    "reporter": 76,
+    "rows": 19,
+    "status": "ok",
+    "year": 2024
+  },
+  {
+    "flow": "M",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/d582803f31fc511fcfa22f42e1d0b61b2909986cd35d556d87807e5137875957.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "76"
+      },
+      "retrieved_at": "2026-09-14T07:00:34+00:00",
+      "sha256": "74858261e794337654acd17f2d17d91e8727f08af9da79fafe8f58366da87418",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "raw_path": "data/raw/comtrade/d582803f31fc511fcfa22f42e1d0b61b2909986cd35d556d87807e5137875957.json",
+    "reporter": 76,
+    "rows": 8,
+    "status": "ok",
+    "year": 2024
+  },
+  {
+    "flow": "X",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/266ff9abf243bb9ef3ebeefdeeffdc4d7d44a88ab2b681f26fedb2bb77a1f0fd.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "156"
+      },
+      "retrieved_at": "2026-09-14T07:00:36+00:00",
+      "sha256": "62af704a6d9c3e54750d341746c1ba8b91ab33c72fd281f5b6a22393664226c5",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "raw_path": "data/raw/comtrade/266ff9abf243bb9ef3ebeefdeeffdc4d7d44a88ab2b681f26fedb2bb77a1f0fd.json",
+    "reporter": 156,
+    "rows": 33,
+    "status": "ok",
+    "year": 2024
+  },
+  {
+    "flow": "M",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "156"
+      },
+      "retrieved_at": "2026-09-14T07:00:40+00:00",
+      "sha256": "14b32e953f96bc3f1634ae30558fccb999980b09c892d0928bd7f1919573bb28",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "raw_path": "data/raw/comtrade/72a36f3afe37042ccaddfc51a599a76a80b0bf34cf49647a0313448592c68ed7.json",
+    "reporter": 156,
+    "rows": 33,
+    "status": "ok",
+    "year": 2024
+  },
+  {
+    "error_type": "ValueError",
+    "flow": "X",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/3527fd7901fdc42af246ecc2e441b8f5560a98907cf54c4718d5b462ee1af6d3.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "266"
+      },
+      "retrieved_at": "2026-09-14T07:00:41+00:00",
+      "sha256": "f3680a1dd8407c30d82902892c8744a6b5c616f6f817fbcff9545710ea68f763",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "reason_code": "empty_response_not_zero_trade",
+    "reporter": 266,
+    "status": "failed",
+    "year": 2024
+  },
+  {
+    "error_type": "ValueError",
+    "flow": "M",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/30ca389a382e48e17823002575029a6186946a89933847343e15961267e5d185.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "266"
+      },
+      "retrieved_at": "2026-09-14T07:00:46+00:00",
+      "sha256": "d621c47cf1d6c742b1b1a7c897cc473519dd08c3851cea6d2103a872e7b4554e",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "reason_code": "empty_response_not_zero_trade",
+    "reporter": 266,
+    "status": "failed",
+    "year": 2024
+  },
+  {
+    "error_type": "ValueError",
+    "flow": "X",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/904e90249c2052900aaa644775ac39740250d580c5907755238804eb8663833b.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "356"
+      },
+      "retrieved_at": "2026-09-14T07:00:47+00:00",
+      "sha256": "d5b6bec2ca12c01d3de898153073fea5196e40f417bf4617352282e5478ee1bd",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "reason_code": "empty_response_not_zero_trade",
+    "reporter": 356,
+    "status": "failed",
+    "year": 2024
+  },
+  {
+    "error_type": "ValueError",
+    "flow": "M",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/b7bb15fdfded3e29482cf989ec1d69daa5fcb50bfd1088719e21ea2dfe48c367.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "356"
+      },
+      "retrieved_at": "2026-09-14T07:00:51+00:00",
+      "sha256": "0f48794e774fadb67770df6eadb0f3844d14aca4dc4c12226de2e63facc771ad",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "reason_code": "empty_response_not_zero_trade",
+    "reporter": 356,
+    "status": "failed",
+    "year": 2024
+  },
+  {
+    "flow": "X",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/7037b0e8df8f6e43df6f3f62f1c6c9f9513fb1c0f26de3cdc4ce76fc09c83a15.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "528"
+      },
+      "retrieved_at": "2026-09-14T07:00:55+00:00",
+      "sha256": "2c6f23c9573640924b6e911d0e01002c612c71d41c3a59b835fe1cf0aee52814",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "raw_path": "data/raw/comtrade/7037b0e8df8f6e43df6f3f62f1c6c9f9513fb1c0f26de3cdc4ce76fc09c83a15.json",
+    "reporter": 528,
+    "rows": 40,
+    "status": "ok",
+    "year": 2024
+  },
+  {
+    "flow": "M",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "528"
+      },
+      "retrieved_at": "2026-09-14T07:00:57+00:00",
+      "sha256": "4db0753f2c66dce18342a6b9a731703f33186a14c0621f9056cb2c1d3b55aa0f",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "raw_path": "data/raw/comtrade/4c9efbbc9c9146f710151b40be2fa7bc08977b68cbe10d4f0ef995a559e132aa.json",
+    "reporter": 528,
+    "rows": 28,
+    "status": "ok",
+    "year": 2024
+  },
+  {
+    "flow": "X",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/cb8db2e29a0e31c74260875abd46452c1526e91d858e68119930d161635cfd98.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "710"
+      },
+      "retrieved_at": "2026-09-14T07:01:00+00:00",
+      "sha256": "6f088ba43e84bf93e21e552b47c535aade6d0c12eb1cfbb5494e811912faf486",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "raw_path": "data/raw/comtrade/cb8db2e29a0e31c74260875abd46452c1526e91d858e68119930d161635cfd98.json",
+    "reporter": 710,
+    "rows": 41,
+    "status": "ok",
+    "year": 2024
+  },
+  {
+    "flow": "M",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "710"
+      },
+      "retrieved_at": "2026-09-14T07:01:02+00:00",
+      "sha256": "2a10f92af932f5dbe30b3ddfc4c8b2056af292be3db8fa054e0bc35c34f45468",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "raw_path": "data/raw/comtrade/a84c079d68e4ba66f23fecd6b8b7e522a5e4b6768468684d50b6c825e4f21646.json",
+    "reporter": 710,
+    "rows": 17,
+    "status": "ok",
+    "year": 2024
+  },
+  {
+    "flow": "X",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/de5e17ba01a45b9220ea98d7451a6936e62d9bdb302e8240dc91e1f51265dfc3.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "X",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "842"
+      },
+      "retrieved_at": "2026-09-14T07:01:08+00:00",
+      "sha256": "41490d5c69ea1d5977ede041201d5234c2ac2146837da42653f6a6e5720c49a4",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "raw_path": "data/raw/comtrade/de5e17ba01a45b9220ea98d7451a6936e62d9bdb302e8240dc91e1f51265dfc3.json",
+    "reporter": 842,
+    "rows": 11,
+    "status": "ok",
+    "year": 2024
+  },
+  {
+    "flow": "M",
+    "hs_code": "260200",
+    "partner": "",
+    "raw": {
+      "path": "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json",
+      "query": {
+        "breakdownMode": "classic",
+        "cmdCode": "260200",
+        "customsCode": "C00",
+        "flowCode": "M",
+        "includeDesc": "true",
+        "maxRecords": 500,
+        "motCode": "0",
+        "partner2Code": "0",
+        "partnerCode": "",
+        "period": "2024",
+        "reporterCode": "842"
+      },
+      "retrieved_at": "2026-09-14T07:01:11+00:00",
+      "sha256": "883b092e2331b03dbf2d9331e129f79cf7464a5428616ce45cfcac7471c9d349",
+      "source": "comtrade",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    "raw_path": "data/raw/comtrade/17cfd0621552f2f9c00b5ed21b1ab8f0aaf60a979ef64950770493b56e03bbb7.json",
+    "reporter": 842,
+    "rows": 13,
+    "status": "ok",
+    "year": 2024
+  }
+]

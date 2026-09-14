@@ -232,6 +232,14 @@ reported-USD headline. See the lithium guide before interpreting them.
 
 ## Data and credit
 
+The isolated [manganese ore audit](docs/manganese-pipeline.md) covers HS260200,
+with strict Raw replay, diagnostic-only production references, and a separate
+human-review boundary. It does not publish data. See the
+[2026-09-14 validation report](docs/manganese-audit-2026-09-14.md) for the retained
+public-API sample, tests, and unresolved evidence requirements.
+The [historical-data validation report](docs/manganese-history-2026-09-14.md)
+adds 2017–2024 trade observations, BGS production vintages, and revision checks.
+
 Mine production: [USGS Mineral Commodity
 Summaries](https://www.usgs.gov/centers/national-minerals-information-center/mineral-commodity-summaries),
 National Minerals Information Center.

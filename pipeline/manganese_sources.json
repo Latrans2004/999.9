@@ -1,0 +1,36 @@
+[
+  {
+    "id": "eramet-index", "kind": "index",
+    "title": "Eramet annual reporting index",
+    "source_url": "https://www.eramet.com/en/investors/annual-report/"
+  },
+  {
+    "id": "south32-index", "kind": "index",
+    "title": "South32 annual reporting index",
+    "source_url": "https://www.south32.net/investors-media/annual-reporting-suite"
+  },
+  {
+    "id": "eramet-2024", "kind": "document", "format": "pdf",
+    "title": "Eramet 2024 annual results, 19 February 2025",
+    "source_url": "https://www.eramet.com/wp-content/uploads/2025/02/2025-19-02-Eramet-CP-Financial-results-2024.pdf",
+    "review_tasks": "Annual manganese ore production and external/internal sales; wet/dry definition; Moanda versus all Gabon. Never use quarterly columns as annual."
+  },
+  {
+    "id": "south32-2024", "kind": "document", "format": "pdf",
+    "title": "South32 annual report for year ended 30 June 2024",
+    "source_url": "https://www.south32.net/docs/default-source/annual-reporting-suite/2024/annual-report-2024.pdf",
+    "review_tasks": "Australia/South Africa manganese: wet metric tonnes, equity versus 100 percent, ore versus alloy, FY versus calendar year, cyclone and stock changes."
+  },
+  {
+    "id": "usgs-2025", "kind": "document", "format": "pdf",
+    "title": "USGS MCS 2025 manganese",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-manganese.pdf",
+    "review_tasks": "World Mine Production is manganese content, unlike ore cargo mass. Verify table units and estimate flags; no grade conversion."
+  },
+  {
+    "id": "usgs-2026", "kind": "document", "format": "pdf",
+    "title": "USGS MCS 2026 manganese",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-manganese.pdf",
+    "review_tasks": "Check revised 2024 content-tonnage column and footnotes. 2025 trade remains outside pipeline scope."
+  }
+]

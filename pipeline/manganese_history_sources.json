@@ -1,0 +1,44 @@
+[
+  {
+    "format": "pdf",
+    "id": "usgs-2019",
+    "kind": "document",
+    "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/mcs-2019-manga.pdf",
+    "title": "USGS MCS 2019 manganese historical edition"
+  },
+  {
+    "format": "pdf",
+    "id": "usgs-2020",
+    "kind": "document",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-manganese.pdf",
+    "title": "USGS MCS 2020 manganese historical edition"
+  },
+  {
+    "format": "pdf",
+    "id": "usgs-2021",
+    "kind": "document",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021-manganese.pdf",
+    "title": "USGS MCS 2021 manganese historical edition"
+  },
+  {
+    "format": "pdf",
+    "id": "usgs-2022",
+    "kind": "document",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022-manganese.pdf",
+    "title": "USGS MCS 2022 manganese historical edition"
+  },
+  {
+    "format": "pdf",
+    "id": "usgs-2023",
+    "kind": "document",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2023/mcs2023-manganese.pdf",
+    "title": "USGS MCS 2023 manganese historical edition"
+  },
+  {
+    "format": "pdf",
+    "id": "usgs-2024",
+    "kind": "document",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-manganese.pdf",
+    "title": "USGS MCS 2024 manganese historical edition"
+  }
+]

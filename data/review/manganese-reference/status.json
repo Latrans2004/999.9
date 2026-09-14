@@ -1,0 +1,18 @@
+{
+  "adopted_values": 0,
+  "classification_counts": {
+    "domestic_consumption": 1,
+    "incomparable": 3,
+    "missing": 56
+  },
+  "comparability_issue_counts": {
+    "weight_basis_mismatch": 9
+  },
+  "exporter_years": 60,
+  "production_country_rows": 9,
+  "production_rows": 11,
+  "publishable": false,
+  "reference_review_status": "unreviewed_machine_extraction",
+  "status": "diagnosed",
+  "trade_rows": 249
+}

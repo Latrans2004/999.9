@@ -1,0 +1,87 @@
+{
+  "entities": [
+    {
+      "id": "CT:490",
+      "kind": "special_area",
+      "metric_eligible": false,
+      "name": "Other Asia, nes",
+      "observations": 2,
+      "policy": "unallocated_special_area",
+      "queries": [
+        [
+          "260200",
+          2024,
+          "M"
+        ],
+        [
+          "260200",
+          2024,
+          "X"
+        ]
+      ],
+      "source_labels": [
+        [
+          "partner",
+          "S19",
+          "Other Asia, nes"
+        ]
+      ]
+    },
+    {
+      "id": "CT:839",
+      "kind": "special_area",
+      "metric_eligible": false,
+      "name": "Special Categories",
+      "observations": 1,
+      "policy": "unallocated_special_area",
+      "queries": [
+        [
+          "260200",
+          2024,
+          "X"
+        ]
+      ],
+      "source_labels": [
+        [
+          "partner",
+          "XX ",
+          "Special Categories"
+        ]
+      ]
+    }
+  ],
+  "note": "Excluded amounts are observations by query, not additive world totals. Unknowns are quarantined; existing data-quality gates still apply.",
+  "policy": "comtrade-entities-v1",
+  "queries": [
+    {
+      "eligible_rows": 104,
+      "excluded": {
+        "partner:unallocated_special_area": {
+          "missing_weight_rows": 0,
+          "observed_value_usd": 1690.0,
+          "observed_weight_t": 6.0,
+          "rows": 1
+        }
+      },
+      "flow": "M",
+      "hs_code": "260200",
+      "rows": 105,
+      "year": 2024
+    },
+    {
+      "eligible_rows": 142,
+      "excluded": {
+        "partner:unallocated_special_area": {
+          "missing_weight_rows": 0,
+          "observed_value_usd": 54527.234,
+          "observed_weight_t": 123.15,
+          "rows": 2
+        }
+      },
+      "flow": "X",
+      "hs_code": "260200",
+      "rows": 144,
+      "year": 2024
+    }
+  ]
+}
