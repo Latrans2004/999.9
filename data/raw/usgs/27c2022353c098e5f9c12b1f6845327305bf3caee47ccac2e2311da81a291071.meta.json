@@ -1,0 +1,38 @@
+{
+  "path": "data/raw/usgs/27c2022353c098e5f9c12b1f6845327305bf3caee47ccac2e2311da81a291071.pdf",
+  "query": {
+    "chapter_urls": [
+      "https://minerals.usgs.gov/minerals/pubs/commodity/lithium/mcs-2019-lithi.pdf",
+      "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-lithium.pdf",
+      "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021-lithium.pdf",
+      "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022-lithium.pdf",
+      "https://pubs.usgs.gov/periodicals/mcs2023/mcs2023-lithium.pdf",
+      "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-lithium.pdf",
+      "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lithium.pdf"
+    ],
+    "content": "The lithium chapters of Mineral Commodity Summaries 2019-2025, extracted from the full volumes and concatenated into one file. The sha256 is of this extracted file, not of any volume.",
+    "editions": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "url_verification": "pubs.usgs.gov and minerals.usgs.gov are unreachable from the environment that archived this file (egress policy), so the URLs above are recorded from the published USGS naming and have not been re-fetched. The archived bytes, not the URL, are what the extraction was run against.",
+    "volume_urls": [
+      "https://minerals.usgs.gov/minerals/pubs/mcs/2019/mcs2019.pdf",
+      "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020.pdf",
+      "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021.pdf",
+      "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022.pdf",
+      "https://pubs.usgs.gov/periodicals/mcs2023/mcs2023.pdf",
+      "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024.pdf",
+      "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025.pdf"
+    ]
+  },
+  "retrieved_at": "2026-09-14T19:28:45+00:00",
+  "sha256": "a61206ba769ecccfe08e0774221069bc4533aab54434c1c091257b4dd1808ec9",
+  "source": "usgs",
+  "url": "reviewed:lithium-mcs-2019-2025-chapters.pdf"
+}

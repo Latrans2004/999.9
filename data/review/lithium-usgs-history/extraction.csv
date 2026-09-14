@@ -1,0 +1,155 @@
+edition,data_year,country_label,production_t,status,page
+2019,2017,United States,,withheld,2
+2019,2018,United States,,withheld,2
+2019,2017,Argentina,5700.0,reported,2
+2019,2018,Argentina,6200.0,estimated,2
+2019,2017,Australia,40000.0,reported,2
+2019,2018,Australia,51000.0,estimated,2
+2019,2017,Brazil,200.0,reported,2
+2019,2018,Brazil,600.0,estimated,2
+2019,2017,Chile,14200.0,reported,2
+2019,2018,Chile,16000.0,estimated,2
+2019,2017,China,6800.0,reported,2
+2019,2018,China,8000.0,estimated,2
+2019,2017,Portugal,800.0,reported,2
+2019,2018,Portugal,800.0,estimated,2
+2019,2017,Namibia,0.0,reported,2
+2019,2018,Namibia,500.0,estimated,2
+2019,2017,Zimbabwe,800.0,reported,2
+2019,2018,Zimbabwe,1600.0,estimated,2
+2019,2017,World total (rounded),69000.0,printed,2
+2019,2018,World total (rounded),85000.0,printed,2
+2020,2018,United States,,withheld,5
+2020,2019,United States,,withheld,5
+2020,2018,Argentina,6400.0,reported,5
+2020,2019,Argentina,6400.0,estimated,5
+2020,2018,Australia,58800.0,reported,5
+2020,2019,Australia,42000.0,estimated,5
+2020,2018,Brazil,300.0,reported,5
+2020,2019,Brazil,300.0,estimated,5
+2020,2018,Canada,2400.0,reported,5
+2020,2019,Canada,200.0,estimated,5
+2020,2018,Chile,17000.0,reported,5
+2020,2019,Chile,18000.0,estimated,5
+2020,2018,China,7100.0,reported,5
+2020,2019,China,7500.0,estimated,5
+2020,2018,Namibia,500.0,reported,5
+2020,2019,Namibia,0.0,estimated,5
+2020,2018,Portugal,800.0,reported,5
+2020,2019,Portugal,1200.0,estimated,5
+2020,2018,Zimbabwe,1600.0,reported,5
+2020,2019,Zimbabwe,1600.0,estimated,5
+2020,2018,Other,0.0,reported,5
+2020,2019,Other,0.0,estimated,5
+2020,2018,World total (rounded),95000.0,printed,5
+2020,2019,World total (rounded),77000.0,printed,5
+2021,2019,United States,,withheld,8
+2021,2020,United States,,withheld,8
+2021,2019,Argentina,6300.0,reported,8
+2021,2020,Argentina,6200.0,estimated,8
+2021,2019,Australia,45000.0,reported,8
+2021,2020,Australia,40000.0,estimated,8
+2021,2019,Brazil,2400.0,reported,8
+2021,2020,Brazil,1900.0,estimated,8
+2021,2019,Canada,200.0,reported,8
+2021,2020,Canada,0.0,estimated,8
+2021,2019,Chile,19300.0,reported,8
+2021,2020,Chile,18000.0,estimated,8
+2021,2019,China,10800.0,reported,8
+2021,2020,China,14000.0,estimated,8
+2021,2019,Portugal,900.0,reported,8
+2021,2020,Portugal,900.0,estimated,8
+2021,2019,Zimbabwe,1200.0,reported,8
+2021,2020,Zimbabwe,1200.0,estimated,8
+2021,2019,Other countries,0.0,reported,8
+2021,2020,Other countries,0.0,estimated,8
+2021,2019,World total (rounded),86000.0,printed,8
+2021,2020,World total (rounded),82000.0,printed,8
+2022,2020,United States,,withheld,11
+2022,2021,United States,,withheld,11
+2022,2020,Argentina,5900.0,reported,11
+2022,2021,Argentina,6200.0,estimated,11
+2022,2020,Australia,39700.0,reported,11
+2022,2021,Australia,55000.0,estimated,11
+2022,2020,Brazil,1420.0,reported,11
+2022,2021,Brazil,1500.0,estimated,11
+2022,2020,Chile,21500.0,reported,11
+2022,2021,Chile,26000.0,estimated,11
+2022,2020,China,13300.0,reported,11
+2022,2021,China,14000.0,estimated,11
+2022,2020,Portugal,348.0,reported,11
+2022,2021,Portugal,900.0,estimated,11
+2022,2020,Zimbabwe,417.0,reported,11
+2022,2021,Zimbabwe,1200.0,estimated,11
+2022,2020,Other countries,0.0,reported,11
+2022,2021,Other countries,0.0,estimated,11
+2022,2020,World total (rounded),82500.0,printed,11
+2022,2021,World total (rounded),100000.0,printed,11
+2023,2021,United States,,withheld,14
+2023,2022,United States,,withheld,14
+2023,2021,Argentina,5970.0,reported,14
+2023,2022,Argentina,6200.0,estimated,14
+2023,2021,Australia,55300.0,reported,14
+2023,2022,Australia,61000.0,estimated,14
+2023,2021,Brazil,1700.0,reported,14
+2023,2022,Brazil,2200.0,estimated,14
+2023,2021,Canada,0.0,reported,14
+2023,2022,Canada,500.0,estimated,14
+2023,2021,Chile,28300.0,reported,14
+2023,2022,Chile,39000.0,estimated,14
+2023,2021,China,14000.0,reported,14
+2023,2022,China,19000.0,estimated,14
+2023,2021,Portugal,900.0,reported,14
+2023,2022,Portugal,600.0,estimated,14
+2023,2021,Zimbabwe,710.0,reported,14
+2023,2022,Zimbabwe,800.0,estimated,14
+2023,2021,Other countries,0.0,reported,14
+2023,2022,Other countries,0.0,estimated,14
+2023,2021,World total (rounded),107000.0,printed,14
+2023,2022,World total (rounded),130000.0,printed,14
+2024,2022,United States,,withheld,17
+2024,2023,United States,,withheld,17
+2024,2022,Argentina,6590.0,reported,17
+2024,2023,Argentina,9600.0,estimated,17
+2024,2022,Australia,74700.0,reported,17
+2024,2023,Australia,86000.0,estimated,17
+2024,2022,Brazil,2630.0,reported,17
+2024,2023,Brazil,4900.0,estimated,17
+2024,2022,Canada,520.0,reported,17
+2024,2023,Canada,3400.0,estimated,17
+2024,2022,Chile,38000.0,reported,17
+2024,2023,Chile,44000.0,estimated,17
+2024,2022,China,22600.0,reported,17
+2024,2023,China,33000.0,estimated,17
+2024,2022,Portugal,380.0,reported,17
+2024,2023,Portugal,380.0,estimated,17
+2024,2022,Zimbabwe,1030.0,reported,17
+2024,2023,Zimbabwe,3400.0,estimated,17
+2024,2022,Other countries,0.0,reported,17
+2024,2023,Other countries,0.0,estimated,17
+2024,2022,World total (rounded),146000.0,printed,17
+2024,2023,World total (rounded),180000.0,printed,17
+2025,2023,United States,,withheld,20
+2025,2024,United States,,withheld,20
+2025,2023,Argentina,8630.0,reported,20
+2025,2024,Argentina,18000.0,estimated,20
+2025,2023,Australia,91700.0,reported,20
+2025,2024,Australia,88000.0,estimated,20
+2025,2023,Brazil,5260.0,reported,20
+2025,2024,Brazil,10000.0,estimated,20
+2025,2023,Canada,3240.0,reported,20
+2025,2024,Canada,4300.0,estimated,20
+2025,2023,Chile,41400.0,reported,20
+2025,2024,Chile,49000.0,estimated,20
+2025,2023,China,35700.0,reported,20
+2025,2024,China,41000.0,estimated,20
+2025,2023,Namibia,2700.0,reported,20
+2025,2024,Namibia,2700.0,estimated,20
+2025,2023,Portugal,380.0,reported,20
+2025,2024,Portugal,380.0,estimated,20
+2025,2023,Zimbabwe,14900.0,reported,20
+2025,2024,Zimbabwe,22000.0,estimated,20
+2025,2023,Other countries,0.0,reported,20
+2025,2024,Other countries,0.0,estimated,20
+2025,2023,World total (rounded),204000.0,printed,20
+2025,2024,World total (rounded),240000.0,printed,20

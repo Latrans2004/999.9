@@ -259,7 +259,9 @@ def test_headline_hs_codes_agree_across_catalog_and_pipeline():
 def test_usgs_strict_schema_withheld_and_duplicate():
     body=(ROOT/'data/manual/lithium-production.csv').read_bytes()
     records=strict_usgs.parse_csv(body)
-    assert len(records)==20
+    # Every reviewed line is a record; back-filling an edition adds lines, and the
+    # count is read from the file rather than pinned so that stays a data change.
+    assert len(records)==sum(1 for line in body.decode('utf-8-sig').splitlines()[1:] if line.strip())
     assert records[0]['production_t'] is None
     assert sum(r['production_t'] or 0 for r in records if r['year']==2024)==pytest.approx(222970)
     with pytest.raises(ValueError): strict_usgs.parse_csv(body+body.splitlines(keepends=True)[1])
