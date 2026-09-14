@@ -121,8 +121,11 @@ Export HHI 列の決定順序(`render.export_cell`):
 - 最上位 `categories`: `{ "battery-metals": { "label", "label_ja" } }`
 - 各鉱物 `category: "battery-metals"`
 - リチウム `headline_trade_stage: "283691"`
-- `symbol` は既存。`build.py` の `pack()` はカタログから特定フィールドしか写さないため、
-  公開 JSON(`minerals/*.json`、`index.json`)は変化しない(graphite 再現チェックで確認)。
+- `symbol` は既存。`publish_graphite.py` と `update_minerals.py` はカタログエントリを
+  `dict(entry)` で鉱物 JSON に写すため、Raw→公開JSON の再現チェックに合わせて
+  `minerals/natural-graphite.json` に `"category": "battery-metals"` が 1 行加わった
+  (再現出力そのもの。数値・系列・単位は無変更)。リチウムは次回の定期更新で同様に
+  `category` と `headline_trade_stage` を持つようになる。`index.json` は変化しない。
 
 ### i18n
 
@@ -134,7 +137,9 @@ placeholder は `screener.js` が `i18n:change` で差し替える。翻訳欠�
 
 ## 5. 不変条件の確認
 
-- 公開 JSON・パイプライン・検証ゲートは無変更。`python -m pipeline.publish_graphite` 後の
+- パイプライン・検証ゲート・公開判定は無変更。公開 JSON の数値・系列・単位も無変更
+  (`natural-graphite.json` に表示用の `category` キーが再現出力として加わったのみ)。
+  `python -m pipeline.publish_graphite` 後の
   `git diff -- critical-minerals/data data/processed/natural-graphite` は空。
 - 天然黒鉛の貿易 HHI は数値としてどこにも出力しない(スクリーナー、クオートヘッダー、
   Export パネルのいずれも「確認中」)。
