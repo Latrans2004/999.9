@@ -79,22 +79,28 @@
       2025
     ],
     "entity_diagnostics_url": "entities.json",
-    "fingerprint": "0c3872a3df63ce632203753a96ed127751a0ab7975c7bfcb72ae7561aa05000a",
-    "last_updated": "2026-09-13T16:44:21+00:00",
+    "fingerprint": "ed3a3034cc3928d9ef5456a56c142c163a64c244c6a296af64cc2770054fc554",
+    "last_updated": "2026-09-14T19:49:08+00:00",
     "methodology_version": "lithium-2026-09-14-coverage-v3",
     "provisional_years": {
+      "253090": [
+        2025
+      ],
       "282520": [
+        2025
+      ],
+      "283691": [
         2025
       ]
     },
-    "retrieved_at": "2026-09-13T16:44:08+00:00",
+    "retrieved_at": "2026-09-14T18:57:54+00:00",
     "source": [
       "UN Comtrade",
       "USGS Mineral Commodity Summaries"
     ],
     "sources": [
       {
-        "path": "data/raw/comtrade/02b54f5998721a80d4ccd1d9316f68084382701a01bb16fd729bd2d2be37ddbf.json",
+        "path": "data/raw/comtrade/26a1f7f6dcb5f5ba869b78aa664732344d44291e03ff50bf3729818b3df6dbba.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -108,13 +114,13 @@
           "period": "2017",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:41:52+00:00",
-        "sha256": "0508dc6dc60209316cd0203cca9279bca0138c53874b22e5b997ef051839668d",
+        "retrieved_at": "2026-09-14T18:55:10+00:00",
+        "sha256": "27b914f76fb1403e03c08ce989d29e6113e0082d2ab930603babf2b9888a032e",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/53948100c69f4d693ad142b654ea0eee04fc98c4782861a46f77c348e6657ebc.json",
+        "path": "data/raw/comtrade/2d4e9b98f9cd935c74fb6d333e6afc43c58e97f601bf896018924e4ffd3802f4.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -128,13 +134,13 @@
           "period": "2017",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:41:53+00:00",
-        "sha256": "b48fca0400b8cc1e4e3de951f0708f9ab518ace3d7378055a14862cd49b12c40",
+        "retrieved_at": "2026-09-14T18:55:12+00:00",
+        "sha256": "4b7e7bdeaeed5cbe6e147a1064c8fb4617ba65a3ee77d24041368cda578af081",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/d81f2206935a15891feec83b486a2f85bd306a7ceb102dc05d5bfef02d2a5cb4.json",
+        "path": "data/raw/comtrade/5a27d07b365396668407ba8fb89c36b2b2065d79379c2a9c0943651b45791efb.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -148,13 +154,13 @@
           "period": "2017",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:41:54+00:00",
-        "sha256": "e930e99a53281012b9f76b95c55d5c7474269e4b81769f5789e60bd53abcda37",
+        "retrieved_at": "2026-09-14T18:55:12+00:00",
+        "sha256": "16ca70e64495c07bff786f9494fbeaa6f5b58645e5d98e8b5fab0c5a6904ef87",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/53cd5e1788f1c128b2aa162bc9394823357f8ad52c151410b06747a391c86258.json",
+        "path": "data/raw/comtrade/ef4319b2df319782d52b960d403651bd52c0a89ef3b85e8902979ab7bfc5a1c5.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -168,13 +174,13 @@
           "period": "2017",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:41:55+00:00",
-        "sha256": "6d08028979d57d30456087d8c30d4cd03435086804d16e90c903e09d9dfb7bb2",
+        "retrieved_at": "2026-09-14T18:55:14+00:00",
+        "sha256": "3020c34d08db8fdaf70ffd17d61d9d387472b8d6e5f995e9b2dabd53b0450a8f",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/394455800c00485ae0940f9e232271b76e5c532dafe48915ffe63f4aff3ec3cd.json",
+        "path": "data/raw/comtrade/d7da2186b825ed82757d4f001155cf64fb91d287c40f24e08d96271f941d1213.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -188,13 +194,13 @@
           "period": "2017",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:41:56+00:00",
-        "sha256": "791c51ee68c76ce8920e55cf00dbc4aa2b9db3fd8ab17b5acfa9000b34568716",
+        "retrieved_at": "2026-09-14T18:55:15+00:00",
+        "sha256": "68d4c723b557b69b2d614f1a94daba22b30fad7094ee534d8413d100edef8ad8",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/a5170f35bd46732af970d7c67a840c2b729697f04a65801582c4795abc366dfd.json",
+        "path": "data/raw/comtrade/75edceedde6788a5540f27ec11c5f0c0edf53c949a495a7c55c7ef77669da476.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -208,13 +214,13 @@
           "period": "2017",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:41:58+00:00",
-        "sha256": "1975e58645b8baeeb98018f0a548c8ab063ccd2c63d05c6ad828a5dfa19d929c",
+        "retrieved_at": "2026-09-14T18:55:16+00:00",
+        "sha256": "c118ca8d2405fdb5a627e61c8782ca39cc84404f1c8e62d2afffba2be3a70d7a",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/a438a39731e1c0845e742a1bf2c0da1a050a63b37ff94c54d760e261900db342.json",
+        "path": "data/raw/comtrade/6a7b194401f1547a92429790cfdb02a986bc7674586514ef657dc2c8ccf91c1d.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -228,13 +234,13 @@
           "period": "2018",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:41:59+00:00",
-        "sha256": "b0f23a3a169efbac6308bdf631ed6ef1ef53ee17c8e92ea4c066cf5d6283c719",
+        "retrieved_at": "2026-09-14T18:55:19+00:00",
+        "sha256": "2fb5666bfbbd9711d6485ce70bd3ccef793e89a721e22e271ce51463e6f810aa",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/b7d49c54c53b5ec127a2db7c0b6c297d1ff0ed7098f0e974f314a2e9e98248e4.json",
+        "path": "data/raw/comtrade/890e4b5f07977231ed877a79f309e2ac2e36babc243f54010f9fb6252c5ffad4.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -248,13 +254,13 @@
           "period": "2018",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:01+00:00",
-        "sha256": "f7fdd33e25e55673ca4d4dee8151c6c0bfe314a87101f1afd1cd3843fd02c47a",
+        "retrieved_at": "2026-09-14T18:55:24+00:00",
+        "sha256": "c5bc240f1410affcc3b3911720725ed833ae82e2b1c8b31c0fa7af2fd943337c",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/8cf9c5fa6278268e36a3798565a7f3df47634f9e88ac0863316d00c894037a5a.json",
+        "path": "data/raw/comtrade/5dac7b989872972faf8234d60ad256d756676ebac607765a0eb972e0118a9132.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -268,13 +274,13 @@
           "period": "2018",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:02+00:00",
-        "sha256": "bd047f99d2f8da7cf949fdf59669c75dc795a053b649dadb2f7c05e99dc4273a",
+        "retrieved_at": "2026-09-14T18:55:26+00:00",
+        "sha256": "2cc6c7bcb4b3dd03bc73e7451d6893b789975ee36fbec47ee25d7db6a3314358",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/26e4d94b1ed895a57c292584d462638a5935263ad63726dfa4a1cf639f0eb219.json",
+        "path": "data/raw/comtrade/659b8d5e6679a56fcdfa34b0f4985634442fac2f2fecd43f36a21e4385fc902a.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -288,13 +294,13 @@
           "period": "2018",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:03+00:00",
-        "sha256": "1a8497e57039131af32c73271bb8c0686be3233154cde8578f9a4a28b5ee69fb",
+        "retrieved_at": "2026-09-14T18:55:27+00:00",
+        "sha256": "4cde5e090b5157cb4052ed824b69a73433caa4545f95d4b763d47f35d4982263",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/aa3cf3b328cc632c16035ca5d08eea1f2b9888031771109a4d6dcfca1d4a019e.json",
+        "path": "data/raw/comtrade/a0e65e59837954d4f445968f6f30897e84c022c1f31ed5416af976dc4fab01f9.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -308,13 +314,13 @@
           "period": "2018",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:04+00:00",
-        "sha256": "41c0214a6ea649015326cd5a0f6418be810235b7dcdda312475aac8b6ba88037",
+        "retrieved_at": "2026-09-14T18:55:28+00:00",
+        "sha256": "fd93d60418b69c4405abcfe1959cb27a5b0aae4eddfde07edd56e07e0b2e307c",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/b6086a500cb5fa8e75a8243e1a31bcbec9494e66b0d9dca80d961e81f4bb5473.json",
+        "path": "data/raw/comtrade/3ff5ca48b8998f32c982158c6be202df7a75ca6f8c91612e2c717c9323b95d05.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -328,13 +334,13 @@
           "period": "2018",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:06+00:00",
-        "sha256": "73cfa7a00a09c7a0d7474791d8647c9a5aaca05c86a1aa438ca068aefb2599f0",
+        "retrieved_at": "2026-09-14T18:55:29+00:00",
+        "sha256": "470b71367e08e4a5b1f8efa6bd4e0a56653929ecf4c67fcef5c82558276fbe36",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/c7d8a75fa18511523573e34b78684eedba591ae449c883260371bb2f235d7018.json",
+        "path": "data/raw/comtrade/9c8e9ea7730bf43b749560b01ef1ca46469c97942d129f8c70ddbcec57d67a35.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -348,13 +354,13 @@
           "period": "2019",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:07+00:00",
-        "sha256": "7467237762c4724b83f987936e91e608a9de0c09f2033c9ea02758086fa8a5cd",
+        "retrieved_at": "2026-09-14T18:55:33+00:00",
+        "sha256": "f08769768c9d3a958884cf05a29fe0619f92c5375b1d55aea9e05a05024ac333",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/0045220740ffeee0017a8c1ba2b2c4e4e9f0352283d6cf949b729eda90ce7865.json",
+        "path": "data/raw/comtrade/00090f45ec2307d0cdaaa2dcf6cea76eb3e7c009fbcad5546f10d17cc8d17379.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -368,13 +374,13 @@
           "period": "2019",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:09+00:00",
-        "sha256": "f2cb510d1890211b2fce29b85d09f6321a45186d80603388ea87d0c03898f56c",
+        "retrieved_at": "2026-09-14T18:55:34+00:00",
+        "sha256": "8857045f88f512c0b37d62072ed6dc611c0b53e46848acf6c25c69d3f37a7fd3",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/6410d028f8ae6b46523bc38ec5c2ec117bdb68dcdb7856d8128c4ed4813f2456.json",
+        "path": "data/raw/comtrade/490b833156fd1dbb13d283bb3f9efbf663f80de5d1c7c9c2ec4009418b3f35e4.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -388,13 +394,13 @@
           "period": "2019",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:11+00:00",
-        "sha256": "0192a2d1c974e6adf066a818ba60aa989d22c1b1c9f7dff3beebf000e8c898c9",
+        "retrieved_at": "2026-09-14T18:55:36+00:00",
+        "sha256": "b4fbf4a9ddc6e90c8c4a667e16bfa8d69d0b3ceb2907271b9b85b2f4088c507a",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/619b455fa21c35730d43ee301ca01bef81d1e60b455419beb8d8b1813bd7d2b8.json",
+        "path": "data/raw/comtrade/8b44910cf68175d53c872d72cc45f20eaa66da8f68b5646b8b3089deb5bb3c8e.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -408,13 +414,13 @@
           "period": "2019",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:12+00:00",
-        "sha256": "f456d9e20967537775be5c4010ec43713b1a2e9a5ae6d4e8e1c4fc8a25378115",
+        "retrieved_at": "2026-09-14T18:55:37+00:00",
+        "sha256": "bd01bd7e0b82bcde1c64641e955341a1e766afc81e7d1ca29fdfff68bd315d71",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/373d2fafeb28dc3fbd1cfbd7453e0b9788ae5e636075d3587943fca05af26e86.json",
+        "path": "data/raw/comtrade/208b1d8a35c098c4c125c93f8a360497f2930ce9ed2ea0ef031bef3a1499dbbe.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -428,13 +434,13 @@
           "period": "2019",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:14+00:00",
-        "sha256": "f1be28a2aeb7a413443eddb60c5b7b3791678011ce9dd3b23f6c44edce9d9e20",
+        "retrieved_at": "2026-09-14T18:55:38+00:00",
+        "sha256": "4a326930a9cd81d22845310d309672ae986dba4fd339d122699260d33e790861",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/c1598ff239a94ec50588e514bbbc18ccba10fa6f668465c384ee79d19e26fa19.json",
+        "path": "data/raw/comtrade/9d0d412cf9ec7dddaeadaf7b63dd143a05f56b59ba972c1353f21d5dd62742c9.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -448,13 +454,13 @@
           "period": "2019",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:15+00:00",
-        "sha256": "9f34ebf5e21271c54942f4dd4c87e544f5cf1eaf95d9c4e8fef0e616dbfc559b",
+        "retrieved_at": "2026-09-14T18:55:41+00:00",
+        "sha256": "7347de81952d32519a1043292a9ea43e10d230fff444bf031b5d560391806132",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/537fff5b664b36d24a2d2925b54dc13f7a6e1a0f08ea056e99609627cfed8b95.json",
+        "path": "data/raw/comtrade/df8509047c87093ca9c209eb1383514213ec217784e5ae58e35720d0f76dc09b.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -468,13 +474,13 @@
           "period": "2020",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:16+00:00",
-        "sha256": "201d627147c9007c0cc904b6ad15e327b7b2511c6147f4654eb3f9225df8c2a7",
+        "retrieved_at": "2026-09-14T18:55:42+00:00",
+        "sha256": "fc043bc21a58abae8b25153635ed170d222838b79273e8ba92ee8cdf0ad95a05",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/ee028c9f19323e3c907453027ee807a82e2eed6a7a1cc88347850d963142a24a.json",
+        "path": "data/raw/comtrade/506ee5e82fa1e1f17cd9a18e56a4478483bcd8594e2773d6e5174e13e9ee0cd3.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -488,13 +494,13 @@
           "period": "2020",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:18+00:00",
-        "sha256": "1d59d9cb2c4deddfc3b7c8aea3f05f28491a7c4c99d06c039d40d4bd0aaf5fc9",
+        "retrieved_at": "2026-09-14T18:55:44+00:00",
+        "sha256": "c057d8a3fe2f82964098f7bb4d2ce586a9a7aeaab10cbdb340f95a931136f4cb",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/6e66eb44c79b2d3fad63831629bc9f50e89c758627646cad94a05ee2a3e79b94.json",
+        "path": "data/raw/comtrade/38b75dcddbebac1edddb8e1d539ae742d74dfd44de9af23ea47a75cc845ea3af.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -508,13 +514,13 @@
           "period": "2020",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:52+00:00",
-        "sha256": "c26d31e8e271d0badd48fe172d2ed98c7af290e52720672898cddb6f8f0d8a16",
+        "retrieved_at": "2026-09-14T18:56:09+00:00",
+        "sha256": "b0ec1a6d675e52fc9d7973de29d99c15d196613c82cbbf57036480c19ee9a2bb",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/e4f968751260f402e855bb3b4589d3ef2b6385d15373aba1b3815ad377ddeab4.json",
+        "path": "data/raw/comtrade/4ced21f242cd9698f960b1fb5ca06090ec443efb7e69eadec5bd41d829b067e3.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -528,13 +534,13 @@
           "period": "2020",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:54+00:00",
-        "sha256": "bee45d609802db342b7ea648b9dd10848159325bc06e4014ebf0001565b7ccef",
+        "retrieved_at": "2026-09-14T18:56:12+00:00",
+        "sha256": "b02e01eb0950a8f4be7736b72c99e1e57447025d097d57af28f9c9381d45ccdb",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/30d557b6fa9d6a1cae1229912e72c17b8495a4fee95e4b67aa4bff1f9d56913d.json",
+        "path": "data/raw/comtrade/9df54c48634f50ba199dd1b7638658ceabba8af08816197f8f490511db807a71.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -548,13 +554,13 @@
           "period": "2020",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:55+00:00",
-        "sha256": "74eed398e53d5ab024e39cebe0e7706567ef84a35dda328d572a9e9ef0870c27",
+        "retrieved_at": "2026-09-14T18:56:14+00:00",
+        "sha256": "b26c09f09e2edaa642f218061cae0a437311d929dad231d282c7a63a83c525fc",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/7d387c5d65f04cdbba30c664ec6909ed8c67661ca1d8d6425cd60039c9d7c9bb.json",
+        "path": "data/raw/comtrade/6de8ecc6de1ec277a7437005a411225b22323c6186ca8340c70ee95b7e02b931.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -568,13 +574,13 @@
           "period": "2020",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:56+00:00",
-        "sha256": "3a6f0c57941abb51d3b592b612ad43071fc242051f0b62b7f641f6c673344129",
+        "retrieved_at": "2026-09-14T18:56:15+00:00",
+        "sha256": "ab35ce61a9e3283b0a59ef07389ad24850089843fa1cfcec04429cd449c11730",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/aaadcf09324fb728456f2eb023c9f1cc9c2d588325014105bc9855d55415ff8a.json",
+        "path": "data/raw/comtrade/ab6470fc551f76ef58c9f81f0fed9ee75e029741e63e9ef2c433114e95daae22.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -588,13 +594,13 @@
           "period": "2021",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:42:58+00:00",
-        "sha256": "7e58bb3e8be0eb3c0bba8719d0060a9cbdd87116636686dd5219d3a19909cce1",
+        "retrieved_at": "2026-09-14T18:56:17+00:00",
+        "sha256": "7e9dfeab971cf36f709125de3e0a7770bfd4b58933bf2d35fd15ec0adb2911ca",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/f773a90d80778a7909b047f54ee5e4259887a5313e628ff15312d02dd4c84357.json",
+        "path": "data/raw/comtrade/2869ca72a84e068b40c3694d6136d20cb319a4e8361e74aacfc4c5dee3f93f71.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -608,13 +614,13 @@
           "period": "2021",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:00+00:00",
-        "sha256": "65f0f14bb9379f488236c1c87cb1d5c5d17063e33217278fa07e1ecc993fd1b7",
+        "retrieved_at": "2026-09-14T18:56:19+00:00",
+        "sha256": "98fad8a4fada8a4a1850b2e1f42dc4cd87f5cd7ccf66031b8959a59aa6e1330b",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/36e50c2cdcb7e9aa4736cdac1784e6b507fb93e8399ce1a45048eaa88554a292.json",
+        "path": "data/raw/comtrade/4c5d1ef403488fe5295c1f5fdff79f43ccf7186c7fc5bb1cce49c0a7de78eb35.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -628,13 +634,13 @@
           "period": "2021",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:02+00:00",
-        "sha256": "2e89857fcf5a9ecd2406dd749d04567e6171ba5ab5edcd86ee4cbaf626fd90aa",
+        "retrieved_at": "2026-09-14T18:56:20+00:00",
+        "sha256": "9f4b74b09bf320430f30f329d47070f1bde756872c4437023143e66994f7e5c0",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/384e951076254cda2f2d34166976a7878852bce76c2e19acdc50540be5175e9d.json",
+        "path": "data/raw/comtrade/9ca0b92f0cc4532b5faa7f409f1a85bec92feab145ab648ebe6b7d0bc54ce2d3.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -648,13 +654,13 @@
           "period": "2021",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:03+00:00",
-        "sha256": "9f100abc90f4eb2348ce0969fcd619973591ca8be5d059a86b672d6d02d4cdc9",
+        "retrieved_at": "2026-09-14T18:56:21+00:00",
+        "sha256": "ec0de2bb542b36c2e989cad2249a21b6ed474fa593d9a573533c3f74c92a8b7a",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/c28f953a2ec35d9319192c4203806a62ef9c67e2dfbe221d136fd799fd18fb1b.json",
+        "path": "data/raw/comtrade/09c0dd56ea1eb1643eee9f6c460ad3ef64ea04cfc07217ef307f0c42b95dea2e.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -668,13 +674,13 @@
           "period": "2021",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:05+00:00",
-        "sha256": "cdc83c12c8f7445a89d49cf7ea97b73469834c34da0179f48bc82b4a385b255c",
+        "retrieved_at": "2026-09-14T18:56:28+00:00",
+        "sha256": "99919ed3d0b7389c0cffd4e76b347a36559109de51b5dcebc09d653225179aa8",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/e8f4ee818db17dd15f7c44fe9edd6e77bb0299f1cfa30ec1c249fcb443a01bab.json",
+        "path": "data/raw/comtrade/4196350f97787475be7e3b5ead27f02a7481f1972312f61c2231517fe72f9235.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -688,13 +694,13 @@
           "period": "2021",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:06+00:00",
-        "sha256": "bbb2427942c55f0d646ca6be5d125156d8aa18db2dc39e1968f732d6719d1ef5",
+        "retrieved_at": "2026-09-14T18:56:30+00:00",
+        "sha256": "c8b9f28aa280008bb83cfc4fd0120b126b37570c572e9afd8a333350d24e6ecc",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/360d82ebe16174c8c57f877152f874738a6dfca2184c153c031ec8be16bd64f2.json",
+        "path": "data/raw/comtrade/c836b729fbde05449476000cd9319288c4df4fb5d30b94e6cb74514cca854fdf.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -708,13 +714,13 @@
           "period": "2022",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:08+00:00",
-        "sha256": "7e7f8e31dd47f0b922d3fd49f5e7fdc3f47a0485fbdec3a1255e205ef50be14e",
+        "retrieved_at": "2026-09-14T18:56:40+00:00",
+        "sha256": "e285c0ea1a034ba5ebbaaee1e1201b576cf20195068a133e151c3959833f074c",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/9aa5232e898e7d00566692eb403232cdb7723124b290bf52637973216a40f597.json",
+        "path": "data/raw/comtrade/5290c5d45842c867c4a84dcbc34340b28bf929eeb318790b0fec5d4b84157825.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -728,13 +734,13 @@
           "period": "2022",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:10+00:00",
-        "sha256": "850e86c9acfae8c688bef8c550cdf73bdb73eed3d7361919ac9804ac8cf9b44f",
+        "retrieved_at": "2026-09-14T18:56:48+00:00",
+        "sha256": "9eb51dacec643d78abaf2fdbf203cfb2d99d960b08b0f522d0cd863d03d65da1",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/703b9747001f75ae03d580fe1c1759c72c788d9af2f3a3e960d02f6c974cf199.json",
+        "path": "data/raw/comtrade/948e66a7429abf90a04f9c5b3ec97e4cee2936dbfa91ca8c0fef1b28c9989f4b.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -748,13 +754,13 @@
           "period": "2022",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:12+00:00",
-        "sha256": "7027a003bf05bb670730e9156683126169480ba6688890c122c99ae7dd0a86b5",
+        "retrieved_at": "2026-09-14T18:56:51+00:00",
+        "sha256": "84b9aa48bb648da8d4f13c69dd72d2a61d80e627d631784936211f9e32213052",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/6b3e11244541ada5d56714f1aa9ac4c7b45d022138f0347a425a1681ad0fda0c.json",
+        "path": "data/raw/comtrade/9b75926d826e3c0cf615e14dabca485dac7b2ac8b5c6310ccb0bf61cc8c41707.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -768,13 +774,13 @@
           "period": "2022",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:14+00:00",
-        "sha256": "4e1be345361404c84b8ccba60839c4b63d7c6f00f2981b7f4149cfc89c84f9cd",
+        "retrieved_at": "2026-09-14T18:56:52+00:00",
+        "sha256": "9e06317bfb52ea7084f7c45c0fa61474eb62ed5d7e2790f5725e0d9a9a9b3a4f",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/d3bcc9b342325aa9e2a0b8de12ce54f0cbefa5d2233b837978c24f469c8d7f88.json",
+        "path": "data/raw/comtrade/bfcee98d3f2618f7ff5837fc6654d977d828aee25faf58fc40b55892d87a79ca.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -788,13 +794,13 @@
           "period": "2022",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:15+00:00",
-        "sha256": "8f34ef39fc071df2f67b2d56cec837a14b19bee97e75f316e1a8281a27717a31",
+        "retrieved_at": "2026-09-14T18:56:53+00:00",
+        "sha256": "97919f62cb95dd6c5147fa3ad644d75f657c61f44984cf59eb1148ff98f9d1b8",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/12576f3e2649d8189cb22a5089fefb02db62f40604fb51767796412f79ccd93e.json",
+        "path": "data/raw/comtrade/e700157e21d7961119dec4169cde0b3632821bb23ea561f9cfa51735e62ccc2c.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -808,13 +814,13 @@
           "period": "2022",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:17+00:00",
-        "sha256": "7c1b813b0dd9ca576e11d3903d48a3411b66982da3aa55b6708758740b1c2093",
+        "retrieved_at": "2026-09-14T18:56:55+00:00",
+        "sha256": "a8675b728f4f8025be2b44973e39a18e23d49ccfc97239aae5c41cd1ea39adbb",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/3d54a507ae9872ff0411bf31b664fc09130a7e564da41e96b89659802ab26f46.json",
+        "path": "data/raw/comtrade/717f9a74e83991269fd47955f4b24ce14e0962510eb245264767dbac1b533142.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -828,13 +834,13 @@
           "period": "2023",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:19+00:00",
-        "sha256": "e9aa59660d5b36b52f5b747b7b7cab8a9cee6c0162173b6eeb96139f146cab3a",
+        "retrieved_at": "2026-09-14T18:56:56+00:00",
+        "sha256": "874822a3578a90105ac6046fdf94f5e48b4394885ad120ca968ddbe51c476101",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/330e02af5b847e7ff444c41e6510a9bbecbf2da62302c53498bd1ddb318fd783.json",
+        "path": "data/raw/comtrade/f8941b28879516c2b1ca019cebead966f45526995a1b641fe28148e7ee9b1c6d.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -848,13 +854,13 @@
           "period": "2023",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:22+00:00",
-        "sha256": "742d21576fd8032726add51b84e92316bb81ebd7ef8de3d8662df421b0551505",
+        "retrieved_at": "2026-09-14T18:56:59+00:00",
+        "sha256": "684c6365c8a315c413cd5a069c22028cf25e5db0b14fea16d8c4eb1f4f2de74c",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/ff58eb2517d91213aed5fa09d6bee927a9e9818779cdaa98ea07c30344d2cac6.json",
+        "path": "data/raw/comtrade/b9340d80ece16564478199ac669dd3c2e380a4daa990b51b994b95962aa96a6b.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -868,13 +874,13 @@
           "period": "2023",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:24+00:00",
-        "sha256": "bfae6fb5ea1c202f8a81948ccf2cb4a039dafb400d7a2393597e98282d5e5909",
+        "retrieved_at": "2026-09-14T18:57:02+00:00",
+        "sha256": "a79411559bca7e1e492df4f078e3be5a7afd491ba0229261bbb9b365fe6c7148",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/ef5fce5f196ece5348324a08c0623e4e59303b2ddf56eee26d1f7512bf603443.json",
+        "path": "data/raw/comtrade/9681a6df3e039160a00df2789943fe9c3559a18582508056a9f6d7ff1cb81265.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -888,13 +894,13 @@
           "period": "2023",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:26+00:00",
-        "sha256": "b9b4ba611f83962caf24ec0577d14f347b81d0ed0d716e658fa9ebff1a412ded",
+        "retrieved_at": "2026-09-14T18:57:05+00:00",
+        "sha256": "3c9cdce07fc7926f04f36554e7bc79df7cbb441d411b0e94af9b60d8d4d2d823",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/d252c5e02f49b9b2c0da7be8c35b29f7610a6177269b47156888c35ee0879f9e.json",
+        "path": "data/raw/comtrade/2397cceb4f4c2ef27e438e4d662a6d3557dd2e9377bcc3b57ca13bf4deb48274.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -908,13 +914,13 @@
           "period": "2023",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:53+00:00",
-        "sha256": "b90c5e40df63b578d92e739597eec5f9121de7763f6dbfaa8b2c97d4ac1ed898",
+        "retrieved_at": "2026-09-14T18:57:11+00:00",
+        "sha256": "363d53c20190b62e03719dc57fb909a82edc87245e45ab047153415150adebd9",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/fa8bb4210ae7a81f2484fa2b5d3243a30b67046a41ad1ff2c215a7e6a6d41550.json",
+        "path": "data/raw/comtrade/a5e2b79901b8bad8301d2ba9e13d27ca156957f8272f36e72eb7102bb99e1b86.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -928,13 +934,13 @@
           "period": "2023",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:55+00:00",
-        "sha256": "cd52c7af01f3d304cd8fbe4256f54aae5daf597367f69218004cda7626da90a7",
+        "retrieved_at": "2026-09-14T18:57:15+00:00",
+        "sha256": "6a66638133040096939cf43c076ff22c5ef10e48c083c0ad5b70ec753e370358",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/bb43cbdcaf4eb1045ba807715c3ccf76b0556296b690dbd5ae037e36c5e5ea9a.json",
+        "path": "data/raw/comtrade/ff347e2b12351c96a514daf472367b5667fe1d7c235f6c1483d4151cb7980343.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -948,13 +954,13 @@
           "period": "2024",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:43:58+00:00",
-        "sha256": "312f4299c0c9a90d4c84abc58753326d9567f43183fec38f4cbee2adfb6038e2",
+        "retrieved_at": "2026-09-14T18:57:20+00:00",
+        "sha256": "9343db9cc31592c1af257b05ac91ead3f2917ea16767787473503177c8bd8d16",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/b2b3df6ca73a699e15f5301aff0494666ba9b51bb963a06316f84cca8e8f768d.json",
+        "path": "data/raw/comtrade/4908aaa52537693a239d3b3c33e723dcae038d8cc9b0b05b105c18294832e845.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "253090",
@@ -968,13 +974,13 @@
           "period": "2024",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:44:00+00:00",
-        "sha256": "45aa2858cc460f691520e3325bf73fbff79f25440f51042b37fa2f0bb31f4ee9",
+        "retrieved_at": "2026-09-14T18:57:26+00:00",
+        "sha256": "fb47ed90d426df58c5b7ebc97bf6546c3c098d96a3393a09512139c00a2c32c2",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/f3d4ae0295ba9a134f5b6834614d8bbabf2a72013fd92a74378ca8d5f6dd6a2f.json",
+        "path": "data/raw/comtrade/75073fb8fb869a3fd5aac8061957c580d0e220472def9c76071278a39318522c.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -988,13 +994,13 @@
           "period": "2024",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:44:02+00:00",
-        "sha256": "6b818fc730726a86ad0d4f6c2aec6caafed7307c9fd978aeda2fbc8a95de1062",
+        "retrieved_at": "2026-09-14T18:57:28+00:00",
+        "sha256": "65404a4e54ac3ecdfada267b5026e93a7b5c95584317473c13233843ac586cf4",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/1adb51e20291a2bcf4c7e188e7ccccc101c93735a0857c421b5af96afabf4250.json",
+        "path": "data/raw/comtrade/604978bd815a285304054b01f1b67e1adc4d142ac93e4ba7fc44097cfb5b9307.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "283691",
@@ -1008,13 +1014,13 @@
           "period": "2024",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:44:04+00:00",
-        "sha256": "a5ad1d94295ca9e70cae40c3e9788bd39b0cc43de277a1d652b8d9122bb30460",
+        "retrieved_at": "2026-09-14T18:57:30+00:00",
+        "sha256": "7a8819c82f56656ced9e812e20e300a110170f18110e6b51fae42601dfd51a36",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/01a004da0a0a663756035c3c1d67c10a5c45fe86f31944bfdb521ef46c5b87fa.json",
+        "path": "data/raw/comtrade/e79d45a201fb6ace1f5c7cd4fb950df38294a553640571d14ef9f465430bc6e4.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -1028,13 +1034,13 @@
           "period": "2024",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:44:06+00:00",
-        "sha256": "46e0fdbfc0d0e36fcc6a63ddcb199364f0b69632d111836432381ae35fa683df",
+        "retrieved_at": "2026-09-14T18:57:32+00:00",
+        "sha256": "c28c7e9c824afb7220914351b6fa8d91c01ba8515f662710070cad7f5aac3314",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/comtrade/66bef76097a8183e8e13e46f95a7e9b4fc9ada9b4aba6a7b6a71f51d55b04f0e.json",
+        "path": "data/raw/comtrade/256f732cfe2b56c92bf45259c3753dfdf80c279110d2933fbd9ddd50c42cfec6.json",
         "query": {
           "breakdownMode": "classic",
           "cmdCode": "282520",
@@ -1048,35 +1054,137 @@
           "period": "2024",
           "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T16:44:08+00:00",
-        "sha256": "41f808455af6416dade72a6011fd22ed05c9552934c56d9063bf1b84008cd329",
+        "retrieved_at": "2026-09-14T18:57:34+00:00",
+        "sha256": "8596c80faa25159b018f77cf5f70afeb727528ff35f8455b8bf36d86eea13f9c",
         "source": "comtrade",
         "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/usgs/a5cb05016627d86752d7ef4fc74edc58b664ca2a10fddcb01a8cbd225a752d7a.pdf",
+        "path": "data/raw/comtrade/e82e5da02529e1e22f8946ec6b378c64b8dd575f03b3c4cde5a973f7268150bf.json",
         "query": {
-          "edition": 2026
+          "breakdownMode": "classic",
+          "cmdCode": "253090",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 100000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2025",
+          "reporterCode": ""
         },
-        "retrieved_at": "2026-09-13T07:26:55+00:00",
-        "sha256": "53f92ea45c367c36f05919151f7784feda5776095afaf3a25aec795a27be106f",
-        "source": "usgs",
-        "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-lithium.pdf"
+        "retrieved_at": "2026-09-14T18:57:37+00:00",
+        "sha256": "879e8d1d8f6e7d0020f908d8a85c107f7d332f94469b0032bd23dea79e7c29be",
+        "source": "comtrade",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       },
       {
-        "path": "data/raw/usgs/af0d253eb79115199dfda779c277282fa376a5926519d0af0c511fe16f70f82c.csv",
-        "query": {},
-        "retrieved_at": "2026-09-13T07:26:55+00:00",
-        "sha256": "4ee508c5eafd0e00917bd8514f02a0a68f7a1e360852915a9691b86b9cb8aa48",
-        "source": "usgs",
-        "url": "reviewed:data/manual/lithium-production.csv"
+        "path": "data/raw/comtrade/fe1657e60f05d9c79c1b338668f6823774f8d5de5013c7fe58afd766d94fa355.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "253090",
+          "customsCode": "C00",
+          "flowCode": "M",
+          "includeDesc": "true",
+          "maxRecords": 100000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2025",
+          "reporterCode": ""
+        },
+        "retrieved_at": "2026-09-14T18:57:40+00:00",
+        "sha256": "67e8fed2797a33a86d3ce3897ff4d4368d389f85c40a3985a30d84a0035c7be3",
+        "source": "comtrade",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      {
+        "path": "data/raw/comtrade/5b90f6514d62fec0090c4beb15d32124374a322197b9765e6650eaddccc9a720.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "283691",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 100000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2025",
+          "reporterCode": ""
+        },
+        "retrieved_at": "2026-09-14T18:57:42+00:00",
+        "sha256": "8cf376ff8f3512a19b62bc7820715ac080f77525088ed3044ae595d9dc135eb2",
+        "source": "comtrade",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      {
+        "path": "data/raw/comtrade/1721615f677943281cce71b44b34fcb86ec02d5ff723383b7280edbb9def5ae7.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "283691",
+          "customsCode": "C00",
+          "flowCode": "M",
+          "includeDesc": "true",
+          "maxRecords": 100000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2025",
+          "reporterCode": ""
+        },
+        "retrieved_at": "2026-09-14T18:57:43+00:00",
+        "sha256": "781428e01412a59d37815820f26e154a53e122ad1e32acbc28b4d275fcadcd40",
+        "source": "comtrade",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      {
+        "path": "data/raw/comtrade/e357ff28aaaeb29d07a2730afcc03fcc66f9143bf7b2aa25d2bc88da0a345f6f.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "282520",
+          "customsCode": "C00",
+          "flowCode": "X",
+          "includeDesc": "true",
+          "maxRecords": 100000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2025",
+          "reporterCode": ""
+        },
+        "retrieved_at": "2026-09-14T18:57:52+00:00",
+        "sha256": "af4181a289833bd8afc8d4e8aad0e672f59fb808d48b435e976f6c8649e30baf",
+        "source": "comtrade",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      },
+      {
+        "path": "data/raw/comtrade/a8a5384e5f69e330b36a36a56d5570e41624c31640a7b5324980fb0f926d8cf6.json",
+        "query": {
+          "breakdownMode": "classic",
+          "cmdCode": "282520",
+          "customsCode": "C00",
+          "flowCode": "M",
+          "includeDesc": "true",
+          "maxRecords": 100000,
+          "motCode": "0",
+          "partner2Code": "0",
+          "partnerCode": "",
+          "period": "2025",
+          "reporterCode": ""
+        },
+        "retrieved_at": "2026-09-14T18:57:54+00:00",
+        "sha256": "11f70129a493712fe9f2136cd0088904dff34c2a5dcfe30d9245a61d0262b51b",
+        "source": "comtrade",
+        "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
       }
     ],
     "unknown_entities": [],
     "usgs_mode": "reviewed_csv_with_automatic_publication_archive",
     "validation": {
-      "profile_count": 42,
-      "row_count": 3525,
+      "profile_count": 51,
+      "row_count": 3682,
       "status": "passed"
     }
   }
