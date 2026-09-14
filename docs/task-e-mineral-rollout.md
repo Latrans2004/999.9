@@ -46,9 +46,36 @@ HSコードは現行catalogの互換性基準であり、新たな分類検証�
   黒鉛のダイジェストと固定版を黙って更新しない。マンガンも既存過去版の取得記録を確認する。
 - C: 2025年追加は鉱物・段階ごとにクエリ完了、欠測、推計、比較可能性を報告する。
   グローバルなend_year変更だけで黒鉛の固定公開系列を延長しない。
-- F: `available: false` + `publication_status: under_review` は「確認中」を日英で表示する。
-  ゼロ値や「取得すれば出る」という表示に置き換えない。出典リンクは鉱山／貿易状態用も扱う。
-  チャートを公開数値のない貿易ブロックに生成しない。
+- F(2026-09-14 改装後の出力契約。6鉱物はこのテンプレートで実装する。
+  詳細は `task-f-redesign-2026-09.md`):
+  - サイト名は Petralysis。トップページはヒーローではなく**スクリーナー**(鉱物一覧テーブル)、
+    個別ページは**クオートヘッダー**(鉱山HHIを主数値とするカード)で始まる。
+    どちらも `render.py` が公開JSONから組み立てる。鉱物側で用意するのは以下だけ。
+  - `catalog.json` の表示用フィールド: `symbol`(元素記号)、`category`(現状は
+    `battery-metals`。最上位 `categories` に `label` / `label_ja` を定義済み)、
+    複数の貿易段階を持つ鉱物のみ `headline_trade_stage`(スクリーナーの Export HHI 列が
+    代表値として引く段階の HS コード)。未指定なら「N stages」リンクで個別ページへ誘導する。
+    `name_ja` / `role_ja` / `summary_ja` / `caveats_ja` は従来どおり。
+  - スクリーナー行の出力要件: `index.json` の `production`(`hhi` / `year` / `band` /
+    `leader` / `leader_share`)があれば Mine HHI・Top supplier・Band・Year に入る。
+    なければ行は残り、数値列は「Pending / 準備中」になる。
+  - Export HHI 列の決定順序は `render.export_cell` に固定されている:
+    (1) 鉱物JSONの `trade.publication_status == "under_review"` または `publishable: false`
+    なら**必ず「Under review / 確認中」**で数値を出さない(Dの判定を覆さない)。
+    (2) `headline_trade_stage` が指す段階の自己申告側の最新確定年(provisional でない最後の年)。
+    (3) 段階が複数で未指定なら「N stages」。(4) `index.json` の `trade` headline。(5) Pending。
+  - クオートヘッダーの要件: `production.latest`(`hhi` / `band` / `top[0]` / `cr3` /
+    `effective_suppliers` / `reporters` / `coverage`)、`production.trend` または
+    `trend_note` / `trend_note_ja`、`trade.latest` または `publication_status`、
+    `generated_at`。`available: false` + `publication_status: under_review` は
+    ヘッダーの Export HHI 統計・ヘッダー直下の注記・Export パネルの3か所で「確認中」を日英で表示する。
+    ゼロ値や「取得すれば出る」という表示に置き換えない。チャートは公開数値のない貿易ブロックに生成しない。
+  - `production.latest.coverage < 1` はヘッダー直下にカバレッジ注記、段階の `provisional_years`
+    は暫定注記として自動表示される。出典リンク(`audit_data_url`)は鉱山／貿易状態用も扱う。
+  - 段階タブは `pipeline/minerals.json` に `stages` を持つ鉱物だけに出る。段階名は
+    `pipeline/i18n.py` の `LABELS_EN` / `STRINGS_JA`(`stage.<policy>`)に追加する。
+  - 各鉱物のページ追加時は `python -m pipeline.render` の再レンダリングと stale チェック、
+    `pipeline/tests/test_screener.py` の通過を完了条件に含める。
 
 出力契約に変更が必要なら、先にPR内でフィールド・単位・系列キー・既存値への影響を記録し、
 B/C/F担当へ渡せる状態にする。このタスクから他担当へのメッセージ送信は行っていない。

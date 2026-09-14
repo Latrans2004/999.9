@@ -9,7 +9,7 @@
    clears the class; the timeout is a safety net if that script fails. */
 (function () {
   try {
-    var lang = localStorage.getItem("orelysis:lang");
+    var lang = localStorage.getItem("petralysis:lang");
     if (!lang && /^ja\b/i.test(navigator.language || "")) lang = "ja";
     if (lang === "ja") {
       var root = document.documentElement;
@@ -19,18 +19,24 @@
   } catch (e) {}
 })();
 </script>
-<title data-i18n-text="天然黒鉛 — 重要鉱物 — Orelysis">Natural graphite — critical minerals — Orelysis</title>
+<title data-i18n-text="天然黒鉛 — 重要鉱物 — Petralysis">Natural graphite — critical minerals — Petralysis</title>
 <meta name="description" content="Natural graphite mine production across all grades and uses. Synthetic graphite and total battery anode supply are outside this series.">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#080A0F">
-<link rel="icon" href="../../assets/img/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon-16.png">
-<link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
-<meta property="og:title" content="Natural graphite supply concentration — Orelysis">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../assets/img/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/img/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/img/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png">
+<meta property="og:title" content="Natural graphite supply concentration — Petralysis">
 <meta property="og:description" content="Supply concentration in critical minerals, from open data.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="../../assets/img/icon-512.png">
+<meta property="og:site_name" content="Petralysis">
+<link rel="canonical" href="https://latrans2004.github.io/petralysis/critical-minerals/minerals/natural-graphite.html">
+<meta property="og:url" content="https://latrans2004.github.io/petralysis/critical-minerals/minerals/natural-graphite.html">
+<meta property="og:image" content="https://latrans2004.github.io/petralysis/assets/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../../assets/css/site.css">
 </head>
 <body>
@@ -39,8 +45,8 @@
 <header class="masthead">
   <div class="wrap masthead__inner">
     <a class="brand" href="../../index.html">
-      <img src="../../assets/img/brand-32.png" alt="" width="22" height="22">
-      <span>Orelysis</span>
+      <img src="../../assets/img/brand-32.png" srcset="../../assets/img/brand-32.png 1x, ../../assets/img/brand-64.png 2x" alt="" width="22" height="22">
+      <span>Petralysis</span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="../../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a>
@@ -57,20 +63,59 @@
 <main id="main">
 <div class="wrap">
   <p class="crumb">
-    <a href="../../index.html">Orelysis</a><span>/</span><a href="../../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n-text="天然黒鉛">Natural graphite</span>
+    <a href="../../index.html">Petralysis</a><span>/</span><a href="../../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n-text="天然黒鉛">Natural graphite</span>
   </p>
-</div>
 
-<div class="wrap hero" style="padding-block:clamp(28px,5vw,52px) clamp(24px,4vw,40px)">
-  <p class="eyebrow" data-i18n-text="負極">Anode</p>
-  <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
-    <h1 style="font-size:var(--step-h1);font-weight:400" data-i18n-text="天然黒鉛">Natural graphite</h1>
-    <span class="card__symbol">C</span>
+  <section class="quote" aria-labelledby="quote-title">
+    <div class="quote__title">
+      <h1 id="quote-title" data-i18n-text="天然黒鉛">Natural graphite</h1>
+<span class="quote__symbol">C</span>      <span class="quote__category"><span data-i18n-text="バッテリーメタル">Battery metals</span> · <span data-i18n-text="負極">Anode</span></span>
+    </div>
+    <p class="quote__summary" data-i18n-text="全品種・用途を対象とする天然黒鉛の鉱山生産量。">Natural graphite mine production across all grades and uses.</p>
+
+    <div class="quote__figure">
+      <span class="quote__label" data-i18n-text="鉱山HHI · 2024">Mine HHI · 2024</span>
+      <span class="quote__value">6,765</span>
+      <span class="band band--high" data-i18n="band.high">Highly concentrated</span>
+      <span class="quote__delta" data-i18n-text="過去の版を固定して収録。年次変化には改訂が含まれます。">Fixed historical editions; annual changes may include revisions.</span>
+    </div>
+
+    <dl class="quote__stats">
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="quote.top_producer">Top producer</dt>
+        <dd class="quote__stat-value quote__stat-value--text">China</dd>
+        <dd class="quote__stat-note" data-i18n-text="報告合計の81.9%">81.9% of reported total</dd>
+      </div>
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="stat.top_three">Top three</dt>
+        <dd class="quote__stat-value">91%</dd>
+        <dd class="quote__stat-note" data-i18n-text="上位3カ国のシェアの合計">Combined share of the largest three</dd>
+      </div>
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="stat.effective_suppliers">Effective suppliers</dt>
+        <dd class="quote__stat-value">1.5</dd>
+        <dd class="quote__stat-note" data-i18n-text="18カ国が報告">18 countries reported</dd>
+      </div>
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="quote.export_hhi">Export HHI</dt>
+        <dd class="quote__stat-value quote__stat-value--text cell__review" data-i18n="screener.under_review">Under review</dd>
+        <dd class="quote__stat-note" data-i18n-text="貿易指標は公開判定待ち">Withheld pending review</dd>
+      </div>
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="quote.updated">Updated</dt>
+        <dd class="quote__stat-value quote__stat-value--text timestamp" data-i18n-text="2026年09月14日 00:00 UTC">14 September 2026, 00:00 UTC</dd>
+        <dd class="quote__stat-note" data-i18n-text="USGS · UN Comtrade">USGS · UN Comtrade</dd>
+      </div>
+    </dl>
+  </section>
+
+  <div class="notice notice--review" style="margin-top:12px">
+    <strong data-i18n="quote.review_title">Trade metrics are under review.</strong>
+    <span data-i18n-text="貿易集中度は確認中です。ミラーデータとの差異と重量カバレッジが未解決のため、貿易HHIは公開していません。">Trade concentration is under review: mirror discrepancies and weight coverage remain unresolved. No trade HHI is published.</span>
   </div>
-  <p class="hero__lede" style="margin-top:18px" data-i18n-text="全品種・用途を対象とする天然黒鉛の鉱山生産量。人造黒鉛や電池用負極材全体の供給量は、この系列の対象外です。">Natural graphite mine production across all grades and uses. Synthetic graphite and total battery anode supply are outside this series.</p>
 </div>
 
-<div class="wrap">
+<div class="wrap" style="margin-top:20px">
   <div class="panel">
   <div class="panel__head">
     <h3 data-i18n="panel.mine_title">Mine concentration</h3>
@@ -78,34 +123,10 @@
   </div>
   <p class="panel__sub" data-i18n-text="USGS Mineral Commodity Summariesにもとづく、国別の世界鉱山生産量シェア。素材が地中から取り出される場所を示す。">Share of world mine production by country, from the USGS Mineral Commodity Summaries. This is where the material leaves the ground.</p>
 
-  <div class="stats" style="margin-bottom:22px">
-    <div class="stat">
-      <span class="stat__label">HHI 2024</span>
-      <span class="stat__value">6,765</span>
-      <span class="stat__note" data-i18n-text="過去の版を固定して収録。年次変化には改訂が含まれます。">Fixed historical editions; annual changes may include revisions.</span>
-    </div>
-    <div class="stat">
-      <span class="stat__label" data-i18n="stat.largest_supplier">Largest supplier</span>
-      <span class="stat__value" style="font-size:1.1rem">China</span>
-      <span class="stat__note" data-i18n-text="報告合計の81.9%">81.9% of the reported total</span>
-    </div>
-    <div class="stat">
-      <span class="stat__label" data-i18n="stat.top_three">Top three</span>
-      <span class="stat__value">91%</span>
-      <span class="stat__note" data-i18n-text="上位3カ国のシェアの合計">Combined share of the three largest</span>
-    </div>
-    <div class="stat">
-      <span class="stat__label" data-i18n="stat.effective_suppliers">Effective suppliers</span>
-      <span class="stat__value">1.5</span>
-      <span class="stat__note" data-i18n-text="18カ国が報告">18 countries reported</span>
-    </div>
-  </div>
 
   <div class="split">
     <div>
-      <h4 style="font-size:var(--step-micro);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px" data-i18n="chart.index_over_time">
-        Index over time
-      </h4>
+      <h4 class="split__head" data-i18n="chart.index_over_time">Index over time</h4>
       <div class="chart" data-line="production"></div>
       <details class="table-toggle">
         <summary data-i18n="table.toggle">Table view</summary>
@@ -171,9 +192,7 @@
     </div>
 
     <div>
-      <h4 style="font-size:var(--step-micro);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px" data-i18n-text="2024年のシェア">
-        Shares in 2024
-      </h4>
+      <h4 class="split__head" data-i18n-text="2024年のシェア">Shares in 2024</h4>
       <div class="chart" data-bars="production"></div>
       <details class="table-toggle">
         <summary data-i18n="table.toggle">Table view</summary>
@@ -251,8 +270,8 @@
   </div>
   <p class="panel__sub" data-i18n-text="UN Comtradeにもとづく、報告国別の世界輸出額シェア。対象は粉状・フレーク状の天然黒鉛(2504.10)およびその他の天然黒鉛(2504.90)。鉱山統計が捉えない加工・精錬の段階を反映する。">Share of world export value by reporting country, from UN Comtrade, covering Natural graphite in powder or flakes (2504.10) and other natural graphite (2504.90). This captures processing and refining that mine statistics do not.</p>
 
-  <div class="chart__empty">
-    <strong data-i18n-text="確認中">Under review</strong>
+  <div class="chart__empty chart__empty--review">
+    <strong data-i18n="screener.under_review">Under review</strong>
     <span data-i18n-text="貿易集中度は確認中です。ミラーデータとの差異と重量カバレッジが未解決のため、貿易HHIは公開していません。">Trade concentration is under review: mirror discrepancies and weight coverage remain unresolved. No trade HHI is published.</span>
   </div>
 </div>
@@ -292,7 +311,7 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <h4>Orelysis</h4>
+        <h4>Petralysis</h4>
         <p style="margin:0;max-width:32ch" data-i18n="footer.tagline">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
       </div>
       <div>
@@ -313,8 +332,8 @@
       <div>
         <h4 data-i18n="footer.source">Source</h4>
         <ul>
-          <li><a href="https://github.com/latrans2004/orelysis" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
-          <li><a href="https://github.com/latrans2004/orelysis/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
+          <li><a href="https://github.com/latrans2004/petralysis" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
+          <li><a href="https://github.com/latrans2004/petralysis/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
         </ul>
       </div>
     </div>
@@ -325,10 +344,10 @@
   </div>
 </footer>
 
-<script type="application/json" id="i18n-data">{"nav.critical_minerals": "重要鉱物", "nav.methodology": "算出方法", "nav.about": "このサイトについて", "skip.content": "本文へスキップ", "banner.title": "サンプルデータ。", "banner.body": "このビルドは合成データ(フィクスチャ)から生成されたものであり、USGSやUN Comtradeの実データではありません。このページの数値はいずれも実測値ではありません。", "footer.tagline": "公開データによる供給集中度の測定。手作業ではなくスケジュール実行で更新される個人プロジェクトです。", "footer.sections": "セクション", "footer.sources": "データソース", "footer.source": "ソース", "footer.repo": "GitHubのリポジトリ", "footer.build_history": "ビルド履歴", "footer.disclaimer": "USGS・国連のいずれも、本サイトおよびその算出結果を承認・保証するものではありません。", "footer.awaiting": "初回のデータビルド待ち", "band.unconcentrated": "非集中", "band.moderate": "中程度の集中", "band.high": "高度に集中", "panel.mine_title": "鉱山側の集中度", "panel.export_title": "輸出側の集中度", "table.toggle": "表で見る", "table.year": "年", "table.top_three": "上位3カ国", "table.reporting": "報告国数", "table.country": "国", "table.share": "シェア", "table.cumulative": "累積", "stat.single_year": "単年データのみ", "stat.largest_supplier": "最大供給国", "stat.top_three": "上位3カ国合計", "stat.effective_suppliers": "実効供給者数", "figure.awaiting_build": "初回ビルド待ち", "figure.no_source_data": "ソースデータなし", "figure.page_ready_pending": "ページ準備済み・データ待ち", "figure.concentration": "集中度", "chart.no_data_yet": "データはまだありません", "chart.index_over_time": "指数の推移", "notfound.title": "ページが見つかりません", "notfound.body": "このページは存在しないか、パイプラインの直近のビルドで名称が変更されました。", "notfound.link": "重要鉱物セクションへ →", "section.no_data_title": "データはまだ生成されていません。", "section.no_data_body": "以下のページとパイプラインはすでに用意されていますが、USGSとUN Comtradeからの初回取得はまだ実行されていません。実行されるまで、すべての数値は未取得として表示されます。", "section.no_data_link": "ビルド履歴を確認 →", "section.eight_minerals_title": "8つの鉱物", "section.eight_minerals_sub": "掲載順に表示。数値は各ソースが公表している最新年のもの。", "section.two_indices_title": "2つの指標、それぞれ別の問い", "section.two_indices_sub": "鉱物ごとのページに2つの数値が並ぶ理由。", "caveats.heading": "この数値が語らないこと", "caveats.shared_note": "いずれの指標も対象は国であって企業ではない。同じ親会社が異なる国に持つ2つの鉱山は、ここでは2つの独立した供給者として扱われる。", "notes.heading": "この鉱物についてのビルドノート。", "chart.read_method": "算出方法の全文を読む →", "hub.sections_title": "セクション", "hub.sections_sub": "素材群ごとに1セクション。それぞれ独立して完結する。", "hub.further_sections": "その他のセクション", "hub.not_yet_built": "未着手", "hub.further_blurb": "パイプラインとレイアウトは共通化されているため、2つ目の素材群を追加するのに新しいサイトは要らず、カタログファイルと取得アダプタを1つ足すだけで済む。", "hub.planned": "計画中", "hub.what_it_means_title": "この数値が意味すること", "hub.live": "稼働中", "panel.stage_title": "段階別の集中度", "panel.stage_sub": "同じリチウムでも、鉱石・炭酸塩・水酸化物のどこを測るかで集中度は変わります。段階を選ぶと、その段階だけで算出した指数に切り替わります。既定は上の輸出側指標と同じヘッドライン(283691と282520の合算、USドル建て)です。", "stage.tablist": "測定する段階", "stage.sidelist": "申告側", "stage.headline_usd": "ヘッドライン(合算・USD)", "stage.ore": "鉱石・精鉱", "stage.carbonate": "炭酸塩", "stage.hydroxide": "水酸化物", "stage.mine_li_t": "鉱山生産(Li換算)", "side.world_export": "全世界向け輸出(自己申告)", "side.china_import": "中国の輸入申告(ミラー)", "stage.coverage": "報告完全性", "stage.no_coverage": "報告完全性は算出対象外", "stage.provisional_legend": "暫定値(報告完全性が不足)", "stage.confirmed_legend": "確定値", "source.reported": "自己申告", "source.partner_sum": "復元(相手国別合計)", "source.mirror": "ミラー採用", "source.estimated": "推計", "verification.unverified": "未検証", "verification.externally_confirmed": "外部照合済", "verification.externally_conflicting": "外部と食い違い", "evidence.close": "閉じる", "evidence.source": "照合したソース", "table.source": "採用根拠", "table.verification": "検証"}</script>
+<script type="application/json" id="i18n-data">{"nav.critical_minerals": "重要鉱物", "nav.methodology": "算出方法", "nav.about": "このサイトについて", "skip.content": "本文へスキップ", "banner.title": "サンプルデータ。", "banner.body": "このビルドは合成データ(フィクスチャ)から生成されたものであり、USGSやUN Comtradeの実データではありません。このページの数値はいずれも実測値ではありません。", "footer.tagline": "公開データによる供給集中度の測定。手作業ではなくスケジュール実行で更新される個人プロジェクトです。", "footer.sections": "セクション", "footer.sources": "データソース", "footer.source": "ソース", "footer.repo": "GitHubのリポジトリ", "footer.build_history": "ビルド履歴", "footer.disclaimer": "USGS・国連のいずれも、本サイトおよびその算出結果を承認・保証するものではありません。", "footer.awaiting": "初回のデータビルド待ち", "band.unconcentrated": "非集中", "band.moderate": "中程度の集中", "band.high": "高度に集中", "panel.mine_title": "鉱山側の集中度", "panel.export_title": "輸出側の集中度", "table.toggle": "表で見る", "table.year": "年", "table.top_three": "上位3カ国", "table.reporting": "報告国数", "table.country": "国", "table.share": "シェア", "table.cumulative": "累積", "stat.single_year": "単年データのみ", "stat.largest_supplier": "最大供給国", "stat.top_three": "上位3カ国合計", "stat.effective_suppliers": "実効供給者数", "figure.awaiting_build": "初回ビルド待ち", "figure.no_source_data": "ソースデータなし", "figure.page_ready_pending": "ページ準備済み・データ待ち", "figure.concentration": "集中度", "chart.no_data_yet": "データはまだありません", "chart.index_over_time": "指数の推移", "notfound.title": "ページが見つかりません", "notfound.body": "このページは存在しないか、パイプラインの直近のビルドで名称が変更されました。", "notfound.link": "重要鉱物セクションへ →", "section.no_data_title": "データはまだ生成されていません。", "section.no_data_body": "以下のページとパイプラインはすでに用意されていますが、USGSとUN Comtradeからの初回取得はまだ実行されていません。実行されるまで、すべての数値は未取得として表示されます。", "section.no_data_link": "ビルド履歴を確認 →", "section.eight_minerals_title": "8つの鉱物", "section.eight_minerals_sub": "掲載順に表示。数値は各ソースが公表している最新年のもの。", "section.two_indices_title": "2つの指標、それぞれ別の問い", "section.two_indices_sub": "鉱物ごとのページに2つの数値が並ぶ理由。", "caveats.heading": "この数値が語らないこと", "caveats.shared_note": "いずれの指標も対象は国であって企業ではない。同じ親会社が異なる国に持つ2つの鉱山は、ここでは2つの独立した供給者として扱われる。", "notes.heading": "この鉱物についてのビルドノート。", "chart.read_method": "算出方法の全文を読む →", "hub.sections_title": "セクション", "hub.sections_sub": "素材群ごとに1セクション。それぞれ独立して完結する。", "hub.further_sections": "その他のセクション", "hub.not_yet_built": "未着手", "hub.further_blurb": "パイプラインとレイアウトは共通化されているため、2つ目の素材群を追加するのに新しいサイトは要らず、カタログファイルと取得アダプタを1つ足すだけで済む。", "hub.planned": "計画中", "hub.what_it_means_title": "この数値が意味すること", "hub.live": "稼働中", "panel.stage_title": "段階別の集中度", "panel.stage_sub": "同じリチウムでも、鉱石・炭酸塩・水酸化物のどこを測るかで集中度は変わります。段階を選ぶと、その段階だけで算出した指数に切り替わります。既定は上の輸出側指標と同じヘッドライン(283691と282520の合算、USドル建て)です。", "stage.tablist": "測定する段階", "stage.sidelist": "申告側", "stage.headline_usd": "ヘッドライン(合算・USD)", "stage.ore": "鉱石・精鉱", "stage.carbonate": "炭酸塩", "stage.hydroxide": "水酸化物", "stage.mine_li_t": "鉱山生産(Li換算)", "side.world_export": "全世界向け輸出(自己申告)", "side.china_import": "中国の輸入申告(ミラー)", "stage.coverage": "報告完全性", "stage.no_coverage": "報告完全性は算出対象外", "stage.provisional_legend": "暫定値(報告完全性が不足)", "stage.confirmed_legend": "確定値", "source.reported": "自己申告", "source.partner_sum": "復元(相手国別合計)", "source.mirror": "ミラー採用", "source.estimated": "推計", "verification.unverified": "未検証", "verification.externally_confirmed": "外部照合済", "verification.externally_conflicting": "外部と食い違い", "evidence.close": "閉じる", "evidence.source": "照合したソース", "table.source": "採用根拠", "table.verification": "検証", "screener.search": "検索", "screener.placeholder": "鉱物名または元素記号", "screener.category": "カテゴリ", "screener.all_categories": "すべてのカテゴリ", "screener.caption": "鉱物ごとの供給集中度。HHIは0〜10,000の尺度で、区分は鉱山側の値にもとづく。", "screener.pending": "準備中", "screener.under_review": "確認中", "screener.no_match": "該当する鉱物はありません。", "screener.showing": "{total}件中{shown}件を表示", "col.mineral": "鉱物", "col.mine_hhi": "鉱山HHI", "col.top_supplier": "最大供給国", "col.export_hhi": "輸出HHI", "col.band": "区分", "col.year": "年", "legend.title": "区分の読み方", "legend.caption": "区分の読み方", "legend.reading": "読み方", "stage.provisional_short": "暫定", "quote.mine_hhi": "鉱山HHI", "quote.export_hhi": "輸出HHI", "quote.top_producer": "最大生産国", "quote.updated": "更新", "quote.provisional_title": "暫定値を含みます。", "quote.review_title": "貿易指標は確認中です。", "quote.coverage_title": "カバレッジ"}</script>
 <script src="../../assets/js/i18n.js"></script>
 <script src="../../assets/js/charts.js"></script>
-<script type="application/json" id="page-data">{"audit_data_url": "../data/natural-graphite/metadata.json", "caveats": ["Synthetic graphite (3801.10) is excluded. Natural graphite trade codes do not identify battery grade; trade concentration remains under review.", "Flake, vein and amorphous graphite command different prices and serve different end uses but share trade codes.", "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series."], "caveats_ja": ["人造黒鉛(3801.10)は対象外です。天然黒鉛の貿易コードでは電池級を識別できず、貿易集中度は確認中です。", "鱗状黒鉛・脈状黒鉛・土状黒鉛は価格も最終用途も異なるが、同じ品目コードに含まれている。", "USGS MCS 2019〜2026年版から2017〜2024年を収録。推計値を保持し、Otherは国別HHIから除外しています。世界合計は丸められており、カバレッジは100%を上限とします。2018・2020・2022年の変化には資料の版や収録国の違いが含まれ、同一基準で改訂された成長率系列ではありません。"], "generated_at": "2026-09-14T00:00:00+00:00", "headline_hs_codes": ["250410", "250490"], "hs_label": "Natural graphite in powder or flakes (2504.10) and other natural graphite (2504.90)", "hs_label_ja": "粉状・フレーク状の天然黒鉛(2504.10)およびその他の天然黒鉛(2504.90)", "metadata": {"data_year": [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024], "methodology_version": "natural-graphite-fixed-mine-2026-09-14-v1", "production_publishable": true, "publication_review": {"authorization": "Project owner approved publication of 2017–2024 fixed-vintage mine production with estimates and vintage caveats; trade remains under review (2026-09-14).", "methodology_version": "natural-graphite-fixed-mine-2026-09-14-v1", "production": {"decision": "publish_fixed_vintages", "note": "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series.", "note_ja": "USGS MCS 2019〜2026年版から2017〜2024年を収録。推計値を保持し、Otherは国別HHIから除外しています。世界合計は丸められており、カバレッジは100%を上限とします。2018・2020・2022年の変化には資料の版や収録国の違いが含まれ、同一基準で改訂された成長率系列ではありません。", "records_sha256": "84674a7e1d929d19f0c804e20ed42e61415ac4c3f85df4100e967d1e3726785d", "reviewed_flag_years": [2018, 2020, 2022]}, "reviewed_at": "2026-09-14T00:00:00+00:00", "trade": {"decision": "withhold", "note": "Trade concentration is under review: mirror discrepancies and weight coverage remain unresolved. No trade HHI is published.", "note_ja": "貿易集中度は確認中です。ミラーデータとの差異と重量カバレッジが未解決のため、貿易HHIは公開していません。"}, "years": [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]}, "sources": [{"edition": 2019, "path": "data/raw/usgs/b0f949bc45e1e174ff5bef47bbd45e4d13a6a2422e50bd4a253042eb442d7cc5.pdf", "query": {}, "retrieved_at": "2026-09-13T18:46:13+00:00", "reviewed_at": "2026-09-13", "sha256": "ab3ecfdc9f4171bfef7596139a92d81f7a5f540fc90c91319752112c56e5ccea", "source": "usgs", "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/mcs-2019-graph.pdf", "year": 2017}, {"edition": 2020, "path": "data/raw/usgs/9e3b054fb41350bbcd06918074bafd0171ba4594706bb54400fa1c0e075785a9.pdf", "query": {}, "retrieved_at": "2026-09-13T18:46:52+00:00", "reviewed_at": "2026-09-13", "sha256": "d41e4c536e95de12d09c60f6f850e1397f9e7fdf32b36217e6969eb1e64f4370", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-graphite.pdf", "year": 2018}, {"edition": 2021, "path": "data/raw/usgs/c9be56416bb0e74207b321d0b9a8b2e435db22e816790588d6cef2ebc65d7aab.pdf", "query": {}, "retrieved_at": "2026-09-13T18:46:53+00:00", "reviewed_at": "2026-09-13", "sha256": "4e9f71e27f85cf3269d8b47615d3ccd1346f2b75473b6d9e60d5882db1beae37", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021-graphite.pdf", "year": 2019}, {"edition": 2022, "path": "data/raw/usgs/6c646104cdd566aab97b64102da9dd9e1c405e60b188b7b61dcb0b8749ebec1e.pdf", "query": {}, "retrieved_at": "2026-09-13T18:46:55+00:00", "reviewed_at": "2026-09-13", "sha256": "547293d0291b483e042d6715037cc3332c9f7fcaa1b302e376d82e69ad0eae48", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022-graphite.pdf", "year": 2020}, {"edition": 2023, "path": "data/raw/usgs/fa5ef145a6f9db6599d30cf75f0e378646328623d6bd8fc6c11d4cbb3202cfe0.pdf", "query": {}, "retrieved_at": "2026-09-13T18:46:57+00:00", "reviewed_at": "2026-09-13", "sha256": "f7f93d825b1aa09818d0c9fcf8b9a4bc8018d65a699bc5a5da6fe98a8742e21a", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2023/mcs2023-graphite.pdf", "year": 2021}, {"edition": 2024, "path": "data/raw/usgs/f9e21976fbcb180857fc843a14afaa252d89607d9f216bec36dad6c29bcfb977.pdf", "query": {}, "retrieved_at": "2026-09-13T18:46:59+00:00", "reviewed_at": "2026-09-13", "sha256": "00ab8511468509f87a1b9b5d9393d5c172b3877cd3f7036304e122025c1b9742", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-graphite.pdf", "year": 2022}, {"edition": 2025, "path": "data/raw/usgs/4991a26cedf817e88f20b31f7c08f03fdad52290f513822c5c5921c420d01ff2.pdf", "query": {}, "retrieved_at": "2026-09-13T18:47:01+00:00", "reviewed_at": "2026-09-13", "sha256": "96f088e1346022462def556b9b470e0b14c290be496d4580ec0e1f93f2b88d88", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-graphite.pdf", "year": 2023}, {"edition": 2026, "path": "data/raw/usgs/6e23e4e85842330c0d30020876267c30b76ede991e05750ba443e13eafe96bf0.pdf", "query": {}, "retrieved_at": "2026-09-13T18:47:02+00:00", "reviewed_at": "2026-09-13", "sha256": "09ec621ed6400162e7f0b09b1e0ae8260a976d968c1936d69592fe5347f8df38", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-graphite.pdf", "year": 2024}], "trade_publishable": false}, "name": "Natural graphite", "name_ja": "天然黒鉛", "production": {"available": true, "latest": {"band": "high", "coverage": 1.0, "cr1": 81.9, "cr3": 91.12, "cr5": 95.38, "effective_suppliers": 1.48, "hhi": 6764.9, "reporters": 18, "top": [{"code": "CHN", "name": "China", "quantity": 1270000.0, "share": 81.8992}, {"code": "MDG", "name": "Madagascar", "quantity": 85000.0, "share": 5.4814}, {"code": "BRA", "name": "Brazil", "quantity": 58000.0, "share": 3.7403}, {"code": "MOZ", "name": "Mozambique", "quantity": 39000.0, "share": 2.515}, {"code": "TZA", "name": "Tanzania, United Republic of", "quantity": 27000.0, "share": 1.7412}, {"code": "RUS", "name": "Russian Federation", "quantity": 20000.0, "share": 1.2898}, {"code": "IND", "name": "India", "quantity": 17600.0, "share": 1.135}, {"code": "CAN", "name": "Canada", "quantity": 11700.0, "share": 0.7545}, {"code": "PRK", "name": "Korea, Democratic People's Republic of", "quantity": 8100.0, "share": 0.5223}, {"code": "NOR", "name": "Norway", "quantity": 5340.0, "share": 0.3444}], "total": 1550686.0, "year": 2024}, "latest_year": 2024, "measurement_unit": "t natural graphite", "notes": [], "publishable": true, "series": [{"coverage": 0.9977, "cr3": 84.37, "hhi": 5031.1, "reporters": 17, "year": 2017}, {"coverage": 1.0, "cr3": 79.46, "hhi": 4022.0, "reporters": 20, "year": 2018}, {"coverage": 1.0, "cr3": 82.08, "hhi": 4263.0, "reporters": 19, "year": 2019}, {"coverage": 0.9993, "cr3": 88.43, "hhi": 6301.3, "reporters": 17, "year": 2020}, {"coverage": 0.9969, "cr3": 86.46, "hhi": 5436.8, "reporters": 18, "year": 2021}, {"coverage": 0.9976, "cr3": 89.86, "hhi": 5393.9, "reporters": 18, "year": 2022}, {"coverage": 1.0, "cr3": 89.66, "hhi": 6314.3, "reporters": 18, "year": 2023}, {"coverage": 1.0, "cr3": 91.12, "hhi": 6764.9, "reporters": 18, "year": 2024}], "series_key": "mine_natural_graphite_t", "source": "USGS Mineral Commodity Summaries (fixed 2019–2026 editions)", "stage": "mine", "trend": null, "trend_note": "Fixed historical editions; annual changes may include revisions.", "trend_note_ja": "過去の版を固定して収録。年次変化には改訂が含まれます。", "unit": "share of identified natural graphite mine production", "unit_ja": "天然黒鉛の国別鉱山生産量に占める割合", "verification_status": "not_applicable"}, "role": "Anode", "role_ja": "負極", "slug": "natural-graphite", "summary": "Natural graphite mine production across all grades and uses. Synthetic graphite and total battery anode supply are outside this series.", "summary_ja": "全品種・用途を対象とする天然黒鉛の鉱山生産量。人造黒鉛や電池用負極材全体の供給量は、この系列の対象外です。", "symbol": "C", "trade": {"available": false, "notes": ["Trade concentration is under review: mirror discrepancies and weight coverage remain unresolved. No trade HHI is published."], "notes_ja": ["貿易集中度は確認中です。ミラーデータとの差異と重量カバレッジが未解決のため、貿易HHIは公開していません。"], "publication_status": "under_review", "publishable": false, "source": "UN Comtrade", "stage": "raw", "unit": "natural graphite trade", "unit_ja": "天然黒鉛の貿易", "verification_status": "unverified"}, "trade_stage": "raw", "usgs_aliases": ["Graphite (Natural)", "Graphite, natural", "Graphite"], "usgs_commodity": "Graphite (Natural)"}</script>
+<script type="application/json" id="page-data">{"audit_data_url": "../data/natural-graphite/metadata.json", "category": "battery-metals", "caveats": ["Synthetic graphite (3801.10) is excluded. Natural graphite trade codes do not identify battery grade; trade concentration remains under review.", "Flake, vein and amorphous graphite command different prices and serve different end uses but share trade codes.", "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series."], "caveats_ja": ["人造黒鉛(3801.10)は対象外です。天然黒鉛の貿易コードでは電池級を識別できず、貿易集中度は確認中です。", "鱗状黒鉛・脈状黒鉛・土状黒鉛は価格も最終用途も異なるが、同じ品目コードに含まれている。", "USGS MCS 2019〜2026年版から2017〜2024年を収録。推計値を保持し、Otherは国別HHIから除外しています。世界合計は丸められており、カバレッジは100%を上限とします。2018・2020・2022年の変化には資料の版や収録国の違いが含まれ、同一基準で改訂された成長率系列ではありません。"], "generated_at": "2026-09-14T00:00:00+00:00", "headline_hs_codes": ["250410", "250490"], "hs_label": "Natural graphite in powder or flakes (2504.10) and other natural graphite (2504.90)", "hs_label_ja": "粉状・フレーク状の天然黒鉛(2504.10)およびその他の天然黒鉛(2504.90)", "metadata": {"data_year": [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024], "methodology_version": "natural-graphite-fixed-mine-2026-09-14-v1", "production_publishable": true, "publication_review": {"authorization": "Project owner approved publication of 2017–2024 fixed-vintage mine production with estimates and vintage caveats; trade remains under review (2026-09-14).", "methodology_version": "natural-graphite-fixed-mine-2026-09-14-v1", "production": {"decision": "publish_fixed_vintages", "note": "Fixed USGS MCS 2019–2026 editions cover 2017–2024. Estimates are retained; Other is excluded from country HHI. Rounded world totals can yield coverage capped at 100%. The 2018, 2020 and 2022 changes include differing source vintages and producer coverage; this is not a uniformly revised growth series.", "note_ja": "USGS MCS 2019〜2026年版から2017〜2024年を収録。推計値を保持し、Otherは国別HHIから除外しています。世界合計は丸められており、カバレッジは100%を上限とします。2018・2020・2022年の変化には資料の版や収録国の違いが含まれ、同一基準で改訂された成長率系列ではありません。", "records_sha256": "84674a7e1d929d19f0c804e20ed42e61415ac4c3f85df4100e967d1e3726785d", "reviewed_flag_years": [2018, 2020, 2022]}, "reviewed_at": "2026-09-14T00:00:00+00:00", "trade": {"decision": "withhold", "note": "Trade concentration is under review: mirror discrepancies and weight coverage remain unresolved. No trade HHI is published.", "note_ja": "貿易集中度は確認中です。ミラーデータとの差異と重量カバレッジが未解決のため、貿易HHIは公開していません。"}, "years": [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]}, "sources": [{"edition": 2019, "path": "data/raw/usgs/b0f949bc45e1e174ff5bef47bbd45e4d13a6a2422e50bd4a253042eb442d7cc5.pdf", "query": {}, "retrieved_at": "2026-09-13T18:46:13+00:00", "reviewed_at": "2026-09-13", "sha256": "ab3ecfdc9f4171bfef7596139a92d81f7a5f540fc90c91319752112c56e5ccea", "source": "usgs", "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/mcs-2019-graph.pdf", "year": 2017}, {"edition": 2020, "path": "data/raw/usgs/9e3b054fb41350bbcd06918074bafd0171ba4594706bb54400fa1c0e075785a9.pdf", "query": {}, "retrieved_at": "2026-09-13T18:46:52+00:00", "reviewed_at": "2026-09-13", "sha256": "d41e4c536e95de12d09c60f6f850e1397f9e7fdf32b36217e6969eb1e64f4370", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-graphite.pdf", "year": 2018}, {"edition": 2021, "path": "data/raw/usgs/c9be56416bb0e74207b321d0b9a8b2e435db22e816790588d6cef2ebc65d7aab.pdf", "query": {}, "retrieved_at": "2026-09-13T18:46:53+00:00", "reviewed_at": "2026-09-13", "sha256": "4e9f71e27f85cf3269d8b47615d3ccd1346f2b75473b6d9e60d5882db1beae37", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021-graphite.pdf", "year": 2019}, {"edition": 2022, "path": "data/raw/usgs/6c646104cdd566aab97b64102da9dd9e1c405e60b188b7b61dcb0b8749ebec1e.pdf", "query": {}, "retrieved_at": "2026-09-13T18:46:55+00:00", "reviewed_at": "2026-09-13", "sha256": "547293d0291b483e042d6715037cc3332c9f7fcaa1b302e376d82e69ad0eae48", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022-graphite.pdf", "year": 2020}, {"edition": 2023, "path": "data/raw/usgs/fa5ef145a6f9db6599d30cf75f0e378646328623d6bd8fc6c11d4cbb3202cfe0.pdf", "query": {}, "retrieved_at": "2026-09-13T18:46:57+00:00", "reviewed_at": "2026-09-13", "sha256": "f7f93d825b1aa09818d0c9fcf8b9a4bc8018d65a699bc5a5da6fe98a8742e21a", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2023/mcs2023-graphite.pdf", "year": 2021}, {"edition": 2024, "path": "data/raw/usgs/f9e21976fbcb180857fc843a14afaa252d89607d9f216bec36dad6c29bcfb977.pdf", "query": {}, "retrieved_at": "2026-09-13T18:46:59+00:00", "reviewed_at": "2026-09-13", "sha256": "00ab8511468509f87a1b9b5d9393d5c172b3877cd3f7036304e122025c1b9742", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-graphite.pdf", "year": 2022}, {"edition": 2025, "path": "data/raw/usgs/4991a26cedf817e88f20b31f7c08f03fdad52290f513822c5c5921c420d01ff2.pdf", "query": {}, "retrieved_at": "2026-09-13T18:47:01+00:00", "reviewed_at": "2026-09-13", "sha256": "96f088e1346022462def556b9b470e0b14c290be496d4580ec0e1f93f2b88d88", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-graphite.pdf", "year": 2023}, {"edition": 2026, "path": "data/raw/usgs/6e23e4e85842330c0d30020876267c30b76ede991e05750ba443e13eafe96bf0.pdf", "query": {}, "retrieved_at": "2026-09-13T18:47:02+00:00", "reviewed_at": "2026-09-13", "sha256": "09ec621ed6400162e7f0b09b1e0ae8260a976d968c1936d69592fe5347f8df38", "source": "usgs", "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-graphite.pdf", "year": 2024}], "trade_publishable": false}, "name": "Natural graphite", "name_ja": "天然黒鉛", "production": {"available": true, "latest": {"band": "high", "coverage": 1.0, "cr1": 81.9, "cr3": 91.12, "cr5": 95.38, "effective_suppliers": 1.48, "hhi": 6764.9, "reporters": 18, "top": [{"code": "CHN", "name": "China", "quantity": 1270000.0, "share": 81.8992}, {"code": "MDG", "name": "Madagascar", "quantity": 85000.0, "share": 5.4814}, {"code": "BRA", "name": "Brazil", "quantity": 58000.0, "share": 3.7403}, {"code": "MOZ", "name": "Mozambique", "quantity": 39000.0, "share": 2.515}, {"code": "TZA", "name": "Tanzania, United Republic of", "quantity": 27000.0, "share": 1.7412}, {"code": "RUS", "name": "Russian Federation", "quantity": 20000.0, "share": 1.2898}, {"code": "IND", "name": "India", "quantity": 17600.0, "share": 1.135}, {"code": "CAN", "name": "Canada", "quantity": 11700.0, "share": 0.7545}, {"code": "PRK", "name": "Korea, Democratic People's Republic of", "quantity": 8100.0, "share": 0.5223}, {"code": "NOR", "name": "Norway", "quantity": 5340.0, "share": 0.3444}], "total": 1550686.0, "year": 2024}, "latest_year": 2024, "measurement_unit": "t natural graphite", "notes": [], "publishable": true, "series": [{"coverage": 0.9977, "cr3": 84.37, "hhi": 5031.1, "reporters": 17, "year": 2017}, {"coverage": 1.0, "cr3": 79.46, "hhi": 4022.0, "reporters": 20, "year": 2018}, {"coverage": 1.0, "cr3": 82.08, "hhi": 4263.0, "reporters": 19, "year": 2019}, {"coverage": 0.9993, "cr3": 88.43, "hhi": 6301.3, "reporters": 17, "year": 2020}, {"coverage": 0.9969, "cr3": 86.46, "hhi": 5436.8, "reporters": 18, "year": 2021}, {"coverage": 0.9976, "cr3": 89.86, "hhi": 5393.9, "reporters": 18, "year": 2022}, {"coverage": 1.0, "cr3": 89.66, "hhi": 6314.3, "reporters": 18, "year": 2023}, {"coverage": 1.0, "cr3": 91.12, "hhi": 6764.9, "reporters": 18, "year": 2024}], "series_key": "mine_natural_graphite_t", "source": "USGS Mineral Commodity Summaries (fixed 2019–2026 editions)", "stage": "mine", "trend": null, "trend_note": "Fixed historical editions; annual changes may include revisions.", "trend_note_ja": "過去の版を固定して収録。年次変化には改訂が含まれます。", "unit": "share of identified natural graphite mine production", "unit_ja": "天然黒鉛の国別鉱山生産量に占める割合", "verification_status": "not_applicable"}, "role": "Anode", "role_ja": "負極", "slug": "natural-graphite", "summary": "Natural graphite mine production across all grades and uses. Synthetic graphite and total battery anode supply are outside this series.", "summary_ja": "全品種・用途を対象とする天然黒鉛の鉱山生産量。人造黒鉛や電池用負極材全体の供給量は、この系列の対象外です。", "symbol": "C", "trade": {"available": false, "notes": ["Trade concentration is under review: mirror discrepancies and weight coverage remain unresolved. No trade HHI is published."], "notes_ja": ["貿易集中度は確認中です。ミラーデータとの差異と重量カバレッジが未解決のため、貿易HHIは公開していません。"], "publication_status": "under_review", "publishable": false, "source": "UN Comtrade", "stage": "raw", "unit": "natural graphite trade", "unit_ja": "天然黒鉛の貿易", "verification_status": "unverified"}, "trade_stage": "raw", "usgs_aliases": ["Graphite (Natural)", "Graphite, natural", "Graphite"], "usgs_commodity": "Graphite (Natural)"}</script>
 <script>
 (function () {
   var data = JSON.parse(document.getElementById("page-data").textContent);

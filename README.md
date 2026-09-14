@@ -1,4 +1,4 @@
-# Orelysis
+# Petralysis
 
 Supply concentration in critical minerals, measured from open data and published
 as a static site on GitHub Pages.
@@ -6,9 +6,17 @@ as a static site on GitHub Pages.
 The site takes published production and trade statistics and reduces them to one
 number per mineral per year — the Herfindahl–Hirschman Index — at two points in
 the chain: where the ore is mined (USGS) and where the material is exported
-(UN Comtrade). The first section covers eight battery and electrification
-minerals. The structure is built so that a second material family is a catalog
-file and a fetch adapter, not a new site.
+(UN Comtrade). The front page is a screener: one row per mineral with the mine
+index, the largest supplier, a representative export index, the band and the
+year, searchable and sortable in the browser and readable as a plain table
+without scripts. Each mineral page opens with the same figures as a quote
+header before any chart. The first section covers eight battery and
+electrification minerals and is laid out for several dozen; a second material
+family is a catalog category and a fetch adapter, not a new site.
+
+Formerly Orelysis; renamed in September 2026. See
+[docs/task-f-redesign-2026-09.md](docs/task-f-redesign-2026-09.md) for the
+rename, the design tokens and the screener rules.
 
 ---
 
@@ -37,24 +45,27 @@ and [Task E rollout](docs/task-e-mineral-rollout.md).
 ```bash
 git init
 git add .
-git commit -m "orelysis: initial site and pipeline"
+git commit -m "petralysis: initial site and pipeline"
 git branch -M main
-git remote add origin https://github.com/<you>/orelysis.git
+git remote add origin https://github.com/<you>/petralysis.git
 git push -u origin main
 ```
 
-### 2. Set two values in `site.json`
+### 2. Set three values in `site.json`
 
 ```json
 {
-  "repo_url": "https://github.com/<you>/orelysis",
-  "site_base": "/orelysis/"
+  "repo_url": "https://github.com/<you>/petralysis",
+  "site_base": "/petralysis/",
+  "site_url": "https://<you>.github.io/petralysis/"
 }
 ```
 
 `repo_url` fills the footer links. `site_base` is only used by `404.html`, and it
-must match how Pages serves the site: `/orelysis/` for a project page at
-`<you>.github.io/orelysis/`, or `/` for a user page or a custom domain.
+must match how Pages serves the site: `/petralysis/` for a project page at
+`<you>.github.io/petralysis/`, or `/` for a user page or a custom domain.
+`site_url` is the absolute origin used for canonical links and the Open Graph
+image; leave it empty to omit both.
 
 Then re-render so the change reaches the HTML:
 
@@ -115,9 +126,11 @@ you fix a parser is fast and does not re-hammer the upstream services.
 ## Layout
 
 ```
-index.html                      the Orelysis hub
+index.html                      the screener (every mineral, every category)
 404.html
 assets/                         css, js, images — shared by every section
+  brand/petralysis-master.png   the one brand image everything else is cut from
+  img/                          favicon, icons, header mark, OGP card (generated)
 critical-minerals/              section 01, self-contained
   index.html                    generated
   methodology.html              generated
@@ -136,9 +149,10 @@ pipeline/
   build.py                      orchestration, writes the JSON
   render.py                     JSON + templates -> static HTML
   fixtures.py                   synthetic data for layout work
-  templates/                    Jinja2
-  tests/                        unit tests for hhi.py
-site.json                       repo URL and Pages base path
+  templates/                    Jinja2 (_screener.html is shared by the hub and the section)
+  tests/                        unit tests for hhi.py, the stage tabs and the screener
+tools/make_brand_assets.py      regenerates assets/img/ from the brand master
+site.json                       repo URL, Pages base path, absolute site URL
 ```
 
 Every HTML file in the repository is generated. Edit the templates in
@@ -156,6 +170,7 @@ Add an entry to `critical-minerals/data/catalog.json`:
   "slug": "tin",
   "name": "Tin",
   "symbol": "Sn",
+  "category": "battery-metals",
   "role": "Solder",
   "summary": "…",
   "usgs_commodity": "Tin",
@@ -167,8 +182,14 @@ Add an entry to `critical-minerals/data/catalog.json`:
 }
 ```
 
-Then `python -m pipeline.build --only tin`. The page, the card and the JSON all
-follow from the catalog entry; nothing else needs editing.
+Then `python -m pipeline.build --only tin`. The page, the screener row and the
+JSON all follow from the catalog entry; nothing else needs editing. `category`
+must name a key of the top-level `categories` map, which is what the screener's
+category filter reads. A mineral measured at several trade stages may add
+`headline_trade_stage` (an HS code from its stage list) to say which stage the
+screener's Export HHI column quotes; without it the column links to the page
+instead of picking one. A trade block whose `publication_status` is
+`under_review` never reaches the screener as a number.
 
 For the Japanese side of the page, add `name_ja`, `role_ja`, `summary_ja`,
 `hs_label_ja` and a `caveats_ja` list the same length as `caveats`. A missing
@@ -207,7 +228,22 @@ regenerated pages, as with any other template change.
 
 Copy `critical-minerals/` to a new directory with its own `data/catalog.json`,
 point `SECTION_DIR` in `build.py` and `render.py` at it (or parameterise them),
-and add a card on the hub page. The templates, CSS and chart code are shared.
+and give its minerals a new `category`. The screener on the hub absorbs the new
+family as a category rather than a card. The templates, CSS and chart code are
+shared.
+
+## Brand assets
+
+Every icon, the header mark and the Open Graph card are derived from
+`assets/brand/petralysis-master.png`:
+
+```bash
+pip install -r tools/requirements-brand.txt
+python tools/make_brand_assets.py
+```
+
+Replace the master and re-run; nothing else references the artwork directly.
+The committed master is a synthesized stand-in until the final artwork lands.
 
 ---
 

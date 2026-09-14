@@ -74,7 +74,7 @@ jobs:
       - name: Commit if anything moved
         id: commit
         run: |
-          git config user.name  "Orelysis pipeline"
+          git config user.name  "Petralysis pipeline"
           git config user.email "actions@users.noreply.github.com"
           git add critical-minerals/data critical-minerals/*.html critical-minerals/minerals index.html 404.html
           if ! git diff --cached --quiet -- critical-minerals/data/minerals/lithium.json; then

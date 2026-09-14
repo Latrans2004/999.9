@@ -9,7 +9,7 @@
    clears the class; the timeout is a safety net if that script fails. */
 (function () {
   try {
-    var lang = localStorage.getItem("orelysis:lang");
+    var lang = localStorage.getItem("petralysis:lang");
     if (!lang && /^ja\b/i.test(navigator.language || "")) lang = "ja";
     if (lang === "ja") {
       var root = document.documentElement;
@@ -19,18 +19,24 @@
   } catch (e) {}
 })();
 </script>
-<title data-i18n-text="Orelysis — 公開データで測る供給集中度">Orelysis — supply concentration from open data</title>
+<title data-i18n-text="Petralysis — 重要鉱物の供給集中度">Petralysis — supply concentration in critical minerals</title>
 <meta name="description" content="Supply concentration in critical minerals, measured with the Herfindahl-Hirschman Index from USGS and UN Comtrade open data.">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#080A0F">
-<link rel="icon" href="assets/img/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<meta property="og:title" content="Orelysis">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="assets/img/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/img/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<meta property="og:title" content="Petralysis">
 <meta property="og:description" content="Supply concentration in critical minerals, from open data.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/img/icon-512.png">
+<meta property="og:site_name" content="Petralysis">
+<link rel="canonical" href="https://latrans2004.github.io/petralysis/index.html">
+<meta property="og:url" content="https://latrans2004.github.io/petralysis/index.html">
+<meta property="og:image" content="https://latrans2004.github.io/petralysis/assets/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
@@ -39,8 +45,8 @@
 <header class="masthead">
   <div class="wrap masthead__inner">
     <a class="brand" href="index.html">
-      <img src="assets/img/brand-32.png" alt="" width="22" height="22">
-      <span>Orelysis</span>
+      <img src="assets/img/brand-32.png" srcset="assets/img/brand-32.png 1x, assets/img/brand-64.png 2x" alt="" width="22" height="22">
+      <span>Petralysis</span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a>
@@ -55,105 +61,293 @@
 </header>
 
 <main id="main">
-<div class="wrap hero">
-  <div class="hero__grid">
-    <div>
-      <p class="eyebrow" data-i18n-text="公開データによる測定">Open-data measurement</p>
-      <p class="wordmark">Orelysis</p>
-      <h1 data-i18n-text="エネルギー転換を支える素材の供給は、どれほど集中しているのか。">How concentrated is the supply of the materials an energy transition runs on?</h1>
-      <p class="hero__lede" data-i18n-text="Orelysisは、公表されている生産統計と貿易統計を、素材ごと・年ごとに1つの数値へと集約する。その数値がハーフィンダール・ハーシュマン指数(HHI)だ。独占禁止当局が市場の評価に用いるのと同じ尺度を、企業ではなく国に向けて使っている。ここにある数値はすべて、スケジュールにしたがってソースから再計算され、その過程はすべて公開されている。">
-        Orelysis takes published production and trade statistics and reduces them to one
-        number per material per year — the Herfindahl–Hirschman Index, the same measure
-        antitrust regulators use on markets, pointed at countries instead of firms.
-        Everything here is recomputed from source on a schedule, and every step is in the open.
-      </p>
-    </div>
-    <figure class="hero__mark" style="margin:0">
-      <img src="assets/img/mark-640.png" alt="" width="640" height="640"
-           style="width:100%;height:auto;display:block" loading="eager">
-    </figure>
+<div class="wrap">
+  <div class="page-head">
+    <h1>Petralysis</h1>
+    <p class="page-head__lede" data-i18n-text="重要鉱物の供給集中度を、公開データから。鉱山(USGS)と輸出(UN Comtrade)の2地点で測ったハーフィンダール・ハーシュマン指数(HHI)。">
+      Supply concentration in critical minerals, from open data. The Herfindahl–Hirschman
+      Index at two points in the chain: the mine (USGS) and the export gate (UN Comtrade).
+    </p>
+    <p class="page-head__meta">
+      <span data-i18n-text="8鉱物 · 公開済み 2">8 minerals · 2 published</span>
+      <span class="timestamp" data-i18n-text="データは最終 2026年09月14日 19:49 UTC に再構築されました">Data last rebuilt 14 September 2026, 19:49 UTC</span>
+      <a href="critical-minerals/methodology.html" data-i18n="nav.methodology">Methodology</a>
+    </p>
   </div>
+
+  <div class="screener" data-screener>
+  <form class="screener__controls" hidden data-screener-controls onsubmit="return false">
+    <label class="screener__field">
+      <span data-i18n="screener.search">Search</span>
+      <input type="search" name="q" data-screener-search placeholder="Name or symbol" autocomplete="off" spellcheck="false">
+    </label>
+    <label class="screener__field">
+      <span data-i18n="screener.category">Category</span>
+      <select name="category" data-screener-category>
+        <option value="" data-i18n="screener.all_categories">All categories</option>
+        <option value="battery-metals" data-i18n-text="バッテリーメタル">Battery metals</option>
+      </select>
+    </label>
+    <span class="screener__count" data-screener-count aria-live="polite"></span>
+  </form>
+
+  <div class="table-scroll">
+    <table class="screener__table" data-screener-table>
+      <caption class="sr-only" data-i18n="screener.caption">Supply concentration by mineral. HHI on the 0–10,000 scale; the band follows the mine figure.</caption>
+      <thead>
+        <tr>
+          <th scope="col" aria-sort="none"><button type="button" class="sort" data-sort="name" data-i18n="col.mineral">Mineral</button></th>
+          <th scope="col" class="num" aria-sort="none"><button type="button" class="sort" data-sort="mine" data-i18n="col.mine_hhi">Mine HHI</button></th>
+          <th scope="col" aria-sort="none"><button type="button" class="sort" data-sort="supplier" data-i18n="col.top_supplier">Top supplier</button></th>
+          <th scope="col" class="num" aria-sort="none"><button type="button" class="sort" data-sort="export" data-i18n="col.export_hhi">Export HHI</button></th>
+          <th scope="col" aria-sort="none"><button type="button" class="sort" data-sort="band" data-i18n="col.band">Band</button></th>
+          <th scope="col" class="num" aria-sort="none"><button type="button" class="sort" data-sort="year" data-i18n="col.year">Year</button></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-category="battery-metals"
+            data-search="lithium リチウム li"
+            data-k-name="lithium"
+            data-k-mine="2046.7"
+            data-k-supplier="australia"
+            data-k-export="5678.1"
+            data-k-band="2"
+            data-k-year="2025">
+          <td>
+            <span class="cell__name"><a href="critical-minerals/minerals/lithium.html" data-i18n-text="リチウム">Lithium</a></span>
+            <span class="cell__sub">Li · <span data-i18n-text="バッテリーメタル">Battery metals</span></span>
+          </td>
+          <td class="num">
+            <strong>2,047</strong>
+          </td>
+          <td>
+            <span class="cell__supplier">Australia · <span class="tnum">32%</span></span>
+          </td>
+          <td class="num">
+            <strong>5,678</strong>
+            <span class="cell__sub cell__sub--num"><span data-i18n-text="炭酸塩">Carbonate</span> · 2024</span>
+          </td>
+          <td>
+            <span class="band band--high" data-i18n="band.high">Highly concentrated</span>
+          </td>
+          <td class="num">2025</td>
+        </tr>
+        <tr data-category="battery-metals"
+            data-search="cobalt コバルト co"
+            data-k-name="cobalt"
+            data-k-mine=""
+            data-k-supplier=""
+            data-k-export=""
+            data-k-band=""
+            data-k-year="">
+          <td>
+            <span class="cell__name"><a href="critical-minerals/minerals/cobalt.html" data-i18n-text="コバルト">Cobalt</a></span>
+            <span class="cell__sub">Co · <span data-i18n-text="バッテリーメタル">Battery metals</span></span>
+          </td>
+          <td class="num">
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+          </td>
+          <td>
+            <span class="cell__pending">—</span>
+          </td>
+          <td class="num">
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+          </td>
+          <td>
+            <span class="cell__pending">—</span>
+          </td>
+          <td class="num"><span class="cell__pending">—</span></td>
+        </tr>
+        <tr data-category="battery-metals"
+            data-search="nickel ニッケル ni"
+            data-k-name="nickel"
+            data-k-mine=""
+            data-k-supplier=""
+            data-k-export=""
+            data-k-band=""
+            data-k-year="">
+          <td>
+            <span class="cell__name"><a href="critical-minerals/minerals/nickel.html" data-i18n-text="ニッケル">Nickel</a></span>
+            <span class="cell__sub">Ni · <span data-i18n-text="バッテリーメタル">Battery metals</span></span>
+          </td>
+          <td class="num">
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+          </td>
+          <td>
+            <span class="cell__pending">—</span>
+          </td>
+          <td class="num">
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+          </td>
+          <td>
+            <span class="cell__pending">—</span>
+          </td>
+          <td class="num"><span class="cell__pending">—</span></td>
+        </tr>
+        <tr data-category="battery-metals"
+            data-search="natural graphite 天然黒鉛 c"
+            data-k-name="natural graphite"
+            data-k-mine="6764.9"
+            data-k-supplier="china"
+            data-k-export=""
+            data-k-band="2"
+            data-k-year="2024">
+          <td>
+            <span class="cell__name"><a href="critical-minerals/minerals/natural-graphite.html" data-i18n-text="天然黒鉛">Natural graphite</a></span>
+            <span class="cell__sub">C · <span data-i18n-text="バッテリーメタル">Battery metals</span></span>
+          </td>
+          <td class="num">
+            <strong>6,765</strong>
+          </td>
+          <td>
+            <span class="cell__supplier">China · <span class="tnum">82%</span></span>
+          </td>
+          <td class="num">
+            <span class="cell__review" data-i18n="screener.under_review">Under review</span>
+          </td>
+          <td>
+            <span class="band band--high" data-i18n="band.high">Highly concentrated</span>
+          </td>
+          <td class="num">2024</td>
+        </tr>
+        <tr data-category="battery-metals"
+            data-search="manganese マンガン mn"
+            data-k-name="manganese"
+            data-k-mine=""
+            data-k-supplier=""
+            data-k-export=""
+            data-k-band=""
+            data-k-year="">
+          <td>
+            <span class="cell__name"><a href="critical-minerals/minerals/manganese.html" data-i18n-text="マンガン">Manganese</a></span>
+            <span class="cell__sub">Mn · <span data-i18n-text="バッテリーメタル">Battery metals</span></span>
+          </td>
+          <td class="num">
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+          </td>
+          <td>
+            <span class="cell__pending">—</span>
+          </td>
+          <td class="num">
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+          </td>
+          <td>
+            <span class="cell__pending">—</span>
+          </td>
+          <td class="num"><span class="cell__pending">—</span></td>
+        </tr>
+        <tr data-category="battery-metals"
+            data-search="rare earths 希土類 ree"
+            data-k-name="rare earths"
+            data-k-mine=""
+            data-k-supplier=""
+            data-k-export=""
+            data-k-band=""
+            data-k-year="">
+          <td>
+            <span class="cell__name"><a href="critical-minerals/minerals/rare-earths.html" data-i18n-text="希土類">Rare earths</a></span>
+            <span class="cell__sub">REE · <span data-i18n-text="バッテリーメタル">Battery metals</span></span>
+          </td>
+          <td class="num">
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+          </td>
+          <td>
+            <span class="cell__pending">—</span>
+          </td>
+          <td class="num">
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+          </td>
+          <td>
+            <span class="cell__pending">—</span>
+          </td>
+          <td class="num"><span class="cell__pending">—</span></td>
+        </tr>
+        <tr data-category="battery-metals"
+            data-search="vanadium バナジウム v"
+            data-k-name="vanadium"
+            data-k-mine=""
+            data-k-supplier=""
+            data-k-export=""
+            data-k-band=""
+            data-k-year="">
+          <td>
+            <span class="cell__name"><a href="critical-minerals/minerals/vanadium.html" data-i18n-text="バナジウム">Vanadium</a></span>
+            <span class="cell__sub">V · <span data-i18n-text="バッテリーメタル">Battery metals</span></span>
+          </td>
+          <td class="num">
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+          </td>
+          <td>
+            <span class="cell__pending">—</span>
+          </td>
+          <td class="num">
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+          </td>
+          <td>
+            <span class="cell__pending">—</span>
+          </td>
+          <td class="num"><span class="cell__pending">—</span></td>
+        </tr>
+        <tr data-category="battery-metals"
+            data-search="copper 銅 cu"
+            data-k-name="copper"
+            data-k-mine=""
+            data-k-supplier=""
+            data-k-export=""
+            data-k-band=""
+            data-k-year="">
+          <td>
+            <span class="cell__name"><a href="critical-minerals/minerals/copper.html" data-i18n-text="銅">Copper</a></span>
+            <span class="cell__sub">Cu · <span data-i18n-text="バッテリーメタル">Battery metals</span></span>
+          </td>
+          <td class="num">
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+          </td>
+          <td>
+            <span class="cell__pending">—</span>
+          </td>
+          <td class="num">
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+          </td>
+          <td>
+            <span class="cell__pending">—</span>
+          </td>
+          <td class="num"><span class="cell__pending">—</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="screener__empty" hidden data-screener-empty data-i18n="screener.no_match">No mineral matches.</p>
 </div>
 
-<div class="wrap">
-  <hr class="rule">
+
   <section>
     <div class="section-head">
-      <h2 data-i18n="hub.sections_title">Sections</h2>
-      <p data-i18n="hub.sections_sub">One section per material family. Each is self-contained.</p>
+      <h2 data-i18n="legend.title">Reading the band</h2>
+      <p><a href="critical-minerals/methodology.html" data-i18n="chart.read_method">Read the full method →</a></p>
     </div>
-    <div class="cards">
-      <a class="card" href="critical-minerals/index.html">
-        <div class="card__top">
-          <div>
-            <div class="card__name" data-i18n="nav.critical_minerals">Critical minerals</div>
-            <div class="card__role" data-i18n-text="バッテリーメタル">Battery metals</div>
-          </div>
-          <span class="card__symbol" data-i18n="hub.live">Live</span>
-        </div>
-        <p style="margin:0;font-size:0.875rem;color:var(--ink-2)" data-i18n-text="バッテリーと電化のチェーンに連なる8つの鉱物を、2つの地点で測定する。鉱石が採掘される場所と、素材が輸出される場所。">
-          Eight minerals on the battery and electrification chain, measured at two points:
-          where the ore is mined and where the material is exported.
-        </p>
-        <div class="card__foot">
-          <span data-i18n-text="8鉱物 · USGS + UN Comtrade">8 minerals · USGS + UN Comtrade</span>
-        </div>
-      </a>
-      <div class="card" aria-hidden="false">
-        <div class="card__top">
-          <div>
-            <div class="card__name" style="color:var(--ink-3)" data-i18n="hub.further_sections">Further sections</div>
-            <div class="card__role" data-i18n="hub.not_yet_built">Not yet built</div>
-          </div>
-          <span class="card__symbol">—</span>
-        </div>
-        <p style="margin:0;font-size:0.875rem;color:var(--ink-3)" data-i18n="hub.further_blurb">
-          The pipeline and the layout are shared, so a second material family is a
-          catalog file and a fetch adapter rather than a new site.
-        </p>
-        <div class="card__foot"><span data-i18n="hub.planned">Planned</span></div>
-      </div>
-    </div>
+    <p class="muted" style="font-size:var(--step-small)" data-i18n-text="HHIは各供給国のシェア(%)を2乗して合計した値(0〜10,000)。区分は米国合併ガイドラインの閾値を読み取りの目安として借用したもので、国が企業のように振る舞うという主張ではない。">
+      HHI is the sum of squared percentage shares of every supplying country, on a 0–10,000
+      scale. The bands borrow the US merger-guideline thresholds as a reading aid, not as
+      a claim that countries behave like firms.
+    </p>
+    <div class="table-scroll">
+<table class="bands">
+  <caption class="sr-only" data-i18n="legend.caption">How to read the band</caption>
+  <thead>
+    <tr><th scope="col">HHI</th><th scope="col" data-i18n="col.band">Band</th><th scope="col" data-i18n="legend.reading">Reading</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="num" data-i18n-text="1,000未満">below 1,000</td><td><span class="band band--unconcentrated" data-i18n="band.unconcentrated">Unconcentrated</span></td><td data-i18n-text="どの供給者が欠けても、それ単独で市場の姿は変わらない。">No single supplier's absence reshapes the market.</td></tr>
+    <tr><td class="num">1,000 – 1,800</td><td><span class="band band--moderate" data-i18n="band.moderate">Moderately concentrated</span></td><td data-i18n-text="少数の供給者が条件を決める。">A handful of suppliers set the terms.</td></tr>
+    <tr><td class="num" data-i18n-text="1,800超">above 1,800</td><td><span class="band band--high" data-i18n="band.high">Highly concentrated</span></td><td data-i18n-text="1つか2つの供給者が、市場そのものである。">One or two suppliers are the market.</td></tr>
+  </tbody>
+</table>
+</div>
+
   </section>
 
-  <hr class="rule">
-
-  <section>
-    <div class="section-head"><h2 data-i18n="hub.what_it_means_title">What the number means</h2></div>
-    <div class="split">
-      <div>
-        <p class="measure" data-i18n-text="ハーフィンダール・ハーシュマン指数は、各供給者のシェア(%)を2乗して合計したものだ。この「2乗」こそが要点で、シェア60%の供給者1社は、10%ずつの供給者6社よりもはるかに重く数えられる。これは、ある輸送ルートが1本閉ざされたときに買い手が実際に感じる違いそのものである。">
-          The Herfindahl–Hirschman Index is the sum of squared percentage shares. Squaring
-          is the whole idea: it makes one supplier at 60% count for far more than six at
-          10% each, which is the difference a buyer actually feels when a single shipment
-          route closes.
-        </p>
-        <p class="measure" data-i18n-text="独占は10,000点、均等な10の供給者は1,000点になる。下の区分は米国の合併ガイドラインに由来するもので、ここでは読み取りの目安として借用している。国が企業と同じように振る舞う、と主張するものではない。">
-          A monopoly scores 10,000. Ten equal suppliers score 1,000. The bands below come
-          from the US merger guidelines and are borrowed here as a reading aid, not as a
-          claim that countries behave like firms.
-        </p>
-        <p><a href="critical-minerals/methodology.html" data-i18n="chart.read_method">Read the full method →</a></p>
-      </div>
-      <div class="stats">
-        <div class="stat">
-          <span class="stat__label" data-i18n-text="1,000未満">Below 1,000</span>
-          <span class="stat__value" style="font-size:1.05rem" data-i18n="band.unconcentrated">Unconcentrated</span>
-          <span class="stat__note" data-i18n-text="どの供給者が欠けても、それ単独で市場の姿は変わらない。">No supplier's absence reshapes the market on its own.</span>
-        </div>
-        <div class="stat">
-          <span class="stat__label">1,000 – 1,800</span>
-          <span class="stat__value" style="font-size:1.05rem" data-i18n-text="中程度">Moderate</span>
-          <span class="stat__note" data-i18n-text="少数の供給者が条件を決める。">A handful of suppliers set the terms.</span>
-        </div>
-        <div class="stat">
-          <span class="stat__label" data-i18n-text="1,800超">Above 1,800</span>
-          <span class="stat__value" style="font-size:1.05rem" data-i18n="band.high">Highly concentrated</span>
-          <span class="stat__note" data-i18n-text="1つか2つの供給者が、市場そのものである。">One or two suppliers are the market.</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="cta-slot"></div>
 </div>
 </main>
 
@@ -161,7 +355,7 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <h4>Orelysis</h4>
+        <h4>Petralysis</h4>
         <p style="margin:0;max-width:32ch" data-i18n="footer.tagline">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
       </div>
       <div>
@@ -182,8 +376,8 @@
       <div>
         <h4 data-i18n="footer.source">Source</h4>
         <ul>
-          <li><a href="https://github.com/latrans2004/orelysis" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
-          <li><a href="https://github.com/latrans2004/orelysis/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
+          <li><a href="https://github.com/latrans2004/petralysis" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
+          <li><a href="https://github.com/latrans2004/petralysis/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
         </ul>
       </div>
     </div>
@@ -194,8 +388,9 @@
   </div>
 </footer>
 
-<script type="application/json" id="i18n-data">{"nav.critical_minerals": "重要鉱物", "nav.methodology": "算出方法", "nav.about": "このサイトについて", "skip.content": "本文へスキップ", "banner.title": "サンプルデータ。", "banner.body": "このビルドは合成データ(フィクスチャ)から生成されたものであり、USGSやUN Comtradeの実データではありません。このページの数値はいずれも実測値ではありません。", "footer.tagline": "公開データによる供給集中度の測定。手作業ではなくスケジュール実行で更新される個人プロジェクトです。", "footer.sections": "セクション", "footer.sources": "データソース", "footer.source": "ソース", "footer.repo": "GitHubのリポジトリ", "footer.build_history": "ビルド履歴", "footer.disclaimer": "USGS・国連のいずれも、本サイトおよびその算出結果を承認・保証するものではありません。", "footer.awaiting": "初回のデータビルド待ち", "band.unconcentrated": "非集中", "band.moderate": "中程度の集中", "band.high": "高度に集中", "panel.mine_title": "鉱山側の集中度", "panel.export_title": "輸出側の集中度", "table.toggle": "表で見る", "table.year": "年", "table.top_three": "上位3カ国", "table.reporting": "報告国数", "table.country": "国", "table.share": "シェア", "table.cumulative": "累積", "stat.single_year": "単年データのみ", "stat.largest_supplier": "最大供給国", "stat.top_three": "上位3カ国合計", "stat.effective_suppliers": "実効供給者数", "figure.awaiting_build": "初回ビルド待ち", "figure.no_source_data": "ソースデータなし", "figure.page_ready_pending": "ページ準備済み・データ待ち", "figure.concentration": "集中度", "chart.no_data_yet": "データはまだありません", "chart.index_over_time": "指数の推移", "notfound.title": "ページが見つかりません", "notfound.body": "このページは存在しないか、パイプラインの直近のビルドで名称が変更されました。", "notfound.link": "重要鉱物セクションへ →", "section.no_data_title": "データはまだ生成されていません。", "section.no_data_body": "以下のページとパイプラインはすでに用意されていますが、USGSとUN Comtradeからの初回取得はまだ実行されていません。実行されるまで、すべての数値は未取得として表示されます。", "section.no_data_link": "ビルド履歴を確認 →", "section.eight_minerals_title": "8つの鉱物", "section.eight_minerals_sub": "掲載順に表示。数値は各ソースが公表している最新年のもの。", "section.two_indices_title": "2つの指標、それぞれ別の問い", "section.two_indices_sub": "鉱物ごとのページに2つの数値が並ぶ理由。", "caveats.heading": "この数値が語らないこと", "caveats.shared_note": "いずれの指標も対象は国であって企業ではない。同じ親会社が異なる国に持つ2つの鉱山は、ここでは2つの独立した供給者として扱われる。", "notes.heading": "この鉱物についてのビルドノート。", "chart.read_method": "算出方法の全文を読む →", "hub.sections_title": "セクション", "hub.sections_sub": "素材群ごとに1セクション。それぞれ独立して完結する。", "hub.further_sections": "その他のセクション", "hub.not_yet_built": "未着手", "hub.further_blurb": "パイプラインとレイアウトは共通化されているため、2つ目の素材群を追加するのに新しいサイトは要らず、カタログファイルと取得アダプタを1つ足すだけで済む。", "hub.planned": "計画中", "hub.what_it_means_title": "この数値が意味すること", "hub.live": "稼働中", "panel.stage_title": "段階別の集中度", "panel.stage_sub": "同じリチウムでも、鉱石・炭酸塩・水酸化物のどこを測るかで集中度は変わります。段階を選ぶと、その段階だけで算出した指数に切り替わります。既定は上の輸出側指標と同じヘッドライン(283691と282520の合算、USドル建て)です。", "stage.tablist": "測定する段階", "stage.sidelist": "申告側", "stage.headline_usd": "ヘッドライン(合算・USD)", "stage.ore": "鉱石・精鉱", "stage.carbonate": "炭酸塩", "stage.hydroxide": "水酸化物", "stage.mine_li_t": "鉱山生産(Li換算)", "side.world_export": "全世界向け輸出(自己申告)", "side.china_import": "中国の輸入申告(ミラー)", "stage.coverage": "報告完全性", "stage.no_coverage": "報告完全性は算出対象外", "stage.provisional_legend": "暫定値(報告完全性が不足)", "stage.confirmed_legend": "確定値", "source.reported": "自己申告", "source.partner_sum": "復元(相手国別合計)", "source.mirror": "ミラー採用", "source.estimated": "推計", "verification.unverified": "未検証", "verification.externally_confirmed": "外部照合済", "verification.externally_conflicting": "外部と食い違い", "evidence.close": "閉じる", "evidence.source": "照合したソース", "table.source": "採用根拠", "table.verification": "検証"}</script>
+<script type="application/json" id="i18n-data">{"nav.critical_minerals": "重要鉱物", "nav.methodology": "算出方法", "nav.about": "このサイトについて", "skip.content": "本文へスキップ", "banner.title": "サンプルデータ。", "banner.body": "このビルドは合成データ(フィクスチャ)から生成されたものであり、USGSやUN Comtradeの実データではありません。このページの数値はいずれも実測値ではありません。", "footer.tagline": "公開データによる供給集中度の測定。手作業ではなくスケジュール実行で更新される個人プロジェクトです。", "footer.sections": "セクション", "footer.sources": "データソース", "footer.source": "ソース", "footer.repo": "GitHubのリポジトリ", "footer.build_history": "ビルド履歴", "footer.disclaimer": "USGS・国連のいずれも、本サイトおよびその算出結果を承認・保証するものではありません。", "footer.awaiting": "初回のデータビルド待ち", "band.unconcentrated": "非集中", "band.moderate": "中程度の集中", "band.high": "高度に集中", "panel.mine_title": "鉱山側の集中度", "panel.export_title": "輸出側の集中度", "table.toggle": "表で見る", "table.year": "年", "table.top_three": "上位3カ国", "table.reporting": "報告国数", "table.country": "国", "table.share": "シェア", "table.cumulative": "累積", "stat.single_year": "単年データのみ", "stat.largest_supplier": "最大供給国", "stat.top_three": "上位3カ国合計", "stat.effective_suppliers": "実効供給者数", "figure.awaiting_build": "初回ビルド待ち", "figure.no_source_data": "ソースデータなし", "figure.page_ready_pending": "ページ準備済み・データ待ち", "figure.concentration": "集中度", "chart.no_data_yet": "データはまだありません", "chart.index_over_time": "指数の推移", "notfound.title": "ページが見つかりません", "notfound.body": "このページは存在しないか、パイプラインの直近のビルドで名称が変更されました。", "notfound.link": "重要鉱物セクションへ →", "section.no_data_title": "データはまだ生成されていません。", "section.no_data_body": "以下のページとパイプラインはすでに用意されていますが、USGSとUN Comtradeからの初回取得はまだ実行されていません。実行されるまで、すべての数値は未取得として表示されます。", "section.no_data_link": "ビルド履歴を確認 →", "section.eight_minerals_title": "8つの鉱物", "section.eight_minerals_sub": "掲載順に表示。数値は各ソースが公表している最新年のもの。", "section.two_indices_title": "2つの指標、それぞれ別の問い", "section.two_indices_sub": "鉱物ごとのページに2つの数値が並ぶ理由。", "caveats.heading": "この数値が語らないこと", "caveats.shared_note": "いずれの指標も対象は国であって企業ではない。同じ親会社が異なる国に持つ2つの鉱山は、ここでは2つの独立した供給者として扱われる。", "notes.heading": "この鉱物についてのビルドノート。", "chart.read_method": "算出方法の全文を読む →", "hub.sections_title": "セクション", "hub.sections_sub": "素材群ごとに1セクション。それぞれ独立して完結する。", "hub.further_sections": "その他のセクション", "hub.not_yet_built": "未着手", "hub.further_blurb": "パイプラインとレイアウトは共通化されているため、2つ目の素材群を追加するのに新しいサイトは要らず、カタログファイルと取得アダプタを1つ足すだけで済む。", "hub.planned": "計画中", "hub.what_it_means_title": "この数値が意味すること", "hub.live": "稼働中", "panel.stage_title": "段階別の集中度", "panel.stage_sub": "同じリチウムでも、鉱石・炭酸塩・水酸化物のどこを測るかで集中度は変わります。段階を選ぶと、その段階だけで算出した指数に切り替わります。既定は上の輸出側指標と同じヘッドライン(283691と282520の合算、USドル建て)です。", "stage.tablist": "測定する段階", "stage.sidelist": "申告側", "stage.headline_usd": "ヘッドライン(合算・USD)", "stage.ore": "鉱石・精鉱", "stage.carbonate": "炭酸塩", "stage.hydroxide": "水酸化物", "stage.mine_li_t": "鉱山生産(Li換算)", "side.world_export": "全世界向け輸出(自己申告)", "side.china_import": "中国の輸入申告(ミラー)", "stage.coverage": "報告完全性", "stage.no_coverage": "報告完全性は算出対象外", "stage.provisional_legend": "暫定値(報告完全性が不足)", "stage.confirmed_legend": "確定値", "source.reported": "自己申告", "source.partner_sum": "復元(相手国別合計)", "source.mirror": "ミラー採用", "source.estimated": "推計", "verification.unverified": "未検証", "verification.externally_confirmed": "外部照合済", "verification.externally_conflicting": "外部と食い違い", "evidence.close": "閉じる", "evidence.source": "照合したソース", "table.source": "採用根拠", "table.verification": "検証", "screener.search": "検索", "screener.placeholder": "鉱物名または元素記号", "screener.category": "カテゴリ", "screener.all_categories": "すべてのカテゴリ", "screener.caption": "鉱物ごとの供給集中度。HHIは0〜10,000の尺度で、区分は鉱山側の値にもとづく。", "screener.pending": "準備中", "screener.under_review": "確認中", "screener.no_match": "該当する鉱物はありません。", "screener.showing": "{total}件中{shown}件を表示", "col.mineral": "鉱物", "col.mine_hhi": "鉱山HHI", "col.top_supplier": "最大供給国", "col.export_hhi": "輸出HHI", "col.band": "区分", "col.year": "年", "legend.title": "区分の読み方", "legend.caption": "区分の読み方", "legend.reading": "読み方", "stage.provisional_short": "暫定", "quote.mine_hhi": "鉱山HHI", "quote.export_hhi": "輸出HHI", "quote.top_producer": "最大生産国", "quote.updated": "更新", "quote.provisional_title": "暫定値を含みます。", "quote.review_title": "貿易指標は確認中です。", "quote.coverage_title": "カバレッジ"}</script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/charts.js"></script>
+<script src="assets/js/screener.js"></script>
 </body>
 </html>
