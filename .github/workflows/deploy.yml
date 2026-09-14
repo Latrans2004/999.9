@@ -38,6 +38,10 @@ jobs:
         run: pip install -r pipeline/requirements.txt
       - name: Unit tests
         run: python -m pytest pipeline/tests -q
+      - name: Verify accepted graphite publication against Raw
+        run: |
+          python -m pipeline.publish_graphite
+          git diff --exit-code -- critical-minerals/data data/processed/natural-graphite
       - name: Re-render pages and fail if they are stale
         run: |
           python -m pipeline.render

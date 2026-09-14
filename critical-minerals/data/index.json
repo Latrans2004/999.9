@@ -88,6 +88,42 @@
           2024
         ]
       }
+    },
+    {
+      "name": "Natural graphite",
+      "production": {
+        "band": "high",
+        "cr3": 91.12,
+        "hhi": 6764.9,
+        "leader": "China",
+        "leader_share": 81.8992,
+        "sparkline": [
+          5031.1,
+          4022.0,
+          4263.0,
+          6301.3,
+          5436.8,
+          5393.9,
+          6314.3,
+          6764.9
+        ],
+        "trend": null,
+        "year": 2024,
+        "years": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024
+        ]
+      },
+      "role": "Anode",
+      "slug": "natural-graphite",
+      "symbol": "C",
+      "trade": null
     }
   ],
   "section": {

@@ -24,6 +24,14 @@ Run **Update lithium data** in Actions. Complete bilateral retrieval requires
 `python -m pipeline.build --only lithium` also uses this strict path.
 The legacy **Refresh data** workflow is now manual-only for other minerals.
 
+### Natural graphite publication
+
+Run `python -m pipeline.publish_graphite` (or `python -m pipeline.build --only natural-graphite`)
+to replay the reviewed 2017–2024 mine series from committed Raw. No key is needed.
+Trade concentration stays under review. Changed production inputs require a new review;
+failed updates retain accepted data. See [Task D publication](docs/natural-graphite-publication-2026-09-14.md)
+and [Task E rollout](docs/task-e-mineral-rollout.md).
+
 ### 1. Push it
 
 ```bash

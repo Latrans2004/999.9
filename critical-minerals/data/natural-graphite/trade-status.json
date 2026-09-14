@@ -1,0 +1,11 @@
+{
+  "decisions": 1384,
+  "global_coverage": null,
+  "note": "Trade concentration is under review: mirror discrepancies and weight coverage remain unresolved. No trade HHI is published.",
+  "note_ja": "貿易集中度は確認中です。ミラーデータとの差異と重量カバレッジが未解決のため、貿易HHIは公開していません。",
+  "publication_status": "under_review",
+  "publishable": false,
+  "queries_complete": true,
+  "rows": 23458,
+  "unresolved": 1356
+}

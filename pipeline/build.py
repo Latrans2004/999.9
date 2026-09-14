@@ -190,6 +190,10 @@ def run(only: list[str] | None = None, *, fixtures: bool = False) -> dict:
 
     # Configured minerals use the strict transaction, even through the old entry point.
     if not fixtures:
+        if any(m['slug'] == 'natural-graphite' for m in minerals):
+            from .publish_graphite import run as graphite_run
+            graphite_run(REPO_ROOT)
+        minerals = [m for m in minerals if m['slug'] != 'natural-graphite']
         strict_config = json.loads((REPO_ROOT / 'pipeline/minerals.json').read_text(encoding='utf-8'))
         strict_slugs = set(strict_config['minerals'])
         for mineral in minerals:
