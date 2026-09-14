@@ -1,0 +1,8 @@
+{
+  "path": "data/raw/usgs-cobalt/5075a298fcf3bbfdee772874d8cd574209513a0fb3b9cf5e099ec3203743a8fe.pdf",
+  "query": {},
+  "retrieved_at": "2026-09-14T17:28:19+00:00",
+  "sha256": "2d736a1d4f76a38b067c0b530d2db9121cdfe1d2b9c5b7d5c2343b7e6abc0d92",
+  "source": "usgs-cobalt",
+  "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-cobalt.pdf"
+}

@@ -1,0 +1,2 @@
+# Preserve exact response bytes, including JSON and error bodies.
+** -text
