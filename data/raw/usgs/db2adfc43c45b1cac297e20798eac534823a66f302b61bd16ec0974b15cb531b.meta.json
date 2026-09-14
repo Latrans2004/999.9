@@ -1,8 +1,8 @@
 {
-  "path": "data/raw/usgs/27c2022353c098e5f9c12b1f6845327305bf3caee47ccac2e2311da81a291071.pdf",
+  "path": "data/raw/usgs/db2adfc43c45b1cac297e20798eac534823a66f302b61bd16ec0974b15cb531b.pdf",
   "query": {
     "chapter_urls": [
-      "https://minerals.usgs.gov/minerals/pubs/commodity/lithium/mcs-2019-lithi.pdf",
+      "https://www.usgs.gov/media/files/lithium-mcs-2019-data-sheet",
       "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-lithium.pdf",
       "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021-lithium.pdf",
       "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022-lithium.pdf",
@@ -20,9 +20,9 @@
       2024,
       2025
     ],
-    "url_verification": "pubs.usgs.gov and minerals.usgs.gov are unreachable from the environment that archived this file (egress policy), so the URLs above are recorded from the published USGS naming and have not been re-fetched. The archived bytes, not the URL, are what the extraction was run against.",
+    "url_verification": "pubs.usgs.gov is unreachable from the environment that archived this file (egress policy), so the 2020-2025 URLs are recorded from the published USGS naming and were not re-fetched here. The 2019 edition predates that naming; its official page was confirmed to exist by the reviewer on 2026-09-14 (lithium-mcs-2019-data-sheet, mcs-2019-lithi.pdf, 167.03 KB). The archived bytes, not the URL, are what the extraction was run against.",
     "volume_urls": [
-      "https://minerals.usgs.gov/minerals/pubs/mcs/2019/mcs2019.pdf",
+      "https://www.usgs.gov/media/files/lithium-mcs-2019-data-sheet",
       "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020.pdf",
       "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021.pdf",
       "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022.pdf",
@@ -31,7 +31,7 @@
       "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025.pdf"
     ]
   },
-  "retrieved_at": "2026-09-14T19:28:45+00:00",
+  "retrieved_at": "2026-09-14T19:47:22+00:00",
   "sha256": "a61206ba769ecccfe08e0774221069bc4533aab54434c1c091257b4dd1808ec9",
   "source": "usgs",
   "url": "reviewed:lithium-mcs-2019-2025-chapters.pdf"
