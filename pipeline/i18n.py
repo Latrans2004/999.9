@@ -112,6 +112,37 @@ STRINGS_JA: dict[str, str] = {
     "hub.planned": "計画中",
     "hub.what_it_means_title": "この数値が意味すること",
     "hub.live": "稼働中",
+    "panel.stage_title": "段階別の集中度",
+    "panel.stage_sub": (
+        "同じリチウムでも、鉱石・炭酸塩・水酸化物のどこを測るかで集中度は"
+        "変わります。段階を選ぶと、その段階だけで算出した指数に切り替わります。"
+        "既定は上の輸出側指標と同じヘッドライン(283691と282520の合算、"
+        "USドル建て)です。"
+    ),
+    "stage.tablist": "測定する段階",
+    "stage.sidelist": "申告側",
+    "stage.headline_usd": "ヘッドライン(合算・USD)",
+    "stage.ore": "鉱石・精鉱",
+    "stage.carbonate": "炭酸塩",
+    "stage.hydroxide": "水酸化物",
+    "stage.mine_li_t": "鉱山生産(Li換算)",
+    "side.world_export": "全世界向け輸出(自己申告)",
+    "side.china_import": "中国の輸入申告(ミラー)",
+    "stage.coverage": "報告完全性",
+    "stage.no_coverage": "報告完全性は算出対象外",
+    "stage.provisional_legend": "暫定値(報告完全性が不足)",
+    "stage.confirmed_legend": "確定値",
+    "source.reported": "自己申告",
+    "source.partner_sum": "復元(相手国別合計)",
+    "source.mirror": "ミラー採用",
+    "source.estimated": "推計",
+    "verification.unverified": "未検証",
+    "verification.externally_confirmed": "外部照合済",
+    "verification.externally_conflicting": "外部と食い違い",
+    "evidence.close": "閉じる",
+    "evidence.source": "照合したソース",
+    "table.source": "採用根拠",
+    "table.verification": "検証",
 }
 
 
@@ -154,3 +185,60 @@ def rebuilt_notice_ja(generated_at_ja: str | None) -> str:
 
 def no_data_notice_ja(source: str) -> str:
     return f"この指標は、{source}からの初回取得が完了すると表示されます。"
+
+
+# --------------------------------------------------------------- stage tabs
+#
+# The stage tabs are generated from pipeline/minerals.json, so their wording
+# cannot live in the template the way the rest of the English chrome does:
+# the template never knows which stages exist. Both languages are therefore
+# kept here, keyed exactly as the ``data-i18n`` attribute the template emits,
+# and the English side is looked up rather than written out.
+#
+# Keys are policy names ("ore", "carbonate", "hydroxide") rather than HS
+# codes, so a second mineral measured at the same stages reuses the wording
+# and a new stage needs one entry here instead of a template change.
+LABELS_EN: dict[str, str] = {
+    "stage.headline_usd": "Headline (combined, USD)",
+    "stage.ore": "Ore and concentrate",
+    "stage.carbonate": "Carbonate",
+    "stage.hydroxide": "Hydroxide",
+    "stage.mine_li_t": "Mine production (Li content)",
+    "side.world_export": "Exports to the world (self-reported)",
+    "side.china_import": "China's import declarations (mirror)",
+    "source.reported": "Self-reported",
+    "source.partner_sum": "Reconstructed (partner sum)",
+    "source.mirror": "Mirror adopted",
+    "source.estimated": "Estimated",
+    "verification.unverified": "Unverified",
+    "verification.externally_confirmed": "Externally confirmed",
+    "verification.externally_conflicting": "Externally conflicting",
+}
+
+
+def label_en(key: str) -> str:
+    """English wording for a generated label, falling back to the key itself.
+
+    An unknown stage policy renders as its own name rather than as an empty
+    tab: a pipeline that grows a stage this module has not learned yet stays
+    legible instead of shipping a blank control.
+    """
+    if key in LABELS_EN:
+        return LABELS_EN[key]
+    return key.split(".", 1)[-1].replace("_", " ")
+
+
+def label_ja(key: str) -> str:
+    """Japanese wording for a generated label; empty means 'keep the English'."""
+    return STRINGS_JA.get(key, "")
+
+
+def stage_coverage_ja(coverage_pct: float) -> str:
+    return f"報告完全性 {coverage_pct:.1f}%(その段階の全期間中央値に対する報告国数)"
+
+
+def provisional_legend_ja(years: list[int], coverage_pct: float | None) -> str:
+    span = "・".join(f"{year}年" for year in years)
+    if coverage_pct is None:
+        return f"{span}は暫定値(報告完全性が不足)"
+    return f"{span}は暫定値(報告完全性が不足、{coverage_pct:.1f}%)"
