@@ -62,7 +62,7 @@ def build_mineral(mineral: dict, conventions: dict, *, fixtures: bool = False) -
             target_years(PRODUCTION_YEARS_BACK),
         )
         trade_by_year, iso, trade_notes = comtrade.exports_by_country(
-            mineral["hs_codes"], target_years(TRADE_YEARS_BACK)
+            mineral["headline_hs_codes"], target_years(TRADE_YEARS_BACK)
         )
 
     production_series = hhi.series(production_by_year, universe_totals=world_totals)
@@ -119,7 +119,7 @@ def build_mineral(mineral: dict, conventions: dict, *, fixtures: bool = False) -
         "summary_ja": mineral.get("summary_ja"),
         "caveats": mineral.get("caveats", []),
         "caveats_ja": mineral.get("caveats_ja", []),
-        "hs_codes": mineral["hs_codes"],
+        "headline_hs_codes": mineral["headline_hs_codes"],
         "hs_label": mineral.get("hs_label"),
         "hs_label_ja": mineral.get("hs_label_ja"),
         "usgs_commodity": mineral["usgs_commodity"],

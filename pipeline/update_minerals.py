@@ -198,7 +198,7 @@ def run(root=ROOT, mineral='lithium', bundle=None, *, render_command=None):
     settings = configuration['minerals'][mineral]
     catalog = read(root / 'critical-minerals/data/catalog.json')
     entry = next(e for e in catalog['minerals'] if e['slug'] == mineral)
-    if entry['hs_codes'] != settings['headline_hs_codes']:
+    if entry['headline_hs_codes'] != settings['headline_hs_codes']:
         raise ValueError('Headline HS codes differ from the existing site catalog')
     if settings['end_year'] < settings['start_year']:
         raise ValueError('Invalid year range')

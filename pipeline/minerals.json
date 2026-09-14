@@ -6,6 +6,7 @@
       "end_year": 2024,
       "hs_codes": ["253090", "283691", "282520"],
       "headline_hs_codes": ["283691", "282520"],
+      "headline_note": "253090 (ore and concentrate) is queried and published as its own stage but is deliberately kept out of the headline. It is a mixed-merchandise population that only becomes comparable with the refined stages once the page offers stage selection, and adding it now would move published HHI/CR3 figures. Revisit when the headline is relativised by stage; until then critical-minerals/data/catalog.json headline_hs_codes must match this list exactly, and pipeline/tests/test_strict_pipeline.py enforces that.",
       "max_records": 100000,
       "usgs": {
         "publication_url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-lithium.pdf",

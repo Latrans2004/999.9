@@ -122,6 +122,26 @@ def test_report_coverage_measures_filings_not_accepted_suppliers():
     assert process_trade.report_coverage(rows+[row('JPN',10,'M','CHN',hs='283691',year=2024)])[('283691',2024)]==pytest.approx(33.3)
 
 
+def test_headline_hs_codes_agree_across_catalog_and_pipeline():
+    # The site catalog and the strict pipeline each carry the headline HS codes, and a
+    # silent divergence would publish a headline the pipeline did not compute. They are
+    # named identically so the mismatch is visible, and checked here so it fails in CI
+    # rather than at the next publication attempt.
+    catalog=json.loads((ROOT/'critical-minerals/data/catalog.json').read_text(encoding='utf-8'))
+    pipeline=json.loads((ROOT/'pipeline/minerals.json').read_text(encoding='utf-8'))['minerals']
+    entries={e['slug']:e for e in catalog['minerals']}
+    assert all('headline_hs_codes' in e for e in entries.values())
+    for slug,settings in pipeline.items():
+        assert entries[slug]['headline_hs_codes']==settings['headline_hs_codes'], slug
+        # A headline code that is never queried would silently produce an empty headline.
+        assert set(settings['headline_hs_codes'])<=set(settings['hs_codes']), slug
+    # 253090 is queried and published as its own stage, and its absence from the headline
+    # is a recorded decision, not drift. See headline_note in pipeline/minerals.json.
+    assert '253090' in pipeline['lithium']['hs_codes']
+    assert '253090' not in pipeline['lithium']['headline_hs_codes']
+    assert '253090' in pipeline['lithium']['headline_note']
+
+
 def test_usgs_strict_schema_withheld_and_duplicate():
     body=(ROOT/'data/manual/lithium-production.csv').read_bytes()
     records=strict_usgs.parse_csv(body)
