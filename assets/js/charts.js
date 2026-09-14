@@ -1,4 +1,4 @@
-/* 999.9 — chart primitives.
+/* Orelysis — chart primitives.
  *
  * No dependencies, no CDN. Three forms only, because the site asks three
  * questions: how has concentration moved (line), who holds the share today
@@ -65,6 +65,29 @@
     tip.style.top = Math.max(4, y - tip.offsetHeight - 10) + "px";
   }
 
+  /* Provisional years are drawn, not dropped: the value is the best one the
+     source has published, and hiding it would leave a gap a reader reads as
+     "no trade". A dashed stroke, a hollow marker and a hatched column say the
+     same thing the legend says in words, so the distinction survives both a
+     greyscale print and a reader who never reaches the legend. */
+  var patternSeq = 0;
+
+  function hatchPattern(svg) {
+    var id = "orelysis-hatch-" + (++patternSeq);
+    var defs = el("defs", {});
+    var pattern = el("pattern", {
+      id: id, width: 6, height: 6, patternUnits: "userSpaceOnUse",
+      patternTransform: "rotate(45)"
+    });
+    pattern.appendChild(el("rect", { width: 6, height: 6, fill: "none" }));
+    pattern.appendChild(el("line", {
+      x1: 0, y1: 0, x2: 0, y2: 6, stroke: INK.faint, "stroke-width": 1.4
+    }));
+    defs.appendChild(pattern);
+    svg.appendChild(defs);
+    return id;
+  }
+
   /* ------------------------------------------------------------------ line */
 
   /* Tooltip wording. The caller may pass options.t with its own phrase
@@ -74,7 +97,9 @@
     t = t || {};
     return {
       topThree: t.topThree || function (pct) { return "top three " + fmt(pct, 1) + "%"; },
-      reporting: t.reporting || function (n) { return n + " reporting"; }
+      reporting: t.reporting || function (n) { return n + " reporting"; },
+      coverage: t.coverage || function (pct) { return "completeness " + fmt(pct, 1) + "%"; },
+      provisional: t.provisional || function () { return "(provisional)"; }
     };
   }
 
@@ -139,23 +164,60 @@
       }
     });
 
+    /* the provisional columns, under the data so the line stays legible */
+    var provisional = {};
+    (options.provisional || []).forEach(function (year) { provisional[year] = true; });
+    var provisionalYears = points.filter(function (p) { return provisional[p.year]; });
+    if (provisionalYears.length) {
+      var fillId = hatchPattern(svg);
+      var halfStep = points.length > 1
+        ? Math.abs(sx(points[1].year) - sx(points[0].year)) / 2
+        : plotW / 2;
+      provisionalYears.forEach(function (p) {
+        var left = Math.max(pad.left, sx(p.year) - halfStep);
+        var right = Math.min(pad.left + plotW, sx(p.year) + halfStep);
+        svg.appendChild(el("rect", {
+          x: left, y: pad.top, width: Math.max(0, right - left), height: plotH,
+          fill: "url(#" + fillId + ")", opacity: 0.5
+        }));
+      });
+    }
+
     /* area wash then the 2px line */
     var path = points.map(function (p, i) { return (i ? "L" : "M") + sx(p.year) + " " + sy(p.hhi); }).join(" ");
     svg.appendChild(el("path", {
       d: path + " L" + sx(points[points.length - 1].year) + " " + sy(0) + " L" + sx(points[0].year) + " " + sy(0) + " Z",
       fill: INK.data, opacity: 0.10, stroke: "none"
     }));
-    svg.appendChild(el("path", {
-      d: path, fill: "none", stroke: INK.data, "stroke-width": 2,
-      "stroke-linejoin": "round", "stroke-linecap": "round"
-    }));
+    /* One segment at a time, because a segment that touches a provisional year
+       is itself provisional: a solid line into a dashed point would claim the
+       move between them is settled. */
+    points.forEach(function (p, i) {
+      if (i === 0) return;
+      var from = points[i - 1];
+      var soft = provisional[p.year] || provisional[from.year];
+      svg.appendChild(el("path", {
+        d: "M" + sx(from.year) + " " + sy(from.hhi) + " L" + sx(p.year) + " " + sy(p.hhi),
+        fill: "none", stroke: INK.data, "stroke-width": 2,
+        "stroke-dasharray": soft ? "5 4" : null,
+        "stroke-linejoin": "round", "stroke-linecap": "round"
+      }));
+    });
 
     /* end marker with a surface ring, and one direct label */
     var last = points[points.length - 1];
     svg.appendChild(el("circle", {
       cx: sx(last.year), cy: sy(last.hhi), r: 4.5,
-      fill: INK.data, stroke: INK.surface, "stroke-width": 2
+      fill: provisional[last.year] ? INK.surface : INK.data,
+      stroke: provisional[last.year] ? INK.data : INK.surface, "stroke-width": 2
     }));
+    provisionalYears.forEach(function (p) {
+      if (p === last) return;
+      svg.appendChild(el("circle", {
+        cx: sx(p.year), cy: sy(p.hhi), r: 3.5,
+        fill: INK.surface, stroke: INK.data, "stroke-width": 1.5
+      }));
+    });
     if (width >= 480) {
       svg.appendChild(text(el("text", {
         x: sx(last.year) + 10, y: sy(last.hhi) + 4,
@@ -215,9 +277,10 @@
 
       var label = document.createElement("span");
       label.className = "tooltip__label";
-      var parts = [String(point.year)];
+      var parts = [String(point.year) + (provisional[point.year] ? " " + phrases.provisional() : "")];
       if (point.cr3 != null) parts.push(phrases.topThree(point.cr3));
       if (point.reporters != null) parts.push(phrases.reporting(point.reporters));
+      if (point.coverage_pct != null) parts.push(phrases.coverage(point.coverage_pct));
       label.textContent = parts.join(" · ");
       tip.appendChild(label);
 
@@ -288,6 +351,30 @@
       item.appendChild(name);
       item.appendChild(track);
       item.appendChild(value);
+
+      /* Provenance badges. A badge that has an evidence note is a button
+         carrying only the note's id; the page owns the disclosure, so the
+         same markup serves these rows and the table view beneath them. */
+      if (row.badges && row.badges.length) {
+        var marks = document.createElement("span");
+        marks.className = "shares__badges";
+        row.badges.forEach(function (mark) {
+          var node = document.createElement(mark.evidence ? "button" : "span");
+          node.className = "badge badge--" + mark.key.replace(/\./g, "-") +
+            (mark.evidence ? " badge--linked" : "");
+          node.textContent = mark.label;
+          if (mark.title) node.title = mark.title;
+          if (mark.evidence) {
+            node.type = "button";
+            node.setAttribute("data-evidence", mark.evidence);
+            node.setAttribute("aria-controls", mark.evidence);
+            node.setAttribute("aria-expanded", "false");
+          }
+          marks.appendChild(node);
+        });
+        item.appendChild(marks);
+      }
+
       list.appendChild(item);
 
       var detail = row.detail;

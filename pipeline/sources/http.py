@@ -19,13 +19,13 @@ import requests
 log = logging.getLogger(__name__)
 
 USER_AGENT = os.environ.get(
-    "NINE_UA",
-    "999.9-critical-minerals/1.0 (open-data hobby project; "
+    "ORELYSIS_UA",
+    "orelysis-critical-minerals/1.0 (open-data hobby project; "
     "https://github.com/{owner}/{repo})",
 )
 
 CACHE_DIR = Path(
-    os.environ.get("NINE_CACHE_DIR", Path(__file__).resolve().parents[2] / ".cache")
+    os.environ.get("ORELYSIS_CACHE_DIR", Path(__file__).resolve().parents[2] / ".cache")
 )
 CACHE_TTL_SECONDS = int(os.environ.get("NINE_CACHE_TTL", 60 * 60 * 24))
 

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "about": "External-evidence ledger. Why a value was chosen (selected_source) and whether that choice was checked against something outside Comtrade are two different questions, and the second cannot be derived from the first: two rows can share a selected_source while only one of them has been corroborated. Each entry records one check of one (mineral, hs_code, country, year range) against a named source outside the trade statistics, and both possible results of that check - the source settles the direction, or the sources disagree and the gap is itself the finding. Keyed on mineral so a second mineral's reviews can be merged in without a schema change.",
+  "source_url_policy": "source_url is deliberately empty on every entry below. The methodology note these entries come from recorded source names but not URLs, and a ledger whose purpose is to make verification honest must not carry a plausible-looking link nobody checked. The field is optional by design; it is filled in by hand when the real link is confirmed.",
+  "outcomes": {
+    "externally_confirmed": "An outside source settles which side of the self-report/mirror disagreement to believe. supports names that side.",
+    "externally_conflicting": "An outside source was consulted and does not resolve the disagreement - typically because it contradicts both declarations. supports is then 'neither'. The value is not filled in; the conflict is published as the finding."
+  },
+  "entries": [
+    {
+      "mineral": "lithium",
+      "hs_code": "253090",
+      "country": "ZWE",
+      "year_from": 2024,
+      "year_to": 2024,
+      "outcome": "externally_conflicting",
+      "supports": "neither",
+      "source_name": "Minerals Marketing Corporation of Zimbabwe (MMCZ)",
+      "source_url": null,
+      "note_en": "Three sources, no two of which agree. Zimbabwe declared 865,611 t of exports to the world in 2024, of which 688,477 t to China; China declared 1,259,180 t of imports from Zimbabwe; MMCZ put Zimbabwe's worldwide exports at 1,014,000 t. China's import declaration exceeds the figure Zimbabwe's own state marketing body publishes for exports to the entire world - an inversion no reporting lag explains. Ore smuggling is a recurring, structural problem in Zimbabwe: it has been the subject of a US House China Select Committee inquiry and of arrests over consignments as small as 720 t, and the government has gone as far as banning raw ore and concentrate exports. Large volumes are moving outside official statistics and no available source captures the real figure, so none of them is used to fill the gap.",
+      "note_ja": "三者が食い違い、どの二つも一致しない。ジンバブエは2024年に全世界向け865,611 t(うち対中国688,477 t)を申告し、中国はジンバブエからの輸入を1,259,180 tと申告、MMCZはジンバブエの全世界向け輸出を1,014,000 tとしている。中国側の輸入申告が、ジンバブエ政府自身の販売公社が全世界向け輸出として公表する数値を上回るという逆転が起きており、報告遅れでは説明がつかない。ジンバブエでは鉱石の密輸が構造的な問題として繰り返し報じられ(米下院China Select Committeeの調査、720 tの積荷での逮捕事例など)、政府は生鉱石・精鉱の輸出禁止措置まで取っている。公式統計の外側で大量に動いていることの表れであり、どのソースも実態を捉えきれていないため、いずれも補完には使わない。"
+    },
+    {
+      "mineral": "lithium",
+      "hs_code": "253090",
+      "country": "CAN",
+      "year_from": 2024,
+      "year_to": 2024,
+      "outcome": "externally_confirmed",
+      "supports": "mirror",
+      "source_name": "Natural Resources Canada - Lithium facts",
+      "source_url": null,
+      "note_en": "Natural Resources Canada puts 2024 Canadian lithium production at 5,983 t of contained lithium. Converted at the 2.788% lithium content of a 6% Li2O spodumene concentrate that is about 214,600 t of concentrate, and China declared 209,521 t of imports from Canada - a 97.6% match. Canada's own declaration of exports to China for the same year is 14 t. The mirror is right and the self-report is broken. NRCan states that spodumene ore and concentrate data are unavailable, so it publishes no export figure directly; checking the production volume for physical plausibility is what made the comparison possible. Note that the ore stage never adopts a mirror value, so this entry documents a known limitation of the published ore series rather than endorsing the value it carries.",
+      "note_ja": "カナダ天然資源省(NRCan)の2024年リチウム生産量は5,983 t(リチウム含有量)。6%Li2Oのスポジュメン精鉱のリチウム含有率2.788%で換算すると精鉱約214,600 tとなり、中国の対カナダ輸入申告209,521 tと97.6%一致する。同年のカナダ自身による対中国輸出申告はわずか14 t。ミラーが正しく、自己申告が壊れている。NRCanは「スポジュメン鉱石・精鉱のデータは利用不可」と明記しており輸出量そのものは公表していないため、生産量から物量の妥当性を確かめるという手順が有効だった。なお鉱石段階はミラー値を採用しない方針であり、本エントリは公開中の鉱石系列が持つ既知の限界を記録するものであって、その値を裏付けるものではない。"
+    },
+    {
+      "mineral": "lithium",
+      "hs_code": "253090",
+      "country": "NGA",
+      "year_from": 2024,
+      "year_to": 2024,
+      "outcome": "externally_confirmed",
+      "supports": "mirror",
+      "source_name": "Benchmark Mineral Intelligence",
+      "source_url": null,
+      "note_en": "Benchmark Mineral Intelligence puts Nigeria's annual exports at roughly 85 kt LCE, about 17 kt below its own 103 kt LCE forecast. Nigeria's Comtrade self-report for 2024 is 6,529 t - an order of magnitude away - while China declares 490,223 t of imports from Nigeria, which is the figure consistent with the independent estimate. Illegal mining and smuggling are an acknowledged problem in Nigeria, including the closure of Three Crown Mines in Kebbi State, and the national export statistics do not capture what is actually leaving. Note that the ore stage never adopts a mirror value, so this entry documents a known limitation of the published ore series rather than endorsing the value it carries.",
+      "note_ja": "Benchmark Mineral Intelligenceによれば、ナイジェリアの年間輸出は約85 kt LCE規模(同社予測103 kt LCEを約17 kt下回る水準)。Comtradeのナイジェリア自己申告は2024年で6,529 tと桁が違い、中国側の対ナイジェリア輸入申告490,223 tのほうが独立推計と整合する。ナイジェリアでは違法採掘・密輸が問題化しており(Kebbi州のThree Crown Mines閉鎖など)、自国の輸出統計が実態を捉えていない。なお鉱石段階はミラー値を採用しない方針であり、本エントリは公開中の鉱石系列が持つ既知の限界を記録するものであって、その値を裏付けるものではない。"
+    },
+    {
+      "mineral": "lithium",
+      "hs_code": "283691",
+      "country": "ARG",
+      "year_from": 2024,
+      "year_to": 2024,
+      "outcome": "externally_confirmed",
+      "supports": "mirror",
+      "source_name": "CAEM (Camara Argentina de Empresarios Mineros) / Secretaria de Mineria",
+      "source_url": null,
+      "note_en": "CAEM and the mining secretariat put Argentina's 2024 worldwide exports at 67,766 t. The Comtrade mirror - the sum of what importing countries declared - is 64,840 t, or 95.7% of that independent figure, while Argentina's own declaration is 47,609 t, or 70.3%. The mirror lands close to the independent source and the self-report is clearly understated, which is what the underreporting correction on this stage assumes. The same reporting also records Argentina's share going to China rising from 43% in 2023 to 67% in 2024, consistent with the sharp increase in China's share of this stage.",
+      "note_ja": "CAEMおよび鉱業事務局によるアルゼンチンの2024年全世界向け輸出は67,766 t。Comtradeのミラー値(輸入国側の申告合計)は64,840 tで独立ソースの95.7%、一方アルゼンチン自身の申告は47,609 tで70.3%にとどまる。ミラー値が独立ソースにきわめて近く自己申告が明確に過小であり、本段階の過小申告補正が前提とするとおりの関係になっている。同じ報道はアルゼンチンの対中国比率が2023年43%から2024年67%へ急増したとも伝えており、本段階における中国シェアの急拡大とも整合する。"
+    },
+    {
+      "mineral": "lithium",
+      "hs_code": "282520",
+      "country": "JPN",
+      "year_from": 2021,
+      "year_to": 2021,
+      "outcome": "externally_confirmed",
+      "supports": "self_report",
+      "source_name": "Japan Ministry of Finance Trade Statistics (e-Stat API, exports by commodity and country, statistical code 282520000)",
+      "source_url": null,
+      "note_en": "Japan's Ministry of Finance records 2021 exports under this code of 3,510 kg to China and 6 kg to South Korea, with no entry for the United States - about 3.52 t in total. Japan's Comtrade self-report of 3.736 t agrees with it; the mirror is 305.8 t, of which 264.2 t is China's declared import from Japan, roughly eighty times the self-report. The mirror is importing countries booking entrepot trade with Japan recorded as the country of origin, so the mirror correction is left switched off for Japan and the self-report is used. The instructive part is the direction: statistical quality is no guide to which side to believe - here the well-resourced statistical agency is the one to trust, where for Canada in the same dataset it is not. The physical check was carried out for 2021 only, so this entry covers 2021 alone even though the correction's configured scope is 2018-2021; the other years are unverified.",
+      "note_ja": "財務省貿易統計によれば、2021年の本コードの輸出は中国向け3,510 kg、韓国向け6 kg、米国向けはデータなしで、合計約3.52 t。Comtradeの日本の自己申告3.736 tとほぼ一致する。一方ミラー値は305.8 t、うち中国側が申告する対日輸入は264.2 tで、自己申告の約80倍にあたる。ミラー値は輸入国側が中継貿易を「原産国=日本」と計上したものと判断し、日本についてはミラー補正を無効化して自己申告を採用している。重要なのは方向で、統計精度の高さは「どちらを信じるか」の指針にならない。ここでは統計体制の整った国の申告が正しく、同じデータセットのカナダでは逆だった。物量確認は2021年について行ったものであり、補正の設定上の適用範囲は2018〜2021年だが本エントリは2021年のみを対象とする。他年は未確認である。"
+    }
+  ]
+}

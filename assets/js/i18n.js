@@ -1,4 +1,4 @@
-/* 999.9 — language toggle (English / Japanese).
+/* Orelysis — language toggle (English / Japanese).
  *
  * Every page is rendered once, in English, and carries its Japanese text
  * alongside. Nothing is translated at runtime: this file only chooses which
@@ -21,7 +21,7 @@
 (function (global) {
   "use strict";
 
-  var STORAGE_KEY = "999.9:lang";
+  var STORAGE_KEY = "orelysis:lang";
   var LANGS = ["en", "ja"];
   var root = document.documentElement;
 

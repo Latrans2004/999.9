@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% block title %}{{ mineral.name }} — critical minerals — 999.9{% endblock %}
-{% block title_ja %}{{ mineral.name_ja or mineral.name }} — 重要鉱物 — 999.9{% endblock %}
-{% block og_title %}{{ mineral.name }} supply concentration — 999.9{% endblock %}
+{% block title %}{{ mineral.name }} — critical minerals — Orelysis{% endblock %}
+{% block title_ja %}{{ mineral.name_ja or mineral.name }} — 重要鉱物 — Orelysis{% endblock %}
+{% block og_title %}{{ mineral.name }} supply concentration — Orelysis{% endblock %}
 {% block description %}{{ mineral.summary|striptags|truncate(180) }}{% endblock %}
 
 {% macro block_panel(key, block, title_key, title, title_ja, blurb, blurb_ja) %}
@@ -124,10 +124,124 @@
 </div>
 {% endmacro %}
 
+{# ---------------------------------------------------------------- stages #}
+{# Every label below is looked up from data: the tab set comes from
+   pipeline/minerals.json via render.load_stages, and the wording from
+   pipeline/i18n.py. Nothing here names a stage, so a mineral that gains or
+   loses one needs no edit to this file. #}
+{% macro stage_badge(badge, evidence) %}
+{% if badge %}
+{% if evidence %}
+<button type="button" class="badge badge--{{ badge.key|replace('.', '-') }} badge--linked"
+        aria-expanded="false" aria-controls="{{ evidence }}" data-evidence="{{ evidence }}"
+        title="{{ badge.raw }}" data-i18n="{{ badge.key }}">{{ badge.label }}</button>
+{% else %}
+<span class="badge badge--{{ badge.key|replace('.', '-') }}" title="{{ badge.raw }}"
+      data-i18n="{{ badge.key }}">{{ badge.label }}</span>
+{% endif %}
+{% endif %}
+{% endmacro %}
+
+{% macro stage_view(panel, active) %}
+<div class="stage__view" data-stage-view="{{ panel.hs_code }}"{% if not active %} hidden{% endif %}>
+  <div class="stats stats--stage">
+    <div class="stat">
+      <span class="stat__label">HHI {{ panel.latest.year }}</span>
+      <span class="stat__value">{{ "{:,.0f}".format(panel.latest.hhi) }}</span>
+      <span class="stat__note band band--{{ panel.latest.band }}" data-i18n="band.{{ panel.latest.band }}">{{ band_labels[panel.latest.band] }}</span>
+    </div>
+    <div class="stat">
+      <span class="stat__label" data-i18n="stat.largest_supplier">Largest supplier</span>
+      <span class="stat__value" style="font-size:1.1rem">{{ panel.latest.rows[0].country }}</span>
+      <span class="stat__note" data-i18n-text="報告合計の{{ '{:.1f}'.format(panel.latest.cr1) }}%">{{ "{:.1f}".format(panel.latest.cr1) }}% of the reported total</span>
+    </div>
+    <div class="stat">
+      <span class="stat__label" data-i18n="stat.top_three">Top three</span>
+      <span class="stat__value">{{ "{:.0f}".format(panel.latest.cr3) }}%</span>
+      <span class="stat__note" data-i18n-text="上位3カ国のシェアの合計">Combined share of the three largest</span>
+    </div>
+    <div class="stat">
+      <span class="stat__label" data-i18n="stat.effective_suppliers">Effective suppliers</span>
+      <span class="stat__value">{{ "{:.1f}".format(panel.latest.effective_suppliers) }}</span>
+      <span class="stat__note" data-i18n-text="{{ panel.latest.reporters }}カ国が報告・単位は{{ panel.unit }}">{{ panel.latest.reporters }} countries reported · measured in {{ panel.unit }}</span>
+    </div>
+  </div>
+
+  <div class="split">
+    <div>
+      <h4 class="split__head" data-i18n="chart.index_over_time">Index over time</h4>
+      <div class="chart" data-stage-line="{{ panel.hs_code }}"></div>
+      <p class="legend">
+        {% if panel.provisional_years %}
+        <span class="legend__item"><i class="legend__swatch legend__swatch--confirmed"></i><span data-i18n="stage.confirmed_legend">Confirmed</span></span>
+        <span class="legend__item"><i class="legend__swatch legend__swatch--provisional"></i><span data-i18n-text="{{ provisional_legend_ja(panel.provisional_years, panel.latest.coverage_pct) }}">Provisional ({{ panel.provisional_years|join(', ') }}) — report completeness is short</span></span>
+        {% endif %}
+        {% if panel.latest.coverage_pct is not none %}
+        <span class="legend__item legend__item--note" data-i18n-text="{{ stage_coverage_ja(panel.latest.coverage_pct) }}">Report completeness {{ "{:.1f}".format(panel.latest.coverage_pct) }}% of this stage's own all-period median, {{ panel.latest.year }}</span>
+        {% else %}
+        <span class="legend__item legend__item--note" data-i18n="stage.no_coverage">Report completeness does not apply to this series</span>
+        {% endif %}
+      </p>
+      <details class="table-toggle">
+        <summary data-i18n="table.toggle">Table view</summary>
+        <div class="table-scroll">
+          <table class="data">
+            <caption data-i18n-text="年次推移。HHIは0〜10,000の尺度。単位{{ panel.unit }}。">By year. HHI on the 0–10,000 scale. Measured in {{ panel.unit }}.</caption>
+            <thead>
+              <tr><th scope="col" data-i18n="table.year">Year</th><th scope="col" class="num">HHI</th><th scope="col" class="num" data-i18n="table.top_three">Top three</th><th scope="col" class="num" data-i18n="table.reporting">Reporting</th>{% if panel.has_coverage %}<th scope="col" class="num" data-i18n="stage.coverage">Report completeness</th>{% endif %}</tr>
+            </thead>
+            <tbody>
+              {% for point in panel.years|reverse %}
+              <tr{% if point.provisional %} class="is-provisional"{% endif %}>
+                <td>{{ point.year }}{% if point.provisional %} <span class="badge badge--provisional" data-i18n="stage.provisional_legend">Provisional</span>{% endif %}</td>
+                <td class="num">{{ "{:,.0f}".format(point.hhi) }}</td>
+                <td class="num">{{ "{:.1f}".format(point.cr3) }}%</td>
+                <td class="num">{{ point.reporters }}</td>
+                {% if panel.has_coverage %}<td class="num">{% if point.coverage_pct is not none %}{{ "{:.1f}".format(point.coverage_pct) }}%{% else %}—{% endif %}</td>{% endif %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <div>
+      <h4 class="split__head" data-i18n-text="{{ panel.latest.year }}年のシェア">Shares in {{ panel.latest.year }}</h4>
+      <div class="chart" data-stage-bars="{{ panel.hs_code }}"></div>
+      <details class="table-toggle">
+        <summary data-i18n="table.toggle">Table view</summary>
+        <div class="table-scroll">
+          <table class="data">
+            <caption data-i18n-text="{{ panel.latest.year }}年、単位{{ panel.unit }}。国名はISO3コード。">{{ panel.latest.year }}, measured in {{ panel.unit }}. Countries as ISO3 codes.</caption>
+            <thead>
+              <tr><th scope="col" data-i18n="table.country">Country</th><th scope="col" class="num" data-i18n="table.share">Share</th><th scope="col" class="num" data-i18n="table.cumulative">Cumulative</th><th scope="col" data-i18n="table.source">Selection</th><th scope="col" data-i18n="table.verification">Verification</th></tr>
+            </thead>
+            <tbody>
+              {% set ns = namespace(cumulative=0) %}
+              {% for row in panel.latest.rows %}
+              {% set ns.cumulative = ns.cumulative + row.share %}
+              <tr>
+                <td class="name">{{ row.country }}</td>
+                <td class="num">{{ "{:.2f}".format(row.share) }}%</td>
+                <td class="num">{{ "{:.1f}".format(ns.cumulative) }}%</td>
+                <td>{{ stage_badge(row.source, none) }}</td>
+                <td>{{ stage_badge(row.verification, row.evidence) }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
 {% block content %}
 <div class="wrap">
   <p class="crumb">
-    <a href="{{ root }}index.html">999.9</a><span>/</span><a href="{{ root }}critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n-text="{{ mineral.name_ja or '' }}">{{ mineral.name }}</span>
+    <a href="{{ root }}index.html">Orelysis</a><span>/</span><a href="{{ root }}critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n-text="{{ mineral.name_ja or '' }}">{{ mineral.name }}</span>
   </p>
 </div>
 
@@ -151,6 +265,65 @@
                  "Share of world export value by reporting country, from UN Comtrade, covering " ~ (mineral.hs_label or "the relevant HS codes") ~ ". This captures processing and refining that mine statistics do not.",
                  "UN Comtradeにもとづく、報告国別の世界輸出額シェア。対象は" ~ (mineral.hs_label_ja or mineral.hs_label or "該当するHSコード") ~ "。鉱山統計が捉えない加工・精錬の段階を反映する。") }}
 
+  {% if stages %}
+  <section class="panel panel--stage">
+    <div class="panel__head">
+      <h3 data-i18n="panel.stage_title">Stage concentration</h3>
+    </div>
+    <p class="panel__sub" data-i18n="panel.stage_sub">
+      The same metal concentrates differently depending on where along the chain it is
+      measured. Choosing a stage switches every figure below to that stage alone. The
+      default is the headline published above: {{ mineral.headline_hs_codes|join(' and ') }}
+      combined, in US dollars.
+    </p>
+
+    <h4 class="sr-only" id="stage-tablist-label" data-i18n="stage.tablist">Stage measured</h4>
+    <div class="tabs" role="tablist" aria-labelledby="stage-tablist-label">
+      {% for tab in stages.tabs %}
+      <button type="button" class="tabs__tab" role="tab" id="stage-tab-{{ tab.key }}"
+              aria-controls="stage-panel-{{ tab.key }}" aria-selected="{{ 'true' if loop.first else 'false' }}"
+              tabindex="{{ '0' if loop.first else '-1' }}" data-stage-tab="{{ tab.key }}"
+              data-i18n="{{ tab.label_key }}">{{ tab.label }}</button>
+      {% endfor %}
+    </div>
+
+    {% for tab in stages.tabs %}
+    <div class="stage" id="stage-panel-{{ tab.key }}" role="tabpanel" tabindex="0"
+         aria-labelledby="stage-tab-{{ tab.key }}"{% if not loop.first %} hidden{% endif %}>
+      {% if tab.panels|length > 1 %}
+      <h5 class="sr-only" id="stage-sides-{{ tab.key }}" data-i18n="stage.sidelist">Declaring side</h5>
+      <div class="sides" role="group" aria-labelledby="stage-sides-{{ tab.key }}">
+        {% for panel in tab.panels %}
+        <button type="button" class="sides__side" data-stage-side="{{ panel.hs_code }}"
+                data-stage-group="{{ tab.key }}" aria-pressed="{{ 'true' if loop.first else 'false' }}"
+                data-i18n="{{ panel.side_label_key }}">{{ panel.side_label }}</button>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% for panel in tab.panels %}
+      {{ stage_view(panel, loop.first) }}
+      {% endfor %}
+    </div>
+    {% endfor %}
+
+    {% for note in stages.notes %}
+    {# Opened from the verification badge of the row it belongs to. Kept in the
+       markup rather than fetched, so the reason is in the page a reader saved. #}
+    <div class="evidence" id="{{ note.id }}" hidden>
+      <p class="evidence__head">
+        <strong>{{ note.country }} · {{ note.hs_code }} · {{ note.years }}</strong>
+        <span class="badge badge--verification-{{ note.outcome }}" data-i18n="verification.{{ note.outcome }}">{{ note.outcome }}</span>
+      </p>
+      <p class="evidence__note" data-i18n-text="{{ note.note_ja }}">{{ note.note }}</p>
+      <p class="evidence__source">
+        <span data-i18n="evidence.source">Source checked against</span>:
+        {% if note.source_url %}<a href="{{ note.source_url }}">{{ note.source_name }}</a>{% else %}{{ note.source_name }}{% endif %}
+      </p>
+      <button type="button" class="evidence__close" data-evidence-close="{{ note.id }}" data-i18n="evidence.close">Close</button>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
   {% if mineral.audit_data_url %}
   <section class="panel">
     <h3 data-i18n-text="段階別データと採用根拠">Stage data and provenance</h3>
@@ -242,4 +415,161 @@
   });
 })();
 </script>
+{% if stage_data %}
+<script type="application/json" id="stage-data">{{ stage_data|safe }}</script>
+<script>
+(function () {
+  var node = document.getElementById("stage-data");
+  if (!node) return;
+  var stages = JSON.parse(node.textContent);
+  var section = document.querySelector(".panel--stage");
+  if (!section) return;
+
+  function isJa() { return !!(window.I18N && window.I18N.lang === "ja"); }
+  function say(label, labelJa) { return (isJa() && labelJa) ? labelJa : label; }
+
+  /* ------------------------------------------------------------- charts */
+  stages.tabs.forEach(function (tab) {
+    tab.panels.forEach(function (panel) {
+      var lineNode = section.querySelector('[data-stage-line="' + panel.hs_code + '"]');
+      if (lineNode) {
+        Chart.register(lineNode, function () {
+          /* A hidden panel has no width to measure, so it is drawn when it is
+             shown rather than sized against a collapsed box. */
+          if (lineNode.offsetParent === null) return;
+          var ja = isJa();
+          var first = panel.years[0].year;
+          var last = panel.years[panel.years.length - 1].year;
+          Chart.line(lineNode, {
+            series: panel.years,
+            provisional: panel.provisional_years,
+            thresholds: ja
+              ? [{ value: 1000, label: "1,000 中程度" }, { value: 1800, label: "1,800 高度" }]
+              : [{ value: 1000, label: "1,000 moderate" }, { value: 1800, label: "1,800 high" }],
+            ariaLabel: ja
+              ? say(tab.label, tab.label_ja) + "の集中度指数(" + first + "年〜" + last + "年)"
+              : tab.label + " concentration index, " + first + " to " + last,
+            t: ja ? {
+              topThree: function (pct) { return "上位3カ国 " + Chart.fmt(pct, 1) + "%"; },
+              reporting: function (n) { return n + "カ国が報告"; },
+              coverage: function (pct) { return "報告完全性 " + Chart.fmt(pct, 1) + "%"; },
+              provisional: function () { return "(暫定)"; }
+            } : null
+          });
+        });
+      }
+
+      var barsNode = section.querySelector('[data-stage-bars="' + panel.hs_code + '"]');
+      if (barsNode) {
+        Chart.register(barsNode, function () {
+          if (barsNode.offsetParent === null) return;
+          var detail = say(panel.unit, panel.unit);
+          var rows = panel.latest.rows.map(function (row) {
+            var badges = [];
+            if (row.source) {
+              badges.push({ key: row.source.key, label: say(row.source.label, row.source.label_ja),
+                            title: row.source.raw, evidence: null });
+            }
+            if (row.verification) {
+              badges.push({ key: row.verification.key,
+                            label: say(row.verification.label, row.verification.label_ja),
+                            title: row.verification.raw, evidence: row.evidence });
+            }
+            return { name: row.country, share: row.share, code: row.country,
+                     detail: detail, badges: badges };
+          });
+          Chart.bars(barsNode, { rows: rows, limit: 10 });
+        });
+      }
+    });
+  });
+
+  /* --------------------------------------------------------------- tabs */
+  var tabs = Array.prototype.slice.call(section.querySelectorAll("[data-stage-tab]"));
+
+  function selectTab(key, moveFocus) {
+    tabs.forEach(function (button) {
+      var active = button.getAttribute("data-stage-tab") === key;
+      button.setAttribute("aria-selected", active ? "true" : "false");
+      button.tabIndex = active ? 0 : -1;
+      if (active && moveFocus) button.focus();
+    });
+    stages.tabs.forEach(function (tab) {
+      var panel = document.getElementById("stage-panel-" + tab.key);
+      if (panel) panel.hidden = tab.key !== key;
+    });
+    Chart.redraw();
+  }
+
+  section.addEventListener("click", function (event) {
+    var button = event.target.closest ? event.target.closest("[data-stage-tab]") : null;
+    if (!button) return;
+    selectTab(button.getAttribute("data-stage-tab"), false);
+  });
+
+  section.addEventListener("keydown", function (event) {
+    var button = event.target.closest ? event.target.closest("[data-stage-tab]") : null;
+    if (!button) return;
+    var step = event.key === "ArrowRight" ? 1 : (event.key === "ArrowLeft" ? -1 : 0);
+    if (!step) return;
+    event.preventDefault();
+    var at = tabs.indexOf(button);
+    var next = tabs[(at + step + tabs.length) % tabs.length];
+    selectTab(next.getAttribute("data-stage-tab"), true);
+  });
+
+  /* -------------------------------------------------------------- sides */
+  section.addEventListener("click", function (event) {
+    var button = event.target.closest ? event.target.closest("[data-stage-side]") : null;
+    if (!button) return;
+    var group = document.getElementById("stage-panel-" + button.getAttribute("data-stage-group"));
+    if (!group) return;
+    var chosen = button.getAttribute("data-stage-side");
+    var buttons = group.querySelectorAll("[data-stage-side]");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute("aria-pressed",
+        buttons[i].getAttribute("data-stage-side") === chosen ? "true" : "false");
+    }
+    var views = group.querySelectorAll("[data-stage-view]");
+    for (var j = 0; j < views.length; j++) {
+      views[j].hidden = views[j].getAttribute("data-stage-view") !== chosen;
+    }
+    Chart.redraw();
+  });
+
+  /* ----------------------------------------------------------- evidence */
+  /* The badge is the control and the note is the disclosure, wherever the
+     badge was rendered: the bars list builds its badges in JavaScript and the
+     table view arrives in the HTML, and one delegated listener serves both. */
+  function setEvidence(id, open) {
+    var note = document.getElementById(id);
+    if (!note) return;
+    note.hidden = !open;
+    var controls = section.querySelectorAll('[data-evidence="' + id + '"]');
+    for (var i = 0; i < controls.length; i++) {
+      controls[i].setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    if (open) {
+      note.tabIndex = -1;
+      note.focus();
+      note.scrollIntoView({ block: "nearest" });
+    }
+  }
+
+  document.addEventListener("click", function (event) {
+    var target = event.target.closest ? event.target.closest("[data-evidence], [data-evidence-close]") : null;
+    if (!target) return;
+    if (target.hasAttribute("data-evidence-close")) {
+      var closing = target.getAttribute("data-evidence-close");
+      setEvidence(closing, false);
+      var back = section.querySelector('[data-evidence="' + closing + '"]');
+      if (back) back.focus();
+      return;
+    }
+    var id = target.getAttribute("data-evidence");
+    setEvidence(id, target.getAttribute("aria-expanded") !== "true");
+  });
+})();
+</script>
+{% endif %}
 {% endblock %}

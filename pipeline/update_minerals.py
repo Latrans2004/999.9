@@ -23,7 +23,7 @@ from . import archive, countries, entity_diagnostics, hhi, process_trade, strict
 from .build import summarise
 
 ROOT = Path(__file__).resolve().parents[1]
-log = logging.getLogger('999.9.strict')
+log = logging.getLogger('orelysis.strict')
 
 
 @contextmanager
@@ -80,7 +80,7 @@ def pack(by_year, source, unit, unit_ja, stage, world=None):
             'trend': hhi.trend(series), 'notes': []}
 
 
-def assemble(bundle, settings, entry):
+def assemble(bundle, settings, entry, mineral='lithium', root=ROOT):
     rows = bundle['trade']
     # Input bundles are for reproducible audited replays, not an unchecked publication bypass.
     expected = {(hs,y,f) for hs in settings['hs_codes'] for y in range(settings['start_year'],settings['end_year']+1) for f in ['X','M']}
@@ -107,6 +107,11 @@ def assemble(bundle, settings, entry):
         log.warning('Unknown entities retained but excluded from metrics: %s', ', '.join(sorted(unknowns)))
     selected = process_trade.build(rows, settings)
     concentration = process_trade.metrics(selected)
+    # Report completeness is a property of the filing year, not of the selection policy,
+    # so it is attached after the metrics rather than computed inside them.
+    coverage = process_trade.report_coverage(rows)
+    for profile in concentration:
+        profile['coverage_pct'] = coverage.get((profile['hs_code'], profile['year']))
     exports = defaultdict(lambda: defaultdict(float))
     for r in rows:
         if countries.trade_eligibility(r)[0] and r['hs_code'] in settings['headline_hs_codes'] and r['flow'] == 'X' and r['partner'] == 'W00':
@@ -136,7 +141,10 @@ def assemble(bundle, settings, entry):
         for year, amounts in sorted(yearly.items()):
             profile = hhi.concentration(year, amounts)
             if profile is None: raise ValueError(f'{stage} {year}: empty profile')
-            concentration.append({'hs_code':stage, 'unit':'USD' if stage == 'headline_usd' else 't Li', **profile.to_dict()})
+            # Single-source stages have no self-report/mirror duality and therefore no
+            # report-completeness question; null is the honest answer, not 100.
+            concentration.append({'hs_code':stage, 'unit':'USD' if stage == 'headline_usd' else 't Li',
+                                  'coverage_pct':None, **profile.to_dict()})
             for code, value in amounts.items():
                 audit_selected.append({'hs_code':stage,'year':year,'country':code,'reported_value':value,
                                        'mirror_value':None,'selected_value':value,'included':True})
@@ -151,8 +159,13 @@ def assemble(bundle, settings, entry):
         source_quality.append({'hs_code':hs,'year':y,'flow':flow,'rows':len(group),
                                'reporters':len({r['reporter'] for r in group}),
                                'missing_value_fraction':sum(r['value_usd'] is None for r in group)/len(group)})
+    evidence = process_trade.load_evidence(root/'pipeline/evidence.json', mineral)
+    unmatched = process_trade.apply_verification(audit_selected, evidence)
+    if unmatched:
+        log.warning('External evidence matches no row (stage or year not published yet): %s', unmatched)
     return {'selected':audit_selected,'concentration':concentration,'trade_rows':rows,'source_quality':source_quality,
-            'entity_diagnostics':entity_diagnostics.summarize(rows), 'production':bundle['production']}, data
+            'entity_diagnostics':entity_diagnostics.summarize(rows),'evidence':evidence,
+            'production':bundle['production']}, data
 
 
 def content_fingerprint(payload):
@@ -190,12 +203,15 @@ def run(root=ROOT, mineral='lithium', bundle=None, *, render_command=None):
     settings = configuration['minerals'][mineral]
     catalog = read(root / 'critical-minerals/data/catalog.json')
     entry = next(e for e in catalog['minerals'] if e['slug'] == mineral)
-    if entry['hs_codes'] != settings['headline_hs_codes']:
+    if entry['headline_hs_codes'] != settings['headline_hs_codes']:
         raise ValueError('Headline HS codes differ from the existing site catalog')
     if settings['end_year'] < settings['start_year']:
         raise ValueError('Invalid year range')
+    unknown_stages = set(settings.get('provisional_years', {})) - set(settings['stages'])
+    if unknown_stages:
+        raise ValueError(f'provisional_years names unknown stages: {sorted(unknown_stages)}')
     bundle = collect(root, settings) if bundle is None else bundle
-    processed, site = assemble(bundle, settings, entry)
+    processed, site = assemble(bundle, settings, entry, mineral, root)
     accepted_path = f'data/processed/{mineral}/snapshot.json'
     previous = read(root / accepted_path)
     report = validate_data.validate(processed,previous,settings['validation'])
@@ -212,6 +228,7 @@ def run(root=ROOT, mineral='lithium', bundle=None, *, render_command=None):
                 'last_updated':stamp,'methodology_version':configuration['methodology_version'],
                 'fingerprint':fingerprint,'sources':bundle['sources'],
                 'usgs_mode':'reviewed_csv_with_automatic_publication_archive',
+                'provisional_years':settings.get('provisional_years', {}),
                 'validation':report}
     metadata['entity_diagnostics_url'] = 'entities.json'
     metadata['unknown_entities'] = [e['id'] for e in processed['entity_diagnostics']['entities'] if e['kind'] == 'unknown']
@@ -242,10 +259,11 @@ def run(root=ROOT, mineral='lithium', bundle=None, *, render_command=None):
         put(stage,f'{base}/concentration.json',{'metadata':metadata,'records':processed['concentration']})
         put(stage,f'{base}/metadata.json',metadata)
         put(stage,f'{base}/entities.json',processed['entity_diagnostics'])
+        put(stage,f'{base}/evidence.json',{'metadata':metadata,'entries':processed['evidence']})
         put(stage,f'critical-minerals/data/minerals/{mineral}.json',site)
         put(stage,'critical-minerals/data/index.json',index)
         table=io.StringIO(newline='')
-        fields=['hs_code','year','country','reported_value','mirror_value','selected_value','selected_source','unit','included','classification','unverified','selection_note','supplement_source_url']
+        fields=['hs_code','year','country','reported_value','mirror_value','selected_value','selected_source','unit','included','classification','verification_status','unverified','selection_note','supplement_source_url']
         writer=csv.DictWriter(table,fieldnames=fields,extrasaction='ignore')
         writer.writeheader()
         writer.writerows(r for r in processed['selected'] if r['hs_code'] not in ('headline_usd','mine_li_t'))

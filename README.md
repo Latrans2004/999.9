@@ -1,4 +1,4 @@
-# 999.9
+# Orelysis
 
 Supply concentration in critical minerals, measured from open data and published
 as a static site on GitHub Pages.
@@ -29,9 +29,9 @@ The legacy **Refresh data** workflow is now manual-only for other minerals.
 ```bash
 git init
 git add .
-git commit -m "999.9: initial site and pipeline"
+git commit -m "orelysis: initial site and pipeline"
 git branch -M main
-git remote add origin https://github.com/<you>/999.9.git
+git remote add origin https://github.com/<you>/orelysis.git
 git push -u origin main
 ```
 
@@ -39,14 +39,14 @@ git push -u origin main
 
 ```json
 {
-  "repo_url": "https://github.com/<you>/999.9",
-  "site_base": "/999.9/"
+  "repo_url": "https://github.com/<you>/orelysis",
+  "site_base": "/orelysis/"
 }
 ```
 
 `repo_url` fills the footer links. `site_base` is only used by `404.html`, and it
-must match how Pages serves the site: `/999.9/` for a project page at
-`<you>.github.io/999.9/`, or `/` for a user page or a custom domain.
+must match how Pages serves the site: `/orelysis/` for a project page at
+`<you>.github.io/orelysis/`, or `/` for a user page or a custom domain.
 
 Then re-render so the change reaches the HTML:
 
@@ -107,7 +107,7 @@ you fix a parser is fast and does not re-hammer the upstream services.
 ## Layout
 
 ```
-index.html                      the 999.9 hub
+index.html                      the Orelysis hub
 404.html
 assets/                         css, js, images — shared by every section
 critical-minerals/              section 01, self-contained
