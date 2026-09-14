@@ -2,6 +2,7 @@ import pytest
 from pipeline import graphite
 from pipeline import graphite_usgs
 from pipeline import graphite_anchor
+from pipeline import graphite_companies
 
 
 def row(flow='X', reporter='CHN', partner='W00', weight=100, **extra):
@@ -153,3 +154,78 @@ def test_anchor_ignores_agreeing_observations():
 
 def test_anchor_requires_both_observations():
     assert graphite_anchor.classify(None, 95.0, 100) == ('incomplete_trade_observation', None)
+
+
+def _disclosure_env(tmp_path, monkeypatch, rows, pin=True):
+    sources = tmp_path / 'sources.json'
+    entry = {'kind': 'document', 'company': 'Syrah Resources', 'operation': 'Balama',
+             'country': 'MOZ', 'url': 'https://example.invalid/q4.pdf',
+             'sha256': 'abc' if pin else None, 'path': 'data/raw/company/q4.pdf',
+             'review_date': '2026-09-14'}
+    sources.write_bytes(graphite.archive.encode({'note': 't', 'documents': [entry]}))
+    monkeypatch.setattr(graphite_companies, 'SOURCES', sources)
+    csv_path = tmp_path / graphite_companies.REVIEWED_CSV
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
+    csv_path.write_text(','.join(graphite_companies.COLUMNS) + '\n' + ''.join(rows), encoding='utf-8')
+    return tmp_path
+
+
+GOOD = ('MOZ,2022,production,163000,Syrah Resources,Balama,'
+        'https://example.invalid/q4.pdf,Quarterly report page 3,2026-09-14\n')
+
+
+def test_disclosures_empty_until_reviewed():
+    # The committed file carries a header and no invented figures.
+    assert graphite_companies.load() == []
+
+
+def test_disclosure_requires_pinned_source(tmp_path, monkeypatch):
+    root = _disclosure_env(tmp_path, monkeypatch, [GOOD], pin=False)
+    with pytest.raises(ValueError, match='Unpinned source'):
+        graphite_companies.load(root)
+
+
+def test_disclosure_accepts_reviewed_row(tmp_path, monkeypatch):
+    root = _disclosure_env(tmp_path, monkeypatch, [GOOD])
+    row = graphite_companies.load(root)[0]
+    assert row['value_t'] == 163000.0
+    assert row['source']['sha256'] == 'abc'
+
+
+def test_disclosure_rejects_blank_locator(tmp_path, monkeypatch):
+    root = _disclosure_env(tmp_path, monkeypatch, [GOOD.replace('Quarterly report page 3', '')])
+    with pytest.raises(ValueError, match='Blank locator'):
+        graphite_companies.load(root)
+
+
+def test_disclosure_rejects_duplicate(tmp_path, monkeypatch):
+    root = _disclosure_env(tmp_path, monkeypatch, [GOOD, GOOD])
+    with pytest.raises(ValueError, match='Duplicate disclosure'):
+        graphite_companies.load(root)
+
+
+def test_disclosure_rejects_unknown_measure(tmp_path, monkeypatch):
+    root = _disclosure_env(tmp_path, monkeypatch, [GOOD.replace(',production,', ',guess,')])
+    with pytest.raises(ValueError, match='Unknown measure'):
+        graphite_companies.load(root)
+
+
+def test_disclosure_fails_closed_on_revised_document(tmp_path, monkeypatch):
+    root = _disclosure_env(tmp_path, monkeypatch, [GOOD])
+    target = root / 'data/raw/company/q4.pdf'
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(b'revised bytes')
+    with pytest.raises(ValueError, match='Primary document revised'):
+        graphite_companies.verify_archived(root)
+
+
+def test_adjudicated_reports_evidence_without_selecting(tmp_path, monkeypatch):
+    root = _disclosure_env(tmp_path, monkeypatch, [GOOD])
+    anchor = [{'country': 'MOZ', 'year': 2022, 'review_class': 'production_adjudicable',
+               'favours': 'mirror', 'selected_weight_t': None},
+              {'country': 'DEU', 'year': 2020, 'review_class': 'reexport_hub',
+               'favours': None, 'selected_weight_t': None}]
+    result = graphite_companies.adjudicated(anchor, graphite_companies.load(root))
+    assert len(result) == 1
+    assert result[0]['evidence_available'] is True
+    assert result[0]['selected_weight_t'] is None

@@ -1,0 +1,27 @@
+{
+  "note": "Primary operator disclosures to acquire for the cases anchor.json marks production_adjudicable. An entry without sha256 is a discovery target only: `discover` archives its bytes in Actions and reports the hash, a reviewer reads the document and pins the hash here, and only then may figures be entered in data/manual/natural-graphite-company-disclosures.csv. Exact report URLs are added after discovery rather than guessed; the seeds below are announcement indexes and are unverified from the audit sandbox, where egress to both hosts is blocked.",
+  "documents": [
+    {
+      "kind": "index",
+      "company": "Syrah Resources",
+      "operation": "Balama",
+      "country": "MOZ",
+      "url": "https://www.syrahresources.com.au/investors/asx-announcements",
+      "sha256": null,
+      "path": null,
+      "review_date": null,
+      "wanted": "Quarterly activities reports and annual reports, 2017-2024: natural graphite production and sales in tonnes for Balama."
+    },
+    {
+      "kind": "index",
+      "company": "NextSource Materials",
+      "operation": "Molo",
+      "country": "MDG",
+      "url": "https://www.nextsourcematerials.com/news-releases/",
+      "sha256": null,
+      "path": null,
+      "review_date": null,
+      "wanted": "Production and shipment releases covering Molo, for the Madagascar cases in anchor.json."
+    }
+  ]
+}

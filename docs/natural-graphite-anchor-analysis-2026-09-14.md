@@ -95,6 +95,26 @@ rosters, each backed by a cited source, and carries residual doubt into the
 output as `unverified`. Lithium ships because its selection is curated and
 evidenced, not because its data is cleaner.
 
+## Acquiring the evidence
+
+The audit sandbox cannot reach the operators' sites, but Actions can, and the
+pipeline already fetches USGS PDFs that way. `graphite_companies` follows the
+same shape: `discover` archives each listed primary document and reports its
+hash, a reviewer reads the document and pins that hash in
+`graphite_company_sources.json`, and only then may figures be entered in
+`data/manual/natural-graphite-company-disclosures.csv`. `load` refuses any row
+whose source is unpinned, and `verify_archived` fails closed when a pinned
+document's bytes change.
+
+The committed CSV holds a header and no rows. Press coverage put Balama at
+163,000 t produced and 162,000 t sold in 2022, which agrees with the classifier,
+but no figure is entered until it comes from a filing with an exact locator.
+
+The discovery job is separate from the audit job and is given no Comtrade
+secret, because it fetches third-party sites. It runs on manual dispatch only.
+Exact report URLs are added to the manifest after discovery rather than guessed;
+the seeds are announcement indexes.
+
 Three sources would supply the missing evidence, none of them reachable from the
 audit sandbox under the current network policy:
 

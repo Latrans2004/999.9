@@ -41,3 +41,27 @@ jobs:
             .cache/graphite-preview/
           include-hidden-files: true
           retention-days: 90
+
+  # Acquires operator disclosures for the cases anchor.json marks adjudicable.
+  # Deliberately separate from the audit job and given no Comtrade secret: it
+  # fetches third-party sites, and nothing it retrieves is accepted until a
+  # reviewer pins the hash. Manual only.
+  discover-disclosures:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r pipeline/requirements.txt
+      - name: Archive primary documents for visual review
+        run: python -m pipeline.graphite_companies
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: natural-graphite-disclosures-${{ github.run_id }}
+          path: .cache/graphite-companies/
+          include-hidden-files: true
+          retention-days: 90
