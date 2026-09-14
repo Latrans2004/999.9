@@ -12,9 +12,14 @@
       2025
     ],
     "entity_diagnostics_url": "entities.json",
-    "fingerprint": "a81682df622a2186bd3f048f30ab2e2712500309a9927862879dffc82eda3d68",
+    "fingerprint": "79251aacb65539c67a11e9c8f89842d13525c015b8df79e8f021c4203dfff4dc",
     "last_updated": "2026-09-13T16:44:21+00:00",
-    "methodology_version": "lithium-2026-09-13-entities-v2",
+    "methodology_version": "lithium-2026-09-14-coverage-v3",
+    "provisional_years": {
+      "282520": [
+        2025
+      ]
+    },
     "retrieved_at": "2026-09-13T16:44:08+00:00",
     "source": [
       "UN Comtrade",
@@ -1012,6 +1017,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 105.5,
       "cr1": 98.22,
       "cr3": 99.79,
       "cr5": 100.0,
@@ -1052,6 +1058,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 106.2,
       "cr1": 97.39,
       "cr3": 99.74,
       "cr5": 100.0,
@@ -1092,6 +1099,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 99.2,
       "cr1": 65.61,
       "cr3": 100.0,
       "cr5": 100.0,
@@ -1120,6 +1128,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 97.7,
       "cr1": 93.85,
       "cr3": 99.16,
       "cr5": 100.0,
@@ -1160,6 +1169,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 100.0,
       "cr1": 92.71,
       "cr3": 98.87,
       "cr5": 100.0,
@@ -1200,6 +1210,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 101.6,
       "cr1": 92.43,
       "cr3": 99.39,
       "cr5": 100.0,
@@ -1240,6 +1251,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 100.0,
       "cr1": 73.51,
       "cr3": 99.78,
       "cr5": 100.0,
@@ -1280,6 +1292,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 86.7,
       "cr1": 76.31,
       "cr3": 99.6,
       "cr5": 100.0,
@@ -1320,6 +1333,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 99.95,
       "cr3": 99.99,
       "cr5": 100.0,
@@ -1372,6 +1386,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 97.61,
       "cr3": 99.93,
       "cr5": 99.99,
@@ -1424,6 +1439,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 93.6,
       "cr3": 99.45,
       "cr5": 99.97,
@@ -1476,6 +1492,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 96.32,
       "cr3": 99.83,
       "cr5": 100.0,
@@ -1528,6 +1545,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 93.86,
       "cr3": 99.78,
       "cr5": 100.0,
@@ -1580,6 +1598,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 90.29,
       "cr3": 97.7,
       "cr5": 99.99,
@@ -1632,6 +1651,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 70.66,
       "cr3": 90.18,
       "cr5": 99.51,
@@ -1684,6 +1704,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 61.68,
       "cr3": 91.05,
       "cr5": 99.98,
@@ -1736,6 +1757,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 79.0,
       "cr1": 44.13,
       "cr3": 81.88,
       "cr5": 97.86,
@@ -1920,6 +1942,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 96.3,
       "cr1": 55.89,
       "cr3": 85.13,
       "cr5": 98.48,
@@ -2134,6 +2157,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 108.6,
       "cr1": 63.74,
       "cr3": 86.95,
       "cr5": 98.37,
@@ -2366,6 +2390,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 93.8,
       "cr1": 67.23,
       "cr3": 87.99,
       "cr5": 97.98,
@@ -2574,6 +2599,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 96.3,
       "cr1": 64.36,
       "cr3": 84.07,
       "cr5": 96.65,
@@ -2782,6 +2808,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 103.7,
       "cr1": 75.82,
       "cr3": 97.04,
       "cr5": 98.27,
@@ -2960,6 +2987,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 113.6,
       "cr1": 74.97,
       "cr3": 93.23,
       "cr5": 95.98,
@@ -3204,6 +3232,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 108.6,
       "cr1": 75.04,
       "cr3": 93.61,
       "cr5": 97.78,
@@ -3412,6 +3441,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 102.1,
       "cr1": 59.06,
       "cr3": 89.45,
       "cr5": 94.29,
@@ -3716,6 +3746,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 104.2,
       "cr1": 55.53,
       "cr3": 86.27,
       "cr5": 94.87,
@@ -4044,6 +4075,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 89.6,
       "cr1": 56.75,
       "cr3": 84.72,
       "cr5": 93.75,
@@ -4324,6 +4356,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 95.8,
       "cr1": 63.49,
       "cr3": 87.04,
       "cr5": 94.8,
@@ -4610,6 +4643,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 97.9,
       "cr1": 67.1,
       "cr3": 86.34,
       "cr5": 92.25,
@@ -4914,6 +4948,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 110.4,
       "cr1": 73.54,
       "cr3": 88.44,
       "cr5": 92.97,
@@ -5254,6 +5289,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 116.7,
       "cr1": 72.55,
       "cr3": 89.71,
       "cr5": 94.47,
@@ -5612,6 +5648,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": 95.8,
       "cr1": 72.56,
       "cr3": 94.45,
       "cr5": 97.09,
@@ -5904,6 +5941,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 46.55,
       "cr3": 73.99,
       "cr5": 88.46,
@@ -6232,6 +6270,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 49.05,
       "cr3": 81.24,
       "cr5": 90.11,
@@ -6572,6 +6611,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 40.27,
       "cr3": 81.27,
       "cr5": 89.98,
@@ -6888,6 +6928,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 40.83,
       "cr3": 82.21,
       "cr5": 89.79,
@@ -7204,6 +7245,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 42.11,
       "cr3": 84.15,
       "cr5": 91.28,
@@ -7526,6 +7568,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 58.51,
       "cr3": 91.77,
       "cr5": 96.05,
@@ -7872,6 +7915,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 48.08,
       "cr3": 87.51,
       "cr5": 93.69,
@@ -8272,6 +8316,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 43.02,
       "cr3": 88.87,
       "cr5": 94.32,
@@ -8618,6 +8663,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 37.09,
       "cr3": 77.59,
       "cr5": 92.75,
@@ -8688,6 +8734,7 @@
     {
       "band": "high",
       "coverage": null,
+      "coverage_pct": null,
       "cr1": 31.9,
       "cr3": 72.82,
       "cr5": 90.51,

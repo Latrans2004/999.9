@@ -105,6 +105,23 @@ def test_excel_production_and_carbonate():
                 assert actual==pytest.approx(expected['selected_value'],abs=.00001)
 
 
+def test_report_coverage_measures_filings_not_accepted_suppliers():
+    # Three filers in a normal year, one in a late-filing year: the late year reads as a
+    # reporting artefact, not as a collapse to a single supplier.
+    rows=[row(c,10,hs='283691',year=y) for y in (2022,2023) for c in ('CHN','CHL','ARG')]
+    rows+=[row('CHN',10,hs='283691',year=2024)]
+    coverage=process_trade.report_coverage(rows)
+    assert coverage[('283691',2022)]==coverage[('283691',2023)]==100.0
+    assert coverage[('283691',2024)]==pytest.approx(33.3)
+    # A country whose figure the policy later rejects still filed, and an unallocated area
+    # that files its own returns is a filer even though it is never an accepted supplier.
+    assert process_trade.report_coverage(rows+[row('CT:490',0,hs='283691',year=2024)])[('283691',2024)]==pytest.approx(66.7)
+    # An entity the registry cannot identify is no evidence that anyone filed.
+    assert process_trade.report_coverage(rows+[row('CT:9999',10,hs='283691',year=2024)])[('283691',2024)]==pytest.approx(33.3)
+    # Imports are a different question; only the export side is counted.
+    assert process_trade.report_coverage(rows+[row('JPN',10,'M','CHN',hs='283691',year=2024)])[('283691',2024)]==pytest.approx(33.3)
+
+
 def test_usgs_strict_schema_withheld_and_duplicate():
     body=(ROOT/'data/manual/lithium-production.csv').read_bytes()
     records=strict_usgs.parse_csv(body)
@@ -190,6 +207,12 @@ def test_transaction_render_and_idempotency(tmp_path):
     assert not update_minerals.run(root,bundle=bundle)
     assert public_bytes(root)==before
     assert (root/'critical-minerals/data/lithium/trade.csv').exists()
+    profiles=json.loads((root/'critical-minerals/data/lithium/concentration.json').read_text(encoding='utf-8'))['records']
+    # Every published stage answers the report-completeness question, and the two
+    # single-source stages answer it with null rather than a misleading 100.
+    assert all('coverage_pct' in r for r in profiles)
+    assert all(r['coverage_pct'] is None for r in profiles if r['hs_code'] in ('headline_usd','mine_li_t'))
+    assert any(r['coverage_pct'] is not None for r in profiles)
     text=(root/'critical-minerals/minerals/lithium.html').read_text(encoding='utf-8')
     assert 'Country provenance JSON' in text and 'data-i18n-text=' in text
     broken=copy.deepcopy(bundle)

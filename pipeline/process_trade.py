@@ -12,6 +12,37 @@ def total(values):
     return sum(values) if values and all(v is not None for v in values) else None
 
 
+def report_coverage(rows, flow='X'):
+    """Reporting completeness per (hs_code, year), as a percentage of that stage's own median.
+
+    Trade statistics are filed late and unevenly, so a recent year can look like a
+    structural break when it is only an incomplete filing season. This counts how many
+    countries filed, relative to the all-period median for the same stage, so a reader can
+    tell the two apart.
+
+    It counts filings, not accepted suppliers: a country that filed a zero, or a figure the
+    selection policy then rejected, still filed. Unallocated areas that file their own annual
+    returns therefore count too - 'Other Asia, nes' is not a supplier the concentration index
+    may attribute tonnes to, but it is a filer, and dropping it would understate how complete
+    the season was. Only entities the registry cannot identify at all are excluded, because an
+    unidentifiable blob in the feed is no evidence that anyone filed, and no published metric
+    here is allowed to move when one appears.
+    """
+    reporters = defaultdict(set)
+    for r in rows:
+        if r['flow'] == flow and countries.row_entity(r, 'reporter').kind != 'unknown':
+            reporters[(r['hs_code'], r['year'])].add(r['reporter'])
+    counts = defaultdict(dict)
+    for (hs, year), filed in reporters.items():
+        counts[hs][year] = len(filed)
+    coverage = {}
+    for hs, years in counts.items():
+        middle = median(years.values())
+        for year, filed in years.items():
+            coverage[(hs, year)] = None if not middle else round(filed / middle * 100, 1)
+    return coverage
+
+
 def build(rows, config):
     # Filtering here covers mirrors, partner-sum recovery and China imports,
     # while the archived/normalized observations remain complete.

@@ -12,9 +12,14 @@
       2025
     ],
     "entity_diagnostics_url": "entities.json",
-    "fingerprint": "a81682df622a2186bd3f048f30ab2e2712500309a9927862879dffc82eda3d68",
+    "fingerprint": "79251aacb65539c67a11e9c8f89842d13525c015b8df79e8f021c4203dfff4dc",
     "last_updated": "2026-09-13T16:44:21+00:00",
-    "methodology_version": "lithium-2026-09-13-entities-v2",
+    "methodology_version": "lithium-2026-09-14-coverage-v3",
+    "provisional_years": {
+      "282520": [
+        2025
+      ]
+    },
     "retrieved_at": "2026-09-13T16:44:08+00:00",
     "source": [
       "UN Comtrade",
