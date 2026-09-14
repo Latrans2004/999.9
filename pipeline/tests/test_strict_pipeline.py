@@ -270,10 +270,15 @@ def test_min_countries_exception_is_scoped():
         validate_data.validate(two_reporter_snapshot('283691',2019),None,CONFIG['validation'])
 
 
+# The synthetic years follow the configured range rather than a list typed here,
+# so extending end_year does not silently stop exercising the newest year.
+SYNTHETIC_START_YEAR=2022
+
+
 def synthetic_bundle():
     records=[]
     for hs in CONFIG['hs_codes']:
-        for year in [2022,2023,2024]:
+        for year in range(SYNTHETIC_START_YEAR,CONFIG['end_year']+1):
             for code,weight in [('AUS',100000),('CHL',80000),('CHN',60000),('USA',40000)]:
                 price=(2000 if year<2024 else 800) if hs=='253090' else 20000
                 records += [row(code,weight,value=weight*price,hs=hs,year=year),
@@ -287,7 +292,7 @@ def copy_repo(tmp_path):
     root=tmp_path/'repo'
     shutil.copytree(ROOT,root,ignore=shutil.ignore_patterns('.git','.cache','__pycache__','.pytest_cache','pytest-cache-files-*'))
     config=json.loads((root/'pipeline/minerals.json').read_text(encoding='utf-8'))
-    config['minerals']['lithium']['start_year']=2022
+    config['minerals']['lithium']['start_year']=SYNTHETIC_START_YEAR
     (root/'pipeline/minerals.json').write_bytes(archive.encode(config))
     # Tests exercise the first-run -> idempotent-second-run cycle against
     # synthetic data; they must not be influenced by whatever real accepted
@@ -363,7 +368,7 @@ def test_filesystem_failure_rolls_back(tmp_path,monkeypatch):
 def test_partial_commodity_cannot_reach_headline():
     bundle=synthetic_bundle()
     bundle['trade']=[r for r in bundle['trade'] if not (r['hs_code']=='283691' and r['partner']=='W00')]
-    config=copy.deepcopy(CONFIG); config['start_year']=2022
+    config=copy.deepcopy(CONFIG); config['start_year']=SYNTHETIC_START_YEAR
     entry=json.loads((ROOT/'critical-minerals/data/catalog.json').read_text(encoding='utf-8'))['minerals'][0]
     with pytest.raises(ValueError,match='missing reported world export totals'):
         update_minerals.assemble(bundle,config,entry)
