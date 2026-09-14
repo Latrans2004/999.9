@@ -39,6 +39,7 @@ jobs:
           set -o pipefail
           python -m pipeline.update_minerals --mineral lithium 2>&1 | tee update.log
       - name: Audit every Comtrade query without publishing
+        id: audit
         if: ${{ inputs.audit_only }}
         env:
           COMTRADE_API_KEY: ${{ secrets.COMTRADE_API_KEY }}
@@ -46,6 +47,71 @@ jobs:
         run: |
           set -o pipefail
           python -m pipeline.audit_entities 2>&1 | tee update.log
+      # An audit answers two questions a log line cannot: which queries upstream
+      # actually has, and whether the candidate moved a figure that is already
+      # published. Both are written to the run summary, including when the audit
+      # itself failed - a query that returns nothing is a finding, not an error
+      # to hide. Neither reading publishes anything or fails the job on its own;
+      # what to do about a moved figure is a human decision.
+      - name: Report query status and published-year invariance
+        if: ${{ always() && inputs.audit_only }}
+        shell: bash
+        env:
+          AUDIT_OUTCOME: ${{ steps.audit.outcome }}
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, pathlib
+          report = pathlib.Path('entity-audit.json')
+          if not report.exists():
+              print('### Queries\n\nNo entity-audit.json: the audit did not reach its first query.')
+          else:
+              queries = json.loads(report.read_text(encoding='utf-8'))['queries']
+              print(f'### Queries ({sum(q["status"] == "ok" for q in queries)}/{len(queries)} ok)\n')
+              print('| year | HS | flow | status | rows |')
+              print('|---|---|---|---|---|')
+              for item in queries:
+                  q = item['query']
+                  note = item['status'] + (f' - {item["error"]}' if item.get('error') else '')
+                  print(f'| {q["period"]} | {q["cmdCode"]} | {q["flowCode"]} | {note} | {item.get("rows", "")} |')
+          PY
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$AUDIT_OUTCOME" != "success" ]; then
+            echo '### Invariance' >> "$GITHUB_STEP_SUMMARY"
+            echo 'The audit did not complete, so there is no candidate snapshot to compare.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git show HEAD:data/processed/lithium/snapshot.json > published-snapshot.json
+          echo '### Invariance' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          set +e
+          python -m pipeline.invariance --previous published-snapshot.json \
+            --current data/processed/lithium/snapshot.json --json invariance-report.json \
+            2>&1 | tee -a "$GITHUB_STEP_SUMMARY"
+          status=${PIPESTATUS[0]}
+          set -e
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "invariance exit status: $status" >> "$GITHUB_STEP_SUMMARY"
+      # The fetched bytes are the evidence the audit rests on, and an artifact
+      # is not reachable from every environment that has to check it. Raw
+      # archives only, on the audited branch only: processed data and the
+      # candidate snapshot are deliberately left to be regenerated and verified
+      # outside CI rather than taken on trust from it.
+      - name: Preserve the fetched raw observations on the audited branch
+        if: ${{ always() && inputs.audit_only && github.ref_name != 'main' }}
+        shell: bash
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          if git diff --quiet -- data/raw && [ -z "$(git ls-files --others --exclude-standard data/raw)" ]; then
+            echo 'No new raw observations to preserve.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name 'Orelysis pipeline'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/raw
+          git commit -m "data: archive raw observations from an audit run"
+          git push origin "HEAD:refs/heads/$BRANCH"
+          echo "Raw observations pushed to $BRANCH." >> "$GITHUB_STEP_SUMMARY"
       - name: Verify reproducible HTML
         if: ${{ !inputs.audit_only && github.ref == 'refs/heads/main' }}
         run: |

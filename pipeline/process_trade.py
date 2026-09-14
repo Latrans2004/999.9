@@ -107,7 +107,7 @@ def apply_verification(selected, entries):
     return sorted(set(ledger) - matched)
 
 
-def report_coverage(rows, flow='X'):
+def report_coverage(rows, flow='X', stage_end_years=None):
     """Reporting completeness per (hs_code, year), as a percentage of that stage's own median.
 
     Trade statistics are filed late and unevenly, so a recent year can look like a
@@ -123,8 +123,14 @@ def report_coverage(rows, flow='X'):
     unidentifiable blob in the feed is no evidence that anyone filed, and no published metric
     here is allowed to move when one appears.
     """
+    caps = stage_end_years or {}
     reporters = defaultdict(set)
     for r in rows:
+        # A year the stage does not publish is not part of that stage's own record,
+        # so it cannot set the median the published years are measured against.
+        cap = caps.get(r['hs_code'])
+        if cap is not None and r['year'] > cap:
+            continue
         if r['flow'] == flow and countries.row_entity(r, 'reporter').kind != 'unknown':
             reporters[(r['hs_code'], r['year'])].add(r['reporter'])
     counts = defaultdict(dict)
@@ -164,7 +170,12 @@ def select_quantities(rows, config):
     for hs, policy in config['stages'].items():
         if policy['policy'] not in {'ore','carbonate','hydroxide','reported'}:
             raise ValueError(f'{hs}: unknown selection policy {policy["policy"]}')
-        years = sorted({r['year'] for r in rows if r['hs_code'] == hs})
+        # A stage may end earlier than the query range when its selection method
+        # stops working - a missing price anchor, a side of the trade that stopped
+        # filing. Ending the series is the honest answer; filling it in is not.
+        cap = policy.get('end_year')
+        years = sorted(y for y in {r['year'] for r in rows if r['hs_code'] == hs}
+                       if cap is None or y <= cap)
         for year in years:
             exports = bilateral[(hs, year, 'X')]
             imports = bilateral[(hs, year, 'M')]

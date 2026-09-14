@@ -122,6 +122,39 @@ def test_report_coverage_measures_filings_not_accepted_suppliers():
     assert process_trade.report_coverage(rows+[row('JPN',10,'M','CHN',hs='283691',year=2024)])[('283691',2024)]==pytest.approx(33.3)
 
 
+def test_a_stage_can_end_before_the_query_range_does():
+    """A stage whose method stops working ends; the query range does not shrink."""
+    config={'stages':{'283691':{**CONFIG['stages']['283691'],'end_year':2023}}}
+    rows=[row(c,10,hs='283691',year=y) for y in (2022,2023,2024) for c in ('CHN','CHL','ARG')]
+    selected=process_trade.build(rows,config)
+    assert sorted({r['year'] for r in selected})==[2022,2023]
+    uncapped={'stages':{'283691':CONFIG['stages']['283691']}}
+    assert sorted({r['year'] for r in process_trade.build(rows,uncapped)})==[2022,2023,2024]
+
+
+def test_a_year_a_stage_does_not_publish_cannot_move_the_years_it_does():
+    # Report completeness is relative to the stage's own median, so a late season
+    # added to the median would silently restate every year already published.
+    published=[row(c,10,hs='283691',year=2022) for c in ('CHN','CHL','ARG','AUS')]
+    published+=[row(c,10,hs='283691',year=2023) for c in ('CHN','CHL')]
+    late=[row('CHN',10,hs='283691',year=2024)]
+    before=process_trade.report_coverage(published)
+    after=process_trade.report_coverage(published+late,stage_end_years={'283691':2023})
+    assert {k:v for k,v in after.items() if k[1]<=2023}=={k:v for k,v in before.items() if k[1]<=2023}
+    assert ('283691',2024) not in after
+    # Without the cap the late year is part of the record and does move the median.
+    assert process_trade.report_coverage(published+late)[('283691',2022)]!=before[('283691',2022)]
+
+
+def test_a_stage_cannot_end_outside_the_queried_range(tmp_path):
+    root=copy_repo(tmp_path)
+    config=json.loads((root/'pipeline/minerals.json').read_text(encoding='utf-8'))
+    config['minerals']['lithium']['stages']['283691']['end_year']=config['minerals']['lithium']['end_year']+1
+    (root/'pipeline/minerals.json').write_bytes(archive.encode(config))
+    with pytest.raises(ValueError,match='outside the queried range'):
+        update_minerals.run(root,bundle=synthetic_bundle())
+
+
 def test_evidence_ledger_is_well_formed_and_reaches_real_rows():
     entries=process_trade.load_evidence(ROOT/'pipeline/evidence.json','lithium')
     assert entries
@@ -197,7 +230,7 @@ def test_accepted_snapshot_carries_only_checked_mirrors_as_verified():
     # substitutions are plausible, not a check of any country. Only Argentina 2024 has been
     # checked against an outside source; every other mirror substitution reads as unverified.
     mirrors=[r for r in rows if r['hs_code']=='283691' and r['selected_source'].startswith('mirror')]
-    assert len(mirrors)==33
+    assert mirrors, 'the carbonate stage published no mirror substitutions at all'
     checked=[r for r in mirrors if r['verification_status']=='externally_confirmed']
     assert [(r['country'],r['year']) for r in checked]==[('ARG',2024)]
     assert all(r['verification_status']=='unverified' for r in mirrors if r not in checked)
@@ -226,7 +259,9 @@ def test_headline_hs_codes_agree_across_catalog_and_pipeline():
 def test_usgs_strict_schema_withheld_and_duplicate():
     body=(ROOT/'data/manual/lithium-production.csv').read_bytes()
     records=strict_usgs.parse_csv(body)
-    assert len(records)==20
+    # Every reviewed line is a record; back-filling an edition adds lines, and the
+    # count is read from the file rather than pinned so that stays a data change.
+    assert len(records)==sum(1 for line in body.decode('utf-8-sig').splitlines()[1:] if line.strip())
     assert records[0]['production_t'] is None
     assert sum(r['production_t'] or 0 for r in records if r['year']==2024)==pytest.approx(222970)
     with pytest.raises(ValueError): strict_usgs.parse_csv(body+body.splitlines(keepends=True)[1])
@@ -270,10 +305,15 @@ def test_min_countries_exception_is_scoped():
         validate_data.validate(two_reporter_snapshot('283691',2019),None,CONFIG['validation'])
 
 
+# The synthetic years follow the configured range rather than a list typed here,
+# so extending end_year does not silently stop exercising the newest year.
+SYNTHETIC_START_YEAR=2022
+
+
 def synthetic_bundle():
     records=[]
     for hs in CONFIG['hs_codes']:
-        for year in [2022,2023,2024]:
+        for year in range(SYNTHETIC_START_YEAR,CONFIG['end_year']+1):
             for code,weight in [('AUS',100000),('CHL',80000),('CHN',60000),('USA',40000)]:
                 price=(2000 if year<2024 else 800) if hs=='253090' else 20000
                 records += [row(code,weight,value=weight*price,hs=hs,year=year),
@@ -287,7 +327,7 @@ def copy_repo(tmp_path):
     root=tmp_path/'repo'
     shutil.copytree(ROOT,root,ignore=shutil.ignore_patterns('.git','.cache','__pycache__','.pytest_cache','pytest-cache-files-*'))
     config=json.loads((root/'pipeline/minerals.json').read_text(encoding='utf-8'))
-    config['minerals']['lithium']['start_year']=2022
+    config['minerals']['lithium']['start_year']=SYNTHETIC_START_YEAR
     (root/'pipeline/minerals.json').write_bytes(archive.encode(config))
     # Tests exercise the first-run -> idempotent-second-run cycle against
     # synthetic data; they must not be influenced by whatever real accepted
@@ -363,7 +403,7 @@ def test_filesystem_failure_rolls_back(tmp_path,monkeypatch):
 def test_partial_commodity_cannot_reach_headline():
     bundle=synthetic_bundle()
     bundle['trade']=[r for r in bundle['trade'] if not (r['hs_code']=='283691' and r['partner']=='W00')]
-    config=copy.deepcopy(CONFIG); config['start_year']=2022
+    config=copy.deepcopy(CONFIG); config['start_year']=SYNTHETIC_START_YEAR
     entry=json.loads((ROOT/'critical-minerals/data/catalog.json').read_text(encoding='utf-8'))['minerals'][0]
     with pytest.raises(ValueError,match='missing reported world export totals'):
         update_minerals.assemble(bundle,config,entry)

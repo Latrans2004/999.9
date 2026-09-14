@@ -1,0 +1,9 @@
+# Offline extraction only. Deliberately NOT part of pipeline/requirements.txt:
+# the pipeline ingests the reviewed snapshot in data/manual/, never a PDF, so
+# nothing in the published path needs a PDF layout engine. PyMuPDF is also
+# AGPL-3.0 while this repository is MIT, and that boundary is easier to keep
+# when the dependency lives in a file the pipeline never installs.
+#
+#   pip install -r tools/requirements-extract.txt
+#   python tools/extract_usgs_history.py <pdf> --out data/review/lithium-usgs-history
+pymupdf>=1.24

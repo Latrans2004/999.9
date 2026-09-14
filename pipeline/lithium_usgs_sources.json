@@ -1,0 +1,107 @@
+[
+  {
+    "archived_path": "data/raw/usgs/db2adfc43c45b1cac297e20798eac534823a66f302b61bd16ec0974b15cb531b.pdf",
+    "archived_sha256": "a61206ba769ecccfe08e0774221069bc4533aab54434c1c091257b4dd1808ec9",
+    "chapter_url": "https://www.usgs.gov/media/files/lithium-mcs-2019-data-sheet",
+    "data_years": [
+      2017,
+      2018
+    ],
+    "edition": 2019,
+    "note": "Lithium chapter extracted from the full volume; the archived file carries all seven editions and its sha256 covers the file as a whole.",
+    "retrieved_at": "2026-09-14T19:47:22+00:00",
+    "reviewed_at": "2026-09-14",
+    "source": "usgs",
+    "volume_url": "https://www.usgs.gov/media/files/lithium-mcs-2019-data-sheet"
+  },
+  {
+    "archived_path": "data/raw/usgs/db2adfc43c45b1cac297e20798eac534823a66f302b61bd16ec0974b15cb531b.pdf",
+    "archived_sha256": "a61206ba769ecccfe08e0774221069bc4533aab54434c1c091257b4dd1808ec9",
+    "chapter_url": "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-lithium.pdf",
+    "data_years": [
+      2018,
+      2019
+    ],
+    "edition": 2020,
+    "note": "Lithium chapter extracted from the full volume; the archived file carries all seven editions and its sha256 covers the file as a whole.",
+    "retrieved_at": "2026-09-14T19:47:22+00:00",
+    "reviewed_at": "2026-09-14",
+    "source": "usgs",
+    "volume_url": "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020.pdf"
+  },
+  {
+    "archived_path": "data/raw/usgs/db2adfc43c45b1cac297e20798eac534823a66f302b61bd16ec0974b15cb531b.pdf",
+    "archived_sha256": "a61206ba769ecccfe08e0774221069bc4533aab54434c1c091257b4dd1808ec9",
+    "chapter_url": "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021-lithium.pdf",
+    "data_years": [
+      2019,
+      2020
+    ],
+    "edition": 2021,
+    "note": "Lithium chapter extracted from the full volume; the archived file carries all seven editions and its sha256 covers the file as a whole.",
+    "retrieved_at": "2026-09-14T19:47:22+00:00",
+    "reviewed_at": "2026-09-14",
+    "source": "usgs",
+    "volume_url": "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021.pdf"
+  },
+  {
+    "archived_path": "data/raw/usgs/db2adfc43c45b1cac297e20798eac534823a66f302b61bd16ec0974b15cb531b.pdf",
+    "archived_sha256": "a61206ba769ecccfe08e0774221069bc4533aab54434c1c091257b4dd1808ec9",
+    "chapter_url": "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022-lithium.pdf",
+    "data_years": [
+      2020,
+      2021
+    ],
+    "edition": 2022,
+    "note": "Lithium chapter extracted from the full volume; the archived file carries all seven editions and its sha256 covers the file as a whole.",
+    "retrieved_at": "2026-09-14T19:47:22+00:00",
+    "reviewed_at": "2026-09-14",
+    "source": "usgs",
+    "volume_url": "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022.pdf"
+  },
+  {
+    "archived_path": "data/raw/usgs/db2adfc43c45b1cac297e20798eac534823a66f302b61bd16ec0974b15cb531b.pdf",
+    "archived_sha256": "a61206ba769ecccfe08e0774221069bc4533aab54434c1c091257b4dd1808ec9",
+    "chapter_url": "https://pubs.usgs.gov/periodicals/mcs2023/mcs2023-lithium.pdf",
+    "data_years": [
+      2021,
+      2022
+    ],
+    "edition": 2023,
+    "note": "Lithium chapter extracted from the full volume; the archived file carries all seven editions and its sha256 covers the file as a whole.",
+    "retrieved_at": "2026-09-14T19:47:22+00:00",
+    "reviewed_at": "2026-09-14",
+    "source": "usgs",
+    "volume_url": "https://pubs.usgs.gov/periodicals/mcs2023/mcs2023.pdf"
+  },
+  {
+    "archived_path": "data/raw/usgs/db2adfc43c45b1cac297e20798eac534823a66f302b61bd16ec0974b15cb531b.pdf",
+    "archived_sha256": "a61206ba769ecccfe08e0774221069bc4533aab54434c1c091257b4dd1808ec9",
+    "chapter_url": "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-lithium.pdf",
+    "data_years": [
+      2022,
+      2023
+    ],
+    "edition": 2024,
+    "note": "Lithium chapter extracted from the full volume; the archived file carries all seven editions and its sha256 covers the file as a whole.",
+    "retrieved_at": "2026-09-14T19:47:22+00:00",
+    "reviewed_at": "2026-09-14",
+    "source": "usgs",
+    "volume_url": "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024.pdf"
+  },
+  {
+    "archived_path": "data/raw/usgs/db2adfc43c45b1cac297e20798eac534823a66f302b61bd16ec0974b15cb531b.pdf",
+    "archived_sha256": "a61206ba769ecccfe08e0774221069bc4533aab54434c1c091257b4dd1808ec9",
+    "chapter_url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lithium.pdf",
+    "data_years": [
+      2023,
+      2024
+    ],
+    "edition": 2025,
+    "note": "Lithium chapter extracted from the full volume; the archived file carries all seven editions and its sha256 covers the file as a whole.",
+    "retrieved_at": "2026-09-14T19:47:22+00:00",
+    "reviewed_at": "2026-09-14",
+    "source": "usgs",
+    "volume_url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025.pdf"
+  }
+]
