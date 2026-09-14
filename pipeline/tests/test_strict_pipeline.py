@@ -122,6 +122,39 @@ def test_report_coverage_measures_filings_not_accepted_suppliers():
     assert process_trade.report_coverage(rows+[row('JPN',10,'M','CHN',hs='283691',year=2024)])[('283691',2024)]==pytest.approx(33.3)
 
 
+def test_a_stage_can_end_before_the_query_range_does():
+    """A stage whose method stops working ends; the query range does not shrink."""
+    config={'stages':{'283691':{**CONFIG['stages']['283691'],'end_year':2023}}}
+    rows=[row(c,10,hs='283691',year=y) for y in (2022,2023,2024) for c in ('CHN','CHL','ARG')]
+    selected=process_trade.build(rows,config)
+    assert sorted({r['year'] for r in selected})==[2022,2023]
+    uncapped={'stages':{'283691':CONFIG['stages']['283691']}}
+    assert sorted({r['year'] for r in process_trade.build(rows,uncapped)})==[2022,2023,2024]
+
+
+def test_a_year_a_stage_does_not_publish_cannot_move_the_years_it_does():
+    # Report completeness is relative to the stage's own median, so a late season
+    # added to the median would silently restate every year already published.
+    published=[row(c,10,hs='283691',year=2022) for c in ('CHN','CHL','ARG','AUS')]
+    published+=[row(c,10,hs='283691',year=2023) for c in ('CHN','CHL')]
+    late=[row('CHN',10,hs='283691',year=2024)]
+    before=process_trade.report_coverage(published)
+    after=process_trade.report_coverage(published+late,stage_end_years={'283691':2023})
+    assert {k:v for k,v in after.items() if k[1]<=2023}=={k:v for k,v in before.items() if k[1]<=2023}
+    assert ('283691',2024) not in after
+    # Without the cap the late year is part of the record and does move the median.
+    assert process_trade.report_coverage(published+late)[('283691',2022)]!=before[('283691',2022)]
+
+
+def test_a_stage_cannot_end_outside_the_queried_range(tmp_path):
+    root=copy_repo(tmp_path)
+    config=json.loads((root/'pipeline/minerals.json').read_text(encoding='utf-8'))
+    config['minerals']['lithium']['stages']['283691']['end_year']=config['minerals']['lithium']['end_year']+1
+    (root/'pipeline/minerals.json').write_bytes(archive.encode(config))
+    with pytest.raises(ValueError,match='outside the queried range'):
+        update_minerals.run(root,bundle=synthetic_bundle())
+
+
 def test_evidence_ledger_is_well_formed_and_reaches_real_rows():
     entries=process_trade.load_evidence(ROOT/'pipeline/evidence.json','lithium')
     assert entries

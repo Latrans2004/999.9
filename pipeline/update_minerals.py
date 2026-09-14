@@ -109,7 +109,8 @@ def assemble(bundle, settings, entry, mineral='lithium', root=ROOT):
     concentration = process_trade.metrics(selected)
     # Report completeness is a property of the filing year, not of the selection policy,
     # so it is attached after the metrics rather than computed inside them.
-    coverage = process_trade.report_coverage(rows)
+    coverage = process_trade.report_coverage(
+        rows, stage_end_years={hs: s['end_year'] for hs, s in settings['stages'].items() if 'end_year' in s})
     for profile in concentration:
         profile['coverage_pct'] = coverage.get((profile['hs_code'], profile['year']))
     exports = defaultdict(lambda: defaultdict(float))
@@ -210,6 +211,10 @@ def run(root=ROOT, mineral='lithium', bundle=None, *, render_command=None):
     unknown_stages = set(settings.get('provisional_years', {})) - set(settings['stages'])
     if unknown_stages:
         raise ValueError(f'provisional_years names unknown stages: {sorted(unknown_stages)}')
+    for stage, policy in settings['stages'].items():
+        cap = policy.get('end_year')
+        if cap is not None and not settings['start_year'] <= cap <= settings['end_year']:
+            raise ValueError(f'{stage}: end_year {cap} is outside the queried range')
     bundle = collect(root, settings) if bundle is None else bundle
     processed, site = assemble(bundle, settings, entry, mineral, root)
     accepted_path = f'data/processed/{mineral}/snapshot.json'
