@@ -105,6 +105,124 @@ def test_excel_production_and_carbonate():
                 assert actual==pytest.approx(expected['selected_value'],abs=.00001)
 
 
+def test_report_coverage_measures_filings_not_accepted_suppliers():
+    # Three filers in a normal year, one in a late-filing year: the late year reads as a
+    # reporting artefact, not as a collapse to a single supplier.
+    rows=[row(c,10,hs='283691',year=y) for y in (2022,2023) for c in ('CHN','CHL','ARG')]
+    rows+=[row('CHN',10,hs='283691',year=2024)]
+    coverage=process_trade.report_coverage(rows)
+    assert coverage[('283691',2022)]==coverage[('283691',2023)]==100.0
+    assert coverage[('283691',2024)]==pytest.approx(33.3)
+    # A country whose figure the policy later rejects still filed, and an unallocated area
+    # that files its own returns is a filer even though it is never an accepted supplier.
+    assert process_trade.report_coverage(rows+[row('CT:490',0,hs='283691',year=2024)])[('283691',2024)]==pytest.approx(66.7)
+    # An entity the registry cannot identify is no evidence that anyone filed.
+    assert process_trade.report_coverage(rows+[row('CT:9999',10,hs='283691',year=2024)])[('283691',2024)]==pytest.approx(33.3)
+    # Imports are a different question; only the export side is counted.
+    assert process_trade.report_coverage(rows+[row('JPN',10,'M','CHN',hs='283691',year=2024)])[('283691',2024)]==pytest.approx(33.3)
+
+
+def test_evidence_ledger_is_well_formed_and_reaches_real_rows():
+    entries=process_trade.load_evidence(ROOT/'pipeline/evidence.json','lithium')
+    assert entries
+    settings=CONFIG
+    snapshot=json.loads((ROOT/'data/processed/lithium/snapshot.json').read_text(encoding='utf-8'))
+    rows={(r['hs_code'],r['year'],r['country']) for r in snapshot['selected']}
+    for e in entries:
+        # An entry naming a stage the pipeline does not query, or a year outside the
+        # published range, would silently verify nothing.
+        assert e['hs_code'] in settings['hs_codes'], e
+        assert settings['start_year']<=e['year_from']<=e['year_to']<=settings['end_year'], e
+        for year in range(e['year_from'],e['year_to']+1):
+            assert (e['hs_code'],year,e['country']) in rows, (e['hs_code'],year,e['country'])
+        # URLs are filled in by hand once confirmed; a fabricated one would defeat the ledger.
+        assert e.get('source_url') in (None,'')
+
+
+@pytest.mark.parametrize('breakage',['outcome','supports','conflicting_supports','years','source','note','overlap'])
+def test_evidence_ledger_rejects_untrustworthy_entries(tmp_path,breakage):
+    entry={'mineral':'lithium','hs_code':'283691','country':'ARG','year_from':2024,'year_to':2024,
+           'outcome':'externally_confirmed','supports':'mirror','source_name':'S','source_url':None,
+           'note_en':'e','note_ja':'j'}
+    ledger={'entries':[entry]}
+    if breakage=='outcome': entry['outcome']='probably_fine'
+    if breakage=='supports': entry['supports']='whoever'
+    if breakage=='conflicting_supports': entry['outcome']='externally_conflicting'
+    if breakage=='years': entry['year_to']=2023
+    if breakage=='source': entry['source_name']=''
+    if breakage=='note': entry['note_ja']=''
+    if breakage=='overlap': ledger['entries'].append(copy.deepcopy(entry))
+    path=tmp_path/'evidence.json'
+    path.write_bytes(archive.encode(ledger))
+    with pytest.raises((ValueError,KeyError)): process_trade.load_evidence(path,'lithium')
+
+
+def test_verification_status_separates_why_from_whether():
+    entries=[{'mineral':'lithium','hs_code':'282520','country':'JPN','year_from':2021,'year_to':2021,
+              'outcome':'externally_confirmed','supports':'self_report','source_name':'MOF',
+              'source_url':None,'note_en':'e','note_ja':'j'},
+             {'mineral':'lithium','hs_code':'253090','country':'ZWE','year_from':2030,'year_to':2030,
+              'outcome':'externally_conflicting','supports':'neither','source_name':'MMCZ',
+              'source_url':None,'note_en':'e','note_ja':'j'}]
+    rows=[{'hs_code':'282520','year':2021,'country':'JPN','selected_value':3.736,'selected_source':'reported'},
+          {'hs_code':'282520','year':2021,'country':'KOR','selected_value':1.0,'selected_source':'reported'},
+          {'hs_code':'253090','year':2021,'country':'CHN','selected_value':5.0,'selected_source':'reported_china_import'},
+          {'hs_code':'283691','year':2021,'country':'BRA','selected_value':9.0,'selected_source':'mirror_missing_report'},
+          {'hs_code':'283691','year':2021,'country':'FRA','selected_value':None,'selected_source':'missing'},
+          {'hs_code':'headline_usd','year':2021,'country':'CHL','selected_value':7.0}]
+    unmatched=process_trade.apply_verification(rows,entries)
+    status=[r['verification_status'] for r in rows]
+    # An outside source that confirms a self-report outranks 'we changed nothing': folding
+    # Japan into no_adjustment would hide the one check that was actually carried out.
+    assert status[0]=='externally_confirmed'
+    assert status[1]=='no_adjustment'
+    # The importer's own declaration is taken as filed, so there is no correction to verify.
+    assert status[2]=='no_adjustment'
+    # A mirror substitution nobody checked is exactly what 'unverified' is for.
+    assert status[3]=='unverified'
+    # Nothing was selected, and a stage with no self-report/mirror pair has no such question.
+    assert status[4]=='not_applicable' and status[5]=='not_applicable'
+    assert [r['unverified'] for r in rows]==[s=='unverified' for s in status]
+    assert all(s in process_trade.VERIFICATION_STATUSES for s in status)
+    # An entry covering a year that is not published verifies nothing, and says so.
+    assert unmatched==[('253090',2030,'ZWE')]
+
+
+def test_accepted_snapshot_carries_only_checked_mirrors_as_verified():
+    snapshot=json.loads((ROOT/'data/processed/lithium/snapshot.json').read_text(encoding='utf-8'))
+    rows=snapshot['selected']
+    assert all(r['verification_status'] in process_trade.VERIFICATION_STATUSES for r in rows)
+    assert all(r['unverified']==(r['verification_status']=='unverified') for r in rows)
+    # The twelve-country allowlist on the carbonate stage is an argument about which
+    # substitutions are plausible, not a check of any country. Only Argentina 2024 has been
+    # checked against an outside source; every other mirror substitution reads as unverified.
+    mirrors=[r for r in rows if r['hs_code']=='283691' and r['selected_source'].startswith('mirror')]
+    assert len(mirrors)==33
+    checked=[r for r in mirrors if r['verification_status']=='externally_confirmed']
+    assert [(r['country'],r['year']) for r in checked]==[('ARG',2024)]
+    assert all(r['verification_status']=='unverified' for r in mirrors if r not in checked)
+
+
+def test_headline_hs_codes_agree_across_catalog_and_pipeline():
+    # The site catalog and the strict pipeline each carry the headline HS codes, and a
+    # silent divergence would publish a headline the pipeline did not compute. They are
+    # named identically so the mismatch is visible, and checked here so it fails in CI
+    # rather than at the next publication attempt.
+    catalog=json.loads((ROOT/'critical-minerals/data/catalog.json').read_text(encoding='utf-8'))
+    pipeline=json.loads((ROOT/'pipeline/minerals.json').read_text(encoding='utf-8'))['minerals']
+    entries={e['slug']:e for e in catalog['minerals']}
+    assert all('headline_hs_codes' in e for e in entries.values())
+    for slug,settings in pipeline.items():
+        assert entries[slug]['headline_hs_codes']==settings['headline_hs_codes'], slug
+        # A headline code that is never queried would silently produce an empty headline.
+        assert set(settings['headline_hs_codes'])<=set(settings['hs_codes']), slug
+    # 253090 is queried and published as its own stage, and its absence from the headline
+    # is a recorded decision, not drift. See headline_note in pipeline/minerals.json.
+    assert '253090' in pipeline['lithium']['hs_codes']
+    assert '253090' not in pipeline['lithium']['headline_hs_codes']
+    assert '253090' in pipeline['lithium']['headline_note']
+
+
 def test_usgs_strict_schema_withheld_and_duplicate():
     body=(ROOT/'data/manual/lithium-production.csv').read_bytes()
     records=strict_usgs.parse_csv(body)
@@ -190,6 +308,12 @@ def test_transaction_render_and_idempotency(tmp_path):
     assert not update_minerals.run(root,bundle=bundle)
     assert public_bytes(root)==before
     assert (root/'critical-minerals/data/lithium/trade.csv').exists()
+    profiles=json.loads((root/'critical-minerals/data/lithium/concentration.json').read_text(encoding='utf-8'))['records']
+    # Every published stage answers the report-completeness question, and the two
+    # single-source stages answer it with null rather than a misleading 100.
+    assert all('coverage_pct' in r for r in profiles)
+    assert all(r['coverage_pct'] is None for r in profiles if r['hs_code'] in ('headline_usd','mine_li_t'))
+    assert any(r['coverage_pct'] is not None for r in profiles)
     text=(root/'critical-minerals/minerals/lithium.html').read_text(encoding='utf-8')
     assert 'Country provenance JSON' in text and 'data-i18n-text=' in text
     broken=copy.deepcopy(bundle)

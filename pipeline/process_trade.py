@@ -1,6 +1,8 @@
 """Reported and mirror quantities stay separate from the legacy USD headline."""
 from __future__ import annotations
 from collections import defaultdict
+import json
+from pathlib import Path
 from statistics import median
 from .hhi import concentration
 from . import countries
@@ -10,6 +12,130 @@ def total(values):
     values = list(values)
     # Do not claim a complete mirror sum when any constituent is missing.
     return sum(values) if values and all(v is not None for v in values) else None
+
+
+OUTCOMES = {'externally_confirmed', 'externally_conflicting'}
+SUPPORTS = {'self_report', 'mirror', 'neither'}
+
+
+def load_evidence(path, mineral=None):
+    """Read the external-evidence ledger and refuse anything that cannot be trusted as one.
+
+    The ledger's whole value is that a reader can take an entry at face value, so the
+    shape is checked rather than assumed: an outcome and a supported side that agree, a
+    named source, and a reason written in both languages. A conflicting outcome may not
+    claim to support either declaration, since the point of recording it is that neither
+    was settled. source_url is allowed to be empty - an unchecked link that looks real
+    would be worse than no link - but a source_name is not.
+    """
+    ledger = json.loads(Path(path).read_text(encoding='utf-8'))
+    entries = [e for e in ledger['entries'] if mineral is None or e['mineral'] == mineral]
+    seen = set()
+    for e in entries:
+        identity = (e['mineral'], e['hs_code'], e['country'], e['year_from'], e['year_to'])
+        if e['outcome'] not in OUTCOMES:
+            raise ValueError(f'{identity}: unknown evidence outcome {e["outcome"]}')
+        if e['supports'] not in SUPPORTS:
+            raise ValueError(f'{identity}: unknown supported side {e["supports"]}')
+        if (e['supports'] == 'neither') != (e['outcome'] == 'externally_conflicting'):
+            raise ValueError(f'{identity}: outcome and supported side disagree')
+        if e['year_to'] < e['year_from']:
+            raise ValueError(f'{identity}: invalid year range')
+        if not e.get('source_name'):
+            raise ValueError(f'{identity}: external evidence without a named source')
+        for field in ('note_en', 'note_ja'):
+            if not e.get(field):
+                raise ValueError(f'{identity}: missing {field}')
+        for year in range(e['year_from'], e['year_to'] + 1):
+            key = (e['mineral'], e['hs_code'], e['country'], year)
+            if key in seen:
+                raise ValueError(f'{key}: two evidence entries cover the same country-year')
+            seen.add(key)
+    return entries
+
+
+VERIFICATION_STATUSES = ('not_applicable', 'no_adjustment', 'externally_confirmed',
+                         'externally_conflicting', 'unverified')
+
+
+def apply_verification(selected, entries):
+    """Label each row with whether its selected value was checked, and how.
+
+    The five values are ordered by how much they claim, and the first that fits wins:
+
+    not_applicable   the question does not arise - either the stage has no self-report /
+                     mirror pair to disagree about (a single-source stage), or no value was
+                     selected at all, so there is nothing to have verified.
+    externally_*     the ledger records a check of this country-year against a source
+                     outside the trade statistics. This outranks no_adjustment: a
+                     self-report that an outside source confirms - Japan's, checked against
+                     the Ministry of Finance - is a stronger statement than 'we changed
+                     nothing', and collapsing it into no_adjustment would hide the check.
+    no_adjustment    the self-report was taken as filed. Nothing was corrected, so there is
+                     no correction to verify. This is not the same as not_applicable: here
+                     the question arises and the answer is that it does not bite.
+    unverified       a correction was applied and nobody has checked it against anything
+                     outside Comtrade.
+
+    The legacy boolean is derived from the result rather than kept alongside it, so the two
+    cannot drift apart. Note what that reclassifies: the mirror substitutions on the
+    carbonate stage were all carried as verified because the twelve-country allowlist
+    limits them to producing and refining countries. That is an argument about which
+    substitutions are plausible, not a check of any particular country, and only Argentina
+    has actually been checked. The rest now read as unverified, which is what they are.
+    """
+    ledger = {}
+    for e in entries:
+        for year in range(e['year_from'], e['year_to'] + 1):
+            ledger[(e['hs_code'], year, e['country'])] = e
+    matched = set()
+    for r in selected:
+        entry = ledger.get((r.get('hs_code'), r.get('year'), r.get('country')))
+        if 'selected_source' not in r:
+            status = 'not_applicable'
+        elif entry is not None:
+            status = entry['outcome']
+            matched.add((entry['hs_code'], r['year'], entry['country']))
+        elif r['selected_value'] is None:
+            status = 'not_applicable'
+        elif r['selected_source'] in ('reported', 'reported_china_import'):
+            status = 'no_adjustment'
+        else:
+            status = 'unverified'
+        r['verification_status'] = status
+        r['unverified'] = status == 'unverified'
+    return sorted(set(ledger) - matched)
+
+
+def report_coverage(rows, flow='X'):
+    """Reporting completeness per (hs_code, year), as a percentage of that stage's own median.
+
+    Trade statistics are filed late and unevenly, so a recent year can look like a
+    structural break when it is only an incomplete filing season. This counts how many
+    countries filed, relative to the all-period median for the same stage, so a reader can
+    tell the two apart.
+
+    It counts filings, not accepted suppliers: a country that filed a zero, or a figure the
+    selection policy then rejected, still filed. Unallocated areas that file their own annual
+    returns therefore count too - 'Other Asia, nes' is not a supplier the concentration index
+    may attribute tonnes to, but it is a filer, and dropping it would understate how complete
+    the season was. Only entities the registry cannot identify at all are excluded, because an
+    unidentifiable blob in the feed is no evidence that anyone filed, and no published metric
+    here is allowed to move when one appears.
+    """
+    reporters = defaultdict(set)
+    for r in rows:
+        if r['flow'] == flow and countries.row_entity(r, 'reporter').kind != 'unknown':
+            reporters[(r['hs_code'], r['year'])].add(r['reporter'])
+    counts = defaultdict(dict)
+    for (hs, year), filed in reporters.items():
+        counts[hs][year] = len(filed)
+    coverage = {}
+    for hs, years in counts.items():
+        middle = median(years.values())
+        for year, filed in years.items():
+            coverage[(hs, year)] = None if not middle else round(filed / middle * 100, 1)
+    return coverage
 
 
 def build(rows, config):

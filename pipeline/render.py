@@ -144,7 +144,7 @@ def placeholder_mineral(entry: dict) -> dict:
         "summary_ja": entry.get("summary_ja"),
         "caveats": entry.get("caveats", []),
         "caveats_ja": entry.get("caveats_ja", []),
-        "hs_codes": entry.get("hs_codes", []),
+        "headline_hs_codes": entry.get("headline_hs_codes", []),
         "hs_label": entry.get("hs_label"),
         "hs_label_ja": entry.get("hs_label_ja"),
         "production": empty_block(

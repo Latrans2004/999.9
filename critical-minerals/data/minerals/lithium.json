@@ -9,7 +9,7 @@
     "輸出側の品目コードはスポジュメン精鉱ではなく精製リチウム化合物を対象としているため、輸出側の指標が表すのは鉱山ではなく化学転換の工程である。"
   ],
   "generated_at": "2026-09-13T16:44:21+00:00",
-  "hs_codes": [
+  "headline_hs_codes": [
     "283691",
     "282520"
   ],
@@ -28,9 +28,14 @@
       2025
     ],
     "entity_diagnostics_url": "entities.json",
-    "fingerprint": "a81682df622a2186bd3f048f30ab2e2712500309a9927862879dffc82eda3d68",
+    "fingerprint": "0c3872a3df63ce632203753a96ed127751a0ab7975c7bfcb72ae7561aa05000a",
     "last_updated": "2026-09-13T16:44:21+00:00",
-    "methodology_version": "lithium-2026-09-13-entities-v2",
+    "methodology_version": "lithium-2026-09-14-coverage-v3",
+    "provisional_years": {
+      "282520": [
+        2025
+      ]
+    },
     "retrieved_at": "2026-09-13T16:44:08+00:00",
     "source": [
       "UN Comtrade",
