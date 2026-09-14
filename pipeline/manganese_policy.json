@@ -1,0 +1,42 @@
+{
+  "hs_code": "260200",
+  "start_year": 2017,
+  "end_year": 2024,
+  "mirror_allowlist": [],
+  "gap_threshold": null,
+  "anchor_ratio_band": null,
+  "review_status": "research_only_not_human_reviewed",
+  "reason": "No reviewed manganese evidence authorizes mirror replacement or numerical anchor thresholds. Empty allowlist does not discredit own declarations.",
+  "country_context": {
+    "IND": {
+      "role": "domestic_consumption",
+      "source_urls": ["https://ibm.gov.in/writereaddata/files/1768904841696f5889c118d13.01.2026__FINAL_COPY_IMYB_BOOK_2023__Ebook.pdf"],
+      "reason": "IBM reports domestic manganese ore consumption and imports for ferroalloys. Fiscal-year national series is not calendar-year exports. Research context only."
+    },
+    "CHN": {
+      "role": "domestic_consumption",
+      "source_urls": ["https://www.eramet.com/en/news/eramet-confirms-its-resilience-and-successfully-delivers-on-its-strategic-roadmap/"],
+      "reason": "Eramet annual market discussion describes Chinese steel demand and ore port inventories. No export/mine identity; research context only."
+    },
+    "GAB": {
+      "role": "unknown",
+      "source_urls": ["https://www.eramet.com/en/investors/annual-report/"],
+      "reason": "Comilog is an operation, not automatically all Gabon; internal/external sales, stocks and other producers need reconciliation. A ratio cannot establish a single-origin industry."
+    },
+    "AUS": {
+      "role": "unknown",
+      "source_urls": ["https://www.south32.net/investors-media/annual-reporting-suite"],
+      "reason": "Multiple operations, equity versus 100 percent, wet tonnes, financial year and cyclone interruptions require review."
+    },
+    "ZAF": {
+      "role": "unknown",
+      "source_urls": ["https://www.south32.net/investors-media/annual-reporting-suite"],
+      "reason": "Multiple producers and domestic alloys preclude an assumed single-mine export anchor."
+    },
+    "NLD": {
+      "role": "unknown",
+      "source_urls": [],
+      "reason": "Potential transit/reexport role must be established for manganese specifically; geography or a high export/production ratio is not evidence."
+    }
+  }
+}

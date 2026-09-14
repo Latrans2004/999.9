@@ -1,0 +1,33 @@
+name: Audit manganese ore (no publication)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: manganese-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r pipeline/requirements.txt
+      - run: python -m pytest pipeline/tests -q
+      - name: Collect only Comtrade and diagnose
+        env:
+          COMTRADE_API_KEY: ${{ secrets.COMTRADE_API_KEY }}
+        run: python -m pipeline.manganese
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: manganese-audit-${{ github.run_id }}
+          path: .cache/manganese-audit/
+          include-hidden-files: true
+          retention-days: 90

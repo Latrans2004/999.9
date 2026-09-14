@@ -1,0 +1,2074 @@
+[
+  {
+    "changed": true,
+    "country": "AUS",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Australia, 2020 column",
+        "native_token": "4 752 200",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 4752200
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Australia, 2020 column",
+        "native_token": "6 425 848",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 6425848
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "AUS",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Australia, 2021 column",
+        "native_token": "6 285 057",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 6285057
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Australia, 2021 column",
+        "native_token": "6 188 587",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 6188587
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": true,
+    "country": "BOL",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Bolivia, 2020 column",
+        "native_token": "* 4 700",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 4700
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Bolivia, 2020 column",
+        "native_token": "23 260",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 23260
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "BOL",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Bolivia, 2021 column",
+        "native_token": "* 5 100",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 5100
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Bolivia, 2021 column",
+        "native_token": "25 140",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 25140
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": true,
+    "country": "BRA",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Brazil, 2020 column",
+        "native_token": "2 385 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 2385000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Brazil, 2020 column",
+        "native_token": "2 469 313",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 2469313
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "BRA",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Brazil, 2021 column",
+        "native_token": "1 775 217",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 1775217
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Brazil, 2021 column",
+        "native_token": "1 435 561",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 1435561
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": true,
+    "country": "CHN",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, China, 2020 column",
+        "native_token": "* 6 700 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 6700000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, China, 2020 column",
+        "native_token": "* 12 856 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 12856000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "CHN",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, China, 2021 column",
+        "native_token": "* 6 500 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 6500000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, China, 2021 column",
+        "native_token": "* 8 000 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 8000000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "CIV",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Ivory Coast, 2020 column",
+        "native_token": "1 325 525",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 1325525
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Côte d’Ivoire, 2020 column",
+        "native_token": "1 325 525",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 1325525
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "CIV",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Ivory Coast, 2021 column",
+        "native_token": "* 1 400 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 1400000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Côte d’Ivoire, 2021 column",
+        "native_token": "961 267",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 961267
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "COD",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Congo, Democratic Republic, 2020 column",
+        "native_token": "(b)* 5 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 5000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Congo, Democratic Republic, 2020 column",
+        "native_token": "(b) * 5 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 5000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "COD",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Congo, Democratic Republic, 2021 column",
+        "native_token": "(b)* 5 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 5000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Congo, Democratic Republic, 2021 column",
+        "native_token": "* 5 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 5000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": true,
+    "country": "COL",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Colombia, 2020 column",
+        "native_token": "—",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 0
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Colombia, 2020 column",
+        "native_token": "* 64",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 64
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "COL",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Colombia, 2021 column",
+        "native_token": "—",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 0
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Colombia, 2021 column",
+        "native_token": "* 800",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 800
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": true,
+    "country": "EGY",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Egypt, 2020 column",
+        "native_token": "* 100 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 100000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Egypt, 2020 column",
+        "native_token": "15 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 15000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "EGY",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Egypt, 2021 column",
+        "native_token": "* 90 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 90000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Egypt, 2021 column",
+        "native_token": "54 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 54000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "GAB",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Gabon, 2020 column",
+        "native_token": "8 147 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 8147000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Gabon, 2020 column",
+        "native_token": "8 147 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 8147000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "GAB",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Gabon, 2021 column",
+        "native_token": "9 241 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 9241000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Gabon, 2021 column",
+        "native_token": "9 241 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 9241000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "GEO",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Georgia, 2020 column",
+        "native_token": "302 200",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 302200
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Georgia, 2020 column",
+        "native_token": "302 200",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 302200
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "GEO",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Georgia, 2021 column",
+        "native_token": "332 400",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 332400
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Georgia, 2021 column",
+        "native_token": "332 400",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 332400
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "GHA",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Ghana, 2020 column",
+        "native_token": "2 357 515",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 2357515
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Ghana, 2020 column",
+        "native_token": "2 357 515",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 2357515
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "GHA",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Ghana, 2021 column",
+        "native_token": "3 336 273",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 3336273
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Ghana, 2021 column",
+        "native_token": "3 336 273",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 3336273
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": true,
+    "country": "IND",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, India, 2020 column",
+        "native_token": "2 688 038",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 2688038
+      },
+      {
+        "locator": "PDF page 56, printed p.46, India, 2020 column",
+        "native_token": "2 703 313",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 2703313
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "IND",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, India, 2021 column",
+        "native_token": "* 2 457 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 2457000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, India, 2021 column",
+        "native_token": "2 692 408",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 2692408
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "IRN",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Iran, 2020 column",
+        "native_token": "289 927",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 289927
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Iran, 2020 column",
+        "native_token": "289 927",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 289927
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "IRN",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Iran, 2021 column",
+        "native_token": "* 290 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 290000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Iran, 2021 column",
+        "native_token": "209 356",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 209356
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "KAZ",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Kazakhstan, 2020 column",
+        "native_token": "813 500",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 813500
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Kazakhstan, 2020 column",
+        "native_token": "813 500",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 813500
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "KAZ",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Kazakhstan, 2021 column",
+        "native_token": "1 248 700",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 1248700
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Kazakhstan, 2021 column",
+        "native_token": "1 248 700",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 1248700
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "MAR",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Morocco, 2020 column",
+        "native_token": "84 087",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 84087
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Morocco, 2020 column",
+        "native_token": "84 087",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 84087
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "MAR",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Morocco, 2021 column",
+        "native_token": "* 84 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 84000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Morocco, 2021 column",
+        "native_token": "82 507",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 82507
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "MEX",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Mexico, 2020 column",
+        "native_token": "565 619",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 565619
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Mexico, 2020 column",
+        "native_token": "565 619",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 565619
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "MEX",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Mexico, 2021 column",
+        "native_token": "560 742",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 560742
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Mexico, 2021 column",
+        "native_token": "560 742",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 560742
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "MMR",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Myanmar, 2020 column",
+        "native_token": "* 634 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 634000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Myanmar, 2020 column",
+        "native_token": "* 634 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 634000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "MMR",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Myanmar, 2021 column",
+        "native_token": "* 515 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 515000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Myanmar, 2021 column",
+        "native_token": "* 515 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 515000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "MYS",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Malaysia, 2020 column",
+        "native_token": "869 864",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 869864
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Malaysia, 2020 column",
+        "native_token": "869 864",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 869864
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "MYS",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Malaysia, 2021 column",
+        "native_token": "668 558",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 668558
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Malaysia, 2021 column",
+        "native_token": "668 558",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 668558
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "NAM",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Namibia, 2020 column",
+        "native_token": "37 072",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 37072
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Namibia, 2020 column",
+        "native_token": "37 072",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 37072
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "NAM",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Namibia, 2021 column",
+        "native_token": "* 38 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 38000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Namibia, 2021 column",
+        "native_token": "30 832",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 30832
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "OMN",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Oman, 2020 column",
+        "native_token": "14 500",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 14500
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Oman, 2020 column",
+        "native_token": "14 500",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 14500
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "OMN",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Oman, 2021 column",
+        "native_token": "15 100",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 15100
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Oman, 2021 column",
+        "native_token": "15 100",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 15100
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "PER",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Peru, 2020 column",
+        "native_token": "* 22 500",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 22500
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Peru, 2020 column",
+        "native_token": "* 22 500",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 22500
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "PER",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Peru, 2021 column",
+        "native_token": "* 20 160",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 20160
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Peru, 2021 column",
+        "native_token": "* 25 300",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 25300
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": true,
+    "country": "ROU",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Romania, 2020 column",
+        "native_token": "* 29 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 29000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Romania, 2020 column",
+        "native_token": "* 40 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 40000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "ROU",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Romania, 2021 column",
+        "native_token": "* 29 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 29000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Romania, 2021 column",
+        "native_token": "* 31 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 31000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "THA",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Thailand, 2020 column",
+        "native_token": "1 400",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 1400
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Thailand, 2020 column",
+        "native_token": "1 400",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 1400
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "THA",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Thailand, 2021 column",
+        "native_token": "—",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 0
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Thailand, 2021 column",
+        "native_token": "—",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 0
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "TUR",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Turkey, 2020 column",
+        "native_token": "101 766",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 101766
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Turkey, 2020 column",
+        "native_token": "101 766",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 101766
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "TUR",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Turkey, 2021 column",
+        "native_token": "86 654",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 86654
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Turkey, 2021 column",
+        "native_token": "86 654",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 86654
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": true,
+    "country": "UKR",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Ukraine, 2020 column",
+        "native_token": "* 1 850 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 1850000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Ukraine, 2020 column",
+        "native_token": "1 888 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 1888000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "UKR",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Ukraine, 2021 column",
+        "native_token": "* 1 850 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 1850000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Ukraine, 2021 column",
+        "native_token": "1 760 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 1760000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": true,
+    "country": "VNM",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Vietnam, 2020 column",
+        "native_token": "* 80 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 80000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Vietnam, 2020 column",
+        "native_token": "121 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 121000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": true,
+    "country": "VNM",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Vietnam, 2021 column",
+        "native_token": "* 80 000",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 80000
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Vietnam, 2021 column",
+        "native_token": "146 000",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 146000
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "ZAF",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, South Africa, 2020 column",
+        "native_token": "16 198 506",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 16198506
+      },
+      {
+        "locator": "PDF page 56, printed p.46, South Africa, 2020 column",
+        "native_token": "16 198 506",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 16198506
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "ZAF",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, South Africa, 2021 column",
+        "native_token": "19 156 479",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 19156479
+      },
+      {
+        "locator": "PDF page 56, printed p.46, South Africa, 2021 column",
+        "native_token": "19 156 479",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 19156479
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  },
+  {
+    "changed": false,
+    "country": "ZMB",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Zambia, 2020 column",
+        "native_token": "46 515",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 46515
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Zambia, 2020 column",
+        "native_token": "46 515",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 46515
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2020
+  },
+  {
+    "changed": false,
+    "country": "ZMB",
+    "observations": [
+      {
+        "locator": "PDF page 54, printed p.46, Zambia, 2021 column",
+        "native_token": "132 241",
+        "raw": {
+          "path": "data/raw/external/dc5f4ec4341c103320945ff14a903f6c62bbe2a81c7c9d8e803bf4975eae2b69.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:17:53+00:00",
+          "sha256": "342420c5b5fd8300ded89526738d0fdea1bb4031b49ffd53487d9eb80b5aaf51",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+        },
+        "source_vintage": "bgs-2017-2021",
+        "value_t": 132241
+      },
+      {
+        "locator": "PDF page 56, printed p.46, Zambia, 2021 column",
+        "native_token": "132 241",
+        "raw": {
+          "path": "data/raw/external/f84e728a23fac21bec778a86262c798e99e1f1eff5a312b21367c8063b7b147f.pdf",
+          "query": {},
+          "retrieved_at": "2026-09-14T10:18:01+00:00",
+          "sha256": "260a9891d28082990e49a75b97c386da1499af1ba59aad8743407c0c57aa55c6",
+          "source": "external",
+          "url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+        },
+        "source_vintage": "bgs-2020-2024",
+        "value_t": 132241
+      }
+    ],
+    "publishable": false,
+    "selected_value_t": null,
+    "year": 2021
+  }
+]

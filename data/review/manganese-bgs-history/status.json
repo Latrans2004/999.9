@@ -1,0 +1,23 @@
+{
+  "adopted_values": 0,
+  "annual_observations": 310,
+  "changed_values": 25,
+  "countries": 34,
+  "fiscal_observations": 35,
+  "missing_observations": 0,
+  "nil_observations": 16,
+  "overlap_country_years": 56,
+  "publishable": false,
+  "status": "extracted_unreviewed",
+  "unique_country_years": 254,
+  "years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ]
+}

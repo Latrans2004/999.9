@@ -1,0 +1,17 @@
+[
+  {
+    "id": "bgs-2017-2021", "kind": "document", "format": "pdf",
+    "title": "BGS World Mineral Production 2017-2021",
+    "source_url": "https://nora.nerc.ac.uk/id/eprint/534316/1/WMP_2017_2021_FINAL.pdf"
+  },
+  {
+    "id": "bgs-2020-2024", "kind": "document", "format": "pdf",
+    "title": "BGS World Mineral Production 2020-2024",
+    "source_url": "https://nora.nerc.ac.uk/id/eprint/541620/1/WMP_2020%20to%202024.pdf"
+  },
+  {
+    "id": "usgs-yearbook-2019", "kind": "document", "format": "pdf",
+    "title": "USGS Manganese Minerals Yearbook 2019",
+    "source_url": "https://pubs.usgs.gov/myb/vol1/2019/myb1-2019-manganese.pdf"
+  }
+]

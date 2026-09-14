@@ -1,0 +1,85 @@
+[
+  {
+    "error_type": "FetchError",
+    "id": "usgs-2019",
+    "publishable": false,
+    "review_status": "unreviewed",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2019/mcs2019-manganese.pdf",
+    "status": "failed"
+  },
+  {
+    "id": "usgs-2020",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/9ca589d97f6bce8db32a55df5f0cf7875ee62038e8f1ebc358805de73a509504.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T10:16:27+00:00",
+      "sha256": "5a3a0160ae8f369ce5b28791d805363bf4fa16c980d86ff7cbe8d889252d050a",
+      "source": "external",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-manganese.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-manganese.pdf",
+    "status": "downloaded_unreviewed"
+  },
+  {
+    "id": "usgs-2021",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/55c7daba03150ed2d5e3be5aac6121accafaf5f1e44b26479434676ac9005438.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T10:16:29+00:00",
+      "sha256": "41aef580d8dc9e2f30176bba02ed59edccc19d4965cb923db44abddde58563b7",
+      "source": "external",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021-manganese.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2021/mcs2021-manganese.pdf",
+    "status": "downloaded_unreviewed"
+  },
+  {
+    "id": "usgs-2022",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/836aa9ee38e6fb133b0a4a8b7c0f5dc22738952a00ab3a31d7162c1afbbd7099.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T10:16:30+00:00",
+      "sha256": "983deaaaee39432839f4e7c9407216033774bbcd91cd404fb26ff4466e1dec42",
+      "source": "external",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022-manganese.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2022/mcs2022-manganese.pdf",
+    "status": "downloaded_unreviewed"
+  },
+  {
+    "id": "usgs-2023",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/d17f153cf907b8822e922a26d38a43c616f86208e2a9b93345a242567e0ec253.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T10:16:31+00:00",
+      "sha256": "d2b0717a3f10f9dfee20b006335778db53a5ce91991cb84276c266c8873a2475",
+      "source": "external",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2023/mcs2023-manganese.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2023/mcs2023-manganese.pdf",
+    "status": "downloaded_unreviewed"
+  },
+  {
+    "id": "usgs-2024",
+    "publishable": false,
+    "raw": {
+      "path": "data/raw/external/3d0e60ced5510e638ab85cdda26610fb96afabf0d8ca71c4f2b3d8e0387a35aa.pdf",
+      "query": {},
+      "retrieved_at": "2026-09-14T10:16:33+00:00",
+      "sha256": "c5b90e373a0e61b86176a337f8db8beac74683af8acc138437bd49c5da78748c",
+      "source": "external",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-manganese.pdf"
+    },
+    "review_status": "unreviewed",
+    "source_url": "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-manganese.pdf",
+    "status": "downloaded_unreviewed"
+  }
+]
