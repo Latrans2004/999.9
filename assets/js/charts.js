@@ -1,4 +1,4 @@
-/* 999.9 — chart primitives.
+/* Orelysis — chart primitives.
  *
  * No dependencies, no CDN. Three forms only, because the site asks three
  * questions: how has concentration moved (line), who holds the share today

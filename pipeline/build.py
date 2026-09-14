@@ -23,7 +23,7 @@ from pathlib import Path
 from . import hhi
 from .sources import comtrade, usgs
 
-log = logging.getLogger("999.9")
+log = logging.getLogger("orelysis")
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SECTION_DIR = REPO_ROOT / "critical-minerals"

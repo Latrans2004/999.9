@@ -9,7 +9,7 @@
    clears the class; the timeout is a safety net if that script fails. */
 (function () {
   try {
-    var lang = localStorage.getItem("999.9:lang");
+    var lang = localStorage.getItem("orelysis:lang");
     if (!lang && /^ja\b/i.test(navigator.language || "")) lang = "ja";
     if (lang === "ja") {
       var root = document.documentElement;
@@ -19,15 +19,15 @@
   } catch (e) {}
 })();
 </script>
-<title data-i18n-text="このサイトについて — 999.9">About — 999.9</title>
-<meta name="description" content="999.9 is a personal open-data project measuring supply concentration in critical minerals.">
+<title data-i18n-text="このサイトについて — Orelysis">About — Orelysis</title>
+<meta name="description" content="Orelysis is a personal open-data project measuring supply concentration in critical minerals.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#080A0F">
 <link rel="icon" href="../assets/img/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
-<meta property="og:title" content="About — 999.9">
+<meta property="og:title" content="About — Orelysis">
 <meta property="og:description" content="Supply concentration in critical minerals, from open data.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="../assets/img/icon-512.png">
@@ -40,7 +40,7 @@
   <div class="wrap masthead__inner">
     <a class="brand" href="../index.html">
       <img src="../assets/img/brand-32.png" alt="" width="22" height="22">
-      <span>999.9</span>
+      <span>Orelysis</span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a>
@@ -56,14 +56,14 @@
 
 <main id="main">
 <div class="wrap">
-  <p class="crumb"><a href="../index.html">999.9</a><span>/</span><span data-i18n="nav.about">About</span></p>
+  <p class="crumb"><a href="../index.html">Orelysis</a><span>/</span><span data-i18n="nav.about">About</span></p>
 </div>
 
 <div class="wrap hero" style="padding-block:clamp(32px,6vw,64px) clamp(20px,4vw,36px)">
   <div class="hero__grid">
     <div>
       <p class="eyebrow" data-i18n="nav.about">About</p>
-      <h1 style="font-size:var(--step-h1);font-weight:400">999.9</h1>
+      <h1 style="font-size:var(--step-h1);font-weight:400">Orelysis</h1>
       <p class="hero__lede" data-i18n-text="趣味のプロジェクト。公開データを入れると、素材ごと・年ごとに1つの数値が出てくる。スプレッドシートに誰も触れることなく、スケジュール実行のジョブがそれを最新に保つ。">
         A hobby project. Public data goes in, one number per material per year comes out,
         and a scheduled job keeps it current without anyone touching a spreadsheet.
@@ -78,13 +78,6 @@
 
 <div class="wrap prose" data-lang-only="en">
   <section style="padding-top:0">
-    <h2>The name</h2>
-    <p>
-      999.9 is the hallmark for the highest commercial purity of a precious metal — four
-      nines, 99.99%. It is the last figure before a claim stops being verifiable, which
-      seemed like a reasonable thing to name a site about published numbers after.
-    </p>
-
     <h2>Why concentration</h2>
     <p>
       Most discussion of critical minerals runs on adjectives. A supply chain is
@@ -132,15 +125,12 @@
       calculations, choices and any errors on this site are mine alone, and neither
       organisation endorses or is associated with it.
     </p>
-    <p><a href="https://github.com/latrans2004/999.9" rel="noopener">Repository on GitHub →</a></p>
+    <p><a href="https://github.com/latrans2004/orelysis" rel="noopener">Repository on GitHub →</a></p>
   </section>
 </div>
 
 <div class="wrap prose" data-lang-only="ja" lang="ja" hidden>
   <section style="padding-top:0">
-    <h2>名前について</h2>
-    <p>999.9は、貴金属の商業上の最高純度を示す刻印で、「フォーナイン」、つまり99.99%を意味する。主張が検証可能であり続ける最後の桁でもある。公表された数値を扱うサイトの名前として、ふさわしいと思えた。</p>
-
     <h2>なぜ「集中度」なのか</h2>
     <p>重要鉱物をめぐる議論の多くは、形容詞で成り立っている。サプライチェーンは「脆弱」で、依存は「懸念される」もので、ある国は「支配的」だ。こうした言葉は確かに役割を果たしているが、素材どうしを比べることはできず、根拠となる事実が変わっても言葉のほうは変わらない。</p>
     <p>集中度の指標は比較ができ、実際に動く。天然黒鉛と銅を同じ軸の上に並べて違いをすぐに見て取れるし、あるサプライチェーンが「狭いかどうか」を言い争う代わりに、この10年で狭くなっているのか広がっているのかを問うことができる。</p>
@@ -155,7 +145,7 @@
 
     <h2>クレジットと免責事項</h2>
     <p>生産データは米国地質調査所(USGS)の国立鉱物情報センター、貿易データはUN Comtradeによるもの。いずれも公開されており、いずれも優れたデータである。このサイトの計算、判断、そして誤りはすべて筆者個人のものであり、どちらの組織も本サイトを承認しておらず、関係もない。</p>
-    <p><a href="https://github.com/latrans2004/999.9" rel="noopener">GitHubのリポジトリ →</a></p>
+    <p><a href="https://github.com/latrans2004/orelysis" rel="noopener">GitHubのリポジトリ →</a></p>
   </section>
 </div>
 </main>
@@ -164,7 +154,7 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <h4>999.9</h4>
+        <h4>Orelysis</h4>
         <p style="margin:0;max-width:32ch" data-i18n="footer.tagline">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
       </div>
       <div>
@@ -185,8 +175,8 @@
       <div>
         <h4 data-i18n="footer.source">Source</h4>
         <ul>
-          <li><a href="https://github.com/latrans2004/999.9" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
-          <li><a href="https://github.com/latrans2004/999.9/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
+          <li><a href="https://github.com/latrans2004/orelysis" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
+          <li><a href="https://github.com/latrans2004/orelysis/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
         </ul>
       </div>
     </div>

@@ -1,4 +1,4 @@
-/* 999.9 — design tokens and layout
+/* Orelysis — design tokens and layout
    Monochrome on near-black. Severity is carried by brightness, never by hue,
    and every band is labelled in words as well, so nothing depends on colour. */
 
@@ -192,8 +192,6 @@ html[lang="ja"] h1, html[lang="ja"] h2, html[lang="ja"] h3 { letter-spacing: 0; 
   font-size: var(--step-hero); font-weight: 200; letter-spacing: 0.06em;
   color: var(--ink); line-height: 1; margin: 0 0 10px;
 }
-.wordmark em { font-style: normal; color: var(--ink-3); }
-
 /* ----------------------------------------------------------------- rules */
 
 .rule { border: 0; border-top: 1px solid var(--hairline-soft); margin: 0; }

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% block title %}{{ mineral.name }} — critical minerals — 999.9{% endblock %}
-{% block title_ja %}{{ mineral.name_ja or mineral.name }} — 重要鉱物 — 999.9{% endblock %}
-{% block og_title %}{{ mineral.name }} supply concentration — 999.9{% endblock %}
+{% block title %}{{ mineral.name }} — critical minerals — Orelysis{% endblock %}
+{% block title_ja %}{{ mineral.name_ja or mineral.name }} — 重要鉱物 — Orelysis{% endblock %}
+{% block og_title %}{{ mineral.name }} supply concentration — Orelysis{% endblock %}
 {% block description %}{{ mineral.summary|striptags|truncate(180) }}{% endblock %}
 
 {% macro block_panel(key, block, title_key, title, title_ja, blurb, blurb_ja) %}
@@ -127,7 +127,7 @@
 {% block content %}
 <div class="wrap">
   <p class="crumb">
-    <a href="{{ root }}index.html">999.9</a><span>/</span><a href="{{ root }}critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n-text="{{ mineral.name_ja or '' }}">{{ mineral.name }}</span>
+    <a href="{{ root }}index.html">Orelysis</a><span>/</span><a href="{{ root }}critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n-text="{{ mineral.name_ja or '' }}">{{ mineral.name }}</span>
   </p>
 </div>
 

@@ -22,7 +22,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from . import i18n
 from .hhi import BAND_LABELS
 
-log = logging.getLogger("999.9.render")
+log = logging.getLogger("orelysis.render")
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SECTION_DIR = REPO_ROOT / "critical-minerals"
@@ -31,7 +31,7 @@ TEMPLATE_DIR = Path(__file__).resolve().parent / "templates"
 CONFIG_PATH = REPO_ROOT / "site.json"
 
 DEFAULT_CONFIG = {
-    "repo_url": "https://github.com/OWNER/999.9",
+    "repo_url": "https://github.com/OWNER/orelysis",
     "site_base": "/",
 }
 
