@@ -66,7 +66,7 @@ jobs:
             echo 'Validated data unchanged. No commit.' >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          git config user.name '999.9 pipeline'
+          git config user.name 'Orelysis pipeline'
           git config user.email 'actions@users.noreply.github.com'
           git add data/raw data/processed critical-minerals/data critical-minerals/*.html critical-minerals/minerals/*.html index.html 404.html
           git commit -m 'data: validated lithium refresh'

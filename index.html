@@ -9,7 +9,7 @@
    clears the class; the timeout is a safety net if that script fails. */
 (function () {
   try {
-    var lang = localStorage.getItem("999.9:lang");
+    var lang = localStorage.getItem("orelysis:lang");
     if (!lang && /^ja\b/i.test(navigator.language || "")) lang = "ja";
     if (lang === "ja") {
       var root = document.documentElement;
@@ -19,7 +19,7 @@
   } catch (e) {}
 })();
 </script>
-<title data-i18n-text="999.9 — 公開データで測る供給集中度">999.9 — supply concentration from open data</title>
+<title data-i18n-text="Orelysis — 公開データで測る供給集中度">Orelysis — supply concentration from open data</title>
 <meta name="description" content="Supply concentration in critical minerals, measured with the Herfindahl-Hirschman Index from USGS and UN Comtrade open data.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#080A0F">
@@ -27,7 +27,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<meta property="og:title" content="999.9">
+<meta property="og:title" content="Orelysis">
 <meta property="og:description" content="Supply concentration in critical minerals, from open data.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/icon-512.png">
@@ -40,7 +40,7 @@
   <div class="wrap masthead__inner">
     <a class="brand" href="index.html">
       <img src="assets/img/brand-32.png" alt="" width="22" height="22">
-      <span>999.9</span>
+      <span>Orelysis</span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a>
@@ -59,10 +59,10 @@
   <div class="hero__grid">
     <div>
       <p class="eyebrow" data-i18n-text="公開データによる測定">Open-data measurement</p>
-      <p class="wordmark">999<em>.</em>9</p>
+      <p class="wordmark">Orelysis</p>
       <h1 data-i18n-text="エネルギー転換を支える素材の供給は、どれほど集中しているのか。">How concentrated is the supply of the materials an energy transition runs on?</h1>
-      <p class="hero__lede" data-i18n-text="999.9は、公表されている生産統計と貿易統計を、素材ごと・年ごとに1つの数値へと集約する。その数値がハーフィンダール・ハーシュマン指数(HHI)だ。独占禁止当局が市場の評価に用いるのと同じ尺度を、企業ではなく国に向けて使っている。ここにある数値はすべて、スケジュールにしたがってソースから再計算され、その過程はすべて公開されている。">
-        999.9 takes published production and trade statistics and reduces them to one
+      <p class="hero__lede" data-i18n-text="Orelysisは、公表されている生産統計と貿易統計を、素材ごと・年ごとに1つの数値へと集約する。その数値がハーフィンダール・ハーシュマン指数(HHI)だ。独占禁止当局が市場の評価に用いるのと同じ尺度を、企業ではなく国に向けて使っている。ここにある数値はすべて、スケジュールにしたがってソースから再計算され、その過程はすべて公開されている。">
+        Orelysis takes published production and trade statistics and reduces them to one
         number per material per year — the Herfindahl–Hirschman Index, the same measure
         antitrust regulators use on markets, pointed at countries instead of firms.
         Everything here is recomputed from source on a schedule, and every step is in the open.
@@ -161,7 +161,7 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <h4>999.9</h4>
+        <h4>Orelysis</h4>
         <p style="margin:0;max-width:32ch" data-i18n="footer.tagline">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
       </div>
       <div>
@@ -182,8 +182,8 @@
       <div>
         <h4 data-i18n="footer.source">Source</h4>
         <ul>
-          <li><a href="https://github.com/latrans2004/999.9" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
-          <li><a href="https://github.com/latrans2004/999.9/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
+          <li><a href="https://github.com/latrans2004/orelysis" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
+          <li><a href="https://github.com/latrans2004/orelysis/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
         </ul>
       </div>
     </div>

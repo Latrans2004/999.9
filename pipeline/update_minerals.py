@@ -23,7 +23,7 @@ from . import archive, countries, entity_diagnostics, hhi, process_trade, strict
 from .build import summarise
 
 ROOT = Path(__file__).resolve().parents[1]
-log = logging.getLogger('999.9.strict')
+log = logging.getLogger('orelysis.strict')
 
 
 @contextmanager
