@@ -1,5 +1,5 @@
 {
-  "note": "Primary operator disclosures to acquire for the cases anchor.json marks production_adjudicable. An entry without sha256 is a discovery target only: `discover` archives its bytes in Actions and reports the hash, a reviewer reads the document and pins the hash here, and only then may figures be entered in data/manual/natural-graphite-company-disclosures.csv. Exact report URLs are added after discovery rather than guessed; the seeds below are announcement indexes and are unverified from the audit sandbox, where egress to both hosts is blocked.",
+  "note": "Primary operator disclosures to acquire for the cases anchor.json marks production_adjudicable. A 'document' entry without sha256 is a discovery target: `discover` archives its bytes in Actions and reports the hash, a reviewer reads the document and pins the hash here, and only then may figures be entered in data/manual/natural-graphite-company-disclosures.csv. An 'index' entry is not fetched at all; it is a page for a human to browse for the real per-report document URL, because a listing page changes and is never itself evidence. Every URL below was returned by a live web search on 2026-09-14, not guessed; a 404 previously reached this manifest because discover() fetched an index entry without checking its kind, which is now fixed.",
   "documents": [
     {
       "kind": "index",
@@ -7,21 +7,36 @@
       "operation": "Balama",
       "country": "MOZ",
       "url": "https://www.syrahresources.com.au/investors/asx-announcements",
-      "sha256": null,
-      "path": null,
-      "review_date": null,
       "wanted": "Quarterly activities reports and annual reports, 2017-2024: natural graphite production and sales in tonnes for Balama."
+    },
+    {
+      "kind": "document",
+      "company": "Syrah Resources",
+      "operation": "Balama",
+      "country": "MOZ",
+      "url": "https://announcements.asx.com.au/asxpdf/20231017/pdf/05w4c8xyhlml9c.pdf",
+      "sha256": null,
+      "review_date": null,
+      "wanted": "Surfaced by search on 2026-09-14 as an ASX announcement dated 2023-10-17; not yet confirmed by a human which report this is. Likely the September 2023 quarterly activities report given the date, which would cover a 2024-anchor-adjacent period, not the 2022 dispute. More announcement URLs for other quarters must still be located from the index above."
     },
     {
       "kind": "index",
       "company": "NextSource Materials",
       "operation": "Molo",
       "country": "MDG",
-      "url": "https://www.nextsourcematerials.com/news-releases/",
+      "url": "https://www.nextsourcematerials.com/news/",
+      "wanted": "Production and shipment releases covering Molo."
+    },
+    {
+      "kind": "document",
+      "company": "NextSource Materials",
+      "operation": "Molo",
+      "country": "MDG",
+      "url": "https://www.nextsourcematerials.com/nextsource-materials-announces-first-production-of-superflake-graphite-at-molo-mine-in-madagascar/",
       "sha256": null,
-      "path": null,
+      "suffix": ".html",
       "review_date": null,
-      "wanted": "Production and shipment releases covering Molo, for the Madagascar cases in anchor.json."
+      "wanted": "First SuperFlake graphite production at Molo, reported around June 2023. IMPORTANT: Molo's first production postdates every Madagascar case anchor.json currently marks production_adjudicable (2017-2021), so this operator cannot supply evidence for those years. It only becomes relevant if a 2023 or 2024 Madagascar case is adjudicable; the pre-2023 Malagasy exporter of record is not yet identified."
     }
   ]
 }

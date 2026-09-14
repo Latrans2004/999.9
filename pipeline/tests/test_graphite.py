@@ -229,3 +229,36 @@ def test_adjudicated_reports_evidence_without_selecting(tmp_path, monkeypatch):
     assert len(result) == 1
     assert result[0]['evidence_available'] is True
     assert result[0]['selected_weight_t'] is None
+
+
+def test_discover_never_fetches_an_index_entry(tmp_path, monkeypatch):
+    sources = tmp_path / 'sources.json'
+    entry = {'kind': 'index', 'company': 'X', 'operation': 'Y', 'country': 'MOZ',
+             'url': 'https://example.invalid/should-not-be-fetched'}
+    sources.write_bytes(graphite.archive.encode({'note': 't', 'documents': [entry]}))
+    monkeypatch.setattr(graphite_companies, 'SOURCES', sources)
+
+    class ExplodingHttp:
+        def get(self, *a, **k):
+            raise AssertionError('index entries must never be fetched')
+
+    packet = graphite_companies.discover(tmp_path, ExplodingHttp())
+    assert packet == [{'url': entry['url'], 'company': 'X', 'operation': 'Y',
+                       'path': None, 'sha256': None, 'pinned_sha256': None,
+                       'status': 'index_not_fetched'}]
+
+
+def test_discover_reports_fetch_failure_without_raising(tmp_path, monkeypatch):
+    sources = tmp_path / 'sources.json'
+    entry = {'kind': 'document', 'company': 'X', 'operation': 'Y', 'country': 'MOZ',
+             'url': 'https://example.invalid/missing.pdf', 'sha256': None}
+    sources.write_bytes(graphite.archive.encode({'note': 't', 'documents': [entry]}))
+    monkeypatch.setattr(graphite_companies, 'SOURCES', sources)
+
+    class FailingHttp:
+        def get(self, *a, **k):
+            raise ValueError('HTTP 404')
+
+    packet = graphite_companies.discover(tmp_path, FailingHttp())
+    assert packet[0]['status'] == 'fetch_failed'
+    assert 'HTTP 404' in packet[0]['error']

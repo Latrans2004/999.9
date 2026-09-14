@@ -88,8 +88,23 @@ def discover(root, http):
     """
     packet = []
     for entry in json.loads(SOURCES.read_bytes())['documents']:
-        body = http.get(entry['url'], binary=True, use_cache=False)
-        ref = archive.save(root, 'company', body, url=entry['url'], suffix='.pdf')
+        if entry.get('kind') != 'document':
+            # An index page (an announcements list, a news feed) is for a human
+            # to browse for the real document URL, never a source to archive.
+            packet.append({'url': entry['url'], 'company': entry.get('company'),
+                           'operation': entry.get('operation'), 'path': None,
+                           'sha256': None, 'pinned_sha256': None, 'status': 'index_not_fetched'})
+            continue
+        try:
+            body = http.get(entry['url'], binary=True, use_cache=False)
+        except Exception as exc:
+            packet.append({'url': entry['url'], 'company': entry.get('company'),
+                           'operation': entry.get('operation'), 'path': None,
+                           'sha256': None, 'pinned_sha256': entry.get('sha256'),
+                           'status': 'fetch_failed', 'error': f'{type(exc).__name__}: {exc}'})
+            continue
+        suffix = entry.get('suffix', '.pdf')
+        ref = archive.save(root, 'company', body, url=entry['url'], suffix=suffix)
         digest = hashlib.sha256(body).hexdigest()
         packet.append({'url': entry['url'], 'company': entry.get('company'),
                        'operation': entry.get('operation'), 'path': ref['path'],
@@ -131,7 +146,8 @@ def main():
     packet = discover(args.output, http)
     (args.output / 'discovery.json').write_bytes(archive.encode(packet))
     for item in packet:
-        print(f'{item["status"]:24} {item["sha256"]}  {item["url"]}')
+        detail = item.get('error') or item['sha256']
+        print(f'{item["status"]:24} {detail}  {item["url"]}')
 
 
 if __name__ == '__main__':
