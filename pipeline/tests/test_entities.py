@@ -3,7 +3,8 @@ import json
 import logging
 import pytest
 from pipeline import audit_entities, countries, entity_diagnostics, process_trade, strict_comtrade, update_minerals
-from pipeline.tests.test_strict_pipeline import api_row, query, row, CONFIG, ROOT, synthetic_bundle, copy_repo
+from pipeline.tests.test_strict_pipeline import (api_row, query, row, CONFIG, ROOT, synthetic_bundle,
+                                                 copy_repo, SYNTHETIC_START_YEAR)
 
 
 @pytest.mark.parametrize('code,name,numeric,key,kind,eligible', [
@@ -95,7 +96,7 @@ def test_unknown_bundle_renders_with_visible_diagnostics_and_unchanged_metrics(t
 def test_replay_cannot_spoof_entity_identity():
     bundle = synthetic_bundle()
     bundle['trade'][0]['reporter_code'] = 80
-    settings = copy.deepcopy(CONFIG); settings['start_year'] = 2022
+    settings = copy.deepcopy(CONFIG); settings['start_year'] = SYNTHETIC_START_YEAR
     entry = json.loads((ROOT/'critical-minerals/data/catalog.json').read_text(encoding='utf-8'))['minerals'][0]
     with pytest.raises(ValueError, match='Invalid normalized entity'):
         update_minerals.assemble(bundle, settings, entry)
@@ -116,7 +117,8 @@ def test_full_audit_attempts_all_queries_even_after_a_fetch_failure(tmp_path, mo
     monkeypatch.setattr(audit_entities.http, 'get', get)
     with pytest.raises(ValueError, match='Some queries failed'):
         audit_entities.run(tmp_path)
-    assert len(calls) == 48
+    queries = (CONFIG['end_year'] - CONFIG['start_year'] + 1) * len(CONFIG['hs_codes']) * 2
+    assert len(calls) == queries
     report = json.loads((tmp_path/'entity-audit.json').read_text(encoding='utf-8'))
-    assert sum(q['status'] == 'ok' for q in report['queries']) == 47
+    assert sum(q['status'] == 'ok' for q in report['queries']) == queries - 1
     assert report['queries'][1]['error'] == 'Simulated upstream outage'

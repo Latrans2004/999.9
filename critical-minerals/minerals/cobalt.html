@@ -9,7 +9,7 @@
    clears the class; the timeout is a safety net if that script fails. */
 (function () {
   try {
-    var lang = localStorage.getItem("orelysis:lang");
+    var lang = localStorage.getItem("petralysis:lang");
     if (!lang && /^ja\b/i.test(navigator.language || "")) lang = "ja";
     if (lang === "ja") {
       var root = document.documentElement;
@@ -19,18 +19,24 @@
   } catch (e) {}
 })();
 </script>
-<title data-i18n-text="コバルト — 重要鉱物 — Orelysis">Cobalt — critical minerals — Orelysis</title>
+<title data-i18n-text="コバルト — 重要鉱物 — Petralysis">Cobalt — critical minerals — Petralysis</title>
 <meta name="description" content="The textbook case of geological concentration. A single country holds the majority of world mine supply, and a different single country holds the majority of refining — a...">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#080A0F">
-<link rel="icon" href="../../assets/img/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon-16.png">
-<link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
-<meta property="og:title" content="Cobalt supply concentration — Orelysis">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../assets/img/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/img/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../assets/img/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png">
+<meta property="og:title" content="Cobalt supply concentration — Petralysis">
 <meta property="og:description" content="Supply concentration in critical minerals, from open data.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="../../assets/img/icon-512.png">
+<meta property="og:site_name" content="Petralysis">
+<link rel="canonical" href="https://latrans2004.github.io/petralysis/critical-minerals/minerals/cobalt.html">
+<meta property="og:url" content="https://latrans2004.github.io/petralysis/critical-minerals/minerals/cobalt.html">
+<meta property="og:image" content="https://latrans2004.github.io/petralysis/assets/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../../assets/css/site.css">
 </head>
 <body>
@@ -39,8 +45,8 @@
 <header class="masthead">
   <div class="wrap masthead__inner">
     <a class="brand" href="../../index.html">
-      <img src="../../assets/img/brand-32.png" alt="" width="22" height="22">
-      <span>Orelysis</span>
+      <img src="../../assets/img/brand-32.png" srcset="../../assets/img/brand-32.png 1x, ../../assets/img/brand-64.png 2x" alt="" width="22" height="22">
+      <span>Petralysis</span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="../../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a>
@@ -57,20 +63,48 @@
 <main id="main">
 <div class="wrap">
   <p class="crumb">
-    <a href="../../index.html">Orelysis</a><span>/</span><a href="../../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n-text="コバルト">Cobalt</span>
+    <a href="../../index.html">Petralysis</a><span>/</span><a href="../../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n-text="コバルト">Cobalt</span>
   </p>
+
+  <section class="quote" aria-labelledby="quote-title">
+    <div class="quote__title">
+      <h1 id="quote-title" data-i18n-text="コバルト">Cobalt</h1>
+<span class="quote__symbol">Co</span>      <span class="quote__category"><span data-i18n-text="バッテリーメタル">Battery metals</span> · <span data-i18n-text="正極の安定化">Cathode stabiliser</span></span>
+    </div>
+    <p class="quote__summary" data-i18n-text="地質的な集中の教科書的な例。">The textbook case of geological concentration.</p>
+
+    <div class="quote__figure">
+      <span class="quote__label" data-i18n="quote.mine_hhi">Mine HHI</span>
+      <span class="quote__value is-empty" data-i18n="screener.pending">Pending</span>
+    </div>
+
+    <dl class="quote__stats">
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="quote.top_producer">Top producer</dt>
+        <dd class="quote__stat-value muted">—</dd>
+      </div>
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="stat.top_three">Top three</dt>
+        <dd class="quote__stat-value muted">—</dd>
+      </div>
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="stat.effective_suppliers">Effective suppliers</dt>
+        <dd class="quote__stat-value muted">—</dd>
+      </div>
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="quote.export_hhi">Export HHI</dt>
+        <dd class="quote__stat-value muted" data-i18n="screener.pending">Pending</dd>
+      </div>
+      <div class="quote__stat">
+        <dt class="quote__stat-label" data-i18n="quote.updated">Updated</dt>
+        <dd class="quote__stat-value muted" data-i18n="figure.awaiting_build">Awaiting first build</dd>
+      </div>
+    </dl>
+  </section>
+
 </div>
 
-<div class="wrap hero" style="padding-block:clamp(28px,5vw,52px) clamp(24px,4vw,40px)">
-  <p class="eyebrow" data-i18n-text="正極の安定化">Cathode stabiliser</p>
-  <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
-    <h1 style="font-size:var(--step-h1);font-weight:400" data-i18n-text="コバルト">Cobalt</h1>
-    <span class="card__symbol">Co</span>
-  </div>
-  <p class="hero__lede" style="margin-top:18px" data-i18n-text="地質的な集中の教科書的な例。世界の鉱山供給の過半を1つの国が占め、精製の過半はまた別の1つの国が占める。この2段階のチョークポイントは、他のどのバッテリーメタルにも見られない。コバルトは業界が最も熱心に使用量を減らそうとしている金属でもあり、指標の水準だけでなく低下の兆しにも注目する価値がある。">The textbook case of geological concentration. A single country holds the majority of world mine supply, and a different single country holds the majority of refining — a two-stage chokepoint that no other battery metal matches. Cobalt is also the metal the industry is trying hardest to design out, which makes its index worth watching for decline as much as for level.</p>
-</div>
-
-<div class="wrap">
+<div class="wrap" style="margin-top:20px">
   <div class="panel">
   <div class="panel__head">
     <h3 data-i18n="panel.mine_title">Mine concentration</h3>
@@ -117,7 +151,7 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <h4>Orelysis</h4>
+        <h4>Petralysis</h4>
         <p style="margin:0;max-width:32ch" data-i18n="footer.tagline">Open-data measurements of supply concentration. A personal project, rebuilt on a schedule rather than by hand.</p>
       </div>
       <div>
@@ -138,19 +172,19 @@
       <div>
         <h4 data-i18n="footer.source">Source</h4>
         <ul>
-          <li><a href="https://github.com/latrans2004/orelysis" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
-          <li><a href="https://github.com/latrans2004/orelysis/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
+          <li><a href="https://github.com/latrans2004/petralysis" rel="noopener" data-i18n="footer.repo">Repository on GitHub</a></li>
+          <li><a href="https://github.com/latrans2004/petralysis/actions" rel="noopener" data-i18n="footer.build_history">Build history</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__meta">
       <span data-i18n="footer.disclaimer">Neither USGS nor the United Nations endorses this site or its calculations.</span>
-      <span class="timestamp" data-i18n-text="データは最終 2026年09月13日 16:44 UTC に再構築されました">Data last rebuilt 13 September 2026, 16:44 UTC</span>
+      <span class="timestamp" data-i18n-text="データは最終 2026年09月14日 19:49 UTC に再構築されました">Data last rebuilt 14 September 2026, 19:49 UTC</span>
     </div>
   </div>
 </footer>
 
-<script type="application/json" id="i18n-data">{"nav.critical_minerals": "重要鉱物", "nav.methodology": "算出方法", "nav.about": "このサイトについて", "skip.content": "本文へスキップ", "banner.title": "サンプルデータ。", "banner.body": "このビルドは合成データ(フィクスチャ)から生成されたものであり、USGSやUN Comtradeの実データではありません。このページの数値はいずれも実測値ではありません。", "footer.tagline": "公開データによる供給集中度の測定。手作業ではなくスケジュール実行で更新される個人プロジェクトです。", "footer.sections": "セクション", "footer.sources": "データソース", "footer.source": "ソース", "footer.repo": "GitHubのリポジトリ", "footer.build_history": "ビルド履歴", "footer.disclaimer": "USGS・国連のいずれも、本サイトおよびその算出結果を承認・保証するものではありません。", "footer.awaiting": "初回のデータビルド待ち", "band.unconcentrated": "非集中", "band.moderate": "中程度の集中", "band.high": "高度に集中", "panel.mine_title": "鉱山側の集中度", "panel.export_title": "輸出側の集中度", "table.toggle": "表で見る", "table.year": "年", "table.top_three": "上位3カ国", "table.reporting": "報告国数", "table.country": "国", "table.share": "シェア", "table.cumulative": "累積", "stat.single_year": "単年データのみ", "stat.largest_supplier": "最大供給国", "stat.top_three": "上位3カ国合計", "stat.effective_suppliers": "実効供給者数", "figure.awaiting_build": "初回ビルド待ち", "figure.no_source_data": "ソースデータなし", "figure.page_ready_pending": "ページ準備済み・データ待ち", "figure.concentration": "集中度", "chart.no_data_yet": "データはまだありません", "chart.index_over_time": "指数の推移", "notfound.title": "ページが見つかりません", "notfound.body": "このページは存在しないか、パイプラインの直近のビルドで名称が変更されました。", "notfound.link": "重要鉱物セクションへ →", "section.no_data_title": "データはまだ生成されていません。", "section.no_data_body": "以下のページとパイプラインはすでに用意されていますが、USGSとUN Comtradeからの初回取得はまだ実行されていません。実行されるまで、すべての数値は未取得として表示されます。", "section.no_data_link": "ビルド履歴を確認 →", "section.eight_minerals_title": "8つの鉱物", "section.eight_minerals_sub": "掲載順に表示。数値は各ソースが公表している最新年のもの。", "section.two_indices_title": "2つの指標、それぞれ別の問い", "section.two_indices_sub": "鉱物ごとのページに2つの数値が並ぶ理由。", "caveats.heading": "この数値が語らないこと", "caveats.shared_note": "いずれの指標も対象は国であって企業ではない。同じ親会社が異なる国に持つ2つの鉱山は、ここでは2つの独立した供給者として扱われる。", "notes.heading": "この鉱物についてのビルドノート。", "chart.read_method": "算出方法の全文を読む →", "hub.sections_title": "セクション", "hub.sections_sub": "素材群ごとに1セクション。それぞれ独立して完結する。", "hub.further_sections": "その他のセクション", "hub.not_yet_built": "未着手", "hub.further_blurb": "パイプラインとレイアウトは共通化されているため、2つ目の素材群を追加するのに新しいサイトは要らず、カタログファイルと取得アダプタを1つ足すだけで済む。", "hub.planned": "計画中", "hub.what_it_means_title": "この数値が意味すること", "hub.live": "稼働中", "panel.stage_title": "段階別の集中度", "panel.stage_sub": "同じリチウムでも、鉱石・炭酸塩・水酸化物のどこを測るかで集中度は変わります。段階を選ぶと、その段階だけで算出した指数に切り替わります。既定は上の輸出側指標と同じヘッドライン(283691と282520の合算、USドル建て)です。", "stage.tablist": "測定する段階", "stage.sidelist": "申告側", "stage.headline_usd": "ヘッドライン(合算・USD)", "stage.ore": "鉱石・精鉱", "stage.carbonate": "炭酸塩", "stage.hydroxide": "水酸化物", "stage.mine_li_t": "鉱山生産(Li換算)", "side.world_export": "全世界向け輸出(自己申告)", "side.china_import": "中国の輸入申告(ミラー)", "stage.coverage": "報告完全性", "stage.no_coverage": "報告完全性は算出対象外", "stage.provisional_legend": "暫定値(報告完全性が不足)", "stage.confirmed_legend": "確定値", "source.reported": "自己申告", "source.partner_sum": "復元(相手国別合計)", "source.mirror": "ミラー採用", "source.estimated": "推計", "verification.unverified": "未検証", "verification.externally_confirmed": "外部照合済", "verification.externally_conflicting": "外部と食い違い", "evidence.close": "閉じる", "evidence.source": "照合したソース", "table.source": "採用根拠", "table.verification": "検証"}</script>
+<script type="application/json" id="i18n-data">{"nav.critical_minerals": "重要鉱物", "nav.methodology": "算出方法", "nav.about": "このサイトについて", "skip.content": "本文へスキップ", "banner.title": "サンプルデータ。", "banner.body": "このビルドは合成データ(フィクスチャ)から生成されたものであり、USGSやUN Comtradeの実データではありません。このページの数値はいずれも実測値ではありません。", "footer.tagline": "公開データによる供給集中度の測定。手作業ではなくスケジュール実行で更新される個人プロジェクトです。", "footer.sections": "セクション", "footer.sources": "データソース", "footer.source": "ソース", "footer.repo": "GitHubのリポジトリ", "footer.build_history": "ビルド履歴", "footer.disclaimer": "USGS・国連のいずれも、本サイトおよびその算出結果を承認・保証するものではありません。", "footer.awaiting": "初回のデータビルド待ち", "band.unconcentrated": "非集中", "band.moderate": "中程度の集中", "band.high": "高度に集中", "panel.mine_title": "鉱山側の集中度", "panel.export_title": "輸出側の集中度", "table.toggle": "表で見る", "table.year": "年", "table.top_three": "上位3カ国", "table.reporting": "報告国数", "table.country": "国", "table.share": "シェア", "table.cumulative": "累積", "stat.single_year": "単年データのみ", "stat.largest_supplier": "最大供給国", "stat.top_three": "上位3カ国合計", "stat.effective_suppliers": "実効供給者数", "figure.awaiting_build": "初回ビルド待ち", "figure.no_source_data": "ソースデータなし", "figure.page_ready_pending": "ページ準備済み・データ待ち", "figure.concentration": "集中度", "chart.no_data_yet": "データはまだありません", "chart.index_over_time": "指数の推移", "notfound.title": "ページが見つかりません", "notfound.body": "このページは存在しないか、パイプラインの直近のビルドで名称が変更されました。", "notfound.link": "重要鉱物セクションへ →", "section.no_data_title": "データはまだ生成されていません。", "section.no_data_body": "以下のページとパイプラインはすでに用意されていますが、USGSとUN Comtradeからの初回取得はまだ実行されていません。実行されるまで、すべての数値は未取得として表示されます。", "section.no_data_link": "ビルド履歴を確認 →", "section.eight_minerals_title": "8つの鉱物", "section.eight_minerals_sub": "掲載順に表示。数値は各ソースが公表している最新年のもの。", "section.two_indices_title": "2つの指標、それぞれ別の問い", "section.two_indices_sub": "鉱物ごとのページに2つの数値が並ぶ理由。", "caveats.heading": "この数値が語らないこと", "caveats.shared_note": "いずれの指標も対象は国であって企業ではない。同じ親会社が異なる国に持つ2つの鉱山は、ここでは2つの独立した供給者として扱われる。", "notes.heading": "この鉱物についてのビルドノート。", "chart.read_method": "算出方法の全文を読む →", "hub.sections_title": "セクション", "hub.sections_sub": "素材群ごとに1セクション。それぞれ独立して完結する。", "hub.further_sections": "その他のセクション", "hub.not_yet_built": "未着手", "hub.further_blurb": "パイプラインとレイアウトは共通化されているため、2つ目の素材群を追加するのに新しいサイトは要らず、カタログファイルと取得アダプタを1つ足すだけで済む。", "hub.planned": "計画中", "hub.what_it_means_title": "この数値が意味すること", "hub.live": "稼働中", "panel.stage_title": "段階別の集中度", "panel.stage_sub": "同じリチウムでも、鉱石・炭酸塩・水酸化物のどこを測るかで集中度は変わります。段階を選ぶと、その段階だけで算出した指数に切り替わります。既定は上の輸出側指標と同じヘッドライン(283691と282520の合算、USドル建て)です。", "stage.tablist": "測定する段階", "stage.sidelist": "申告側", "stage.headline_usd": "ヘッドライン(合算・USD)", "stage.ore": "鉱石・精鉱", "stage.carbonate": "炭酸塩", "stage.hydroxide": "水酸化物", "stage.mine_li_t": "鉱山生産(Li換算)", "side.world_export": "全世界向け輸出(自己申告)", "side.china_import": "中国の輸入申告(ミラー)", "stage.coverage": "報告完全性", "stage.no_coverage": "報告完全性は算出対象外", "stage.provisional_legend": "暫定値(報告完全性が不足)", "stage.confirmed_legend": "確定値", "source.reported": "自己申告", "source.partner_sum": "復元(相手国別合計)", "source.mirror": "ミラー採用", "source.estimated": "推計", "verification.unverified": "未検証", "verification.externally_confirmed": "外部照合済", "verification.externally_conflicting": "外部と食い違い", "evidence.close": "閉じる", "evidence.source": "照合したソース", "table.source": "採用根拠", "table.verification": "検証", "screener.search": "検索", "screener.placeholder": "鉱物名または元素記号", "screener.category": "カテゴリ", "screener.all_categories": "すべてのカテゴリ", "screener.caption": "鉱物ごとの供給集中度。HHIは0〜10,000の尺度で、区分は鉱山側の値にもとづく。", "screener.pending": "準備中", "screener.under_review": "確認中", "screener.no_match": "該当する鉱物はありません。", "screener.showing": "{total}件中{shown}件を表示", "col.mineral": "鉱物", "col.mine_hhi": "鉱山HHI", "col.top_supplier": "最大供給国", "col.export_hhi": "輸出HHI", "col.band": "区分", "col.year": "年", "legend.title": "区分の読み方", "legend.caption": "区分の読み方", "legend.reading": "読み方", "stage.provisional_short": "暫定", "quote.mine_hhi": "鉱山HHI", "quote.export_hhi": "輸出HHI", "quote.top_producer": "最大生産国", "quote.updated": "更新", "quote.provisional_title": "暫定値を含みます。", "quote.review_title": "貿易指標は確認中です。", "quote.coverage_title": "カバレッジ"}</script>
 <script src="../../assets/js/i18n.js"></script>
 <script src="../../assets/js/charts.js"></script>
 <script type="application/json" id="page-data">{"slug": "cobalt", "name": "Cobalt", "name_ja": "コバルト", "symbol": "Co", "role": "Cathode stabiliser", "role_ja": "正極の安定化", "summary": "The textbook case of geological concentration. A single country holds the majority of world mine supply, and a different single country holds the majority of refining — a two-stage chokepoint that no other battery metal matches. Cobalt is also the metal the industry is trying hardest to design out, which makes its index worth watching for decline as much as for level.", "summary_ja": "地質的な集中の教科書的な例。世界の鉱山供給の過半を1つの国が占め、精製の過半はまた別の1つの国が占める。この2段階のチョークポイントは、他のどのバッテリーメタルにも見られない。コバルトは業界が最も熱心に使用量を減らそうとしている金属でもあり、指標の水準だけでなく低下の兆しにも注目する価値がある。", "caveats": ["Most cobalt is mined as a by-product of copper or nickel, so its output responds to the economics of the host metal rather than to cobalt demand — a supply-elasticity limit the index cannot show."], "caveats_ja": ["コバルトの大半は銅やニッケルの副産物として採掘されるため、その生産量はコバルト需要ではなく主産物となる金属の経済性に反応する。これは指標には表れない供給弾力性の限界である。"], "headline_hs_codes": ["260500", "810520"], "hs_label": "Cobalt ores and concentrates (2605.00) and cobalt mattes, unwrought cobalt and powders (8105.20)", "hs_label_ja": "コバルト鉱・精鉱(2605.00)およびコバルトのマット、塊状コバルト、粉(8105.20)", "production": {"available": false, "notes": [], "source": "USGS Mineral Commodity Summaries", "stage": "mine", "unit": "share of mine production", "unit_ja": "鉱山生産量に占める割合", "series": []}, "trade": {"available": false, "notes": [], "source": "UN Comtrade", "stage": "export", "unit": "share of export value", "unit_ja": "輸出額に占める割合", "series": []}}</script>

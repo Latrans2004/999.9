@@ -1,0 +1,126 @@
+{# The mineral screener: one row per catalog entry.
+
+   Rendered complete and in catalog order, so the table reads without any
+   script. assets/js/screener.js then reveals the controls and adds search,
+   a category filter and column sorting on top of the same markup. Every
+   figure in a cell comes from render.screener_rows; nothing is computed here.
+
+   The Export HHI cell has four states and only one of them is a number:
+     value    the published figure, or the catalog's headline_trade_stage
+     stages   several trade stages and no headline chosen: link to the page
+     review   the publication decision withholds the figure ("Under review")
+     pending  the mineral has no build yet
+#}
+{% macro sort_key(value) %}{% if value is not none %}{{ value }}{% endif %}{% endmacro %}
+
+{% macro screener(rows, categories, fixed_category, root) %}
+<div class="screener" data-screener>
+  <form class="screener__controls" hidden data-screener-controls onsubmit="return false">
+    <label class="screener__field">
+      <span data-i18n="screener.search">Search</span>
+      <input type="search" name="q" data-screener-search placeholder="Name or symbol" autocomplete="off" spellcheck="false">
+    </label>
+    {% if not fixed_category %}
+    <label class="screener__field">
+      <span data-i18n="screener.category">Category</span>
+      <select name="category" data-screener-category>
+        <option value="" data-i18n="screener.all_categories">All categories</option>
+        {% for key, category in categories.items() %}
+        <option value="{{ key }}" data-i18n-text="{{ category.label_ja or '' }}">{{ category.label }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    {% endif %}
+    <span class="screener__count" data-screener-count aria-live="polite"></span>
+  </form>
+
+  <div class="table-scroll">
+    <table class="screener__table" data-screener-table>
+      <caption class="sr-only" data-i18n="screener.caption">Supply concentration by mineral. HHI on the 0–10,000 scale; the band follows the mine figure.</caption>
+      <thead>
+        <tr>
+          <th scope="col" aria-sort="none"><button type="button" class="sort" data-sort="name" data-i18n="col.mineral">Mineral</button></th>
+          <th scope="col" class="num" aria-sort="none"><button type="button" class="sort" data-sort="mine" data-i18n="col.mine_hhi">Mine HHI</button></th>
+          <th scope="col" aria-sort="none"><button type="button" class="sort" data-sort="supplier" data-i18n="col.top_supplier">Top supplier</button></th>
+          <th scope="col" class="num" aria-sort="none"><button type="button" class="sort" data-sort="export" data-i18n="col.export_hhi">Export HHI</button></th>
+          <th scope="col" aria-sort="none"><button type="button" class="sort" data-sort="band" data-i18n="col.band">Band</button></th>
+          <th scope="col" class="num" aria-sort="none"><button type="button" class="sort" data-sort="year" data-i18n="col.year">Year</button></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        {% set band_rank = {"unconcentrated": 0, "moderate": 1, "high": 2}.get(row.band) %}
+        <tr data-category="{{ row.category.key }}"
+            data-search="{{ (row.name ~ ' ' ~ row.name_ja ~ ' ' ~ row.symbol)|lower }}"
+            data-k-name="{{ row.name|lower }}"
+            data-k-mine="{{ sort_key(row.mine.hhi if row.mine else none) }}"
+            data-k-supplier="{{ (row.mine.leader|lower) if row.mine and row.mine.leader else '' }}"
+            data-k-export="{{ sort_key(row.export.hhi if row.export.kind == 'value' else none) }}"
+            data-k-band="{{ sort_key(band_rank) }}"
+            data-k-year="{{ sort_key(row.year) }}">
+          <td>
+            <span class="cell__name"><a href="{{ root }}critical-minerals/minerals/{{ row.slug }}.html" data-i18n-text="{{ row.name_ja }}">{{ row.name }}</a></span>
+            <span class="cell__sub">{% if row.symbol %}{{ row.symbol }} · {% endif %}<span data-i18n-text="{{ row.category.label_ja }}">{{ row.category.label }}</span></span>
+          </td>
+          <td class="num">
+            {% if row.mine %}
+            <strong>{{ "{:,.0f}".format(row.mine.hhi) }}</strong>
+            {% else %}
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+            {% endif %}
+          </td>
+          <td>
+            {% if row.mine and row.mine.leader %}
+            <span class="cell__supplier">{{ row.mine.leader }} · <span class="tnum">{{ "{:.0f}".format(row.mine.leader_share) }}%</span></span>
+            {% else %}
+            <span class="cell__pending">—</span>
+            {% endif %}
+          </td>
+          <td class="num">
+            {% if row.export.kind == 'value' %}
+            <strong>{{ "{:,.0f}".format(row.export.hhi) }}</strong>
+            {% if row.export.stage_label %}
+            <span class="cell__sub cell__sub--num"><span data-i18n-text="{{ row.export.stage_label_ja }}">{{ row.export.stage_label }}</span> · {{ row.export.year }}{% if row.export.provisional %} <span data-i18n="stage.provisional_short">provisional</span>{% endif %}</span>
+            {% elif row.export.year != row.year %}
+            <span class="cell__sub cell__sub--num">{{ row.export.year }}</span>
+            {% endif %}
+            {% elif row.export.kind == 'stages' %}
+            <a href="{{ root }}critical-minerals/minerals/{{ row.slug }}.html" data-i18n-text="{{ row.export.count }}段階">{{ row.export.count }} stages</a>
+            {% elif row.export.kind == 'review' %}
+            <span class="cell__review" data-i18n="screener.under_review">Under review</span>
+            {% else %}
+            <span class="cell__pending" data-i18n="screener.pending">Pending</span>
+            {% endif %}
+          </td>
+          <td>
+            {% if row.band %}
+            <span class="band band--{{ row.band }}" data-i18n="band.{{ row.band }}">{{ band_labels[row.band] }}</span>
+            {% else %}
+            <span class="cell__pending">—</span>
+            {% endif %}
+          </td>
+          <td class="num">{% if row.year %}{{ row.year }}{% else %}<span class="cell__pending">—</span>{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="screener__empty" hidden data-screener-empty data-i18n="screener.no_match">No mineral matches.</p>
+</div>
+{% endmacro %}
+
+{% macro band_legend(root) %}
+<div class="table-scroll">
+<table class="bands">
+  <caption class="sr-only" data-i18n="legend.caption">How to read the band</caption>
+  <thead>
+    <tr><th scope="col">HHI</th><th scope="col" data-i18n="col.band">Band</th><th scope="col" data-i18n="legend.reading">Reading</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="num" data-i18n-text="1,000未満">below 1,000</td><td><span class="band band--unconcentrated" data-i18n="band.unconcentrated">Unconcentrated</span></td><td data-i18n-text="どの供給者が欠けても、それ単独で市場の姿は変わらない。">No single supplier's absence reshapes the market.</td></tr>
+    <tr><td class="num">1,000 – 1,800</td><td><span class="band band--moderate" data-i18n="band.moderate">Moderately concentrated</span></td><td data-i18n-text="少数の供給者が条件を決める。">A handful of suppliers set the terms.</td></tr>
+    <tr><td class="num" data-i18n-text="1,800超">above 1,800</td><td><span class="band band--high" data-i18n="band.high">Highly concentrated</span></td><td data-i18n-text="1つか2つの供給者が、市場そのものである。">One or two suppliers are the market.</td></tr>
+  </tbody>
+</table>
+</div>
+{% endmacro %}

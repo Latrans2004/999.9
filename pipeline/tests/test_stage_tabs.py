@@ -180,7 +180,11 @@ def test_provisional_years_come_from_the_published_metadata(monkeypatch):
 
     # Flag a year that is actually published and the panel must mark it.
     doctored = copy.deepcopy(CONCENTRATION)
-    doctored['metadata']['provisional_years'] = {'283691': [2024]}
+    # Flag the stage's own latest published year, whichever it is, so the check
+    # follows the data rather than the year that happened to be latest when it
+    # was written.
+    latest = max(r['year'] for r in CONCENTRATION['records'] if r['hs_code'] == '283691')
+    doctored['metadata']['provisional_years'] = {'283691': [latest]}
     real = render.read_json
 
     def patched(path):
@@ -190,7 +194,7 @@ def test_provisional_years_come_from_the_published_metadata(monkeypatch):
 
     monkeypatch.setattr(render, 'read_json', patched)
     carbonate = next(t for t in stages()['tabs'] if t['key'] == '283691')
-    assert carbonate['panels'][0]['provisional_years'] == [2024]
+    assert carbonate['panels'][0]['provisional_years'] == [latest]
     assert carbonate['panels'][0]['latest']['provisional'] is True
 
 
