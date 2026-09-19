@@ -1,0 +1,18 @@
+globe.gl.min.js
+===============
+
+globe.gl 2.46.2 (https://github.com/vasturiano/globe.gl), the minified UMD
+build from the npm package globe.gl@2.46.2 (dist/globe.gl.min.js), committed
+unchanged. MIT License, Copyright (c) 2019 Vasco Asturiano; the full text is
+in globe.gl.LICENSE.txt next to this file.
+
+The build bundles its dependencies, each under its own licence:
+three.js (MIT), three-globe, three-render-objects, kapsule and accessor-fn
+(MIT, Vasco Asturiano), @tweenjs/tween.js (MIT), d3 modules (ISC),
+h3-js (Apache-2.0, Uber Technologies, Inc.), and the MgOpen typeface used by
+three-globe's label layer (licence text embedded in the bundle, MAGENTA Ltd.).
+
+Loaded only by critical-minerals/globe.html, and only once the globe comes
+into view in a browser with WebGL. To upgrade: replace the file with the new
+version's dist/globe.gl.min.js, update the version here and in
+pipeline/templates/globe.html, and re-run the globe checks.
