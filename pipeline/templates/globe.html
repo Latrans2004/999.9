@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}Globe — critical minerals — Petralysis{% endblock %}
+{% block title_ja %}地球儀 — 重要鉱物 — Petralysis{% endblock %}
+{% block og_title %}Globe — critical minerals — Petralysis{% endblock %}
+{% block description %}Where each critical mineral is mined and exported, by country: the published country shares drawn on a globe, with the same figures as a table.{% endblock %}
+
+{# The mineral list comes from critical-minerals/data/globe/index.json, which
+   pipeline/globe.py builds from the catalog: a new catalog entry appears here
+   on the next render, disabled until it has a published layer. Everything
+   below the controls is filled by assets/js/globe-page.js; the globe itself
+   is an aid, and the table under it carries every number it draws. #}
+{% block content %}
+<div class="wrap">
+  <p class="crumb">
+    <a href="{{ root }}index.html">Petralysis</a><span>/</span><a href="{{ root }}critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n="nav.globe">Globe</span>
+  </p>
+
+  <div class="page-head">
+    <h1 data-i18n="nav.globe">Globe</h1>
+    <p class="page-head__lede" data-i18n="globe.lede">Which countries hold each mineral's mine output, and its exports: the published country shares, one mineral and one measure at a time. The figures are the ones on the mineral pages.</p>
+  </div>
+
+  <div class="globe-controls">
+    <div class="screener__field">
+      <label for="globe-mineral" data-i18n="globe.mineral">Mineral</label>
+      <select id="globe-mineral" name="m">
+        {% for group in groups %}
+        <optgroup label="{{ group.label }}" data-label-en="{{ group.label }}" data-label-ja="{{ group.label_ja }}">
+          {% for m in group.minerals %}
+          {% if m.selectable %}
+          <option value="{{ m.id }}"{% if m.id == default.mineral %} selected{% endif %} data-i18n-text="{{ m.name_ja }}">{{ m.name_en }}</option>
+          {% elif m.status == 'under_review' %}
+          <option value="{{ m.id }}" disabled data-i18n-text="{{ m.name_ja or m.name_en }} — 確認中">{{ m.name_en }} — Under review</option>
+          {% else %}
+          <option value="{{ m.id }}" disabled data-i18n-text="{{ m.name_ja or m.name_en }} — 準備中">{{ m.name_en }} — Pending</option>
+          {% endif %}
+          {% endfor %}
+        </optgroup>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="screener__field globe-controls__layers">
+      <span id="globe-layers-label" data-i18n="globe.measure">Measure</span>
+      <div class="sides globe-layers" id="globe-layers" role="group" aria-labelledby="globe-layers-label"></div>
+    </div>
+  </div>
+
+  <div class="notice notice--review globe-redirect" id="globe-redirect" hidden></div>
+
+  <div class="globe-layout">
+    <div class="globe-stage" id="globe-stage">
+      <div class="globe-canvas" id="globe-canvas" role="img" aria-label="Globe of country shares" data-vendor-src="{{ root }}assets/js/vendor/globe.gl.min.js"></div>
+      <div class="globe-legend" id="globe-legend">
+        <div class="globe-legend__scale">
+          <span class="globe-legend__bar" aria-hidden="true"></span>
+          <span class="globe-legend__ticks"><span style="left:0">0%</span><span style="left:29.4%">25%</span><span style="left:58.8%">50%</span><span style="left:100%">85%+</span></span>
+        </div>
+        <span class="globe-legend__item"><i class="globe-legend__swatch globe-legend__swatch--nodata" aria-hidden="true"></i><span data-i18n="globe.no_data">No data</span></span>
+        <span class="globe-legend__item globe-legend__item--note" data-i18n="globe.legend_scale">Same scale for every mineral and measure. 0% also covers countries the source does not list.</span>
+        <span class="globe-legend__item globe-legend__item--note" id="globe-other" hidden></span>
+      </div>
+    </div>
+
+    <aside class="globe-info panel" id="globe-info" aria-live="polite">
+      <p class="muted" data-i18n="globe.loading">Loading…</p>
+    </aside>
+  </div>
+
+  <section class="globe-table">
+    <div class="section-head">
+      <h2 id="globe-table-title" data-i18n="globe.table_title">Countries by share</h2>
+      <p id="globe-table-sub"></p>
+    </div>
+    <div class="table-scroll">
+      <table class="data" id="globe-table" aria-labelledby="globe-table-title">
+        <thead>
+          <tr><th scope="col" class="num">#</th><th scope="col" data-i18n="table.country">Country</th><th scope="col" class="num" data-i18n="table.share">Share</th><th scope="col" class="num" data-i18n="table.cumulative">Cumulative</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <button type="button" class="globe-more" id="globe-more" aria-controls="globe-table" aria-expanded="false" hidden></button>
+    <noscript>
+      <div class="notice" style="margin-top:12px">The globe and this table need JavaScript. Every figure is also on the <a href="index.html">mineral pages</a>.</div>
+    </noscript>
+  </section>
+
+  <p class="globe-credit" data-i18n="globe.credit">Country borders: Natural Earth (public domain). Globe drawn with globe.gl. Shares: USGS Mineral Commodity Summaries and UN Comtrade, as published on each mineral page.</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="application/json" id="globe-config">{"index": "data/globe/index.json", "data": "data/globe/", "borders": "{{ root }}assets/geo/countries.geojson", "pages": ""}</script>
+<script src="{{ root }}assets/js/globe-page.js"></script>
+{% endblock %}

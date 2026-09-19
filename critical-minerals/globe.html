@@ -19,40 +19,40 @@
   } catch (e) {}
 })();
 </script>
-<title data-i18n-text="ニッケル — 重要鉱物 — Petralysis">Nickel — critical minerals — Petralysis</title>
-<meta name="description" content="The volume metal of high-energy cathodes, and the one battery input with a genuinely large non-battery market in stainless steel. Indonesian output has grown fast enough over...">
+<title data-i18n-text="地球儀 — 重要鉱物 — Petralysis">Globe — critical minerals — Petralysis</title>
+<meta name="description" content="Where each critical mineral is mined and exported, by country: the published country shares drawn on a globe, with the same figures as a table.">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FFFFFF">
-<link rel="icon" href="../../assets/img/favicon.ico" sizes="16x16 32x32 48x48">
-<link rel="icon" type="image/png" sizes="192x192" href="../../assets/img/icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="../../assets/img/icon-512.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png">
-<meta property="og:title" content="Nickel supply concentration — Petralysis">
+<link rel="icon" href="../assets/img/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/img/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../assets/img/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+<meta property="og:title" content="Globe — critical minerals — Petralysis">
 <meta property="og:description" content="Supply concentration in critical minerals, from open data.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Petralysis">
-<link rel="canonical" href="https://latrans2004.github.io/petralysis/critical-minerals/minerals/nickel.html">
-<meta property="og:url" content="https://latrans2004.github.io/petralysis/critical-minerals/minerals/nickel.html">
+<link rel="canonical" href="https://latrans2004.github.io/petralysis/critical-minerals/globe.html">
+<meta property="og:url" content="https://latrans2004.github.io/petralysis/critical-minerals/globe.html">
 <meta property="og:image" content="https://latrans2004.github.io/petralysis/assets/img/ogp.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body>
 <a class="skip" href="#main" data-i18n="skip.content">Skip to content</a>
 
 <header class="masthead">
   <div class="wrap masthead__inner">
-    <a class="brand" href="../../index.html">
-      <img src="../../assets/img/brand-32.png" srcset="../../assets/img/brand-32.png 1x, ../../assets/img/brand-64.png 2x" alt="" width="22" height="22">
+    <a class="brand" href="../index.html">
+      <img src="../assets/img/brand-32.png" srcset="../assets/img/brand-32.png 1x, ../assets/img/brand-64.png 2x" alt="" width="22" height="22">
       <span>Petralysis</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="../../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a>
-      <a href="../../critical-minerals/globe.html" data-i18n="nav.globe">Globe</a>
-      <a href="../../critical-minerals/methodology.html" data-i18n="nav.methodology">Methodology</a>
-      <a href="../../critical-minerals/about.html" data-i18n="nav.about">About</a>
+      <a href="../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a>
+      <a href="../critical-minerals/globe.html" aria-current="page" data-i18n="nav.globe">Globe</a>
+      <a href="../critical-minerals/methodology.html" data-i18n="nav.methodology">Methodology</a>
+      <a href="../critical-minerals/about.html" data-i18n="nav.about">About</a>
     </nav>
     <div class="lang" role="group" aria-label="Language / 言語">
       <button type="button" class="lang__btn" data-set-lang="en" aria-pressed="true" lang="en">EN</button>
@@ -64,87 +64,77 @@
 <main id="main">
 <div class="wrap">
   <p class="crumb">
-    <a href="../../index.html">Petralysis</a><span>/</span><a href="../../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n-text="ニッケル">Nickel</span>
+    <a href="../index.html">Petralysis</a><span>/</span><a href="../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a><span>/</span><span data-i18n="nav.globe">Globe</span>
   </p>
 
-  <section class="quote" aria-labelledby="quote-title">
-    <div class="quote__title">
-      <h1 id="quote-title" data-i18n-text="ニッケル">Nickel</h1>
-<span class="quote__symbol">Ni</span>      <span class="quote__category"><span data-i18n-text="バッテリーメタル">Battery metals</span> · <span data-i18n-text="正極のエネルギー密度">Cathode energy density</span></span>
+  <div class="page-head">
+    <h1 data-i18n="nav.globe">Globe</h1>
+    <p class="page-head__lede" data-i18n="globe.lede">Which countries hold each mineral's mine output, and its exports: the published country shares, one mineral and one measure at a time. The figures are the ones on the mineral pages.</p>
+  </div>
+
+  <div class="globe-controls">
+    <div class="screener__field">
+      <label for="globe-mineral" data-i18n="globe.mineral">Mineral</label>
+      <select id="globe-mineral" name="m">
+        <optgroup label="Battery metals" data-label-en="Battery metals" data-label-ja="バッテリーメタル">
+          <option value="lithium" selected data-i18n-text="リチウム">Lithium</option>
+          <option value="cobalt" disabled data-i18n-text="コバルト — 準備中">Cobalt — Pending</option>
+          <option value="nickel" disabled data-i18n-text="ニッケル — 準備中">Nickel — Pending</option>
+          <option value="natural-graphite" data-i18n-text="天然黒鉛">Natural graphite</option>
+          <option value="manganese" disabled data-i18n-text="マンガン — 準備中">Manganese — Pending</option>
+          <option value="rare-earths" disabled data-i18n-text="希土類 — 準備中">Rare earths — Pending</option>
+          <option value="vanadium" disabled data-i18n-text="バナジウム — 準備中">Vanadium — Pending</option>
+          <option value="copper" disabled data-i18n-text="銅 — 準備中">Copper — Pending</option>
+        </optgroup>
+      </select>
     </div>
-    <p class="quote__summary" data-i18n-text="高エネルギー密度の正極における量的な主役であり、ステンレス鋼という電池以外の大きな市場を持つ唯一のバッテリー原料でもある。">The volume metal of high-energy cathodes, and the one battery input with a genuinely large non-battery market in stainless steel.</p>
+    <div class="screener__field globe-controls__layers">
+      <span id="globe-layers-label" data-i18n="globe.measure">Measure</span>
+      <div class="sides globe-layers" id="globe-layers" role="group" aria-labelledby="globe-layers-label"></div>
+    </div>
+  </div>
 
-    <div class="quote__figure">
-      <span class="quote__label" data-i18n="quote.mine_hhi">Mine HHI</span>
-      <span class="quote__value is-empty" data-i18n="screener.pending">Pending</span>
+  <div class="notice notice--review globe-redirect" id="globe-redirect" hidden></div>
+
+  <div class="globe-layout">
+    <div class="globe-stage" id="globe-stage">
+      <div class="globe-canvas" id="globe-canvas" role="img" aria-label="Globe of country shares" data-vendor-src="../assets/js/vendor/globe.gl.min.js"></div>
+      <div class="globe-legend" id="globe-legend">
+        <div class="globe-legend__scale">
+          <span class="globe-legend__bar" aria-hidden="true"></span>
+          <span class="globe-legend__ticks"><span style="left:0">0%</span><span style="left:29.4%">25%</span><span style="left:58.8%">50%</span><span style="left:100%">85%+</span></span>
+        </div>
+        <span class="globe-legend__item"><i class="globe-legend__swatch globe-legend__swatch--nodata" aria-hidden="true"></i><span data-i18n="globe.no_data">No data</span></span>
+        <span class="globe-legend__item globe-legend__item--note" data-i18n="globe.legend_scale">Same scale for every mineral and measure. 0% also covers countries the source does not list.</span>
+        <span class="globe-legend__item globe-legend__item--note" id="globe-other" hidden></span>
+      </div>
     </div>
 
-    <dl class="quote__stats">
-      <div class="quote__stat">
-        <dt class="quote__stat-label" data-i18n="quote.top_producer">Top producer</dt>
-        <dd class="quote__stat-value muted">—</dd>
-      </div>
-      <div class="quote__stat">
-        <dt class="quote__stat-label" data-i18n="stat.top_three">Top three</dt>
-        <dd class="quote__stat-value muted">—</dd>
-      </div>
-      <div class="quote__stat">
-        <dt class="quote__stat-label" data-i18n="stat.effective_suppliers">Effective suppliers</dt>
-        <dd class="quote__stat-value muted">—</dd>
-      </div>
-      <div class="quote__stat">
-        <dt class="quote__stat-label" data-i18n="quote.export_hhi">Export HHI</dt>
-        <dd class="quote__stat-value muted" data-i18n="screener.pending">Pending</dd>
-      </div>
-      <div class="quote__stat">
-        <dt class="quote__stat-label" data-i18n="quote.updated">Updated</dt>
-        <dd class="quote__stat-value muted" data-i18n="figure.awaiting_build">Awaiting first build</dd>
-      </div>
-    </dl>
-  </section>
-
-</div>
-
-<div class="wrap" style="margin-top:20px">
-  <div class="panel">
-  <div class="panel__head">
-    <h3 data-i18n="panel.mine_title">Mine concentration</h3>
+    <aside class="globe-info panel" id="globe-info" aria-live="polite">
+      <p class="muted" data-i18n="globe.loading">Loading…</p>
+    </aside>
   </div>
-  <p class="panel__sub" data-i18n-text="USGS Mineral Commodity Summariesにもとづく、国別の世界鉱山生産量シェア。素材が地中から取り出される場所を示す。">Share of world mine production by country, from the USGS Mineral Commodity Summaries. This is where the material leaves the ground.</p>
 
-  <div class="chart__empty">
-    <strong data-i18n="chart.no_data_yet">No data yet</strong>
-    <span data-i18n-text="この指標は、USGS Mineral Commodity Summariesからの初回取得が完了すると表示されます。">This index will appear once the pipeline completes a successful fetch from USGS Mineral Commodity Summaries.</span>
-  </div>
-</div>
-
-
-  <div class="panel">
-  <div class="panel__head">
-    <h3 data-i18n="panel.export_title">Export concentration</h3>
-  </div>
-  <p class="panel__sub" data-i18n-text="UN Comtradeにもとづく、報告国別の世界輸出額シェア。対象はニッケル鉱・精鉱(2604.00)および塊状ニッケル(7502.10、7502.20)。鉱山統計が捉えない加工・精錬の段階を反映する。">Share of world export value by reporting country, from UN Comtrade, covering Nickel ores and concentrates (2604.00) and unwrought nickel (7502.10, 7502.20). This captures processing and refining that mine statistics do not.</p>
-
-  <div class="chart__empty">
-    <strong data-i18n="chart.no_data_yet">No data yet</strong>
-    <span data-i18n-text="この指標は、UN Comtradeからの初回取得が完了すると表示されます。">This index will appear once the pipeline completes a successful fetch from UN Comtrade.</span>
-  </div>
-</div>
-
-
-  <section>
+  <section class="globe-table">
     <div class="section-head">
-      <h2 data-i18n="caveats.heading">What these numbers do not say</h2>
+      <h2 id="globe-table-title" data-i18n="globe.table_title">Countries by share</h2>
+      <p id="globe-table-sub"></p>
     </div>
-    <ul class="caveats">
-<li data-i18n-text="クラス1とクラス2のニッケルは電池用途では互いに代替できないが、同じ品目コードに含まれるため、輸出側の指標には電池グレードとステンレスグレードの素材が混在している。">Class 1 and Class 2 nickel are not substitutes for battery use but share trade codes, so the export index mixes battery-grade and stainless-grade material.</li>      <li data-i18n="caveats.shared_note">Both indices measure countries, not companies. Two mines in different countries
-      owned by the same parent read here as two suppliers.</li>
-    </ul>
+    <div class="table-scroll">
+      <table class="data" id="globe-table" aria-labelledby="globe-table-title">
+        <thead>
+          <tr><th scope="col" class="num">#</th><th scope="col" data-i18n="table.country">Country</th><th scope="col" class="num" data-i18n="table.share">Share</th><th scope="col" class="num" data-i18n="table.cumulative">Cumulative</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <button type="button" class="globe-more" id="globe-more" aria-controls="globe-table" aria-expanded="false" hidden></button>
+    <noscript>
+      <div class="notice" style="margin-top:12px">The globe and this table need JavaScript. Every figure is also on the <a href="index.html">mineral pages</a>.</div>
+    </noscript>
   </section>
 
-
-  <div class="pager">
-<a href="../../critical-minerals/minerals/cobalt.html" data-i18n-text="← コバルト">← Cobalt</a><a href="../../critical-minerals/minerals/natural-graphite.html" data-i18n-text="天然黒鉛 →">Natural graphite →</a>  </div>
+  <p class="globe-credit" data-i18n="globe.credit">Country borders: Natural Earth (public domain). Globe drawn with globe.gl. Shares: USGS Mineral Commodity Summaries and UN Comtrade, as published on each mineral page.</p>
 </div>
 </main>
 
@@ -158,10 +148,10 @@
       <div>
         <h4 data-i18n="footer.sections">Sections</h4>
         <ul>
-          <li><a href="../../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a></li>
-          <li><a href="../../critical-minerals/globe.html" data-i18n="nav.globe">Globe</a></li>
-          <li><a href="../../critical-minerals/methodology.html" data-i18n="nav.methodology">Methodology</a></li>
-          <li><a href="../../critical-minerals/about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="../critical-minerals/index.html" data-i18n="nav.critical_minerals">Critical minerals</a></li>
+          <li><a href="../critical-minerals/globe.html" data-i18n="nav.globe">Globe</a></li>
+          <li><a href="../critical-minerals/methodology.html" data-i18n="nav.methodology">Methodology</a></li>
+          <li><a href="../critical-minerals/about.html" data-i18n="nav.about">About</a></li>
         </ul>
       </div>
       <div>
@@ -187,57 +177,9 @@
 </footer>
 
 <script type="application/json" id="i18n-data">{"nav.critical_minerals": "重要鉱物", "nav.methodology": "算出方法", "nav.about": "このサイトについて", "skip.content": "本文へスキップ", "banner.title": "サンプルデータ。", "banner.body": "このビルドは合成データ(フィクスチャ)から生成されたものであり、USGSやUN Comtradeの実データではありません。このページの数値はいずれも実測値ではありません。", "footer.tagline": "公開データによる供給集中度の測定。手作業ではなくスケジュール実行で更新される個人プロジェクトです。", "footer.sections": "セクション", "footer.sources": "データソース", "footer.source": "ソース", "footer.repo": "GitHubのリポジトリ", "footer.build_history": "ビルド履歴", "footer.disclaimer": "USGS・国連のいずれも、本サイトおよびその算出結果を承認・保証するものではありません。", "footer.awaiting": "初回のデータビルド待ち", "band.unconcentrated": "非集中", "band.moderate": "中程度の集中", "band.high": "高度に集中", "panel.mine_title": "鉱山側の集中度", "panel.export_title": "輸出側の集中度", "table.toggle": "表で見る", "table.year": "年", "table.top_three": "上位3カ国", "table.reporting": "報告国数", "table.country": "国", "table.share": "シェア", "table.cumulative": "累積", "stat.single_year": "単年データのみ", "stat.largest_supplier": "最大供給国", "stat.top_three": "上位3カ国合計", "stat.effective_suppliers": "実効供給者数", "figure.awaiting_build": "初回ビルド待ち", "figure.no_source_data": "ソースデータなし", "figure.page_ready_pending": "ページ準備済み・データ待ち", "figure.concentration": "集中度", "chart.no_data_yet": "データはまだありません", "chart.index_over_time": "指数の推移", "notfound.title": "ページが見つかりません", "notfound.body": "このページは存在しないか、パイプラインの直近のビルドで名称が変更されました。", "notfound.link": "重要鉱物セクションへ →", "section.no_data_title": "データはまだ生成されていません。", "section.no_data_body": "以下のページとパイプラインはすでに用意されていますが、USGSとUN Comtradeからの初回取得はまだ実行されていません。実行されるまで、すべての数値は未取得として表示されます。", "section.no_data_link": "ビルド履歴を確認 →", "section.eight_minerals_title": "8つの鉱物", "section.eight_minerals_sub": "掲載順に表示。数値は各ソースが公表している最新年のもの。", "section.two_indices_title": "2つの指標、それぞれ別の問い", "section.two_indices_sub": "鉱物ごとのページに2つの数値が並ぶ理由。", "caveats.heading": "この数値が語らないこと", "caveats.shared_note": "いずれの指標も対象は国であって企業ではない。同じ親会社が異なる国に持つ2つの鉱山は、ここでは2つの独立した供給者として扱われる。", "notes.heading": "この鉱物についてのビルドノート。", "chart.read_method": "算出方法の全文を読む →", "hub.sections_title": "セクション", "hub.sections_sub": "素材群ごとに1セクション。それぞれ独立して完結する。", "hub.further_sections": "その他のセクション", "hub.not_yet_built": "未着手", "hub.further_blurb": "パイプラインとレイアウトは共通化されているため、2つ目の素材群を追加するのに新しいサイトは要らず、カタログファイルと取得アダプタを1つ足すだけで済む。", "hub.planned": "計画中", "hub.what_it_means_title": "この数値が意味すること", "hub.live": "稼働中", "panel.stage_title": "段階別の集中度", "panel.stage_sub": "同じリチウムでも、鉱石・炭酸塩・水酸化物のどこを測るかで集中度は変わります。段階を選ぶと、その段階だけで算出した指数に切り替わります。既定は上の輸出側指標と同じヘッドライン(283691と282520の合算、USドル建て)です。", "stage.tablist": "測定する段階", "stage.sidelist": "申告側", "stage.headline_usd": "ヘッドライン(合算・USD)", "stage.ore": "鉱石・精鉱", "stage.carbonate": "炭酸塩", "stage.hydroxide": "水酸化物", "stage.mine_li_t": "鉱山生産(Li換算)", "side.world_export": "全世界向け輸出(自己申告)", "side.china_import": "中国の輸入申告(ミラー)", "stage.coverage": "報告完全性", "stage.no_coverage": "報告完全性は算出対象外", "stage.provisional_legend": "暫定値(報告完全性が不足)", "stage.confirmed_legend": "確定値", "source.reported": "自己申告", "source.partner_sum": "復元(相手国別合計)", "source.mirror": "ミラー採用", "source.estimated": "推計", "verification.unverified": "未検証", "verification.externally_confirmed": "外部照合済", "verification.externally_conflicting": "外部と食い違い", "evidence.close": "閉じる", "evidence.source": "照合したソース", "table.source": "採用根拠", "table.verification": "検証", "screener.search": "検索", "screener.placeholder": "鉱物名または元素記号", "screener.category": "カテゴリ", "screener.all_categories": "すべてのカテゴリ", "screener.caption": "鉱物ごとの供給集中度。HHIは0〜10,000の尺度で、区分は鉱山側の値にもとづく。", "screener.pending": "準備中", "screener.under_review": "確認中", "screener.no_match": "該当する鉱物はありません。", "screener.showing": "{total}件中{shown}件を表示", "col.mineral": "鉱物", "col.mine_hhi": "鉱山HHI", "col.top_supplier": "最大供給国", "col.export_hhi": "輸出HHI", "col.band": "区分", "col.year": "年", "legend.title": "区分の読み方", "legend.caption": "区分の読み方", "legend.reading": "読み方", "stage.provisional_short": "暫定", "quote.mine_hhi": "鉱山HHI", "quote.export_hhi": "輸出HHI", "quote.top_producer": "最大生産国", "quote.updated": "更新", "quote.provisional_title": "暫定値を含みます。", "quote.review_title": "貿易指標は確認中です。", "quote.coverage_title": "カバレッジ", "quote.globe_link": "地球儀で見る →", "hub.globe_link": "国別シェアを地球儀で見る →", "nav.globe": "地球儀", "globe.lede": "各鉱物の鉱山生産と輸出が、どの国にどれだけあるか。公表済みの国別シェアを、鉱物と指標を1つずつ選んで表示します。数値は各鉱物ページと同じものです。", "globe.mineral": "鉱物", "globe.measure": "指標", "globe.no_data": "データなし", "globe.not_listed": "ソースに記載なし", "globe.legend_scale": "すべての鉱物・指標で同じ尺度。0%には、ソースに記載のない国も含みます。", "globe.loading": "読み込み中…", "globe.load_failed": "地球儀のデータを読み込めませんでした。数値は各鉱物ページで確認できます。", "globe.table_title": "国別シェア", "globe.credit": "国境データ:Natural Earth(パブリックドメイン)。地球儀の描画:globe.gl。シェア:USGS Mineral Commodity SummariesおよびUN Comtrade(各鉱物ページで公表済みのもの)。", "globe.aria": "{mineral}・{layer}({year}年)の国別シェアを示す地球儀。同じ数値を下の表に掲載。", "globe.share": "シェア", "globe.year": "対象年", "globe.source": "出典", "globe.leader": "首位国", "globe.cr3": "上位3カ国", "globe.coverage": "カバレッジ", "globe.coverage_named": "報告合計のうち、数値のある国が占める割合", "globe.coverage_world": "公表された世界合計のうち、数値のある国が占める割合", "globe.report_completeness": "報告完全性", "globe.no_data_list": "データなし", "globe.other": "その他(特定の国に帰属しない分) {pct}", "globe.provisional": "暫定値", "globe.page_link": "鉱物ページを開く →", "globe.show_all": "全{n}カ国を表示", "globe.show_fewer": "上位10カ国のみ表示", "globe.table_sub": "{mineral} · {layer} · {year}年", "globe.redirect": "{name}は{status}のため、地球儀では選べません。{fallback}を表示しています。", "globe.withheld": "データなし(非公表)"}</script>
-<script src="../../assets/js/i18n.js"></script>
-<script src="../../assets/js/charts.js"></script>
-<script type="application/json" id="page-data">{"slug": "nickel", "name": "Nickel", "name_ja": "ニッケル", "symbol": "Ni", "role": "Cathode energy density", "role_ja": "正極のエネルギー密度", "summary": "The volume metal of high-energy cathodes, and the one battery input with a genuinely large non-battery market in stainless steel. Indonesian output has grown fast enough over the last decade to move the index substantially on its own, which makes nickel the clearest example on this site of concentration as a recent event rather than a geological given.", "summary_ja": "高エネルギー密度の正極における量的な主役であり、ステンレス鋼という電池以外の大きな市場を持つ唯一のバッテリー原料でもある。インドネシアの生産量はこの10年で急増し、それ単独で指標を大きく動かすほどになった。ニッケルは、集中が地質的な所与ではなく最近の出来事として起こりうることを、このサイトで最も明確に示す例である。", "caveats": ["Class 1 and Class 2 nickel are not substitutes for battery use but share trade codes, so the export index mixes battery-grade and stainless-grade material."], "caveats_ja": ["クラス1とクラス2のニッケルは電池用途では互いに代替できないが、同じ品目コードに含まれるため、輸出側の指標には電池グレードとステンレスグレードの素材が混在している。"], "headline_hs_codes": ["260400", "750210", "750220"], "hs_label": "Nickel ores and concentrates (2604.00) and unwrought nickel (7502.10, 7502.20)", "hs_label_ja": "ニッケル鉱・精鉱(2604.00)および塊状ニッケル(7502.10、7502.20)", "production": {"available": false, "notes": [], "source": "USGS Mineral Commodity Summaries", "stage": "mine", "unit": "share of mine production", "unit_ja": "鉱山生産量に占める割合", "series": []}, "trade": {"available": false, "notes": [], "source": "UN Comtrade", "stage": "export", "unit": "share of export value", "unit_ja": "輸出額に占める割合", "series": []}}</script>
-<script>
-(function () {
-  var data = JSON.parse(document.getElementById("page-data").textContent);
-
-  function isJa() { return !!(window.I18N && window.I18N.lang === "ja"); }
-
-  ["production", "trade"].forEach(function (key) {
-    var block = data[key];
-    if (!block || !block.available) return;
-
-    var lineNode = document.querySelector('[data-line="' + key + '"]');
-    if (lineNode) {
-      /* Everything language-dependent is built inside the draw callback, so
-         Chart.redraw() after a language switch picks up the new wording. */
-      Chart.register(lineNode, function () {
-        var ja = isJa();
-        var first = block.series[0].year;
-        var last = block.series[block.series.length - 1].year;
-        Chart.line(lineNode, {
-          series: block.series,
-          thresholds: ja
-            ? [{ value: 1000, label: "1,000 中程度" }, { value: 1800, label: "1,800 高度" }]
-            : [{ value: 1000, label: "1,000 moderate" }, { value: 1800, label: "1,800 high" }],
-          ariaLabel: ja
-            ? (data.name_ja || data.name) + "の" + (key === "production" ? "鉱山側" : "輸出側") +
-              "集中度指数(" + first + "年〜" + last + "年)"
-            : (key === "production" ? "Mine" : "Export") +
-              " concentration index for " + data.name + ", " + first + " to " + last,
-          t: ja ? {
-            topThree: function (pct) { return "上位3カ国 " + Chart.fmt(pct, 1) + "%"; },
-            reporting: function (n) { return n + "カ国が報告"; }
-          } : null
-        });
-      });
-    }
-
-    var barsNode = document.querySelector('[data-bars="' + key + '"]');
-    if (barsNode) {
-      Chart.register(barsNode, function () {
-        var detail = isJa() ? (block.unit_ja || block.unit) : block.unit;
-        var rows = block.latest.top.map(function (row) {
-          return { name: row.name, share: row.share, code: row.code, detail: detail };
-        });
-        Chart.bars(barsNode, { rows: rows, limit: 10 });
-      });
-    }
-  });
-})();
-</script>
+<script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/charts.js"></script>
+<script type="application/json" id="globe-config">{"index": "data/globe/index.json", "data": "data/globe/", "borders": "../assets/geo/countries.geojson", "pages": ""}</script>
+<script src="../assets/js/globe-page.js"></script>
 </body>
 </html>

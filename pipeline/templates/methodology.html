@@ -169,6 +169,27 @@
 
   <hr class="rule">
 
+  <section id="globe">
+    <h2>The globe</h2>
+    <p>The <a href="globe.html">globe page</a> draws, for one mineral and one measure at a
+    time, the country shares already published on that mineral's page: mine production
+    (USGS) and exports by trade stage (UN Comtrade). It computes nothing new. A build
+    check recomputes the leading country, its share, the top-three share and the HHI from
+    the shares it draws and stops the build if they differ from the published figures, and
+    a measure that is under review is never written to the globe's data at all.</p>
+    <p>The colour scale is fixed across minerals and measures (square root, 0% to 85% and
+    above), so the same shade means the same share everywhere. A country the source lists
+    without a figure is drawn as no data, never as zero. Where USGS reserves are added
+    later they will carry the note that reserves are an estimate of what is economically
+    extractable, not a measure of supply concentration.</p>
+    <p>Country borders are from <a href="https://www.naturalearthdata.com/" rel="noopener">Natural Earth</a>
+    (public domain), 1:110m, with the small countries that scale omits taken from 1:50m.
+    The globe is drawn with <a href="https://globe.gl/" rel="noopener">globe.gl</a> (MIT),
+    served from this site.</p>
+  </section>
+
+  <hr class="rule">
+
   <section>
     <h2>What this cannot tell you</h2>
     <ul>
@@ -281,6 +302,15 @@
       </div>
     </dl>
     <p>すべてのページのフッターには、そのデータを生成した実行のタイムスタンプを載せている。古くなった数値は、黙って残るのではなく、古いと分かるようになっている。</p>
+  </section>
+
+  <hr class="rule">
+
+  <section id="globe-ja">
+    <h2>地球儀</h2>
+    <p><a href="globe.html">地球儀ページ</a>は、各鉱物のページですでに公表している国別シェアを、鉱物と指標を1つずつ選んで地球儀上に描く。指標は鉱山生産(USGS)と、貿易段階ごとの輸出(UN Comtrade)。新しい計算は一切しない。ビルド時の検査で、描くシェアから首位国・首位シェア・上位3カ国シェア・HHIを再計算し、公表値と食い違えばビルドを止める。確認中の指標は、地球儀のデータに一切書き出さない。</p>
+    <p>色の尺度は鉱物・指標をまたいで固定している(平方根スケール、0%から85%以上まで)。同じ濃さはどこでも同じシェアを意味する。ソースに国名はあるが数値がない国は、0ではなく「データなし」として描く。今後USGSの埋蔵量を加える場合は、埋蔵量は経済的に採掘可能と推計される量であって供給集中度そのものではない、という注記を付ける。</p>
+    <p>国境データは<a href="https://www.naturalearthdata.com/" rel="noopener">Natural Earth</a>(パブリックドメイン)の1:110m。この縮尺にない小さな国は1:50mから補っている。地球儀の描画には<a href="https://globe.gl/" rel="noopener">globe.gl</a>(MITライセンス)を使い、このサイトから配信している。</p>
   </section>
 
   <hr class="rule">
