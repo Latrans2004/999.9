@@ -1,0 +1,167 @@
+{
+ "schema": 1,
+ "data_generated_at": "2026-09-14T19:49:08+00:00",
+ "scale": {
+  "transform": "sqrt",
+  "max": 0.85
+ },
+ "default": {
+  "mineral": "lithium",
+  "layer": "mine_production_share"
+ },
+ "groups": [
+  {
+   "key": "battery-metals",
+   "label": "Battery metals",
+   "label_ja": "バッテリーメタル"
+  }
+ ],
+ "minerals": [
+  {
+   "id": "lithium",
+   "name_en": "Lithium",
+   "name_ja": "リチウム",
+   "symbol": "Li",
+   "group": "battery-metals",
+   "status": "published",
+   "selectable": true,
+   "page_url": "minerals/lithium.html",
+   "layers": [
+    {
+     "id": "mine_production_share",
+     "kind": "mine_production_share",
+     "year": 2025,
+     "status": "published",
+     "label": "Mine production",
+     "label_ja": "鉱山生産"
+    },
+    {
+     "id": "export_share_headline",
+     "kind": "export_share",
+     "year": 2025,
+     "status": "published",
+     "label": "Exports · Headline (combined, USD)",
+     "label_ja": "輸出 · ヘッドライン(合算・USD)"
+    },
+    {
+     "id": "export_share_ore",
+     "kind": "export_share",
+     "year": 2024,
+     "status": "published",
+     "label": "Exports · Ore and concentrate",
+     "label_ja": "輸出 · 鉱石・精鉱"
+    },
+    {
+     "id": "export_share_carbonate",
+     "kind": "export_share",
+     "year": 2025,
+     "status": "published",
+     "label": "Exports · Carbonate",
+     "label_ja": "輸出 · 炭酸塩"
+    },
+    {
+     "id": "export_share_hydroxide",
+     "kind": "export_share",
+     "year": 2024,
+     "status": "published",
+     "label": "Exports · Hydroxide",
+     "label_ja": "輸出 · 水酸化物"
+    }
+   ]
+  },
+  {
+   "id": "cobalt",
+   "name_en": "Cobalt",
+   "name_ja": "コバルト",
+   "symbol": "Co",
+   "group": "battery-metals",
+   "status": "pending",
+   "selectable": false,
+   "page_url": "minerals/cobalt.html",
+   "layers": []
+  },
+  {
+   "id": "nickel",
+   "name_en": "Nickel",
+   "name_ja": "ニッケル",
+   "symbol": "Ni",
+   "group": "battery-metals",
+   "status": "pending",
+   "selectable": false,
+   "page_url": "minerals/nickel.html",
+   "layers": []
+  },
+  {
+   "id": "natural-graphite",
+   "name_en": "Natural graphite",
+   "name_ja": "天然黒鉛",
+   "symbol": "C",
+   "group": "battery-metals",
+   "status": "published",
+   "selectable": true,
+   "page_url": "minerals/natural-graphite.html",
+   "layers": [
+    {
+     "id": "mine_production_share",
+     "kind": "mine_production_share",
+     "year": 2024,
+     "status": "published",
+     "label": "Mine production",
+     "label_ja": "鉱山生産"
+    },
+    {
+     "id": "export_share_headline",
+     "kind": "export_share",
+     "year": null,
+     "status": "under_review",
+     "label": "Exports",
+     "label_ja": "輸出"
+    }
+   ]
+  },
+  {
+   "id": "manganese",
+   "name_en": "Manganese",
+   "name_ja": "マンガン",
+   "symbol": "Mn",
+   "group": "battery-metals",
+   "status": "pending",
+   "selectable": false,
+   "page_url": "minerals/manganese.html",
+   "layers": []
+  },
+  {
+   "id": "rare-earths",
+   "name_en": "Rare earths",
+   "name_ja": "希土類",
+   "symbol": "REE",
+   "group": "battery-metals",
+   "status": "pending",
+   "selectable": false,
+   "page_url": "minerals/rare-earths.html",
+   "layers": []
+  },
+  {
+   "id": "vanadium",
+   "name_en": "Vanadium",
+   "name_ja": "バナジウム",
+   "symbol": "V",
+   "group": "battery-metals",
+   "status": "pending",
+   "selectable": false,
+   "page_url": "minerals/vanadium.html",
+   "layers": []
+  },
+  {
+   "id": "copper",
+   "name_en": "Copper",
+   "name_ja": "銅",
+   "symbol": "Cu",
+   "group": "battery-metals",
+   "status": "pending",
+   "selectable": false,
+   "page_url": "minerals/copper.html",
+   "layers": []
+  }
+ ]
+}
