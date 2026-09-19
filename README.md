@@ -136,6 +136,7 @@ critical-minerals/              section 01, self-contained
   methodology.html              generated
   about.html                    generated
   minerals/<slug>.html          generated, one per catalog entry
+  globe.html                    generated: country shares on a globe
   data/
     catalog.json                hand-written: the minerals, HS codes, copy
     index.json                  generated: the summary the section page reads
@@ -147,6 +148,7 @@ pipeline/
   sources/comtrade.py           annual exports by reporter
   sources/http.py               retries, throttling, on-disk cache
   build.py                      orchestration, writes the JSON
+  globe.py                      the globe page's data and its checks
   render.py                     JSON + templates -> static HTML
   fixtures.py                   synthetic data for layout work
   templates/                    Jinja2 (_screener.html is shared by the hub and the section)
@@ -195,6 +197,29 @@ For the Japanese side of the page, add `name_ja`, `role_ja`, `summary_ja`,
 `hs_label_ja` and a `caveats_ja` list the same length as `caveats`. A missing
 `*_ja` field is not an error: that text simply stays in English when the
 Japanese toggle is on.
+
+## The globe page
+
+`critical-minerals/globe.html` shows, one mineral and one measure at a time,
+the published country shares on a globe (globe.gl, vendored under
+`assets/js/vendor/`, loaded only by that page). `python -m pipeline.render`
+writes its data with `pipeline/globe.py`:
+
+```
+critical-minerals/data/globe/index.json     every catalog mineral, status, layers
+critical-minerals/data/globe/<slug>.json    shares of the published layers only
+```
+
+Nothing is calculated for it. Mine shares come from the mineral JSON (or the
+concentration record it was taken from, when the JSON keeps only ten
+countries), trade shares from the stage panels the mineral page shows. The
+render stops if a country has no border polygon, if shares exceed the whole,
+if the leader, its share, CR3 or HHI recomputed from the shares differ from
+the published figures, if a layer under review would be written with a
+number, or if the list or a status drifts from the catalog and the screener.
+A new catalog entry shows in the mineral list on the next render, disabled
+until it has a published layer. Borders are Natural Earth, cut by
+`tools/make_globe_borders.py`; see `assets/geo/NOTICE.txt`.
 
 ## Language toggle
 
