@@ -173,6 +173,47 @@ STRINGS_JA: dict[str, str] = {
     "quote.provisional_title": "暫定値を含みます。",
     "quote.review_title": "貿易指標は確認中です。",
     "quote.coverage_title": "カバレッジ",
+    "quote.globe_link": "地球儀で見る →",
+    "hub.globe_link": "国別シェアを地球儀で見る →",
+    # globe page
+    "nav.globe": "地球儀",
+    "globe.lede": (
+        "各鉱物の鉱山生産と輸出が、どの国にどれだけあるか。公表済みの国別シェアを、"
+        "鉱物と指標を1つずつ選んで表示します。数値は各鉱物ページと同じものです。"
+    ),
+    "globe.mineral": "鉱物",
+    "globe.measure": "指標",
+    "globe.no_data": "データなし",
+    "globe.not_listed": "ソースに記載なし",
+    "globe.legend_scale": (
+        "すべての鉱物・指標で同じ尺度。0%には、ソースに記載のない国も含みます。"
+    ),
+    "globe.loading": "読み込み中…",
+    "globe.load_failed": "地球儀のデータを読み込めませんでした。数値は各鉱物ページで確認できます。",
+    "globe.table_title": "国別シェア",
+    "globe.credit": (
+        "国境データ:Natural Earth(パブリックドメイン)。地球儀の描画:globe.gl。"
+        "シェア:USGS Mineral Commodity SummariesおよびUN Comtrade(各鉱物ページで公表済みのもの)。"
+    ),
+    "globe.aria": "{mineral}・{layer}({year}年)の国別シェアを示す地球儀。同じ数値を下の表に掲載。",
+    "globe.share": "シェア",
+    "globe.year": "対象年",
+    "globe.source": "出典",
+    "globe.leader": "首位国",
+    "globe.cr3": "上位3カ国",
+    "globe.coverage": "カバレッジ",
+    "globe.coverage_named": "報告合計のうち、数値のある国が占める割合",
+    "globe.coverage_world": "公表された世界合計のうち、数値のある国が占める割合",
+    "globe.report_completeness": "報告完全性",
+    "globe.no_data_list": "データなし",
+    "globe.other": "その他(特定の国に帰属しない分) {pct}",
+    "globe.provisional": "暫定値",
+    "globe.page_link": "鉱物ページを開く →",
+    "globe.show_all": "全{n}カ国を表示",
+    "globe.show_fewer": "上位10カ国のみ表示",
+    "globe.table_sub": "{mineral} · {layer} · {year}年",
+    "globe.redirect": "{name}は{status}のため、地球儀では選べません。{fallback}を表示しています。",
+    "globe.withheld": "データなし(非公表)",
 }
 
 
@@ -265,6 +306,78 @@ def label_ja(key: str) -> str:
 
 def stage_coverage_ja(coverage_pct: float) -> str:
     return f"報告完全性 {coverage_pct:.1f}%(その段階の全期間中央値に対する報告国数)"
+
+
+# --------------------------------------------------------------- globe page
+#
+# Sentences written into critical-minerals/data/globe/<slug>.json, English
+# and Japanese side by side. Country names are not part of them: the page
+# lists no-data countries itself, by name, from the border file.
+
+def globe_share_note_en(kind: str, world_coverage, no_data: list[str]) -> str:
+    parts = []
+    if kind == "reserves":
+        parts.append(
+            "Reserves are not supply concentration: they are the quantity estimated to be "
+            "economically extractable, not what is produced or shipped."
+        )
+    if kind in ("mine", "reserves"):
+        parts.append("Shares are of the total the USGS reports by country.")
+        if isinstance(world_coverage, (int, float)) and world_coverage < 1:
+            parts.append(
+                f"The countries with a figure account for {world_coverage * 100:.1f}% of the "
+                "published world total; the rest is withheld or unallocated at source and is "
+                "not attributed to any country, as on the mineral page."
+            )
+    else:
+        parts.append(
+            "Shares are of the total the reporting countries declared; a country that did "
+            "not report has no share on the map."
+        )
+    if no_data:
+        parts.append("Countries listed without a figure are shown as no data, not as 0%.")
+    return " ".join(parts)
+
+
+def globe_share_note_ja(kind: str, world_coverage, no_data: list[str]) -> str:
+    parts = []
+    if kind == "reserves":
+        parts.append(
+            "埋蔵量は供給集中度そのものではなく、経済的に採掘可能と推計される量であり、"
+            "生産量や出荷量ではありません。"
+        )
+    if kind in ("mine", "reserves"):
+        parts.append("シェアはUSGSが国別に報告した合計に対する割合です。")
+        if isinstance(world_coverage, (int, float)) and world_coverage < 1:
+            parts.append(
+                f"数値のある国の合計は、公表されている世界合計の{world_coverage * 100:.1f}%です。"
+                "残りはソース側で非公表または未配分とされており、鉱物ページと同様に、"
+                "特定の国には割り当てていません。"
+            )
+    else:
+        parts.append(
+            "シェアは報告国が申告した合計に対する割合です。報告のない国には、"
+            "地図上でシェアを割り当てていません。"
+        )
+    if no_data:
+        parts.append("数値のない国は0%ではなく「データなし」として表示しています。")
+    return "".join(parts)
+
+
+def globe_trade_measure_en(unit: str) -> str:
+    if unit == "USD":
+        return "share of reported export value (USD)"
+    if unit == "t":
+        return "share of reported export weight (t)"
+    return f"share of reported exports ({unit})"
+
+
+def globe_trade_measure_ja(unit: str) -> str:
+    if unit == "USD":
+        return "報告された輸出額(USドル)に占める割合"
+    if unit == "t":
+        return "報告された輸出重量(t)に占める割合"
+    return f"報告された輸出({unit})に占める割合"
 
 
 def provisional_legend_ja(years: list[int], coverage_pct: float | None) -> str:

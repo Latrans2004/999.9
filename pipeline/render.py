@@ -578,6 +578,12 @@ def render_all() -> None:
     categories = catalog.get("categories") or {}
     live_count = sum(1 for r in rows if r["live"])
 
+    # The globe's data is written and checked before any page, so a check
+    # that fails leaves the committed pages as they were.
+    from . import globe
+    globe_index = globe.write(catalog, rows)
+    on_globe = {m["id"] for m in globe_index["minerals"] if m["selectable"]}
+
     # ------------------------------------------------------------ hub page
     write(
         REPO_ROOT / "index.html",
@@ -619,6 +625,24 @@ def render_all() -> None:
         ),
     )
 
+    # ------------------------------------------------------------ globe page
+    groups = []
+    for group in globe_index["groups"]:
+        members = [m for m in globe_index["minerals"] if m["group"] == group["key"]]
+        if members:
+            groups.append({**group, "minerals": members})
+    write(
+        SECTION_DIR / "globe.html",
+        env.get_template("globe.html").render(
+            root="../",
+            page="globe",
+            path="critical-minerals/globe.html",
+            groups=groups,
+            default=globe_index["default"],
+            **base,
+        ),
+    )
+
     # ------------------------------------------------------- standing pages
     for name, page in (("methodology", "methodology"), ("about", "about")):
         write(
@@ -653,11 +677,12 @@ def render_all() -> None:
                 page_data=safe_json(data),
                 stages=stages,
                 stage_data=safe_json(stages) if stages else None,
+                on_globe=entry["slug"] in on_globe,
                 **base,
             ),
         )
 
-    log.info("rendered %d pages", len(entries) + 5)
+    log.info("rendered %d pages", len(entries) + 6)
 
 
 if __name__ == "__main__":

@@ -43,12 +43,15 @@ jobs:
           python -m pipeline.publish_graphite
           git diff --exit-code -- critical-minerals/data data/processed/natural-graphite
       - name: Re-render pages and fail if they are stale
+        # The render also rebuilds the globe data and runs its checks
+        # (pipeline/globe.py); a failed check fails this step.
         run: |
           python -m pipeline.render
-          if ! git diff --quiet -- '*.html'; then
-            echo "::error::Rendered pages differ from what is committed."
+          if ! git diff --quiet -- '*.html' critical-minerals/data/globe              || [ -n "$(git ls-files --others --exclude-standard -- critical-minerals/data/globe)" ]; then
+            echo "::error::Rendered pages or globe data differ from what is committed."
             echo "Run 'python -m pipeline.render' locally and commit the result."
-            git --no-pager diff --stat -- '*.html'
+            git --no-pager diff --stat -- '*.html' critical-minerals/data/globe
+            git ls-files --others --exclude-standard -- critical-minerals/data/globe
             exit 1
           fi
 

@@ -1,0 +1,54 @@
+{
+ "id": "natural-graphite",
+ "name_en": "Natural graphite",
+ "name_ja": "天然黒鉛",
+ "layers": [
+  {
+   "id": "mine_production_share",
+   "kind": "mine_production_share",
+   "status": "published",
+   "label": "Mine production",
+   "label_ja": "鉱山生産",
+   "year": 2024,
+   "source": "USGS Mineral Commodity Summaries (fixed 2019–2026 editions)",
+   "measure": "share of identified natural graphite mine production",
+   "measure_ja": "天然黒鉛の国別鉱山生産量に占める割合",
+   "unit": "share",
+   "values": {
+    "CHN": 0.818992,
+    "MDG": 0.054814,
+    "BRA": 0.037403,
+    "MOZ": 0.02515,
+    "TZA": 0.017412,
+    "RUS": 0.012898,
+    "IND": 0.01135,
+    "CAN": 0.007545,
+    "PRK": 0.005223,
+    "NOR": 0.003444,
+    "LKA": 0.001935,
+    "TUR": 0.001677,
+    "KOR": 0.000645,
+    "UKR": 0.00058,
+    "MEX": 0.000455,
+    "VNM": 0.000322,
+    "DEU": 9e-05,
+    "AUT": 6.4e-05,
+    "USA": 0.0
+   },
+   "no_data": [],
+   "other_share": 0.0,
+   "coverage": 0.999999,
+   "world_coverage": 1.0,
+   "provisional": false,
+   "summary": {
+    "leader": "CHN",
+    "leader_share": 81.8992,
+    "cr3": 91.12,
+    "hhi": 6764.9,
+    "band": "high"
+   },
+   "note_en": "Shares are of the total the USGS reports by country.",
+   "note_ja": "シェアはUSGSが国別に報告した合計に対する割合です。"
+  }
+ ]
+}

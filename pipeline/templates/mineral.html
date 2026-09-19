@@ -264,6 +264,9 @@
     {% if mineral.summary %}
     <p class="quote__summary" data-i18n-text="{{ first_sentence(mineral.summary_ja) }}">{{ first_sentence(mineral.summary) }}</p>
     {% endif %}
+    {% if on_globe %}
+    <p class="quote__links"><a href="{{ root }}critical-minerals/globe.html?m={{ mineral.slug }}" data-i18n="quote.globe_link">View on the globe →</a></p>
+    {% endif %}
 
     <div class="quote__figure">
       {% if prod.available %}
