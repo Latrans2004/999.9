@@ -1264,7 +1264,7 @@
       "excluded": {
         "partner:unallocated_special_area": {
           "missing_weight_rows": 1,
-          "observed_value_usd": 21131261.675999988,
+          "observed_value_usd": 21131303.08299999,
           "observed_weight_t": 109291.05924000002,
           "rows": 54
         },
@@ -1285,7 +1285,7 @@
       "excluded": {
         "partner:unallocated_special_area": {
           "missing_weight_rows": 0,
-          "observed_value_usd": 15732334.122999998,
+          "observed_value_usd": 15734377.889999999,
           "observed_weight_t": 229117.61133800005,
           "rows": 39
         },
@@ -1302,33 +1302,33 @@
       "year": 2024
     },
     {
-      "eligible_rows": 2211,
+      "eligible_rows": 2212,
       "excluded": {
         "partner:unallocated_special_area": {
           "missing_weight_rows": 1,
-          "observed_value_usd": 6729972.762999998,
+          "observed_value_usd": 6733154.5249999985,
           "observed_weight_t": 58804.55028,
           "rows": 51
         }
       },
       "flow": "M",
       "hs_code": "253090",
-      "rows": 2262,
+      "rows": 2263,
       "year": 2025
     },
     {
-      "eligible_rows": 1779,
+      "eligible_rows": 1777,
       "excluded": {
         "partner:unallocated_special_area": {
           "missing_weight_rows": 0,
-          "observed_value_usd": 5646851.21,
-          "observed_weight_t": 22204.52586,
+          "observed_value_usd": 5706118.364,
+          "observed_weight_t": 22166.75661,
           "rows": 32
         }
       },
       "flow": "X",
       "hs_code": "253090",
-      "rows": 1811,
+      "rows": 1809,
       "year": 2025
     },
     {
@@ -1639,7 +1639,7 @@
       "excluded": {
         "partner:unallocated_special_area": {
           "missing_weight_rows": 0,
-          "observed_value_usd": 5111219.714999999,
+          "observed_value_usd": 5111575.002999999,
           "observed_weight_t": 373.9986689999999,
           "rows": 8
         },
@@ -1660,7 +1660,7 @@
       "excluded": {
         "partner:unallocated_special_area": {
           "missing_weight_rows": 0,
-          "observed_value_usd": 139121.581,
+          "observed_value_usd": 139043.37,
           "observed_weight_t": 99.153553,
           "rows": 7
         }
@@ -1675,7 +1675,7 @@
       "excluded": {
         "partner:unallocated_special_area": {
           "missing_weight_rows": 0,
-          "observed_value_usd": 426315.824,
+          "observed_value_usd": 426341.012,
           "observed_weight_t": 2.2186540000000003,
           "rows": 6
         }
@@ -2005,7 +2005,7 @@
       "excluded": {
         "partner:unallocated_special_area": {
           "missing_weight_rows": 0,
-          "observed_value_usd": 7769033.205000001,
+          "observed_value_usd": 7769073.000000001,
           "observed_weight_t": 566.841896,
           "rows": 8
         },
@@ -2041,7 +2041,7 @@
       "excluded": {
         "partner:unallocated_special_area": {
           "missing_weight_rows": 0,
-          "observed_value_usd": 2192129.573,
+          "observed_value_usd": 2192111.4439999997,
           "observed_weight_t": 269.440912,
           "rows": 6
         }

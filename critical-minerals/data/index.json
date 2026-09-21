@@ -21,7 +21,7 @@
   },
   "failures": [],
   "fixtures": false,
-  "generated_at": "2026-09-14T19:49:08+00:00",
+  "generated_at": "2026-09-21T13:00:16+00:00",
   "minerals": [
     {
       "name": "Lithium",
@@ -69,9 +69,9 @@
       "trade": {
         "band": "high",
         "cr3": 79.86,
-        "hhi": 3641.5,
+        "hhi": 3641.8,
         "leader": "Chile",
-        "leader_share": 56.9211,
+        "leader_share": 56.9231,
         "sparkline": [
           2682.0,
           3194.7,
@@ -80,15 +80,15 @@
           3207.7,
           4366.3,
           3658.1,
-          3435.7,
-          3641.5
+          3435.5,
+          3641.8
         ],
         "trend": {
-          "change": 433.8,
+          "change": 434.1,
           "direction": "up",
           "from_hhi": 3207.7,
           "from_year": 2021,
-          "to_hhi": 3641.5,
+          "to_hhi": 3641.8,
           "to_year": 2025
         },
         "year": 2025,

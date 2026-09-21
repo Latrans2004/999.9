@@ -1,0 +1,20 @@
+{
+  "path": "data/raw/comtrade/84de63c0ed121a4c65604ea5e40e2b054268085ad03c38758eb7beb2e174227a.json",
+  "query": {
+    "breakdownMode": "classic",
+    "cmdCode": "283691",
+    "customsCode": "C00",
+    "flowCode": "X",
+    "includeDesc": "true",
+    "maxRecords": 100000,
+    "motCode": "0",
+    "partner2Code": "0",
+    "partnerCode": "",
+    "period": "2021",
+    "reporterCode": ""
+  },
+  "retrieved_at": "2026-09-21T12:58:19+00:00",
+  "sha256": "069c997d154a362a4b64ff58bc921d1d4a1fd949a384bd437a7fdcea4340bac6",
+  "source": "comtrade",
+  "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS"
+}

@@ -1,0 +1,8 @@
+{
+  "path": "data/raw/usgs/47e22ae578ccabab048799113f79fcabee5d11c9a039f8bbf17942e782b4a23a.csv",
+  "query": {},
+  "retrieved_at": "2026-09-21T13:00:04+00:00",
+  "sha256": "4ec730aaf304dd804905efa11027e0feb5e690532a2be63b733a46dc95e167ad",
+  "source": "usgs",
+  "url": "reviewed:data/manual/lithium-production.csv"
+}
